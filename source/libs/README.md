@@ -1,0 +1,2 @@
+In questa cartella vanno inserite le librerie compilate necessarie per far girare il programma. 
+Fate puntare il vostro compilatore a questa cartella per la ricerca delle librerie, e occhio ai link simbolici.
