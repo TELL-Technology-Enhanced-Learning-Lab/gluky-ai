@@ -1,0 +1,62 @@
+[gd_scene load_steps=17 format=3 uid="uid://go824gfnbv33"]
+
+[ext_resource type="Script" uid="uid://mpr76q85i68u" path="res://scripts/level.gd" id="1_jyhfs"]
+[ext_resource type="Script" uid="uid://dnwj1pnsobvsy" path="res://scripts/game_setup.gd" id="1_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://c022p7vea353u" path="res://modules/Module_0_EMod.tscn" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bnd1r43jq8cfy" path="res://modules/Module_Obstacle_1.tscn" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://x1jjljtno8ss" path="res://modules/Module_Obstacle_2.tscn" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://0ehed50b121n" path="res://modules/Module_Obstacle_3.tscn" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/Player_Controller.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://0vg8mco5y7cp" path="res://modules/cibi_3d.tscn" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://1d50klwf46ey" path="res://modules/cibi2_3d.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://db23xh17yadlg" path="res://modules/cibi3_3d.tscn" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://bjusk5oa2ah2q" path="res://modules/cibi4_3d.tscn" id="9_ya4ey"]
+
+[sub_resource type="Environment" id="Environment_irwmq"]
+fog_enabled = true
+fog_light_energy = 0.48
+fog_sky_affect = 0.265
+volumetric_fog_density = 0.015
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
+albedo_color = Color(0.5568628, 0.40784314, 0.2901961, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tefeu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]
+size = Vector3(1.2744751, 1.9979248, 1.0361328)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o6xl0"]
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_ya4ey")
+
+[node name="level" type="Node3D" parent="."]
+script = ExtResource("1_jyhfs")
+modules = Array[PackedScene]([ExtResource("2_o6xl0"), ExtResource("2_tbgi4"), ExtResource("2_tefeu"), ExtResource("3_tefeu"), ExtResource("6_o6xl0"), ExtResource("7_tipki"), ExtResource("8_choun"), ExtResource("9_ya4ey")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_irwmq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.30484766, 0.95240116, 0, -0.95240116, 0.30484766, 0, 9.35368, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -4.371139e-08, 7.5710346e-08, 0, 0.8660254, 0.5, -8.742278e-08, 0.5, -0.8660254, -1, 10, -5)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("4_jyhfs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+material_override = SubResource("StandardMaterial3D_tbgi4")
+mesh = SubResource("CapsuleMesh_tefeu")
+
+[node name="CollectionArea" type="Area3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CollectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03164673, 0.20562744, -0.008300781)
+shape = SubResource("BoxShape3D_ya4ey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_o6xl0")
