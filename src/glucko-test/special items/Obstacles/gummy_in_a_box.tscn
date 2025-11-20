@@ -397,12 +397,12 @@ transform = Transform3D(1.9470717e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 1
 transform = Transform3D(0.99999994, 0, 1.4210855e-14, 0, 1, 0, -1.4210855e-14, 0, 0.99999994, 0, 0, 0)
 
 [node name="obstacle_11_007_002" type="MeshInstance3D" parent="GummyInABox"]
-transform = Transform3D(1, 0, -1.2661871e-13, 0, 1, 0, 1.2789769e-13, 0, 0.99, -0.07269353, -0.25815892, 7.7278295)
+transform = Transform3D(0.2, 0, -2.557954e-14, 0, 0.2, 0, 2.557954e-14, 0, 0.2, -0.072694935, -0.25815892, 0.50688636)
 mesh = SubResource("ArrayMesh_848k5")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GummyInABox"]
-transform = Transform3D(1, 0, -1.2789769e-13, 0, 1, 0, 1.2789769e-13, 0, 1, -0.07269353, -0.25815892, 7.7278295)
+transform = Transform3D(0.2, 0, -2.557954e-14, 0, 0.2, 0, 2.557954e-14, 0, 0.2, -0.072694935, -0.25815892, 0.50688636)
 shape = SubResource("ConcavePolygonShape3D_816jt")
 
 [node name="obstacle_11_001_002" type="MeshInstance3D" parent="GummyInABox"]
@@ -411,27 +411,27 @@ mesh = SubResource("ArrayMesh_vr35t")
 skeleton = NodePath("")
 
 [node name="obstacle_11_002_002" type="MeshInstance3D" parent="GummyInABox/obstacle_11_001_002"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5155455e-05, 1.8779182, 2.0216322)
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -1.5155455e-05, 1.8779182, 2.0216322)
 mesh = SubResource("ArrayMesh_vij6s")
 skeleton = NodePath("")
 
 [node name="obstacle_11_003_002" type="MeshInstance3D" parent="GummyInABox/obstacle_11_001_002"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8779448, 0, 2.0216324)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.8779448, 0, 2.0216324)
 mesh = SubResource("ArrayMesh_3fwvg")
 skeleton = NodePath("")
 
 [node name="obstacle_11_004_002" type="MeshInstance3D" parent="GummyInABox/obstacle_11_001_002"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5155455e-05, -1.8779202, 2.0216322)
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, -1.5155455e-05, -1.8779202, 2.0216322)
 mesh = SubResource("ArrayMesh_1qk6a")
 skeleton = NodePath("")
 
 [node name="obstacle_11_005_002" type="MeshInstance3D" parent="GummyInABox/obstacle_11_001_002"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8779145, 0, 2.021632)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.8779145, 0, 2.021632)
 mesh = SubResource("ArrayMesh_v2xun")
 skeleton = NodePath("")
 
 [node name="obstacle_11_006_002" type="MeshInstance3D" parent="GummyInABox/obstacle_11_001_002"]
-transform = Transform3D(1, 0, 3.0951245e-13, 0, 1, 0, -3.1263883e-13, 0, 0.99, -0.04771476, -0.27539068, 7.6369267)
+transform = Transform3D(0.2, 0, 6.190249e-14, 0, 0.2, 0, -6.252777e-14, 0, 0.198, -0.047716163, -0.27539068, 0.41598517)
 mesh = SubResource("ArrayMesh_jdl8w")
 skeleton = NodePath("")
 
