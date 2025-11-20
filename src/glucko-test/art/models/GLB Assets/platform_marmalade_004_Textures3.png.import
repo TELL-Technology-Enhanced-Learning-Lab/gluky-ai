@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bickp8r7jktah"
 path.s3tc="res://.godot/imported/platform_marmalade_004_Textures3.png-6901092242dc5ba12684c44684ef964d.s3tc.ctex"
+path.etc2="res://.godot/imported/platform_marmalade_004_Textures3.png-6901092242dc5ba12684c44684ef964d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/platform_marmalade_004_Textures3.png"
-dest_files=["res://.godot/imported/platform_marmalade_004_Textures3.png-6901092242dc5ba12684c44684ef964d.s3tc.ctex"]
+dest_files=["res://.godot/imported/platform_marmalade_004_Textures3.png-6901092242dc5ba12684c44684ef964d.s3tc.ctex", "res://.godot/imported/platform_marmalade_004_Textures3.png-6901092242dc5ba12684c44684ef964d.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmbrhbiytbcrk"
 path.s3tc="res://.godot/imported/candy_011_Textures3.png-c574d966d2419858dcebe48383455f9a.s3tc.ctex"
+path.etc2="res://.godot/imported/candy_011_Textures3.png-c574d966d2419858dcebe48383455f9a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/candy_011_Textures3.png"
-dest_files=["res://.godot/imported/candy_011_Textures3.png-c574d966d2419858dcebe48383455f9a.s3tc.ctex"]
+dest_files=["res://.godot/imported/candy_011_Textures3.png-c574d966d2419858dcebe48383455f9a.s3tc.ctex", "res://.godot/imported/candy_011_Textures3.png-c574d966d2419858dcebe48383455f9a.etc2.ctex"]
 
 [params]
 

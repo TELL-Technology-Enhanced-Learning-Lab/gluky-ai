@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpe1svgl67yig"
 path.s3tc="res://.godot/imported/caramel_cone_002_Textures3.png-b9560b81d4c4854165840261cfb4425c.s3tc.ctex"
+path.etc2="res://.godot/imported/caramel_cone_002_Textures3.png-b9560b81d4c4854165840261cfb4425c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/caramel_cone_002_Textures3.png"
-dest_files=["res://.godot/imported/caramel_cone_002_Textures3.png-b9560b81d4c4854165840261cfb4425c.s3tc.ctex"]
+dest_files=["res://.godot/imported/caramel_cone_002_Textures3.png-b9560b81d4c4854165840261cfb4425c.s3tc.ctex", "res://.godot/imported/caramel_cone_002_Textures3.png-b9560b81d4c4854165840261cfb4425c.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8x7mtxbfq8k4"
 path.s3tc="res://.godot/imported/obstacle_3_001_Textures3.png-8ad67e9ec299cf9b95a0a14cf6ffe848.s3tc.ctex"
+path.etc2="res://.godot/imported/obstacle_3_001_Textures3.png-8ad67e9ec299cf9b95a0a14cf6ffe848.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/obstacle_3_001_Textures3.png"
-dest_files=["res://.godot/imported/obstacle_3_001_Textures3.png-8ad67e9ec299cf9b95a0a14cf6ffe848.s3tc.ctex"]
+dest_files=["res://.godot/imported/obstacle_3_001_Textures3.png-8ad67e9ec299cf9b95a0a14cf6ffe848.s3tc.ctex", "res://.godot/imported/obstacle_3_001_Textures3.png-8ad67e9ec299cf9b95a0a14cf6ffe848.etc2.ctex"]
 
 [params]
 

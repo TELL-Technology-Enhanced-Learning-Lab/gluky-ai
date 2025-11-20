@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lnygmfx0m25r"
 path.s3tc="res://.godot/imported/marmalade_snake_002_Textures3.png-e5f3f2f8280deeb814626de78d69204a.s3tc.ctex"
+path.etc2="res://.godot/imported/marmalade_snake_002_Textures3.png-e5f3f2f8280deeb814626de78d69204a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/marmalade_snake_002_Textures3.png"
-dest_files=["res://.godot/imported/marmalade_snake_002_Textures3.png-e5f3f2f8280deeb814626de78d69204a.s3tc.ctex"]
+dest_files=["res://.godot/imported/marmalade_snake_002_Textures3.png-e5f3f2f8280deeb814626de78d69204a.s3tc.ctex", "res://.godot/imported/marmalade_snake_002_Textures3.png-e5f3f2f8280deeb814626de78d69204a.etc2.ctex"]
 
 [params]
 

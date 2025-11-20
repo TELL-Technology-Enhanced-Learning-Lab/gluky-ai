@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8iem3ub7g4p8"
+path="res://.godot/imported/4BAZ15083WX48DEQ00S24L1QT.obj-0fa64fe3ce663db87f3204306f7c43d5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/4BAZ15083WX48DEQ00S24L1QT.obj-0fa64fe3ce663db87f3204306f7c43d5.mesh"]
+
+source_file="res://art/models/Food Models/croissant/4BAZ15083WX48DEQ00S24L1QT.obj"
+dest_files=["res://.godot/imported/4BAZ15083WX48DEQ00S24L1QT.obj-0fa64fe3ce663db87f3204306f7c43d5.mesh", "res://.godot/imported/4BAZ15083WX48DEQ00S24L1QT.obj-0fa64fe3ce663db87f3204306f7c43d5.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

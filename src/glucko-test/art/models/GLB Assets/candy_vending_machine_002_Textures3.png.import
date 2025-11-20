@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0e4ncjrrthcb"
 path.s3tc="res://.godot/imported/candy_vending_machine_002_Textures3.png-38b1add4e809fdfdf7ecc9af2a5376e3.s3tc.ctex"
+path.etc2="res://.godot/imported/candy_vending_machine_002_Textures3.png-38b1add4e809fdfdf7ecc9af2a5376e3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/candy_vending_machine_002_Textures3.png"
-dest_files=["res://.godot/imported/candy_vending_machine_002_Textures3.png-38b1add4e809fdfdf7ecc9af2a5376e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/candy_vending_machine_002_Textures3.png-38b1add4e809fdfdf7ecc9af2a5376e3.s3tc.ctex", "res://.godot/imported/candy_vending_machine_002_Textures3.png-38b1add4e809fdfdf7ecc9af2a5376e3.etc2.ctex"]
 
 [params]
 

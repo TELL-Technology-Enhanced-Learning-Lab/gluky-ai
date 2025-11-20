@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6djdg806dhio"
 path.s3tc="res://.godot/imported/Water_normal.jpg-ca305a82c53426f3c9647b689352f6d4.s3tc.ctex"
+path.etc2="res://.godot/imported/Water_normal.jpg-ca305a82c53426f3c9647b689352f6d4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://art/models/GLB Assets/Water_normal.jpg"
-dest_files=["res://.godot/imported/Water_normal.jpg-ca305a82c53426f3c9647b689352f6d4.s3tc.ctex"]
+dest_files=["res://.godot/imported/Water_normal.jpg-ca305a82c53426f3c9647b689352f6d4.s3tc.ctex", "res://.godot/imported/Water_normal.jpg-ca305a82c53426f3c9647b689352f6d4.etc2.ctex"]
 
 [params]
 

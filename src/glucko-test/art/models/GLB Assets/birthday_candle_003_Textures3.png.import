@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b422dha0tp2bv"
 path.s3tc="res://.godot/imported/birthday_candle_003_Textures3.png-1fe9a71de8335b9f0267deaf645de567.s3tc.ctex"
+path.etc2="res://.godot/imported/birthday_candle_003_Textures3.png-1fe9a71de8335b9f0267deaf645de567.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/birthday_candle_003_Textures3.png"
-dest_files=["res://.godot/imported/birthday_candle_003_Textures3.png-1fe9a71de8335b9f0267deaf645de567.s3tc.ctex"]
+dest_files=["res://.godot/imported/birthday_candle_003_Textures3.png-1fe9a71de8335b9f0267deaf645de567.s3tc.ctex", "res://.godot/imported/birthday_candle_003_Textures3.png-1fe9a71de8335b9f0267deaf645de567.etc2.ctex"]
 
 [params]
 

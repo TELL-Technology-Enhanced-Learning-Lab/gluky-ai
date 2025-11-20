@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://djbvpusjuofcn"
 path.s3tc="res://.godot/imported/lollipop_032_Textures3.png-c1998699ec36c3ae174de1d3a0696a8b.s3tc.ctex"
+path.etc2="res://.godot/imported/lollipop_032_Textures3.png-c1998699ec36c3ae174de1d3a0696a8b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/lollipop_032_Textures3.png"
-dest_files=["res://.godot/imported/lollipop_032_Textures3.png-c1998699ec36c3ae174de1d3a0696a8b.s3tc.ctex"]
+dest_files=["res://.godot/imported/lollipop_032_Textures3.png-c1998699ec36c3ae174de1d3a0696a8b.s3tc.ctex", "res://.godot/imported/lollipop_032_Textures3.png-c1998699ec36c3ae174de1d3a0696a8b.etc2.ctex"]
 
 [params]
 

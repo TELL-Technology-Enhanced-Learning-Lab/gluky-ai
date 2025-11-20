@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvsp81b25j45p"
 path.s3tc="res://.godot/imported/air_balloon_001_Textures3.png-0e071ae69b44b3aabcc64215f469f9fe.s3tc.ctex"
+path.etc2="res://.godot/imported/air_balloon_001_Textures3.png-0e071ae69b44b3aabcc64215f469f9fe.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/air_balloon_001_Textures3.png"
-dest_files=["res://.godot/imported/air_balloon_001_Textures3.png-0e071ae69b44b3aabcc64215f469f9fe.s3tc.ctex"]
+dest_files=["res://.godot/imported/air_balloon_001_Textures3.png-0e071ae69b44b3aabcc64215f469f9fe.s3tc.ctex", "res://.godot/imported/air_balloon_001_Textures3.png-0e071ae69b44b3aabcc64215f469f9fe.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3h8rq7gcxihh"
 path.s3tc="res://.godot/imported/candy_inflatable_001_Textures3.png-b2e58681804b7cea74e9e42aef77180a.s3tc.ctex"
+path.etc2="res://.godot/imported/candy_inflatable_001_Textures3.png-b2e58681804b7cea74e9e42aef77180a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/GLB Assets/candy_inflatable_001_Textures3.png"
-dest_files=["res://.godot/imported/candy_inflatable_001_Textures3.png-b2e58681804b7cea74e9e42aef77180a.s3tc.ctex"]
+dest_files=["res://.godot/imported/candy_inflatable_001_Textures3.png-b2e58681804b7cea74e9e42aef77180a.s3tc.ctex", "res://.godot/imported/candy_inflatable_001_Textures3.png-b2e58681804b7cea74e9e42aef77180a.etc2.ctex"]
 
 [params]
 
