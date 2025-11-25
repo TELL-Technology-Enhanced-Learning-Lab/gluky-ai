@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://dg2pvtsem8n38"]
+[gd_scene load_steps=9 format=4 uid="uid://dg2pvtsem8n38"]
 
 [ext_resource type="Texture2D" uid="uid://clrd0hwtcbiru" path="res://art/models/Demo Stages/demo_stage_Textures3.png" id="1_krhga"]
-[ext_resource type="Script" uid="uid://cawmkk50o03vh" path="res://scripts/settings_ballon.gd" id="1_pje3f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_murml"]
 resource_name = "Color"
@@ -86,7 +85,6 @@ _data = {
 }
 
 [node name="Cylinder lollipop3" type="Node3D"]
-script = ExtResource("1_pje3f")
 
 [node name="Cylinder lollipop3" type="AnimatableBody3D" parent="."]
 transform = Transform3D(0.32556814, 0.94551855, 0, -0.94551855, 0.32556814, 0, 0, 0, 1, 0, 0, 0)

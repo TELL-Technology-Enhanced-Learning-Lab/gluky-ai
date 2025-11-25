@@ -29,11 +29,13 @@ func _input(event):
 			if event.index == 0:
 				yaw -= event.relative.x * touch_sensitivity
 			elif event.index == 1:
-				vertical_offset = clamp(vertical_offset - event.relative.y * vertical_sensitivity, min_vertical_offset, max_vertical_offset)
+				var inverted_vertical = -event.relative.y
+				vertical_offset = clamp(vertical_offset + inverted_vertical * vertical_sensitivity, min_vertical_offset, max_vertical_offset)
 	else:
 		if event is InputEventMouseMotion:
 			yaw -= event.relative.x * mouse_sensitivity
-			vertical_offset = clamp(vertical_offset - event.relative.y * vertical_sensitivity, min_vertical_offset, max_vertical_offset)
+			var inverted_vertical = -event.relative.y
+			vertical_offset = clamp(vertical_offset + inverted_vertical * vertical_sensitivity, min_vertical_offset, max_vertical_offset)
 
 func _physics_process(delta):
 	if not player:

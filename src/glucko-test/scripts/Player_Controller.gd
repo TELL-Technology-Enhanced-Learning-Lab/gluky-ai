@@ -2,11 +2,12 @@ extends CharacterBody3D
 
 @export var speed: float = 10.0
 @export var gravity: float = 40.0
-@export var jump_vel: float = 20.0
+@export var jump_vel: float = 15.0
 @export var rotation_speed := 12.0
 @export var stopping_speed := 1.0
 @export var push_strength: float = 0
 @export var push_duration: float = 0.1
+@export var sprint_multiplier: float = 1.2
 
 var glucoseVal: int = 50
 var timer: float = 0.0
@@ -15,6 +16,7 @@ var _was_on_floor_last_frame := true
 var _is_being_pushed: bool = false
 var _push_velocity: Vector3 = Vector3.ZERO
 var _push_timer: float = 0.0
+var _is_sprinting: bool = false
 
 @onready var game_setup = get_parent()
 @onready var collection_area: Area3D = $CollectionArea
@@ -31,11 +33,14 @@ func _physics_process(delta: float) -> void:
 	handle_glucose(delta)
 	handle_push_effect(delta)
 	update_animation_state()
+	create_sprint_dust()
 	move_and_slide()
 
 func handle_movement(delta: float) -> void:
 	if _is_being_pushed:
 		return
+	
+	_is_sprinting = Input.is_action_pressed("sprint")
 		
 	var input_dir = Vector3.ZERO
 	if Input.is_action_pressed("move_forward"):
@@ -54,8 +59,9 @@ func handle_movement(delta: float) -> void:
 		direction.y = 0
 		direction = direction.normalized()
 		
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
+		var current_speed = speed * (sprint_multiplier if _is_sprinting else 1.0)
+		velocity.x = direction.x * current_speed
+		velocity.z = direction.z * current_speed
 		
 		if direction.length() > 0.2:
 			_last_input_direction = direction.normalized()
@@ -120,6 +126,31 @@ func update_animation_state() -> void:
 			_skin.run_tilt = 0.0
 	
 	_was_on_floor_last_frame = is_on_floor()
+
+func create_sprint_dust():
+	if _is_sprinting and is_on_floor() and velocity.length() > stopping_speed:
+		if randf() < 0.3:
+			var dust = MeshInstance3D.new()
+			dust.mesh = SphereMesh.new()
+			dust.mesh.radius = 0.2
+			dust.mesh.height = 0.4
+			
+			var material = StandardMaterial3D.new()
+			material.albedo_color = Color(0.6, 0.4, 0.2, 0.8)
+			material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+			dust.material_override = material
+			
+			var behind_pos = global_position - global_transform.basis.z * 0.5
+			behind_pos.y = global_position.y + 0.1
+			
+			get_tree().root.add_child(dust)
+			dust.global_position = behind_pos
+			
+			var tween = create_tween()
+			var target_pos = dust.global_position + Vector3(0, 0.5, 0)
+			tween.parallel().tween_property(dust, "global_position", target_pos, 0.8)
+			tween.parallel().tween_property(dust, "scale", Vector3.ZERO, 0.8)
+			tween.tween_callback(dust.queue_free)
 
 func handle_glucose(delta: float) -> void:
 	timer += delta

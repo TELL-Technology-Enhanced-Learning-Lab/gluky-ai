@@ -1,9 +1,11 @@
-AnimatableBody3D
 AnimationPlayer
-Node3D
 RigidBody3D
-CollisionShape3D
-Area3D
-RayCast3D
+Marker3D
+Node3D
 StaticBody3D
+GPUParticles3D
+Area3D
+CollisionShape3D
+AnimatableBody3D
+RayCast3D
 CharacterBody3D

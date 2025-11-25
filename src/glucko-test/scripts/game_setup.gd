@@ -10,7 +10,7 @@ func _ready():
 	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	fade_rect.modulate.a = 1.0
 	
-	get_tree().root.add_child(fade_rect)
+	get_tree().root.add_child.call_deferred(fade_rect)
 	
 	await get_tree().process_frame
 	
@@ -20,7 +20,7 @@ func _ready():
 	
 	var ui_scene = load("res://art/user interface/Glucose_Bar.tscn")
 	var ui_instance = ui_scene.instantiate()
-	add_child(ui_instance)
+	add_child.call_deferred(ui_instance)
 	glucose_bar = ui_instance.get_node("CanvasLayer")
 
 func update_value(new_value) -> void:

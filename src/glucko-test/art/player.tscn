@@ -11,11 +11,6 @@ size = Vector3(1.2744751, 1.9979248, 1.0361328)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
-speed = null
-gravity = null
-jump_vel = null
-rotation_speed = null
-stopping_speed = null
 
 [node name="PlayerSkin" parent="." instance=ExtResource("1_y40ok")]
 unique_name_in_owner = true
