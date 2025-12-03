@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3gnbeuly3nhg"]
+
+[ext_resource type="ArrayMesh" uid="uid://babwoowsjv2c8" path="res://art/models/Food Models/cinnamon_roll.obj" id="1_hv2ky"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_xdb6t"]
+[ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_enng6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkk4p"]
+albedo_texture = ExtResource("2_enng6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_enng6"]
+size = Vector3(0.46118164, 0.23597717, 0.45568848)
+
+[sub_resource type="Animation" id="Animation_km0yn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gtut0"]
+resource_name = "bob"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o2nf8"]
+_data = {
+&"RESET": SubResource("Animation_km0yn"),
+&"bob": SubResource("Animation_gtut0")
+}
+
+[node name="cinnamon_roll" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+mesh = ExtResource("1_hv2ky")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qkk4p")
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+script = ExtResource("1_xdb6t")
+glucose_amount = 80.0
+effect_duration = 22.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021362305, 0.124046326, 0.0095825195)
+shape = SubResource("BoxShape3D_enng6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_o2nf8")
+}
+autoplay = "bob"
+speed_scale = 0.4
+
+[node name="Label3D" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 1
+text = "Roll di cannella"

@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://g5q0qsbd8bdp"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdtl53grvax3y" path="res://art/models/Food Models/donut_pink.obj" id="1_m5m2d"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_nxvjs"]
+[ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_27si4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dflt4"]
+albedo_texture = ExtResource("2_27si4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_27si4"]
+size = Vector3(0.4547119, 0.2922821, 0.4309082)
+
+[sub_resource type="Animation" id="Animation_km0yn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gtut0"]
+resource_name = "bob"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o2nf8"]
+_data = {
+&"RESET": SubResource("Animation_km0yn"),
+&"bob": SubResource("Animation_gtut0")
+}
+
+[node name="donut_pink" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+mesh = ExtResource("1_m5m2d")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dflt4")
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+script = ExtResource("1_nxvjs")
+glucose_amount = 55.0
+effect_duration = 20.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01361084, 0.103645325, -0.004760742)
+shape = SubResource("BoxShape3D_27si4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_o2nf8")
+}
+autoplay = "bob"
+speed_scale = 0.4
+
+[node name="Label3D" type="Label3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 1
+text = "Ciambella"

@@ -9,7 +9,6 @@ extends CharacterBody3D
 @export var push_duration: float = 0.1
 @export var sprint_multiplier: float = 1.2
 
-var glucoseVal: int = 50
 var timer: float = 0.0
 var _last_input_direction := Vector3.BACK
 var _was_on_floor_last_frame := true
@@ -17,20 +16,26 @@ var _is_being_pushed: bool = false
 var _push_velocity: Vector3 = Vector3.ZERO
 var _push_timer: float = 0.0
 var _is_sprinting: bool = false
+var _is_invincible: bool = false
 
-@onready var game_setup = get_parent()
 @onready var collection_area: Area3D = $CollectionArea
 @onready var _skin: CharacterSkin = $PlayerSkin
+@onready var game_setup = get_parent()
+
+var glucose_bar = null
 
 func _ready() -> void:
 	add_to_group("player")
-	game_setup.update_value(glucoseVal)
 	collection_area.body_entered.connect(_on_collection_area_body_entered)
+	collection_area.area_entered.connect(_on_collection_area_area_entered)
 	_last_input_direction = -global_transform.basis.z
+	game_setup.glucose_bar_ready.connect(_on_glucose_bar_ready)
+
+func _on_glucose_bar_ready():
+	glucose_bar = get_parent().get_node("GlucoseUI")
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
-	handle_glucose(delta)
 	handle_push_effect(delta)
 	update_animation_state()
 	create_sprint_dust()
@@ -98,6 +103,11 @@ func apply_push_force(push_direction: Vector3, strength: float = -1) -> void:
 	_is_being_pushed = true
 	_push_timer = push_duration
 
+func start_invincibility(duration: float) -> void:
+	_is_invincible = true
+	await get_tree().create_timer(duration).timeout
+	_is_invincible = false
+
 func update_animation_state() -> void:
 	if not _skin:
 		return
@@ -152,35 +162,33 @@ func create_sprint_dust():
 			tween.parallel().tween_property(dust, "scale", Vector3.ZERO, 0.8)
 			tween.tween_callback(dust.queue_free)
 
-func handle_glucose(delta: float) -> void:
-	timer += delta
-	if timer >= 1.3:
-		glucoseVal = max(0, glucoseVal - 1)
-		game_setup.update_value(glucoseVal)
-		timer = 0.0
-
-func _on_collection_area_body_entered(body: Node3D) -> void:
+func _on_collection_area_body_entered(body: Node) -> void:
 	handle_collision(body)
 
-func handle_collision(body: Node3D) -> void:
-	if body.is_in_group("obstacles"): 
-		var push_direction = global_position - body.global_position
-		push_strength = (velocity.length() + 6) * 1.4; 
+func _on_collection_area_area_entered(area: Area3D) -> void:
+	handle_collision(area)
+
+func handle_collision(collider: Node3D, food_data: Dictionary = {}):
+	if collider.is_in_group("Obstacle"):
+		if _is_invincible:
+			return
+		var push_direction = global_position - collider.global_position
+		if collider.is_in_group("Moving"):
+			push_strength = (velocity.length() + 25) * 1.4
+		else:
+			push_strength = (velocity.length() + 6) * 1.4
 		push_direction.y = 0
 		push_direction = push_direction.normalized()
 		apply_push_force(push_direction)
-	elif body.is_in_group("healthy foods"):
-		glucoseVal = max(0, glucoseVal - 3)
-		game_setup.update_value(glucoseVal)
-		collect_item(body)
-	elif body.is_in_group("sugary foods"):
-		glucoseVal = min(100, glucoseVal + 4)
-		game_setup.update_value(glucoseVal)
-		collect_item(body)
-	elif body.is_in_group("power ups"):
-		glucoseVal = 50
-		game_setup.update_value(glucoseVal)
-		collect_item(body)
+		start_invincibility(1.0)
+	elif collider.is_in_group("HealthyFood") or collider.is_in_group("SugaryFood"):
+		var glucose_amount = food_data.get("glucose_amount", 15.0 if collider.is_in_group("HealthyFood") else 60.0)
+		var duration = food_data.get("effect_duration", 30.0 if collider.is_in_group("HealthyFood") else 45.0)
+		
+		if glucose_bar and glucose_bar.has_method("add_food_effect"):
+			var food_type = "HealthyFood" if collider.is_in_group("HealthyFood") else "SugaryFood"
+			var effect_id = food_type + "_" + str(randi())
+			glucose_bar.add_food_effect(effect_id, glucose_amount, duration)
 
 func collect_item(item: Node3D):
 	item.queue_free()

@@ -83,8 +83,8 @@ _data = {
 &"rotation_propeller": SubResource("Animation_ryk0m")
 }
 
-[node name="Propeller2" type="AnimatableBody3D" groups=["obstacles"]]
-transform = Transform3D(0.8859085, 0, -1.2104404, 0, 1.5, 0, 1.2104404, 0, 0.8859085, 0, 0, 0)
+[node name="Propeller2" type="AnimatableBody3D" groups=["Obstacle"]]
+transform = Transform3D(0.8859084, 0, -1.2104403, 0, 1.5, 0, 1.2104403, 0, 0.8859084, 0, 0, 0)
 
 [node name="obstacle_12_001_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)

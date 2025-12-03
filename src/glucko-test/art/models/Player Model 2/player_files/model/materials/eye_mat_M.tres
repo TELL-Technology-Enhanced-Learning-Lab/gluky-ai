@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://art/models/Player Model 2/player_files/model/character_eye_open_diffuse.png" id="1_i2awh"]
+[ext_resource type="Texture2D" path="res://art/models/Player Model 2/player_files/model/character_eye_open_normal.png" id="2_bkwcf"]
+
+[resource]
+resource_name = "eye_mat_M"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_i2awh")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_bkwcf")

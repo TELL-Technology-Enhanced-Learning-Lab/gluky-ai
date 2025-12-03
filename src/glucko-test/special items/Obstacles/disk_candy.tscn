@@ -139,7 +139,7 @@ libraries = {
 autoplay = "rotation_disk"
 speed_scale = 0.3
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." groups=["obstacles"]]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." groups=["Obstacle"]]
 
 [node name="obstacle_12_001_007" type="MeshInstance3D" parent="AnimatableBody3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.6999998, 0, 0, 0, 0.7, 0, 0, 0)

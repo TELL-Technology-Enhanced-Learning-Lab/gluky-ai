@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Glucko test"
-run/main_scene="uid://ckxa8t3gpey0k"
+run/main_scene="uid://dfgwohcu8ud2y"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [global_group]
 
-obstacles=""
+HealthyFood=""
+Obstacle=""
+SugaryFood=""
+Moving=""
+Player=""
 
 [input]
 

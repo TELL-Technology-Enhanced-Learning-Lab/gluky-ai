@@ -120,7 +120,7 @@ _data = {
 [node name="SwingingTrunk" type="Node3D"]
 transform = Transform3D(2.0293697e-07, 0.2377172, 1.0530713, -2.9802315e-08, 1.0530713, -0.23771718, -1.0795686, 3.5539147e-09, 2.0945869e-07, 0, 0, 0)
 
-[node name="SwingingTrunk" type="AnimatableBody3D" parent="." groups=["obstacles"]]
+[node name="SwingingTrunk" type="AnimatableBody3D" parent="." groups=["Moving", "Obstacle"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.34202015, -0.93969256, 0, 0.9396926, 0.34202012, 0, 0, 0)
 
 [node name="obstacle_18_002_003" type="MeshInstance3D" parent="SwingingTrunk"]

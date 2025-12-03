@@ -86,7 +86,7 @@ _data = {
 [node name="GroundHammer" type="Node3D"]
 transform = Transform3D(0.99939084, 0.034899496, 0, -0.028932994, 0.8285326, 0.5591929, 0.01951555, -0.55885226, 0.8290376, 0, 0, 0)
 
-[node name="GroundHammer" type="AnimatableBody3D" parent="." groups=["obstacles"]]
+[node name="GroundHammer" type="AnimatableBody3D" parent="." groups=["Moving", "Obstacle"]]
 auto_translate_mode = 1
 transform = Transform3D(1, 1.8626451e-09, 1.862645e-09, -1.8626451e-09, 1, -5.960465e-08, -1.8626449e-09, 5.9604645e-08, 1.0000001, 0, 0, 0)
 

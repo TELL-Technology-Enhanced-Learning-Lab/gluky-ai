@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6pg2n4xhowoj"
+path="res://.godot/imported/Bottle_Water_b.obj-e8004850f3fa602b5c9a051e3c9b97fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bottle_Water_b.obj-e8004850f3fa602b5c9a051e3c9b97fc.mesh"]
+
+source_file="res://art/models/Food Models/Bottle_Water_b.obj"
+dest_files=["res://.godot/imported/Bottle_Water_b.obj-e8004850f3fa602b5c9a051e3c9b97fc.mesh", "res://.godot/imported/Bottle_Water_b.obj-e8004850f3fa602b5c9a051e3c9b97fc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

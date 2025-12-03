@@ -1,7 +1,9 @@
 extends Node3D
 
+signal glucose_bar_ready
+
 var glucose_bar
-var glucose_value = 50
+var glucose_value = 90
 
 func _ready():
 	var fade_rect = ColorRect.new()
@@ -19,9 +21,10 @@ func _ready():
 	tween.finished.connect(fade_rect.queue_free)
 	
 	var ui_scene = load("res://art/user interface/Glucose_Bar.tscn")
-	var ui_instance = ui_scene.instantiate()
-	add_child.call_deferred(ui_instance)
-	glucose_bar = ui_instance.get_node("CanvasLayer")
+	glucose_bar = ui_scene.instantiate() 
+	add_child(glucose_bar)
+
+	emit_signal("glucose_bar_ready")
 
 func update_value(new_value) -> void:
 	glucose_value = new_value

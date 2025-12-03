@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp05tpb8txew4"]
+
+[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/Player_Controller.gd" id="1_yorxs"]
+[ext_resource type="PackedScene" uid="uid://bogbgh75gie2k" path="res://art/models/Player Model 2/player_files/player_model_male.tscn" id="2_fojen"]
+[ext_resource type="Script" uid="uid://cx3bgtswd4xh0" path="res://scripts/camera_movement.gd" id="3_fnqkx"]
+[ext_resource type="Script" uid="uid://camcsm683a0du" path="res://art/models/Player Model/player_files/character_skin.gd" id="3_ox6eu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]
+size = Vector3(1.2744751, 1.9979248, 1.0361328)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o6xl0"]
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_yorxs")
+
+[node name="PlayerSkin" parent="." instance=ExtResource("2_fojen")]
+unique_name_in_owner = true
+script = ExtResource("3_ox6eu")
+
+[node name="CollectionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.852482, 0)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03164673, 0.20562744, -0.008300781)
+shape = SubResource("BoxShape3D_ya4ey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90349907, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_o6xl0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.8641999, -2.5237556)
+script = ExtResource("3_fnqkx")

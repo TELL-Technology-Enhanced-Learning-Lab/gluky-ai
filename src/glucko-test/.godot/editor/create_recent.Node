@@ -1,11 +1,4 @@
-AnimationPlayer
-RigidBody3D
-Marker3D
 Node3D
-StaticBody3D
-GPUParticles3D
-Area3D
-CollisionShape3D
-AnimatableBody3D
-RayCast3D
-CharacterBody3D
+Label
+ColorRect
+AnimationPlayer

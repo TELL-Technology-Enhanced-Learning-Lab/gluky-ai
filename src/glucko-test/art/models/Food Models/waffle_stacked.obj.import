@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://diuaqhc5vo0bo"
+path="res://.godot/imported/waffle_stacked.obj-09c1fd9aa5f366ae2f5f5cbd79a9cd7f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/waffle_stacked.obj-09c1fd9aa5f366ae2f5f5cbd79a9cd7f.mesh"]
+
+source_file="res://art/models/Food Models/waffle_stacked.obj"
+dest_files=["res://.godot/imported/waffle_stacked.obj-09c1fd9aa5f366ae2f5f5cbd79a9cd7f.mesh", "res://.godot/imported/waffle_stacked.obj-09c1fd9aa5f366ae2f5f5cbd79a9cd7f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -45,7 +45,7 @@ shadow_mesh = SubResource("ArrayMesh_6bl41")
 [sub_resource type="SphereShape3D" id="SphereShape3D_y7bu6"]
 radius = 0.6
 
-[node name="Projectile3" type="RigidBody3D" groups=["obstacles"]]
+[node name="Projectile3" type="RigidBody3D" groups=["Moving", "Obstacle"]]
 
 [node name="candy_011_003" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_8xt1e")

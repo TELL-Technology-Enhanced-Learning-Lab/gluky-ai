@@ -393,7 +393,7 @@ size = Vector3(0.2, 1, 0.2)
 [node name="GummyInABox" type="Node3D"]
 transform = Transform3D(1.9470717e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 1.9470717e-07, 0, 0, 0)
 
-[node name="GummyInABox" type="AnimatableBody3D" parent="." groups=["obstacles"]]
+[node name="GummyInABox" type="AnimatableBody3D" parent="." groups=["Moving", "Obstacle"]]
 transform = Transform3D(0.99999994, 0, 1.4210855e-14, 0, 1, 0, -1.4210855e-14, 0, 0.99999994, 0, 0, 0)
 
 [node name="obstacle_11_007_002" type="MeshInstance3D" parent="GummyInABox"]
