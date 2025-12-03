@@ -1338,7 +1338,7 @@ jump_vel = 20.0
 [node name="Ground" type="Node3D" parent="."]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 343.502, 15.268, 14.172)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 343.503, 15.278, 14.17)
 
 [node name="platform_candy_001_001" type="MeshInstance3D" parent="Ground/StaticBody3D"]
 mesh = SubResource("ArrayMesh_3xvcw")
@@ -2633,6 +2633,7 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_ytbw5")
 }
+autoplay = "spinning_arc"
 speed_scale = 0.2
 
 [node name="lollipop_007_006" type="MeshInstance3D" parent="Decorations (Animated)"]
@@ -2644,6 +2645,7 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_1ktrj")
 }
+autoplay = "spinning_arc"
 speed_scale = 0.2
 
 [node name="lollipop_007_007" type="MeshInstance3D" parent="Decorations (Animated)"]
@@ -2655,6 +2657,7 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_1ktrj")
 }
+autoplay = "spinning_arc"
 speed_scale = 0.2
 
 [node name="lollipop_007_009" type="MeshInstance3D" parent="Decorations (Animated)"]
@@ -2666,10 +2669,11 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_1ktrj")
 }
+autoplay = "spinning_arc"
 speed_scale = 0.2
 
 [node name="lollipop_007_008" type="MeshInstance3D" parent="Decorations (Animated)"]
-transform = Transform3D(1.6861773, 1.2739966e-07, -4.280611, -4.280611, 1.8711147e-07, -1.6861773, 1.2739966e-07, 4.600742, 1.8711147e-07, 380.5221, -8.364449, -547.1905)
+transform = Transform3D(7.893267e-15, 1.8057689e-07, 4.131118, 4.131118, -1.8057689e-07, 0, 1.8057689e-07, 4.131118, -1.8057689e-07, 380.5221, -8.364449, -547.1905)
 mesh = SubResource("ArrayMesh_v3noa")
 skeleton = NodePath("")
 
@@ -2677,6 +2681,7 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_b6bnt")
 }
+autoplay = "spinning_arc"
 speed_scale = 0.2
 
 [node name="Flying objects" type="Node3D" parent="."]
@@ -3890,165 +3895,165 @@ shape = SubResource("BoxShape3D_1ktrj")
 [node name="SpawnFoods" type="Node3D" parent="."]
 
 [node name="Marker3D" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.45517, 15.268, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.45517, 15.783014, 0)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D2" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 348.29147, 15.268, -12.396054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 348.29147, 15.783014, -12.396054)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D3" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.10248, 15.268, -15.727906)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.10248, 15.783014, -15.727906)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D4" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 345.7768, 15.268, -21.355927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 345.7768, 15.783014, -21.355927)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D5" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 337.86194, 15.268, -9.927067)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 337.86194, 15.783014, -9.927067)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D6" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 340.47968, 8.670802, -41.64947)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 340.47968, 9.185817, -41.64947)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D7" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.2307, 5.210835, -48.463795)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.2307, 5.725849, -48.463795)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D8" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.2307, 3.6979494, -60.45148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.2307, 4.212964, -60.45148)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D9" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.9254, 3.6979494, -75.76361)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.9254, 4.212964, -75.76361)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D10" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.6853, 3.6979494, -88.24749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.6853, 4.212964, -88.24749)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D11" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.42813, 3.6979494, -94.58265)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.42813, 4.212964, -94.58265)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D12" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.09735, 15.550979, -129.23782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.09735, 16.065994, -129.23782)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D13" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.33777, 15.550979, -129.23782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.33777, 16.065994, -129.23782)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D14" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 345.91827, 15.550979, -129.23782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 345.91827, 16.065994, -129.23782)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D15" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.96738, 20.983372, -146.10849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.96738, 21.498386, -146.10849)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D16" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.96738, 26.185219, -156.27705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.96738, 26.700233, -156.27705)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D17" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.96738, 27.800453, -166.40202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.96738, 28.315468, -166.40202)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D18" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.6117, 27.800453, -163.64497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.6117, 28.315468, -163.64497)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D20" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.60413, 38.89155, -208.92868)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.60413, 39.406563, -208.92868)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D21" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.60413, 34.74233, -217.99812)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.60413, 35.257343, -217.99812)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D22" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 344.11807, 28.550737, -231.03918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 344.11807, 29.065752, -231.03918)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D23" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 348.08994, 28.501984, -262.02545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 348.08994, 29.016998, -262.02545)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D24" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 352.71542, 28.501984, -271.9327)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 352.71542, 29.016998, -271.9327)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D25" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339.89615, 28.501984, -279.328)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 339.89615, 29.016998, -279.328)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D26" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 335.3747, 28.501984, -262.94943)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 335.3747, 29.016998, -262.94943)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D27" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 340.73703, 28.501984, -356.7793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 340.73703, 29.016998, -356.7793)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D28" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 345.47107, 28.501984, -373.29904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 345.47107, 29.016998, -373.29904)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D29" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.38583, 28.501984, -383.8942)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.38583, 29.016998, -383.8942)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D30" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.30765, 28.501984, -401.7129)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.30765, 29.016998, -401.7129)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D31" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.30765, 15.984627, -459.34482)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.30765, 16.499641, -459.34482)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D32" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.30765, 9.849907, -481.24713)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.30765, 10.364922, -481.24713)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D33" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 344.09824, 4.1479926, -509.90063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 344.09824, 4.6630073, -509.90063)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D34" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 335.9912, 4.1479926, -518.5034)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 335.9912, 4.6630073, -518.5034)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D35" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.55377, 4.1479926, -532.7546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 343.55377, 4.6630073, -532.7546)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D36" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355.83615, 4.1479926, -529.10736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355.83615, 4.6630073, -529.10736)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D37" type="Marker3D" parent="SpawnFoods" groups=["SugaryFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 378.3474, 4.1479926, -520.1761)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 378.3474, 4.6630073, -520.1761)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D38" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.761, 4.1479926, -524.5192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.761, 4.6630073, -524.5192)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D39" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.761, 4.1479926, -516.89874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.761, 4.6630073, -516.89874)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D40" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 421.69708, 7.0780754, -521.50183)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 421.69708, 7.59309, -521.50183)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D41" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 449.66556, 3.8669357, -520.74585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 449.66556, 4.3819504, -520.74585)
 script = ExtResource("17_b6bnt")
 
 [node name="Marker3D19" type="Marker3D" parent="SpawnFoods" groups=["HealthyFood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.69003, 27.800453, -168.33919)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.69003, 28.315468, -168.33919)
 script = ExtResource("17_b6bnt")

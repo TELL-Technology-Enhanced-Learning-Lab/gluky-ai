@@ -1,31 +1,6 @@
+res://scripts/glucose_bar.gd
 res://scenes/livello3.tscn
+res://scripts/camera_movement.gd
+res://art/user interface/Glucose_Bar.tscn
 res://scenes/livello2.tscn
-res://special items/healthy foods/apple.tscn
-res://special items/healthy foods/baguette_half.tscn
-res://special items/healthy foods/baguette.tscn
-res://special items/healthy foods/banana.tscn
-res://special items/healthy foods/blackberry.tscn
-res://special items/healthy foods/bottle_water_b.tscn
-res://special items/healthy foods/bread_roll.tscn
-res://special items/healthy foods/bread_slice.tscn
-res://special items/healthy foods/chicken_cooking_a.tscn
-res://special items/healthy foods/coconut.tscn
-res://special items/healthy foods/hummus.tscn
-res://special items/healthy foods/orange.tscn
-res://special items/healthy foods/pear.tscn
-res://special items/healthy foods/pineapple.tscn
-res://special items/healthy foods/strawberry.tscn
-res://special items/healthy foods/watermelon.tscn
-res://special items/sugary foods/cake_birthday_slice.tscn
-res://special items/sugary foods/cake_chocolate_slice.tscn
-res://special items/sugary foods/cake_strawberry_slice.tscn
-res://special items/sugary foods/cookie.tscn
-res://special items/sugary foods/cinnamon_roll.tscn
-res://special items/sugary foods/croissant.tscn
-res://special items/sugary foods/cupcake.tscn
-res://special items/sugary foods/donut.tscn
-res://special items/sugary foods/donut_pink.tscn
-res://special items/sugary foods/pie_apple_slice.tscn
-res://special items/sugary foods/pie_cherry_slice.tscn
-res://special items/sugary foods/waffle_stacked.tscn
-res://special items/sugary foods/muffin.tscn
+res://scripts/Player_Controller.gd

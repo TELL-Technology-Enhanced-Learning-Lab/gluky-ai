@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var safe_min_line: ColorRect = $ColorRect_SafeMin
 @onready var safe_max_line: ColorRect = $ColorRect_SafeMax
 
+signal glucose_updated(value: float)
+
 var min_glucose := 50.0
 var max_glucose := 250.0
 var low_threshold := 70.0        
@@ -21,11 +23,17 @@ var bar_height := 30.0
 var bar_x := 20.0
 var bar_y := 20.0
 
+var movement_decay_multiplier := 1.2
+var sprint_decay_multiplier := 1.4
+var is_moving := false
+var is_sprinting := false
+
 var effects: Array = []
 var base_decay: float = 1.0
 var game_over_triggered: bool = false
 
 func _ready():
+	add_to_group("GlucoseBar")
 	update_indicators()
 	update_display()
 
@@ -46,12 +54,19 @@ func _process(delta: float):
 
 	effects = active_effects
 	
-	total_change -= base_decay * delta
+	var movement_decay = base_decay
+	if is_moving:
+		movement_decay *= movement_decay_multiplier
+		if is_sprinting:
+			movement_decay *= sprint_decay_multiplier
+	
+	total_change -= movement_decay * delta
 	
 	current_glucose += total_change
 	current_glucose = clamp(current_glucose, min_glucose, max_glucose)
 	
 	update_display()
+	emit_signal("glucose_updated", current_glucose)
 	
 	check_game_over()
 
@@ -67,7 +82,7 @@ func add_food_effect(id: String, total_amount: float, duration_seconds: float):
 	}
 	
 	effects.append(effect)
-
+	
 func get_glucose_value() -> float:
 	return current_glucose
 
@@ -134,3 +149,15 @@ func trigger_game_over():
 	
 	fade_rect.queue_free()
 	get_tree().call_deferred("reload_current_scene")
+
+func set_moving_state(moving: bool, sprinting: bool = false):
+	is_moving = moving
+	is_sprinting = sprinting
+
+func get_current_decay_rate() -> float:
+	var current_decay = base_decay
+	if is_moving:
+		current_decay *= movement_decay_multiplier
+		if is_sprinting:
+			current_decay *= sprint_decay_multiplier
+	return current_decay

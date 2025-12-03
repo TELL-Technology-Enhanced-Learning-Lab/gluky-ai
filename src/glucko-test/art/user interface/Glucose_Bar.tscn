@@ -37,7 +37,7 @@ color = Color(0.9666667, 1, 0, 1)
 [node name="ColorRect_SafeMax" type="ColorRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(1, 0, 0, 1)
+color = Color(0.9666667, 1, 0, 1)
 
 [node name="Label_Value" type="Label" parent="."]
 light_mask = 2

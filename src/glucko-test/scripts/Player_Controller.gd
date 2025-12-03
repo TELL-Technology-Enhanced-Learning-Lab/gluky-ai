@@ -43,6 +43,8 @@ func _physics_process(delta: float) -> void:
 
 func handle_movement(delta: float) -> void:
 	if _is_being_pushed:
+		if glucose_bar:
+			glucose_bar.set_moving_state(false, false)
 		return
 	
 	_is_sprinting = Input.is_action_pressed("sprint")
@@ -74,6 +76,10 @@ func handle_movement(delta: float) -> void:
 		var target_angle := Vector3.BACK.signed_angle_to(_last_input_direction, Vector3.UP)
 		_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
 	
+	if glucose_bar:
+		var is_moving = input_dir.length() > 0.1 and is_on_floor()
+		glucose_bar.set_moving_state(is_moving, _is_sprinting)
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
@@ -95,6 +101,8 @@ func handle_push_effect(delta: float) -> void:
 		if _push_timer <= 0:
 			_is_being_pushed = false
 			_push_velocity = Vector3.ZERO
+			if glucose_bar:
+				glucose_bar.set_moving_state(false, false)
 
 func apply_push_force(push_direction: Vector3, strength: float = -1) -> void:
 	var actual_strength = strength if strength > 0 else push_strength

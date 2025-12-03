@@ -72,8 +72,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_nn24a")
 [node name="Area3D" type="Area3D" parent="Node3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 script = ExtResource("1_nn24a")
-glucose_amount = 0.0
-effect_duration = 0.0
+glucose_amount = 40.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006591797, 0.02747345, 0.006088257)
