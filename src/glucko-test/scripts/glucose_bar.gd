@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var safe_max_line: ColorRect = $ColorRect_SafeMax
 
 signal glucose_updated(value: float)
+signal glucose_game_over()  
 
 var min_glucose := 50.0
 var max_glucose := 250.0
@@ -18,6 +19,7 @@ var safe_min := 80.0
 var safe_max := 140.0         
 
 var current_glucose := 90.0     
+
 var bar_width := 400.0
 var bar_height := 30.0
 var bar_x := 20.0
@@ -29,11 +31,11 @@ var is_moving := false
 var is_sprinting := false
 
 var effects: Array = []
+
 var base_decay: float = 1.0
 var game_over_triggered: bool = false
 
 func _ready():
-	add_to_group("GlucoseBar")
 	update_indicators()
 	update_display()
 
@@ -51,7 +53,6 @@ func _process(delta: float):
 			total_change += frame_change
 			effect.elapsed += delta
 			active_effects.append(effect)
-
 	effects = active_effects
 	
 	var movement_decay = base_decay
@@ -59,7 +60,6 @@ func _process(delta: float):
 		movement_decay *= movement_decay_multiplier
 		if is_sprinting:
 			movement_decay *= sprint_decay_multiplier
-	
 	total_change -= movement_decay * delta
 	
 	current_glucose += total_change
@@ -67,22 +67,30 @@ func _process(delta: float):
 	
 	update_display()
 	emit_signal("glucose_updated", current_glucose)
-	
 	check_game_over()
 
 func add_food_effect(id: String, total_amount: float, duration_seconds: float):
 	if game_over_triggered:
 		return
-		
 	var effect = {
 		"id": id,
-		"total_amount": total_amount,
+		"total_amount": total_amount, 
 		"duration": duration_seconds,
 		"elapsed": 0.0
 	}
-	
 	effects.append(effect)
-	
+
+func inject_insulin(total_amount: float, duration_seconds: float):
+	if game_over_triggered:
+		return
+	var effect = {
+		"id": "insulin",
+		"total_amount": -abs(total_amount), 
+		"duration": duration_seconds,
+		"elapsed": 0.0
+	}
+	effects.append(effect)
+
 func get_glucose_value() -> float:
 	return current_glucose
 
@@ -99,17 +107,16 @@ func update_display() -> void:
 
 func get_color_for_glucose(value: float) -> Color:
 	if value <= low_threshold:
-		return Color(0.1, 0.4, 1.0)   
+		return Color(0.1, 0.4, 1.0)  
 	elif value >= high_threshold:
-		return Color(1.0, 0.2, 0.2)   
+		return Color(1.0, 0.2, 0.2)  
 	elif value >= safe_min and value <= safe_max:
-		return Color(0.2, 1.0, 0.3)    
+		return Color(0.2, 1.0, 0.3)   
 	else:
-		return Color(1.0, 0.8, 0.0)    
+		return Color(1.0, 0.8, 0.0)   
 
 func update_indicators():
 	var line_width = 3
-	
 	_place_indicator(limit_low_line, low_threshold, line_width)
 	_place_indicator(limit_high_line, high_threshold, line_width)
 	_place_indicator(safe_min_line, safe_min, line_width)
@@ -118,37 +125,13 @@ func update_indicators():
 func _place_indicator(node: ColorRect, value: float, line_width: int):
 	var percentage = (value - min_glucose) / (max_glucose - min_glucose)
 	percentage = clamp(percentage, 0.0, 1.0)
-	
 	node.size = Vector2(line_width, bar_height)
 	node.position.x = bar_x + bar_width * percentage - line_width * 0.5
 	node.position.y = bar_y
 
 func check_game_over():
 	if current_glucose <= min_glucose or current_glucose >= max_glucose:
-		trigger_game_over()
-
-func trigger_game_over():
-	if game_over_triggered:
-		return
-	
-	game_over_triggered = true
-	
-	var fade_rect = ColorRect.new()
-	fade_rect.color = Color.BLACK
-	fade_rect.size = get_viewport().get_visible_rect().size
-	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	fade_rect.modulate.a = 0
-	
-	get_tree().root.add_child(fade_rect)
-	
-	var tween = create_tween()
-	tween.tween_property(fade_rect, "modulate:a", 1.0, 0.5)
-	await tween.finished
-	
-	await get_tree().create_timer(0.3).timeout
-	
-	fade_rect.queue_free()
-	get_tree().call_deferred("reload_current_scene")
+		emit_signal("glucose_game_over")
 
 func set_moving_state(moving: bool, sprinting: bool = false):
 	is_moving = moving

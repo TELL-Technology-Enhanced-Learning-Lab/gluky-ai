@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://eu7moy8ymkc4" path="res://scripts/glucose_bar.gd" id="1_fk700"]
 
 [node name="GlucoseUI" type="CanvasLayer"]
+follow_viewport_enabled = true
 script = ExtResource("1_fk700")
 
 [node name="BackgroundBar" type="ColorRect" parent="."]

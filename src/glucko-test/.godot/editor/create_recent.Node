@@ -1,4 +1,14 @@
-Node3D
-Label
-ColorRect
+AudioStreamPlayer2D
 AnimationPlayer
+ColorRect
+Control
+TabContainer
+Window
+Popup
+PopupPanel
+Label
+Button
+VBoxContainer
+CanvasLayer
+TextureRect
+Node3D

@@ -1,6 +1,1 @@
-res://scripts/glucose_bar.gd
-res://scenes/livello3.tscn
-res://scripts/camera_movement.gd
 res://art/user interface/Glucose_Bar.tscn
-res://scenes/livello2.tscn
-res://scripts/Player_Controller.gd

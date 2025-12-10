@@ -38,7 +38,7 @@ var shake_timer: float = 0.0
 var last_glucose_state: String = "normal"
 var subviewport_container: SubViewportContainer
 var effects_setup_complete: bool = false
-var glucose_bar_connected: bool = false
+var game_setup_connected: bool = false
 
 func _ready():
 	player = get_parent()
@@ -54,14 +54,28 @@ func _ready():
 	call_deferred("setup_visual_effects")
 	
 	await get_tree().create_timer(0.1).timeout
-	setup_glucose_connection()
+	setup_game_setup_connection()
 
-func setup_glucose_connection():
-	var glucose_bar = get_tree().get_first_node_in_group("GlucoseBar")
-	if glucose_bar and not glucose_bar_connected:
-		if glucose_bar.has_signal("glucose_updated"):
-			glucose_bar.connect("glucose_updated", Callable(self, "_on_glucose_updated"))
-			glucose_bar_connected = true
+func setup_game_setup_connection():
+	var game_setup = null
+	
+	for node in get_tree().root.get_children():
+		if node is Node3D and node.get_script() != null:
+			var script_path = node.get_script().resource_path
+			if script_path != null and "game_setup" in script_path:
+				game_setup = node
+				break
+	
+	if not game_setup:
+		game_setup = get_tree().root.get_node_or_null("GameSetup") or get_tree().root.find_child("GameSetup", true, false)
+	
+	if game_setup and not game_setup_connected:
+		if game_setup.has_signal("glucose_updated"):
+			game_setup.connect("glucose_updated", Callable(self, "_on_glucose_updated"))
+			game_setup_connected = true
+		
+		if game_setup.has_signal("glucose_bar_available"):
+			game_setup.connect("glucose_bar_available", Callable(self, "_on_glucose_bar_available"))
 
 func _on_glucose_updated(value: float):
 	glucose_value = value
@@ -85,6 +99,8 @@ func setup_visual_effects():
 	post_process_material.set_shader_parameter("screen_tint", Color.WHITE)
 	post_process_material.set_shader_parameter("chromatic_aberration", 0.0)
 	post_process_material.set_shader_parameter("vignette_strength", 0.0)
+	post_process_material.set_shader_parameter("vignette_smoothness", 1.0)
+	post_process_material.set_shader_parameter("vignette_darkness", 0.3)
 	post_process_material.set_shader_parameter("noise_strength", 0.0)
 	
 	apply_post_process_material()
@@ -155,7 +171,9 @@ uniform float blur_strength : hint_range(0, 0.15) = 0.0;
 uniform float distortion_strength : hint_range(0, 0.3) = 0.0;
 uniform vec4 screen_tint : source_color = vec4(1.0);
 uniform float chromatic_aberration : hint_range(0, 0.05) = 0.0;
-uniform float vignette_strength : hint_range(0, 1.5) = 0.0;
+uniform float vignette_strength : hint_range(0, 2.5) = 0.0;
+uniform float vignette_smoothness : hint_range(0.5, 3.0) = 1.0;
+uniform float vignette_darkness : hint_range(0.0, 0.7) = 0.3;
 uniform float noise_strength : hint_range(0, 0.3) = 0.0;
 
 vec4 gaussian_blur(vec2 uv, float strength) {
@@ -211,12 +229,21 @@ vec4 apply_chromatic_aberration(vec2 uv, float strength) {
 	return vec4(r, g, b, a);
 }
 
-float apply_vignette(vec2 uv, float strength) {
+float apply_vignette(vec2 uv, float strength, float smoothness, float darkness) {
 	if (strength <= 0.001) return 1.0;
 	
 	vec2 center = vec2(0.5, 0.5);
-	float dist = distance(uv, center);
-	float vignette = 1.0 - dist * dist * strength * 3.0;
+	vec2 dist_vec = uv - center;
+	
+	dist_vec.x *= 1.777;
+	
+	float dist = length(dist_vec);
+	
+	float vignette = 1.0 - smoothstep(0.0, strength, dist);
+	
+	vignette = pow(vignette, smoothness);
+	
+	vignette = mix(vignette, 1.0 - darkness, (1.0 - vignette));
 	
 	return clamp(vignette, 0.0, 1.0);
 }
@@ -237,7 +264,7 @@ void fragment() {
 	
 	color = gaussian_blur(distorted_uv, blur_strength);
 	
-	float vignette = apply_vignette(base_uv, vignette_strength);
+	float vignette = apply_vignette(base_uv, vignette_strength, vignette_smoothness, vignette_darkness);
 	color.rgb *= vignette;
 	
 	color *= screen_tint;
@@ -288,8 +315,8 @@ func _physics_process(delta):
 	if not effects_setup_complete:
 		setup_visual_effects()
 	
-	if not glucose_bar_connected:
-		setup_glucose_connection()
+	if not game_setup_connected:
+		setup_game_setup_connection()
 	
 	update_symptoms(delta)
 	update_screen_shake(delta)
@@ -302,16 +329,28 @@ func _physics_process(delta):
 		camera_target.z += screen_shake_offset.y * 0.5
 	
 	var yaw_with_dizziness = yaw
-	if glucose_value < low_glucose_threshold:
-		dizziness_offset = dizziness_offset.lerp(Vector2(randf_range(-1, 1), randf_range(-1, 1)) * low_symptom_intensity, delta * 3.0)
-		yaw_with_dizziness += dizziness_offset.x * 0.3
-		camera_target.y += dizziness_offset.y * 0.4
 	
-	var desired_offset = Vector3(0, 0, camera_distance).rotated(Vector3.UP, yaw_with_dizziness)
+	if glucose_value < low_glucose_threshold:
+		var intensity = clamp((low_glucose_threshold - glucose_value) / 20.0, 0.0, 1.0) * low_symptom_intensity
+		dizziness_offset = dizziness_offset.lerp(
+			Vector2(randf_range(-1, 1), randf_range(-1, 1)) * intensity,
+			delta * 2.5
+		)
+		yaw_with_dizziness += dizziness_offset.x * 0.25
+		camera_target.y += dizziness_offset.y * 0.35
+	elif glucose_value > high_glucose_threshold:
+		var intensity = clamp((glucose_value - high_glucose_threshold) / 70.0, 0.0, 1.0) * 1.2
+		var t = Time.get_ticks_msec() / 1000.0
+		dizziness_offset = dizziness_offset.lerp(
+			Vector2(sin(t * 3.0) * intensity, cos(t * 2.5) * intensity),
+			delta * 2.0
+		)
+		yaw_with_dizziness += dizziness_offset.x * 0.15
+		camera_target.y += dizziness_offset.y * 0.2
 
+	var desired_offset = Vector3(0, 0, camera_distance).rotated(Vector3.UP, yaw_with_dizziness)
 	actual_camera_distance = check_camera_collision(camera_target, desired_offset)
 	var final_position = camera_target + desired_offset.normalized() * actual_camera_distance
-
 	final_position = ensure_minimum_height(final_position, player_pos)
 	
 	var current_smooth_speed = smooth_speed
@@ -361,35 +400,44 @@ func apply_visual_effects():
 	var distortion_amount = 0.0
 	var chromatic_aberration_amount = 0.0
 	var vignette_amount = 0.0
+	var vignette_smoothness = 1.0
+	var vignette_darkness = 0.3
 	var noise_amount = 0.0
 	
 	if glucose_value < low_glucose_threshold:
 		var severity = clamp((low_glucose_threshold - glucose_value) / 20.0, 0.0, 1.0)
-		blur_amount = severity * low_symptom_intensity * 0.08
-		distortion_amount = severity * low_symptom_intensity * 0.08
-		chromatic_aberration_amount = severity * low_symptom_intensity * 0.04
-		vignette_amount = severity * 1.2
-		noise_amount = severity * 0.15
+		blur_amount = lerp(blur_amount, severity * low_symptom_intensity * 0.12, 0.05)
+		distortion_amount = lerp(distortion_amount, severity * low_symptom_intensity * 0.1, 0.05)
+		chromatic_aberration_amount = lerp(chromatic_aberration_amount, severity * low_symptom_intensity * 0.06, 0.05)
+		vignette_amount = lerp(vignette_amount, severity * 1.8, 0.05)
+		vignette_smoothness = lerp(vignette_smoothness, 1.5, 0.05)
+		vignette_darkness = lerp(vignette_darkness, 0.6, 0.05)
+		noise_amount = lerp(noise_amount, severity * 0.25, 0.05)
 		
-		screen_tint = Color.from_hsv(0.6, 0.5, 0.8).lerp(Color.WHITE, 1.0 - severity * 0.8)
-		
-		fov = original_fov + sin(low_symptom_timer * 4.0) * 8.0 * severity
+		var desat_color = Color.from_hsv(0.6, 0.3, 0.7)
+		var dark_tint = Color(0.5, 0.6, 0.8, 1.0)
+		screen_tint = screen_tint.lerp(desat_color.lerp(dark_tint, severity * 0.8), 0.05)
+		fov = original_fov + sin(low_symptom_timer * 5.0) * 10.0 * severity
 		
 	elif glucose_value > high_glucose_threshold:
 		var severity = clamp((glucose_value - high_glucose_threshold) / 70.0, 0.0, 1.0)
-		blur_amount = severity * high_symptom_intensity * 0.06
-		distortion_amount = severity * high_symptom_intensity * 0.04
-		vignette_amount = severity * 1.4
-		noise_amount = severity * 0.08
+		blur_amount = lerp(blur_amount, severity * 0.05, 0.05)
+		distortion_amount = lerp(distortion_amount, severity * 0.03, 0.05)
+		chromatic_aberration_amount = lerp(chromatic_aberration_amount, severity * 0.025, 0.05)
+		vignette_amount = lerp(vignette_amount, severity * 1.4, 0.05)
+		vignette_smoothness = lerp(vignette_smoothness, 1.8, 0.05)
+		vignette_darkness = lerp(vignette_darkness, 0.5, 0.05)
+		noise_amount = lerp(noise_amount, severity * 0.08, 0.05)
 		
-		screen_tint = Color.from_hsv(0.0, 0.4, 0.9).lerp(Color.WHITE, 1.0 - severity * 0.7)
-		
-		fov = original_fov - severity * 8.0
+		var warm_color = Color.from_hsv(0.05, 0.5, 1.0)
+		var red_tint = Color(1.0, 0.7, 0.6, 1.0)
+		screen_tint = screen_tint.lerp(warm_color.lerp(red_tint, severity * 0.7), 0.05)
+		fov = lerp(fov, original_fov - severity * 8.0, 0.05)
 		
 		if high_symptom_timer > 0.5:
-			var pulse = sin(high_symptom_timer * 8.0) * severity * 0.2
+			var pulse = sin(high_symptom_timer * 10.0) * severity * 0.25
 			rotation.z += pulse
-		
+	
 	else:
 		fov = lerp(fov, original_fov, 0.05)
 		rotation.z = lerp_angle(rotation.z, 0.0, 0.05)
@@ -398,22 +446,26 @@ func apply_visual_effects():
 		distortion_amount = lerp(distortion_amount, 0.0, 0.05)
 		chromatic_aberration_amount = lerp(chromatic_aberration_amount, 0.0, 0.05)
 		vignette_amount = lerp(vignette_amount, 0.0, 0.05)
+		vignette_smoothness = lerp(vignette_smoothness, 1.0, 0.05)
+		vignette_darkness = lerp(vignette_darkness, 0.3, 0.05)
 		noise_amount = lerp(noise_amount, 0.0, 0.05)
 	
 	if world_environment:
 		var env = world_environment.environment
-		
 		env.glow_enabled = glucose_value > high_glucose_threshold
 		if env.glow_enabled:
 			var severity = clamp((glucose_value - high_glucose_threshold) / 70.0, 0.0, 1.0)
-			env.glow_bloom = 0.3 + severity * 0.4
-			env.glow_intensity = 1.5 + severity * 1.0
+			env.glow_bloom = 0.3 + severity * 0.6
+			env.glow_intensity = 1.5 + severity * 1.5
+			env.glow_strength = 2.0 + severity * 1.0
 	
 	post_process_material.set_shader_parameter("blur_strength", blur_amount)
 	post_process_material.set_shader_parameter("distortion_strength", distortion_amount)
 	post_process_material.set_shader_parameter("screen_tint", screen_tint)
 	post_process_material.set_shader_parameter("chromatic_aberration", chromatic_aberration_amount)
 	post_process_material.set_shader_parameter("vignette_strength", vignette_amount)
+	post_process_material.set_shader_parameter("vignette_smoothness", vignette_smoothness)
+	post_process_material.set_shader_parameter("vignette_darkness", vignette_darkness)
 	post_process_material.set_shader_parameter("noise_strength", noise_amount)
 
 func check_camera_collision(camera_target: Vector3, desired_offset: Vector3) -> float:
@@ -469,7 +521,7 @@ func reset_camera():
 	rotation.z = 0.0
 	
 	effects_setup_complete = false
-	glucose_bar_connected = false
+	game_setup_connected = false
 	
 	cleanup_visual_effects()
 	call_deferred("setup_visual_effects")

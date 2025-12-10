@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfctbnbv8n1hm"]
+
+[ext_resource type="Script" uid="uid://mcgllvqh6l47" path="res://scripts/InsulineUI.gd" id="1_pxwc1"]
+[ext_resource type="Texture2D" uid="uid://cd23utw5ymix5" path="res://art/insulina.png" id="2_yr6s8"]
+
+[node name="InsulinCounter" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_pxwc1")
+
+[node name="CounterLabel" type="Label" parent="."]
+offset_left = 1026.0
+offset_top = 321.0
+offset_right = 1085.0
+offset_bottom = 344.0
+
+[node name="Icon" type="TextureRect" parent="."]
+offset_left = 979.0
+offset_top = 253.0
+offset_right = 1049.0
+offset_bottom = 323.0
+texture = ExtResource("2_yr6s8")
+expand_mode = 1
+
+[node name="Icon2" type="TextureRect" parent="."]
+offset_left = 1003.0
+offset_top = 253.0
+offset_right = 1073.0
+offset_bottom = 323.0
+texture = ExtResource("2_yr6s8")
+expand_mode = 1
+
+[node name="Icon3" type="TextureRect" parent="."]
+offset_left = 1027.0
+offset_top = 253.0
+offset_right = 1097.0
+offset_bottom = 323.0
+texture = ExtResource("2_yr6s8")
+expand_mode = 1

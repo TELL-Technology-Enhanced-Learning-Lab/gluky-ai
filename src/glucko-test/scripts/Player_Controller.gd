@@ -9,9 +9,7 @@ extends CharacterBody3D
 @export var push_duration: float = 0.1
 @export var sprint_multiplier: float = 1.2
 
-var timer: float = 0.0
 var _last_input_direction := Vector3.BACK
-var _was_on_floor_last_frame := true
 var _is_being_pushed: bool = false
 var _push_velocity: Vector3 = Vector3.ZERO
 var _push_timer: float = 0.0
@@ -23,6 +21,10 @@ var _is_invincible: bool = false
 @onready var game_setup = get_parent()
 
 var glucose_bar = null
+var insulin_ui = null
+
+const INSULIN_EFFECT_MGDL := 80.0  
+const INSULIN_DURATION := 30.0    
 
 func _ready() -> void:
 	add_to_group("player")
@@ -30,9 +32,13 @@ func _ready() -> void:
 	collection_area.area_entered.connect(_on_collection_area_area_entered)
 	_last_input_direction = -global_transform.basis.z
 	game_setup.glucose_bar_ready.connect(_on_glucose_bar_ready)
+	game_setup.ui_ready.connect(_on_ui_ready)
 
 func _on_glucose_bar_ready():
-	glucose_bar = get_parent().get_node("GlucoseUI")
+	glucose_bar = game_setup.get_glucose_bar()
+
+func _on_ui_ready():
+	insulin_ui = game_setup.get_insulin_counter()
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
@@ -40,6 +46,14 @@ func _physics_process(delta: float) -> void:
 	update_animation_state()
 	create_sprint_dust()
 	move_and_slide()
+	handle_insulin_input()
+
+func handle_insulin_input():
+	if Input.is_action_just_pressed("inject_insulin"):
+		if insulin_ui.get_insulin_available() > 0:
+			if glucose_bar:
+				glucose_bar.inject_insulin(INSULIN_EFFECT_MGDL, INSULIN_DURATION)
+				insulin_ui.use_insulin()
 
 func handle_movement(delta: float) -> void:
 	if _is_being_pushed:
@@ -142,8 +156,6 @@ func update_animation_state() -> void:
 		else:
 			_skin.idle()
 			_skin.run_tilt = 0.0
-	
-	_was_on_floor_last_frame = is_on_floor()
 
 func create_sprint_dust():
 	if _is_sprinting and is_on_floor() and velocity.length() > stopping_speed:
@@ -197,6 +209,7 @@ func handle_collision(collider: Node3D, food_data: Dictionary = {}):
 			var food_type = "HealthyFood" if collider.is_in_group("HealthyFood") else "SugaryFood"
 			var effect_id = food_type + "_" + str(randi())
 			glucose_bar.add_food_effect(effect_id, glucose_amount, duration)
+			
 
 func collect_item(item: Node3D):
 	item.queue_free()

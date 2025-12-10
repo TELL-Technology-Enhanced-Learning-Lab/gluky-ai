@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://yrm5nseoc5tb"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MenuRoot" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="UI/MenuRoot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="UI/MenuRoot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="Button" parent="UI/MenuRoot/ButtonContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="Button" parent="UI/MenuRoot/ButtonContainer"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="UI/MenuRoot/ButtonContainer"]
+layout_mode = 2
+
+[node name="VersionLabel" type="Label" parent="UI/MenuRoot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CreditsLabel" type="Label" parent="UI/MenuRoot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="FadeLayer" type="ColorRect" parent="UI/MenuRoot"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuAnimation" type="AnimationPlayer" parent="UI"]
+
+[node name="UiSounds" type="AudioStreamPlayer2D" parent="UI"]
+
+[node name="OptionsPopup" type="Window" parent="."]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+
+[node name="OptionsTab" type="TabContainer" parent="OptionsPopup"]
+offset_right = 40.0
+offset_bottom = 40.0
+current_tab = 0
+
+[node name="VideoTab" type="Control" parent="OptionsPopup/OptionsTab"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="AudioTab" type="Control" parent="OptionsPopup/OptionsTab"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ControlsTab" type="Control" parent="OptionsPopup/OptionsTab"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
