@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://o5aa1e8k43m6"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_1x2ya"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_1x2ya"]
 [ext_resource type="Texture2D" uid="uid://dexqgfaedd15v" path="res://art/models/fruits models/texture/watermelon.png" id="1_ai2pi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsdry"]

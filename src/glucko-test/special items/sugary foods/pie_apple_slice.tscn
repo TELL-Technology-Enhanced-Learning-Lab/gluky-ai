@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c3oa0aswvmj3y"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_a7fpo"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_a7fpo"]
 [ext_resource type="ArrayMesh" uid="uid://cg8e3j2m7ywow" path="res://art/models/Food Models/pie_apple_slice.obj" id="1_ttu1g"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_q41g6"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2sg8co24uq0q"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_dujhw"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_dujhw"]
 [ext_resource type="ArrayMesh" uid="uid://diuaqhc5vo0bo" path="res://art/models/Food Models/waffle_stacked.obj" id="1_g80u2"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_rjp6t"]
 

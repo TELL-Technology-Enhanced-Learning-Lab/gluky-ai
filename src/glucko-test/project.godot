@@ -11,9 +11,27 @@ config_version=5
 [application]
 
 config/name="Glucko test"
-run/main_scene="uid://dfgwohcu8ud2y"
+run/main_scene="uid://c8dtxq71sqyub"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://art/music/default_bus_layout.tres"
+
+[autoload]
+
+ResolutionManager="*res://scripts/general/resolution_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=3
+window/size/borderless=true
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [global_group]
 

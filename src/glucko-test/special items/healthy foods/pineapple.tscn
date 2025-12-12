@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://buch5nvplt7x2"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_sc15w"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_sc15w"]
 [ext_resource type="Texture2D" uid="uid://cvadh8y3mmkb2" path="res://art/models/fruits models/texture/pineapple.png" id="2_7ghbf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydx5r"]

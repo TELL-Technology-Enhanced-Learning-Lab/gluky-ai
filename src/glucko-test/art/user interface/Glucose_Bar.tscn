@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://0q6h818eiqe7"]
 
-[ext_resource type="Script" uid="uid://eu7moy8ymkc4" path="res://scripts/glucose_bar.gd" id="1_fk700"]
+[ext_resource type="Script" uid="uid://eu7moy8ymkc4" path="res://scripts/glucorun game logic/glucose_bar.gd" id="1_fk700"]
 
 [node name="GlucoseUI" type="CanvasLayer"]
 follow_viewport_enabled = true

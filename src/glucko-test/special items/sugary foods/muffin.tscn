@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cg5hwygltigk0"]
 
 [ext_resource type="ArrayMesh" uid="uid://bv3333ytwnot5" path="res://art/models/Food Models/muffin.obj" id="1_d0dkm"]
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_gi1b2"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_gi1b2"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_gkyx4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkyx4"]

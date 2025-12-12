@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://cek5vaa6jx2wp"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_8vuqn"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_8vuqn"]
 [ext_resource type="Texture2D" uid="uid://cow7hg5tek5dn" path="res://art/models/fruits models/texture/strawberry.png" id="2_8md3g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrkwm"]

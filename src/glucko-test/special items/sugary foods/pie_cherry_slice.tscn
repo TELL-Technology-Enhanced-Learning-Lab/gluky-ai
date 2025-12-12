@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bnhe1onowyxuf"]
 
 [ext_resource type="ArrayMesh" uid="uid://dortymii0rkmx" path="res://art/models/Food Models/pie_cherry_slice.obj" id="1_571oc"]
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_f2rov"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_f2rov"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_ndhi5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mn0o"]

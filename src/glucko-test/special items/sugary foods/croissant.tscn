@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dsg58byre6aoo"]
 
 [ext_resource type="ArrayMesh" uid="uid://c3k51x5mhcdnm" path="res://art/models/Food Models/croissant.obj" id="1_0rmxi"]
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_rwvk2"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_rwvk2"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_y4y0i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gr4gr"]

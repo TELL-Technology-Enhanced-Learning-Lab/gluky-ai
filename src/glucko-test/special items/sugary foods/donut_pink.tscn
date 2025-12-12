@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://g5q0qsbd8bdp"]
 
 [ext_resource type="ArrayMesh" uid="uid://bdtl53grvax3y" path="res://art/models/Food Models/donut_pink.obj" id="1_m5m2d"]
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_nxvjs"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_nxvjs"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_27si4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dflt4"]

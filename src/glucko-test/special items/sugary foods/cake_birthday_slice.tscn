@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://lrgw1xmj2buv"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_fyq8k"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_fyq8k"]
 [ext_resource type="ArrayMesh" uid="uid://cvyiie2d81g8b" path="res://art/models/Food Models/cake_birthday_slice.obj" id="1_nycxj"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_1l3al"]
 

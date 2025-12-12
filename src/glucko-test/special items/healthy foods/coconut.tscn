@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://cta0r7vi8ii3a"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/food_item.gd" id="1_pit56"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_pit56"]
 [ext_resource type="Texture2D" uid="uid://cwbrf82tq8vws" path="res://art/models/fruits models/texture/coconut.png" id="2_rmv57"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1r7u"]
