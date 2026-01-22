@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnmefbc5cesha"
+path="res://.godot/imported/picnic_table.obj-babf5a2362df9d718e7688f60f3ed3da.mesh"
+
+[deps]
+
+files=["res://.godot/imported/picnic_table.obj-babf5a2362df9d718e7688f60f3ed3da.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Fun_Playground_1.0_FREE/Assets/obj/picnic_table.obj"
+dest_files=["res://.godot/imported/picnic_table.obj-babf5a2362df9d718e7688f60f3ed3da.mesh", "res://.godot/imported/picnic_table.obj-babf5a2362df9d718e7688f60f3ed3da.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

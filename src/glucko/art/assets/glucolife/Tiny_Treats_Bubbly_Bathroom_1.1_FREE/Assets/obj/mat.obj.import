@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dr6e43lj8k4xo"
+path="res://.godot/imported/mat.obj-8e0c889b3ce7fe4a8a846b8118a7f5cb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mat.obj-8e0c889b3ce7fe4a8a846b8118a7f5cb.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Bubbly_Bathroom_1.1_FREE/Assets/obj/mat.obj"
+dest_files=["res://.godot/imported/mat.obj-8e0c889b3ce7fe4a8a846b8118a7f5cb.mesh", "res://.godot/imported/mat.obj-8e0c889b3ce7fe4a8a846b8118a7f5cb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

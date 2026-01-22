@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://hjg8ufi5bae3"]
+
+[ext_resource type="VideoStream" uid="uid://c8vupq034ujo4" path="res://art/videos/MenuGlukolife/IMG_5483 (2).ogv" id="1_aqsh1"]
+[ext_resource type="FontFile" uid="uid://5vyjhlve78uv" path="res://art/assets/glucorun menu/LuckiestGuy-Regular.ttf" id="2_aqsh1"]
+[ext_resource type="Script" uid="uid://dwk658fwbgq7f" path="res://scripts/Glucolife/ScriptMenu/video_stream_player.gd" id="2_ssown"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1079.0
+offset_bottom = 1918.0
+stream = ExtResource("1_aqsh1")
+autoplay = true
+expand = true
+script = ExtResource("2_ssown")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 914.0
+offset_right = 705.0
+offset_bottom = 1059.0
+theme_override_fonts/font = ExtResource("2_aqsh1")
+theme_override_font_sizes/font_size = 52
+text = "Play"

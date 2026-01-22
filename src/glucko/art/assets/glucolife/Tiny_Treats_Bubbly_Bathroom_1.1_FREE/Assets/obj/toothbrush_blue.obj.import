@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2cbivv70hm5g"
+path="res://.godot/imported/toothbrush_blue.obj-c5845ce9c86da512b640d871334232d3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/toothbrush_blue.obj-c5845ce9c86da512b640d871334232d3.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Bubbly_Bathroom_1.1_FREE/Assets/obj/toothbrush_blue.obj"
+dest_files=["res://.godot/imported/toothbrush_blue.obj-c5845ce9c86da512b640d871334232d3.mesh", "res://.godot/imported/toothbrush_blue.obj-c5845ce9c86da512b640d871334232d3.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

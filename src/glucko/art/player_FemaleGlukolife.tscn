@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxporf8bchux8"]
+
+[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/glucorun game logic/Player_Controller.gd" id="1_8why2"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://art/models/Player Model/player_files/player_model_female.tscn" id="2_x6ppj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]
+size = Vector3(1.2744751, 1.9979248, 1.0361328)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o6xl0"]
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_8why2")
+
+[node name="PlayerSkin" parent="." instance=ExtResource("2_x6ppj")]
+unique_name_in_owner = true
+
+[node name="CollectionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.852482, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03164673, 0.20562744, -0.008300781)
+shape = SubResource("BoxShape3D_ya4ey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90349907, 0)
+shape = SubResource("CapsuleShape3D_o6xl0")

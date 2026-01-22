@@ -1,0 +1,14 @@
+TextureButton
+TouchScreenButton
+ColorRect
+TextureRect
+Control
+CanvasLayer
+AnimationPlayer
+Node3D
+HBoxContainer
+Panel
+CollisionShape3D
+Camera3D
+DirectionalLight3D
+WorldEnvironment

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2j6kd62ykxte"
+path="res://.godot/imported/wall_modular_panelled_window_blue_full_right_A.obj-39a1b5a8ed90f1fff489a017c568dc66.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_modular_panelled_window_blue_full_right_A.obj-39a1b5a8ed90f1fff489a017c568dc66.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Playful_Bedroom_1.1/Assets/obj/wall_modular_panelled_window_blue_full_right_A.obj"
+dest_files=["res://.godot/imported/wall_modular_panelled_window_blue_full_right_A.obj-39a1b5a8ed90f1fff489a017c568dc66.mesh", "res://.godot/imported/wall_modular_panelled_window_blue_full_right_A.obj-39a1b5a8ed90f1fff489a017c568dc66.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

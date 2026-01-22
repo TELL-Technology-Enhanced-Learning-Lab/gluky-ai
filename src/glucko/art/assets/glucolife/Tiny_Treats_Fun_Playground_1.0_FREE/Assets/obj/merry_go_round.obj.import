@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cd6i5hllshxhn"
+path="res://.godot/imported/merry_go_round.obj-0f00cfe60f8d84f78a9647543c22ebd9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/merry_go_round.obj-0f00cfe60f8d84f78a9647543c22ebd9.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Fun_Playground_1.0_FREE/Assets/obj/merry_go_round.obj"
+dest_files=["res://.godot/imported/merry_go_round.obj-0f00cfe60f8d84f78a9647543c22ebd9.mesh", "res://.godot/imported/merry_go_round.obj-0f00cfe60f8d84f78a9647543c22ebd9.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

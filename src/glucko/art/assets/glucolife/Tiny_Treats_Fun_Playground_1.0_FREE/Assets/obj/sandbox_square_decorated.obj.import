@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6v60c1ingash"
+path="res://.godot/imported/sandbox_square_decorated.obj-bac17230b7fa42c3d7a457149f1324de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sandbox_square_decorated.obj-bac17230b7fa42c3d7a457149f1324de.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Fun_Playground_1.0_FREE/Assets/obj/sandbox_square_decorated.obj"
+dest_files=["res://.godot/imported/sandbox_square_decorated.obj-bac17230b7fa42c3d7a457149f1324de.mesh", "res://.godot/imported/sandbox_square_decorated.obj-bac17230b7fa42c3d7a457149f1324de.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

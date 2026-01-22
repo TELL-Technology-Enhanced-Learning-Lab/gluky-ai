@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clwhcp2rxgagx"
+path="res://.godot/imported/wall_tiles_kitchen_window_full_right.obj-02ef5089a653156d91e64f7d82922be3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_tiles_kitchen_window_full_right.obj-02ef5089a653156d91e64f7d82922be3.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/obj/wall_tiles_kitchen_window_full_right.obj"
+dest_files=["res://.godot/imported/wall_tiles_kitchen_window_full_right.obj-02ef5089a653156d91e64f7d82922be3.mesh", "res://.godot/imported/wall_tiles_kitchen_window_full_right.obj-02ef5089a653156d91e64f7d82922be3.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

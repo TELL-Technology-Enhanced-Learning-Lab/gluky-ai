@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbt5sesfdl1ty"
+path="res://.godot/imported/wall_modular_tiled_half_corner_outer_A.obj-267f3f845322644901cd201f9019348d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_modular_tiled_half_corner_outer_A.obj-267f3f845322644901cd201f9019348d.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Bubbly_Bathroom_1.1_FREE/Assets/obj/wall_modular_tiled_half_corner_outer_A.obj"
+dest_files=["res://.godot/imported/wall_modular_tiled_half_corner_outer_A.obj-267f3f845322644901cd201f9019348d.mesh", "res://.godot/imported/wall_modular_tiled_half_corner_outer_A.obj-267f3f845322644901cd201f9019348d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

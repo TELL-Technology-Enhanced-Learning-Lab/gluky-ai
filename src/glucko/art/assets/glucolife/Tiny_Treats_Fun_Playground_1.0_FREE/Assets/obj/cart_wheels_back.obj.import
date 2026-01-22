@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://lahb5x2lcjbx"
+path="res://.godot/imported/cart_wheels_back.obj-f5a5477976d88026324679792c5f9adb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cart_wheels_back.obj-f5a5477976d88026324679792c5f9adb.mesh"]
+
+source_file="res://art/assets/glucolife/Tiny_Treats_Fun_Playground_1.0_FREE/Assets/obj/cart_wheels_back.obj"
+dest_files=["res://.godot/imported/cart_wheels_back.obj-f5a5477976d88026324679792c5f9adb.mesh", "res://.godot/imported/cart_wheels_back.obj-f5a5477976d88026324679792c5f9adb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
