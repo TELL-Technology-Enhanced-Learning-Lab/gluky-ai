@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtbcnb7ibhln4"]
+[gd_scene format=3 uid="uid://dtbcnb7ibhln4"]
 
 [ext_resource type="ArrayMesh" uid="uid://bedmrtt8173r4" path="res://art/models/Food Models/cake_chocolate_slice.obj" id="1_b77rf"]
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_w4xhn"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun/game items/food_item.gd" id="1_w4xhn"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_ulwmx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h63ub"]

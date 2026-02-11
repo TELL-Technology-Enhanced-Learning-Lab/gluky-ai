@@ -2,6 +2,8 @@ extends Control
 
 # Riferimento all'immagine
 @onready var splash_image: TextureRect = $Background
+@export var preferred_orientation := OrientationManager.OrientationMode.LANDSCAPE
+
 
 # Configurazione
 @export var auto_transition_delay: float = 3.0  # Tempo totale prima di cambiare scena

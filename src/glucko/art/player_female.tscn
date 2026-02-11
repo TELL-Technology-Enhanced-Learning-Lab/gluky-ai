@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8gvwbulds7lv"]
+[gd_scene format=3 uid="uid://b8gvwbulds7lv"]
 
-[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/glucorun game logic/Player_Controller.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/glucorun/game logic/Player_Controller.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://art/models/Player Model/player_files/player_model_female.tscn" id="1_y40ok"]
-[ext_resource type="Script" uid="uid://cx3bgtswd4xh0" path="res://scripts/glucorun game logic/camera_movement.gd" id="3_h0ps5"]
+[ext_resource type="Script" uid="uid://cx3bgtswd4xh0" path="res://scripts/glucorun/game logic/camera_movement.gd" id="3_h0ps5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]
 size = Vector3(1.2744751, 1.9979248, 1.0361328)

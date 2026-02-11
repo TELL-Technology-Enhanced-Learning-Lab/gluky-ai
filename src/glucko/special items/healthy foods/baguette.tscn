@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvjxj2j5k1471"]
+[gd_scene format=3 uid="uid://bvjxj2j5k1471"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcpi61fjona7d" path="res://art/models/Food Models/baguette.obj" id="1_bel2o"]
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_km0yn"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun/game items/food_item.gd" id="1_km0yn"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_gtut0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_km0yn"]

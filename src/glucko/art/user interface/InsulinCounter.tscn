@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfctbnbv8n1hm"]
+[gd_scene format=3 uid="uid://cfctbnbv8n1hm"]
 
-[ext_resource type="Script" uid="uid://mcgllvqh6l47" path="res://scripts/glucorun game logic/InsulineUI.gd" id="1_pxwc1"]
+[ext_resource type="Script" uid="uid://mcgllvqh6l47" path="res://scripts/glucorun/game logic/InsulineUI.gd" id="1_pxwc1"]
+[ext_resource type="Script" uid="uid://qstpjhnl3gs8" path="res://scripts/glucorun/game logic/mobile_insuline.gd" id="2_kjyc2"]
 [ext_resource type="Texture2D" uid="uid://cd23utw5ymix5" path="res://art/assets/glucorun ui/insulina.png" id="2_yr6s8"]
 
 [node name="InsulinCounter" type="CanvasLayer"]
@@ -19,6 +20,7 @@ offset_top = -20.0
 offset_bottom = 95.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("2_kjyc2")
 
 [node name="BoxContainer" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(40, 40)

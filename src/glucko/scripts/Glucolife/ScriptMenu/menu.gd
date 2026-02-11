@@ -2,6 +2,7 @@ extends Control
 
 @onready var video_intro: VideoStreamPlayer = $VideoIntro
 @onready var video_loop: VideoStreamPlayer = $VideoLoop
+@export var preferred_orientation := OrientationManager.OrientationMode.LANDSCAPE
 
 # Durata delle transizioni in secondi
 @export var fade_duration: float = 0.5

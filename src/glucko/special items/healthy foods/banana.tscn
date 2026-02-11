@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://6lq4pi8ou3vo"]
+[gd_scene format=4 uid="uid://6lq4pi8ou3vo"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_71ri6"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun/game items/food_item.gd" id="1_71ri6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xw6i1"]
 resource_name = "banana"

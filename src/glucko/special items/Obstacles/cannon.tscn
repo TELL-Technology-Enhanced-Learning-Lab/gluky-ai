@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://dyq32e74rx167"]
+[gd_scene format=4 uid="uid://dyq32e74rx167"]
 
-[ext_resource type="Script" uid="uid://brervrhwhq1uj" path="res://scripts/glucorun game items/cannon.gd" id="1_kg274"]
+[ext_resource type="Script" uid="uid://brervrhwhq1uj" path="res://scripts/glucorun/game items/cannon.gd" id="1_kg274"]
 [ext_resource type="PackedScene" uid="uid://b4q2a8vhlwy8y" path="res://special items/Projectiles/projectile.tscn" id="2_e6dum"]
 [ext_resource type="Texture2D" uid="uid://clrd0hwtcbiru" path="res://art/models/Demo Stages/demo_stage_Textures3.png" id="2_hu1x0"]
 [ext_resource type="PackedScene" uid="uid://b3p1la7v4l5vk" path="res://special items/Projectiles/projectile_2.tscn" id="3_xaxp0"]

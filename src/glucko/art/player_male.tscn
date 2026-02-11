@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp05tpb8txew4"]
+[gd_scene format=3 uid="uid://dp05tpb8txew4"]
 
-[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/glucorun game logic/Player_Controller.gd" id="1_yorxs"]
+[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/glucorun/game logic/Player_Controller.gd" id="1_yorxs"]
 [ext_resource type="PackedScene" uid="uid://bogbgh75gie2k" path="res://art/models/Player Model 2/player_files/player_model_male.tscn" id="2_fojen"]
-[ext_resource type="Script" uid="uid://cx3bgtswd4xh0" path="res://scripts/glucorun game logic/camera_movement.gd" id="3_fnqkx"]
+[ext_resource type="Script" uid="uid://cx3bgtswd4xh0" path="res://scripts/glucorun/game logic/camera_movement.gd" id="3_fnqkx"]
 [ext_resource type="Script" uid="uid://camcsm683a0du" path="res://art/models/Player Model/player_files/character_skin.gd" id="3_ox6eu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]

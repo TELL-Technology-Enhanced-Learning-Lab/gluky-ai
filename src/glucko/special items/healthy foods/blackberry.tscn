@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://lq4xvdpurvkg"]
+[gd_scene format=4 uid="uid://lq4xvdpurvkg"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_inpnk"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun/game items/food_item.gd" id="1_inpnk"]
 [ext_resource type="Texture2D" uid="uid://cr127edvur73n" path="res://art/models/fruits models/texture/blackberry.png" id="2_ekiwd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5ypw"]

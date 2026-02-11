@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Glucko"
-run/main_scene="uid://b7io2v0ygogks"
-config/features=PackedStringArray("4.5", "Mobile")
+run/main_scene="uid://53ulaprq6ohm"
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [audio]
@@ -24,6 +28,8 @@ buses/default_bus_layout="res://art/music/default_bus_layout.tres"
 ResolutionManager="*res://scripts/general/resolution_manager.gd"
 OrientationManager="*res://scripts/general/auto_orientation_manager.gd"
 GlucolifeDataManager="*res://scripts/general/GlucolifeDataManager.gd"
+FoodDatabase="*res://scripts/glucorun/game logic/food_database.gd"
+TTSManager="*uid://dbgd21eea5phn"
 
 [display]
 
@@ -32,6 +38,7 @@ window/size/viewport_height=1080
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/handheld/orientation=4
 window/vsync/vsync_mode=0
 
 [global_group]

@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var preferred_orientation := OrientationManager.OrientationMode.PORTRAIT
+
 func _ready():
 	GlucolifeDataManager.enter_glucolife()
 	_update_ui()

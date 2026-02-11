@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://das83o2p6wixh"]
+[gd_scene format=3 uid="uid://das83o2p6wixh"]
 
 [ext_resource type="PackedScene" uid="uid://0q6h818eiqe7" path="res://art/user interface/Glucose_Bar.tscn" id="1_bstwh"]
-[ext_resource type="Script" uid="uid://chn3ttvoct7ns" path="res://scripts/glucorun game logic/game_ui.gd" id="1_rk08h"]
+[ext_resource type="Script" uid="uid://chn3ttvoct7ns" path="res://scripts/glucorun/game logic/game_ui.gd" id="1_rk08h"]
 [ext_resource type="PackedScene" uid="uid://cfctbnbv8n1hm" path="res://art/user interface/InsulinCounter.tscn" id="2_rk08h"]
 
 [node name="GameUI" type="CanvasLayer"]

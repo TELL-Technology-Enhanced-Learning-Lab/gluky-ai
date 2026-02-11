@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxporf8bchux8"]
+[gd_scene format=3 uid="uid://dxporf8bchux8"]
 
-[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/glucorun game logic/Player_Controller.gd" id="1_8why2"]
+[ext_resource type="Script" uid="uid://bu86nv4w1htlb" path="res://scripts/glucorun/game logic/Player_Controller.gd" id="1_8why2"]
 [ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://art/models/Player Model/player_files/player_model_female.tscn" id="2_x6ppj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]

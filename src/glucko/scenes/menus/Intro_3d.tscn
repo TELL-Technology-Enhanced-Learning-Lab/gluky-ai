@@ -1,7 +1,8 @@
-[gd_scene load_steps=177 format=4 uid="uid://c8dtxq71sqyub"]
+[gd_scene format=4 uid="uid://c8dtxq71sqyub"]
 
 [ext_resource type="Texture2D" uid="uid://dxkh66sw7ffp" path="res://art/models/Player Model 2/player_files/model/textures/player_model_Image_0.png" id="1_0lkv4"]
 [ext_resource type="Script" uid="uid://bp6q2fsg8vrqo" path="res://scripts/general/menu_player.gd" id="1_28uqs"]
+[ext_resource type="Script" uid="uid://do3566uyjiqi1" path="res://scripts/menu logic/general/Intro_orientation.gd" id="1_lkuk1"]
 [ext_resource type="Script" uid="uid://d2mn2judk6f3q" path="res://scripts/menu logic/general/main_menu_camera.gd" id="2_1lx41"]
 [ext_resource type="Texture2D" uid="uid://bqkdr61mhg2bf" path="res://art/models/Player Model 2/player_files/model/textures/player_model_Image_1.png" id="2_28uqs"]
 [ext_resource type="Texture2D" uid="uid://bwtmi3hmcj3ww" path="res://art/models/Player Model 2/player_files/model/textures/player_model_Image_2.png" id="3_453ip"]
@@ -4967,6 +4968,21 @@ _data = {
 &"TurnForward": SubResource("Animation_qefms")
 }
 
+[sub_resource type="Animation" id="Animation_ibsv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.1846597, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_lkuk1"]
 resource_name = "bookPrep"
 length = 0.3
@@ -4983,41 +4999,27 @@ tracks/0/keys = {
 "values": [Vector3(0, -1.1846597, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ibsv5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.1846597, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uqtog"]
 _data = {
 &"RESET": SubResource("Animation_ibsv5"),
 &"bookPrep": SubResource("Animation_lkuk1")
 }
 
-[node name="MainMenu" type="Node3D"]
+[node name="MainMenu" type="Node3D" unique_id=269131052]
+script = ExtResource("1_lkuk1")
 
-[node name="player_model" type="Node3D" parent="."]
+[node name="player_model" type="Node3D" parent="." unique_id=545301256]
 transform = Transform3D(0.03528323, -0.99913347, 0.022079248, 0, 0.022093004, 0.9997559, -0.99937737, -0.035274617, 0.0007795125, -1.0367465, 2.4458592, -2.160358)
 
-[node name="player" type="Node3D" parent="player_model"]
+[node name="player" type="Node3D" parent="player_model" unique_id=256845621]
 transform = Transform3D(1, 1.1175871e-08, -2.3283059e-10, -1.1175871e-08, 1, 6.330083e-10, 2.3283064e-10, -6.330084e-10, 0.9999998, -0.12172508, -0.0075290203, -0.14617014)
 script = ExtResource("1_28uqs")
 
-[node name="character" type="Node3D" parent="player_model/player"]
+[node name="character" type="Node3D" parent="player_model/player" unique_id=323359952]
 
-[node name="rig" type="Node3D" parent="player_model/player/character"]
+[node name="rig" type="Node3D" parent="player_model/player/character" unique_id=1801718842]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="player_model/player/character/rig"]
+[node name="Skeleton3D" type="Skeleton3D" parent="player_model/player/character/rig" unique_id=847493590]
 transform = Transform3D(0.97840685, 0.0009234615, -0.20669566, 0.005125469, 0.99957436, 0.028727531, 0.20663431, -0.029166538, 0.9779847, 0.12406397, -0.00945735, 0.24655008)
 bones/0/name = "DEF-spine"
 bones/0/parent = -1
@@ -5601,365 +5603,359 @@ bones/82/position = Vector3(8.554579e-08, 0.22412944, 7.586732e-08)
 bones/82/rotation = Quaternion(-1.9380842e-07, 0.9541185, -0.29942936, -6.419549e-07)
 bones/82/scale = Vector3(0.99999964, 0.99999875, 1.0000001)
 
-[node name="Character" type="MeshInstance3D" parent="player_model/player/character/rig/Skeleton3D"]
+[node name="Character" type="MeshInstance3D" parent="player_model/player/character/rig/Skeleton3D" unique_id=1393686057]
 mesh = SubResource("ArrayMesh_nxvc7")
 skin = SubResource("Skin_c675u")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="player_model/player"]
-libraries = {
-&"": SubResource("AnimationLibrary_453ip")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player_model/player" unique_id=1105562263]
+libraries/ = SubResource("AnimationLibrary_453ip")
 
-[node name="Node3D" type="Node3D" parent="player_model"]
+[node name="Node3D" type="Node3D" parent="player_model" unique_id=1091011512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1338385, 0.31719458)
 
-[node name="Camera3D" type="Camera3D" parent="player_model/Node3D" node_paths=PackedStringArray("player_node")]
+[node name="Camera3D" type="Camera3D" parent="player_model/Node3D" unique_id=1372518156 node_paths=PackedStringArray("player_node")]
 transform = Transform3D(-1.0000001, 3.7252903e-09, -8.7486114e-08, 3.7252903e-09, 1, -2.9776857e-09, 8.73697e-08, -1.9736035e-09, -1, 0, 0.004388094, 0.19856429)
 script = ExtResource("2_1lx41")
 player_node = NodePath("../..")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=263746913]
 environment = SubResource("Environment_t3lm4")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1531723807]
 transform = Transform3D(0.93094116, -0.009903072, -0.36503497, 0.36516926, 0.025246315, 0.9305988, 0, -0.99963224, 0.02711913, -1.7095842, 16.53087, 5.699559)
 
-[node name="Room_lights" type="Node3D" parent="."]
+[node name="Room_lights" type="Node3D" parent="." unique_id=1144734355]
 transform = Transform3D(35, 0, 0, 0, 35, 0, 0, 0, 35, 0, 0.90103483, -3)
 
-[node name="room" type="MeshInstance3D" parent="Room_lights"]
+[node name="room" type="MeshInstance3D" parent="Room_lights" unique_id=156611312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00976656, 0.08618685, -0.010328698)
 mesh = SubResource("ArrayMesh_nfukk")
 skeleton = NodePath("")
 
-[node name="room2" type="MeshInstance3D" parent="Room_lights"]
+[node name="room2" type="MeshInstance3D" parent="Room_lights" unique_id=818082041]
 transform = Transform3D(4.371139e-08, -6.6002366e-15, -1.2, -1.509958e-07, -1, 0, -1, 1.509958e-07, -5.2453668e-08, -0.008765514, 0.10477236, 0.0043246076)
 mesh = SubResource("ArrayMesh_nfukk")
 skeleton = NodePath("")
 
-[node name="room3" type="MeshInstance3D" parent="Room_lights"]
+[node name="room3" type="MeshInstance3D" parent="Room_lights" unique_id=1796775279]
 transform = Transform3D(-0.99983835, 1.5097137e-07, -0.021571096, -1.5099579e-07, -1, 6.8151907e-22, -0.017975913, 2.714287e-09, 1.1998061, 0.06717742, 0.098091215, 0.35757512)
 mesh = SubResource("ArrayMesh_nfukk")
 skeleton = NodePath("")
 
-[node name="roof" type="MeshInstance3D" parent="Room_lights"]
+[node name="roof" type="MeshInstance3D" parent="Room_lights" unique_id=1112611567]
 transform = Transform3D(-1.1924881e-08, 1.0425061e-15, -1, -8.742278e-08, -1, 0, -1, 8.742278e-08, 1.1924881e-08, 0.007207923, 0.18122655, -0.010328703)
 mesh = SubResource("BoxMesh_28uqs")
 skin = SubResource("Skin_453ip")
 skeleton = NodePath("../room2")
 
-[node name="floor" type="MeshInstance3D" parent="Room_lights"]
+[node name="floor" type="MeshInstance3D" parent="Room_lights" unique_id=1518632501]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012419033, 0.001108894, 7.4114796e-05)
 mesh = SubResource("ArrayMesh_h67jh")
 skeleton = NodePath("")
 
-[node name="polySurface36" type="MeshInstance3D" parent="Room_lights"]
+[node name="polySurface36" type="MeshInstance3D" parent="Room_lights" unique_id=409490939]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054510493, 0.02354622, -0.09500857)
 mesh = SubResource("ArrayMesh_be4qs")
 skeleton = NodePath("")
 
-[node name="pCube37" type="MeshInstance3D" parent="Room_lights" groups=["minigame"]]
+[node name="pCube37" type="MeshInstance3D" parent="Room_lights" unique_id=1186220736 groups=["minigame"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055067662, 0.057960458, -0.10246169)
 mesh = SubResource("ArrayMesh_2htx3")
 skeleton = NodePath("")
 
-[node name="pCube40" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube40" type="MeshInstance3D" parent="Room_lights" unique_id=1033038037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049241513, 0.010345489, 0.04361051)
 mesh = SubResource("ArrayMesh_xekgi")
 skeleton = NodePath("")
 
-[node name="pCube41" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube41" type="MeshInstance3D" parent="Room_lights" unique_id=2048300397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050139893, 0.026443828, 0.044166647)
 mesh = SubResource("ArrayMesh_7okun")
 skeleton = NodePath("")
 
-[node name="pCube42" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube42" type="MeshInstance3D" parent="Room_lights" unique_id=2141396224]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104130164, 0.040159382, 0.06573264)
 mesh = SubResource("ArrayMesh_vsfxm")
 skeleton = NodePath("")
 
-[node name="pCube43" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube43" type="MeshInstance3D" parent="Room_lights" unique_id=918224825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09309524, 0.0429734, 0.03562027)
 mesh = SubResource("ArrayMesh_0bmhh")
 skeleton = NodePath("")
 
-[node name="polySurface43" type="MeshInstance3D" parent="Room_lights" groups=["minigame", "target"]]
+[node name="polySurface43" type="MeshInstance3D" parent="Room_lights" unique_id=799019538 groups=["minigame", "target"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08685534, 0.057960458, -0.097879134)
 mesh = SubResource("ArrayMesh_bbeyb")
 skeleton = NodePath("")
 
-[node name="pCube59" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube59" type="MeshInstance3D" parent="Room_lights" unique_id=1764092759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06319175, 0.04577341, -0.08268766)
 mesh = SubResource("ArrayMesh_gstks")
 skeleton = NodePath("")
 
-[node name="pCube60" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube60" type="MeshInstance3D" parent="Room_lights" unique_id=2045377233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043532673, 0.04574799, -0.07996967)
 mesh = SubResource("ArrayMesh_cjyaa")
 skeleton = NodePath("")
 
-[node name="pCube61" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube61" type="MeshInstance3D" parent="Room_lights" unique_id=1838477398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032193273, 0.08030427, -0.111919224)
 mesh = SubResource("ArrayMesh_buope")
 skeleton = NodePath("")
 
-[node name="pCube62" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube62" type="MeshInstance3D" parent="Room_lights" unique_id=1534809871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07300336, 0.10172062, -0.111919224)
 mesh = SubResource("ArrayMesh_02uue")
 skeleton = NodePath("")
 
-[node name="polySurface56" type="MeshInstance3D" parent="Room_lights"]
+[node name="polySurface56" type="MeshInstance3D" parent="Room_lights" unique_id=350016974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11616147, 0.1108689, 0.0043414854)
 mesh = SubResource("ArrayMesh_yiojt")
 skeleton = NodePath("")
 
-[node name="pCube63" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube63" type="MeshInstance3D" parent="Room_lights" unique_id=437714169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017010875, 0.027093723, 0.044243567)
 mesh = SubResource("ArrayMesh_yw12o")
 skeleton = NodePath("")
 
-[node name="pCube64" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube64" type="MeshInstance3D" parent="Room_lights" unique_id=1074698325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06344385, 0.02921211, 0.04443392)
 mesh = SubResource("ArrayMesh_61ah7")
 skeleton = NodePath("")
 
-[node name="pCube67" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube67" type="MeshInstance3D" parent="Room_lights" unique_id=2051707409 groups=["library"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.9999998, 0, 0, 0, 0.99999976, -0.06611459, 0.10960027, -0.11139068)
 mesh = SubResource("ArrayMesh_2w5kr")
 skeleton = NodePath("")
 
-[node name="Node3D" type="Node3D" parent="Room_lights" groups=["library", "target"]]
+[node name="Node3D" type="Node3D" parent="Room_lights" unique_id=417434397 groups=["library", "target"]]
 transform = Transform3D(-0.008822341, 0.9867614, -0.16193716, 0.99832916, 0.0179398, 0.054926895, 0.05710488, -0.16118199, -0.98527104, -0.044948794, 0.104320616, -0.07766881)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Room_lights/Node3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Room_lights/Node3D" unique_id=1157507659]
 root_node = NodePath("../../pCube67")
-libraries = {
-&"": SubResource("AnimationLibrary_lkuk1")
-}
+libraries/ = SubResource("AnimationLibrary_lkuk1")
 
-[node name="pCube68" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube68" type="MeshInstance3D" parent="Room_lights" unique_id=25833488 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06676512, 0.10522487, -0.11139068)
 mesh = SubResource("ArrayMesh_kyx4a")
 skeleton = NodePath("")
 
-[node name="pCube69" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube69" type="MeshInstance3D" parent="Room_lights" unique_id=1608292510 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079471454, 0.111041225, -0.11139068)
 mesh = SubResource("ArrayMesh_d2s5t")
 skeleton = NodePath("")
 
-[node name="pCube72" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube72" type="MeshInstance3D" parent="Room_lights" unique_id=1537055296 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09547483, 0.111041225, -0.11139068)
 mesh = SubResource("ArrayMesh_y0tnr")
 skeleton = NodePath("")
 
-[node name="pCube73" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube73" type="MeshInstance3D" parent="Room_lights" unique_id=1975816215 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101714596, 0.11102422, -0.11139068)
 mesh = SubResource("ArrayMesh_0tdhp")
 skeleton = NodePath("")
 
-[node name="pCube74" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube74" type="MeshInstance3D" parent="Room_lights" unique_id=1874049006 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04344781, 0.089235626, -0.11139068)
 mesh = SubResource("ArrayMesh_pvmqr")
 skeleton = NodePath("")
 
-[node name="pCube75" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube75" type="MeshInstance3D" parent="Room_lights" unique_id=965620558 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049553897, 0.08902475, -0.11139068)
 mesh = SubResource("ArrayMesh_jx245")
 skeleton = NodePath("")
 
-[node name="pCube77" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube77" type="MeshInstance3D" parent="Room_lights" unique_id=637502872 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058626834, 0.08902475, -0.11139068)
 mesh = SubResource("ArrayMesh_iarso")
 skeleton = NodePath("")
 
-[node name="pCube78" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube78" type="MeshInstance3D" parent="Room_lights" unique_id=1994284113 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023343984, 0.08902475, -0.11139068)
 mesh = SubResource("ArrayMesh_215tr")
 skeleton = NodePath("")
 
-[node name="pCube81" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube81" type="MeshInstance3D" parent="Room_lights" unique_id=386453135 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037691373, 0.08902475, -0.11139068)
 mesh = SubResource("ArrayMesh_g2lao")
 skeleton = NodePath("")
 
-[node name="pCube85" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube85" type="MeshInstance3D" parent="Room_lights" unique_id=551812558 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01727297, 0.089014836, -0.11139068)
 mesh = SubResource("ArrayMesh_ltx8e")
 skeleton = NodePath("")
 
-[node name="pCube86" type="MeshInstance3D" parent="Room_lights" groups=["library"]]
+[node name="pCube86" type="MeshInstance3D" parent="Room_lights" unique_id=2067539096 groups=["library"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056184426, 0.11074726, -0.11139068)
 mesh = SubResource("ArrayMesh_pw3ci")
 skeleton = NodePath("")
 
-[node name="pCube88" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube88" type="MeshInstance3D" parent="Room_lights" unique_id=207446131]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.096702844, 0.047362477, -0.08263604)
 mesh = SubResource("ArrayMesh_jxxex")
 skeleton = NodePath("")
 
-[node name="pCube89" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube89" type="MeshInstance3D" parent="Room_lights" unique_id=1072277048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029762788, 0.038882412, 0.03652389)
 mesh = SubResource("ArrayMesh_pjxx5")
 skeleton = NodePath("")
 
-[node name="pCube91" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube91" type="MeshInstance3D" parent="Room_lights" unique_id=1715881881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022259604, 0.043048315, 0.061512183)
 mesh = SubResource("ArrayMesh_3urp3")
 skeleton = NodePath("")
 
-[node name="pCube92" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube92" type="MeshInstance3D" parent="Room_lights" unique_id=1547200461]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01150221, 0.019981777, 0.013367554)
 mesh = SubResource("ArrayMesh_cjtle")
 skeleton = NodePath("")
 
-[node name="pCube93" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube93" type="MeshInstance3D" parent="Room_lights" unique_id=960502755]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120765254, 0.10453, 0.0044856234)
 mesh = SubResource("ArrayMesh_o6u28")
 skeleton = NodePath("")
 
-[node name="pCube94" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube94" type="MeshInstance3D" parent="Room_lights" unique_id=177430907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.058241, 0.003117216, -0.0670934)
 mesh = SubResource("ArrayMesh_cn1iw")
 skeleton = NodePath("")
 
-[node name="pCube118" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube118" type="MeshInstance3D" parent="Room_lights" unique_id=1244082989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1179393, 0.10125638, 0.09296823)
 mesh = SubResource("ArrayMesh_lq7in")
 skeleton = NodePath("")
 
-[node name="pCube121" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube121" type="MeshInstance3D" parent="Room_lights" unique_id=741858750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10106708, 0.010620249, -0.023473332)
 mesh = SubResource("ArrayMesh_jvm5x")
 skeleton = NodePath("")
 
-[node name="couce" type="Node3D" parent="Room_lights"]
+[node name="couce" type="Node3D" parent="Room_lights" unique_id=1734173523]
 
-[node name="polySurface152" type="MeshInstance3D" parent="Room_lights/couce"]
+[node name="polySurface152" type="MeshInstance3D" parent="Room_lights/couce" unique_id=1611271886]
 mesh = SubResource("ArrayMesh_wuko7")
 skeleton = NodePath("")
 
-[node name="polySurface153" type="MeshInstance3D" parent="Room_lights/couce"]
+[node name="polySurface153" type="MeshInstance3D" parent="Room_lights/couce" unique_id=820644573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.063391045, 0.019362023, -0.08250008)
 mesh = SubResource("ArrayMesh_r02fs")
 skeleton = NodePath("")
 
-[node name="polySurface154" type="MeshInstance3D" parent="Room_lights/couce"]
+[node name="polySurface154" type="MeshInstance3D" parent="Room_lights/couce" unique_id=1043463442]
 mesh = SubResource("ArrayMesh_kcjgk")
 skeleton = NodePath("")
 
-[node name="polySurface155" type="MeshInstance3D" parent="Room_lights/couce"]
+[node name="polySurface155" type="MeshInstance3D" parent="Room_lights/couce" unique_id=126334844]
 mesh = SubResource("ArrayMesh_cvsk0")
 skeleton = NodePath("")
 
-[node name="polySurface151" type="MeshInstance3D" parent="Room_lights/couce"]
+[node name="polySurface151" type="MeshInstance3D" parent="Room_lights/couce" unique_id=683889507]
 mesh = SubResource("ArrayMesh_eldt1")
 skeleton = NodePath("")
 
-[node name="pCube129" parent="Room_lights" instance=ExtResource("11_joma4")]
+[node name="pCube129" parent="Room_lights" unique_id=1397473660 instance=ExtResource("11_joma4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042004038, 0.11102552, -0.11879769)
 
-[node name="pCube133" parent="Room_lights" instance=ExtResource("12_qt1vi")]
+[node name="pCube133" parent="Room_lights" unique_id=518710910 instance=ExtResource("12_qt1vi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.082, 0.077, -0.119)
 
-[node name="pCube131" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube131" type="MeshInstance3D" parent="Room_lights" unique_id=1947467138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018867182, 0.053132806, -0.09475267)
 mesh = SubResource("ArrayMesh_a8vre")
 skeleton = NodePath("")
 
-[node name="pCube132" type="MeshInstance3D" parent="Room_lights"]
+[node name="pCube132" type="MeshInstance3D" parent="Room_lights" unique_id=1272141073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08432864, 0.026110342, -0.05387379)
 mesh = SubResource("ArrayMesh_mkx3n")
 skeleton = NodePath("")
 
-[node name="polySurface178" type="MeshInstance3D" parent="Room_lights"]
+[node name="polySurface178" type="MeshInstance3D" parent="Room_lights" unique_id=156251482]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025787855, 0.16113508, -0.0632165)
 mesh = SubResource("ArrayMesh_di4vn")
 skeleton = NodePath("")
 
-[node name="polySurface157" type="MeshInstance3D" parent="Room_lights"]
+[node name="polySurface157" type="MeshInstance3D" parent="Room_lights" unique_id=436453479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025816942, 0.10275713, -0.064619996)
 mesh = SubResource("ArrayMesh_qvbhm")
 skeleton = NodePath("")
 
-[node name="Door6" type="MeshInstance3D" parent="Room_lights" groups=["exit"]]
+[node name="Door6" type="MeshInstance3D" parent="Room_lights" unique_id=1362210015 groups=["exit"]]
 transform = Transform3D(0.057142857, 0, 0, 0, 0.057142857, 0, 0, 0, 0.057142857, 0.120817974, 0.00053126365, 0.020356819)
 mesh = ExtResource("12_fs5t7")
 skeleton = NodePath("../..")
 
-[node name="Node3D" type="Node3D" parent="Room_lights/Door6" groups=["exit", "target"]]
+[node name="Node3D" type="Node3D" parent="Room_lights/Door6" unique_id=966932344 groups=["exit", "target"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1342969, -0.15462029)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Room_lights"]
-libraries = {
-&"": SubResource("AnimationLibrary_yxgke")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Room_lights" unique_id=1199817405]
+libraries/ = SubResource("AnimationLibrary_yxgke")
 
-[node name="Main Selection" type="Node2D" parent="."]
+[node name="Main Selection" type="Node2D" parent="." unique_id=786527590]
 position = Vector2(74, 126)
 
-[node name="Selection" type="Button" parent="Main Selection"]
+[node name="Selection" type="Button" parent="Main Selection" unique_id=341255679]
 offset_left = 30.0
 offset_top = 462.0
 offset_right = 128.0
 offset_bottom = 492.0
 script = ExtResource("11_453ip")
 
-[node name="Library Options" type="Node2D" parent="."]
+[node name="Library Options" type="Node2D" parent="." unique_id=1394935043]
 script = ExtResource("13_yus31")
 
-[node name="TutGlucolife" type="Button" parent="Library Options"]
+[node name="TutGlucolife" type="Button" parent="Library Options" unique_id=1883094466]
 offset_left = 550.0
 offset_top = 475.0
 offset_right = 648.0
 offset_bottom = 506.0
 text = "Glucolife"
 
-[node name="TutGlucorun" type="Button" parent="Library Options"]
+[node name="TutGlucorun" type="Button" parent="Library Options" unique_id=547391886]
 offset_left = 400.0
 offset_top = 475.0
 offset_right = 498.0
 offset_bottom = 506.0
 text = "Glucorun"
 
-[node name="TutSelection" type="Button" parent="Library Options"]
+[node name="TutSelection" type="Button" parent="Library Options" unique_id=1041999460]
 offset_left = 400.0
 offset_top = 275.0
 offset_right = 498.0
 offset_bottom = 305.0
 text = "Tutorials"
 
-[node name="BackButton" type="Button" parent="Library Options"]
+[node name="BackButton" type="Button" parent="Library Options" unique_id=935813291]
 offset_left = 250.0
 offset_top = 475.0
 offset_right = 348.0
 offset_bottom = 505.0
 text = "Flip back"
 
-[node name="Book" type="Node3D" parent="." groups=["book"]]
+[node name="Book" type="Node3D" parent="." unique_id=1058253372 groups=["book"]]
 transform = Transform3D(0.037661232, 0, -0.0926371, 0, 0.1, 0, 0.0926371, 0, 0.037661232, 0, 10.343303, 0)
 script = ExtResource("14_ftmrx")
 
-[node name="Book" type="Node3D" parent="Book"]
+[node name="Book" type="Node3D" parent="Book" unique_id=2076138058]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Static" type="Node3D" parent="Book/Book"]
+[node name="Static" type="Node3D" parent="Book/Book" unique_id=1811652642]
 
-[node name="PageLeft" type="MeshInstance3D" parent="Book/Book/Static"]
+[node name="PageLeft" type="MeshInstance3D" parent="Book/Book/Static" unique_id=1916278561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 material_override = SubResource("1")
 mesh = SubResource("2")
 
-[node name="PageRight" type="MeshInstance3D" parent="Book/Book/Static"]
+[node name="PageRight" type="MeshInstance3D" parent="Book/Book/Static" unique_id=1355455836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 material_override = SubResource("3")
 mesh = SubResource("4")
 
-[node name="Turning" type="Node3D" parent="Book/Book"]
+[node name="Turning" type="Node3D" parent="Book/Book" unique_id=151441087]
 visible = false
 
-[node name="Page" type="Node3D" parent="Book/Book/Turning"]
+[node name="Page" type="Node3D" parent="Book/Book/Turning" unique_id=683852405]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Book/Book/Turning/Page"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Book/Book/Turning/Page" unique_id=563374342]
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -5982,38 +5978,36 @@ bones/2/position = Vector3(1, 0, 0)
 bones/2/rotation = Quaternion(0, 0, 0, 1)
 bones/2/scale = Vector3(1, 1, 1)
 
-[node name="Back" type="MeshInstance3D" parent="Book/Book/Turning/Page/Skeleton3D"]
+[node name="Back" type="MeshInstance3D" parent="Book/Book/Turning/Page/Skeleton3D" unique_id=1606115779]
 mesh = SubResource("ArrayMesh_yjgwq")
 skin = SubResource("Skin_1evec")
 
-[node name="Front" type="MeshInstance3D" parent="Book/Book/Turning/Page/Skeleton3D"]
+[node name="Front" type="MeshInstance3D" parent="Book/Book/Turning/Page/Skeleton3D" unique_id=1729382060]
 mesh = SubResource("ArrayMesh_duewi")
 skin = SubResource("Skin_1evec")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Book/Book/Turning"]
-libraries = {
-&"": SubResource("AnimationLibrary_eypoo")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Book/Book/Turning" unique_id=976158796]
+libraries/ = SubResource("AnimationLibrary_eypoo")
 
-[node name="PageLeft" type="MeshInstance3D" parent="Book/Book/Turning"]
+[node name="PageLeft" type="MeshInstance3D" parent="Book/Book/Turning" unique_id=1604693899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 material_override = SubResource("1")
 mesh = SubResource("2")
 
-[node name="PageRight" type="MeshInstance3D" parent="Book/Book/Turning"]
+[node name="PageRight" type="MeshInstance3D" parent="Book/Book/Turning" unique_id=2138645547]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 material_override = SubResource("3")
 mesh = SubResource("4")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Book"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Book" unique_id=1466376853]
 stream = ExtResource("15_joma4")
 
-[node name="PageAnimation" type="Node3D" parent="Book"]
+[node name="PageAnimation" type="Node3D" parent="Book" unique_id=813235764]
 transform = Transform3D(1, 0, 0, 0, 1.45, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Page" type="Node3D" parent="Book/PageAnimation"]
+[node name="Page" type="Node3D" parent="Book/PageAnimation" unique_id=382381481]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Book/PageAnimation/Page"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Book/PageAnimation/Page" unique_id=1643797111]
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -6036,23 +6030,19 @@ bones/2/position = Vector3(1, 0, 0)
 bones/2/rotation = Quaternion(0, 0, 0, 1)
 bones/2/scale = Vector3(1, 1, 1)
 
-[node name="Back" type="MeshInstance3D" parent="Book/PageAnimation/Page/Skeleton3D"]
+[node name="Back" type="MeshInstance3D" parent="Book/PageAnimation/Page/Skeleton3D" unique_id=2050393777]
 mesh = SubResource("ArrayMesh_anbgb")
 skin = SubResource("Skin_ck8w3")
 
-[node name="Front" type="MeshInstance3D" parent="Book/PageAnimation/Page/Skeleton3D"]
+[node name="Front" type="MeshInstance3D" parent="Book/PageAnimation/Page/Skeleton3D" unique_id=198562357]
 mesh = SubResource("ArrayMesh_qvjvd")
 skin = SubResource("Skin_ck8w3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Book/PageAnimation"]
-libraries = {
-&"": SubResource("AnimationLibrary_aijem")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Book/PageAnimation" unique_id=482002697]
+libraries/ = SubResource("AnimationLibrary_aijem")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Book"]
-libraries = {
-&"": SubResource("AnimationLibrary_uqtog")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Book" unique_id=1914733565]
+libraries/ = SubResource("AnimationLibrary_uqtog")
 
-[node name="BookMenuController" type="Node3D" parent="."]
+[node name="BookMenuController" type="Node3D" parent="." unique_id=1785669745]
 script = ExtResource("18_24ykk")

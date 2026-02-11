@@ -3,7 +3,10 @@ extends Control
 @onready var main_buttons: VBoxContainer = $MainButtons
 @onready var options: Panel = $Options
 @onready var fullscreen_button: Button = $Options/VBoxContainer/HBoxContainer2/FullscreenControl  
-@onready var fullscreen_label: Label = $Options/VBoxContainer/HBoxContainer2/Label    
+@onready var fullscreen_label: Label = $Options/VBoxContainer/HBoxContainer2/Label
+
+@export var preferred_orientation := OrientationManager.OrientationMode.LANDSCAPE
+	
 
 
 func _ready():

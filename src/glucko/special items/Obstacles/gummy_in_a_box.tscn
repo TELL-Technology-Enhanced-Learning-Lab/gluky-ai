@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=4 uid="uid://cgei42cjyyyeo"]
+[gd_scene format=4 uid="uid://cgei42cjyyyeo"]
 
 [ext_resource type="Texture2D" uid="uid://clrd0hwtcbiru" path="res://art/models/Demo Stages/demo_stage_Textures3.png" id="1_xgd1q"]
-[ext_resource type="Script" uid="uid://dyghc63aao6us" path="res://scripts/glucorun game items/punch_detector.gd" id="2_30lv8"]
+[ext_resource type="Script" uid="uid://dyghc63aao6us" path="res://scripts/glucorun/game items/punch_detector.gd" id="2_30lv8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_murml"]
 resource_name = "Color"

@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4d6s874ewsg3"]
+[gd_scene format=3 uid="uid://c4d6s874ewsg3"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_07n03"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun/game items/food_item.gd" id="1_07n03"]
 [ext_resource type="ArrayMesh" uid="uid://dvl7md8nnnb1d" path="res://art/models/Food Models/bread_roll.obj" id="1_euo0s"]
 [ext_resource type="Texture2D" uid="uid://bl53l74ivva4q" path="res://art/models/Food Models/tiny_treats_texture_1.png" id="2_neneo"]
 

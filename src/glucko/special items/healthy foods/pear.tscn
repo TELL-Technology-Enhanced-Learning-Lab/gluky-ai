@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://d3tmb325d32nl"]
+[gd_scene format=4 uid="uid://d3tmb325d32nl"]
 
-[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun game items/food_item.gd" id="1_3kmo5"]
+[ext_resource type="Script" uid="uid://cqn40jlcabqs0" path="res://scripts/glucorun/game items/food_item.gd" id="1_3kmo5"]
 [ext_resource type="Texture2D" uid="uid://5u4ko1d1m0d0" path="res://art/models/fruits models/texture/pear.png" id="1_25j5i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itihj"]
