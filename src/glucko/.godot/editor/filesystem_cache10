@@ -1,12 +1,13 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1772450091
-export_presets.cfg::TextFile::-1::1772447221::0::1::::<><><>0<>0<><>::
+::res://::1772463575
+export_presets.cfg::TextFile::-1::1772450722::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::3205258256488073752::1772447221::1772447221::1::::<><><>0<>0<>856044ef90b983da6cbb18c8a4a39a8b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://addons/::1772449972
+::res://addons/::1772451553
 ::res://addons/libs/::1772449972
 ::res://addons/libs/arm64/::1772449972
 ::res://addons/libs/arm64-v8a/::1772449972
 ::res://addons/libs/armeabi-v7a/::1772449972
+::res://android/::1772450223
 ::res://animationsaved/::1772449972
 spin.res::Animation::8793166959594457011::1772447213::0::1::::<><><>0<>0<><>::
 spinning_arc.res::Animation::5751093646048696331::1772447213::0::1::::<><><>0<>0<><>::
@@ -3544,8 +3545,8 @@ Menu_inizio.tscn::PackedScene::4479565602782253071::1772448230::0::1::::<><><>0<
 tutorial_2.tscn::PackedScene::904804396319078443::1769121438::0::1::::<><><>0<>0<><>::uid://enxguv8yg2tu::::res://Assets/assets_img_tutorial/Tutorialgame1.png<>uid://c2olmq2guy5sg::::res://scenes_tutorial/BackMenu.gd<>uid://jm3hksv13qby::::res://font_esterni/SamuraiBlast.ttf<>uid://bwpq6tmvp82l0::::res://font_esterni/hHittoSushi.ttf
 tutorial_3.tscn::PackedScene::6761842287846906137::1768070296::0::1::::<><><>0<>0<><>::uid://4wi1k41moqaf::::res://Assets/assets_img_tutorial/Tutorialgame2.png<>uid://c2olmq2guy5sg::::res://scenes_tutorial/BackMenu.gd<>uid://bwpq6tmvp82l0::::res://font_esterni/hHittoSushi.ttf<>uid://jm3hksv13qby::::res://font_esterni/SamuraiBlast.ttf
 tutorial_4.tscn::PackedScene::6721433578893073866::1768070308::0::1::::<><><>0<>0<><>::uid://c2olmq2guy5sg::::res://scenes_tutorial/BackMenu.gd<>uid://tqprvq3xewtn::::res://Assets/assets_img_tutorial/Tutorialgame3.png<>uid://jm3hksv13qby::::res://font_esterni/SamuraiBlast.ttf<>uid://bwpq6tmvp82l0::::res://font_esterni/hHittoSushi.ttf
-::res://scenes/TestChatBot/::1772450021
-TestSTT.tscn::PackedScene::4334930165476584303::1772447223::0::1::::<><><>0<>0<><>::uid://b6vurfon4e6dj::::res://scripts/glucky/TestStt.gd<>uid://dbgd21eea5phn::::res://scripts/glucky/tts.gd
+::res://scenes/TestChatBot/::1772451065
+TestSTT.tscn::PackedScene::4334930165476584303::1772451065::0::1::::<><><>0<>0<><>::uid://b6vurfon4e6dj::::res://scripts/glucky/TestStt.gd<>uid://dbgd21eea5phn::::res://scripts/glucky/tts.gd
 ::res://scenes/user interface/::1772450021
 Game_UI_Glucorun.tscn::PackedScene::7198475291403463285::1772447223::0::1::::<><><>0<>0<><>::uid://0q6h818eiqe7::::res://scenes/user interface/Glucose_Bar_Glucorun.tscn<>uid://chn3ttvoct7ns::::res://scripts/glucorun/game logic/game_ui.gd<>uid://cfctbnbv8n1hm::::res://scenes/user interface/Insulin_Counter_Glucorun.tscn
 Glucose_Bar_Glucorun.tscn::PackedScene::1789647637289377672::1772447223::0::1::::<><><>0<>0<><>::uid://eu7moy8ymkc4::::res://scripts/glucorun/game logic/glucose_bar.gd
@@ -3562,9 +3563,9 @@ GlucolifeCamera.gd::GDScript::4258537919232180891::1772447224::0::1::::<>Camera3
 GlucolifeDataManager.gd::GDScript::6265293628322889740::1772447224::0::1::::<>Node<><>0<>0<><>::
 menu_player.gd::GDScript::3504269027699922922::1772447224::0::1::::CameraController<>Node3D<><>0<>0<><>::
 resolution_manager.gd::GDScript::606514166556995343::1772447224::0::1::::<>Node<><>0<>0<><>::
-::res://scripts/glucky/::1772450021
+::res://scripts/glucky/::1772451065
 stt.gd::GDScript::4286187119034067179::1772447224::0::1::::<>Node<><>0<>0<><>::
-TestStt.gd::GDScript::4606871752532692731::1772447224::0::1::::<>Node2D<><>0<>0<><>::
+TestStt.gd::GDScript::4606871752532692731::1772451065::0::1::::<>Node2D<><>0<>0<><>::
 tts.gd::GDScript::7242068900624685607::1772447224::0::1::::<>Node<><>0<>0<><>::
 ::res://scripts/Glucolife/::1772450022
 ::res://scripts/Glucolife/gameLogic/::1772450021

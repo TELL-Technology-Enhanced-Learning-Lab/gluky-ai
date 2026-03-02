@@ -4,7 +4,7 @@ extends Control
 
 @export var auto_transition_delay: float = 3.0
 @export var transition_duration: float = 1.0
-@export_file("*.tscn") var next_scene: String = "res://scenes/menu_glucolife/Menu.tscn"
+@export_file("*.tscn") var next_scene: String = "res://scenes/menus/glucolife/Menu.tscn"
 
 var transition_overlay: ColorRect
 
