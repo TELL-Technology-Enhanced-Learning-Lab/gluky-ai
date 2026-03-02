@@ -1,0 +1,114 @@
+{
+  "questions": [
+	{
+	  "text": "Quale di questi è un pranzo equilibrato?",
+	  "answers": ["Patatine fritte", "Pizza e gelato", "Pasta integrale", "Dolci e  bibite"],
+	  "correct": 2,
+	  "explanations": [
+		"Risposta Errata! Le patatine fritte da sole non sono un pasto completo. Contengono solo grassi e sale, senza proteine o vitamine essenziali. La risposta corretta è pasta integrale.",
+		"Risposta Errata! Pizza e gelato insieme sono troppo ricchi di grassi e zuccheri. Non formano un pasto equilibrato per chi deve controllare il diabete. La risposta corretta è pasta integrale.",
+		"Risposta Corretta! La pasta integrale è un pranzo completo: carboidrati complessi, fibre e vitamine. Perfetto per mantenere stabile la glicemia!",
+        "Risposta Errata! Dolci e bibite sono solo zuccheri vuoti. Non danno i nutrienti necessari e causano picchi glicemici pericolosi. La risposta corretta è pasta integrale."
+	  ]
+	},
+	{
+	  "text": "Quale contorno è più sano?",
+	  "answers": ["Patatine fritte", "Insalata mista", "Ketchup", "Maionese"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Le patatine fritte sono ricche di grassi saturi e sale. Fanno aumentare rapidamente la glicemia e non sono salutari. La risposta corretta è l'insalata mista.",
+		"Risposta Corretta! L'insalata mista è ricca di vitamine, minerali e fibre. Aiuta la digestione e non fa alzare la glicemia. È il contorno ideale!",
+		"Risposta Errata! Il ketchup non è un contorno! È una salsa piena di zuccheri aggiunti. Va usato con moderazione. La risposta corretta è l'insalata mista.",
+        "Risposta Errata! La maionese è una salsa grassa, non un contorno. Contiene molte calorie e grassi ma pochissime vitamine. La risposta corretta è l'insalata mista."
+	  ]
+	},
+	{
+	  "text": "Quale fonte di proteine è migliore per il pranzo?",
+	  "answers": ["Hamburger fritto", "Salsicce", "Wurstel", "Pollo alla griglia"],
+	  "correct": 3,
+	  "explanations": [
+		"Risposta Errata! L'hamburger fritto assorbe molto olio durante la cottura, diventando troppo grasso. Meglio scegliere carni grigliate o al forno. La risposta corretta è il pollo alla griglia.",
+		"Risposta Errata! Le salsicce contengono molti grassi saturi, sale e conservanti. Non sono la scelta migliore per un pranzo salutare. La risposta corretta è il pollo alla griglia.",
+		"Risposta Errata! I wurstel sono carni processate piene di sale e conservanti. Vanno consumati raramente, non sono adatti per un pranzo regolare. La risposta corretta è il pollo alla griglia.",
+        "Risposta Corretta! Il pollo alla griglia è una fonte di proteine magre, senza grassi aggiunti. Ideale per un pranzo sano ed equilibrato!"
+	  ]
+	},
+	{
+	  "text": "Quale tipo di pasta è più adatta per chi ha il diabete?",
+	  "answers": ["Pasta integrale", "Pasta  bianca", "Pasta  fritta", "Nessuna pasta"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! La pasta integrale contiene più fibre che rallentano l'assorbimento degli zuccheri. È perfetta per mantenere stabile la glicemia!",
+		"Risposta Errata! La pasta bianca è ricca di grassi e ha un alto indice glicemico. Meglio scegliere quella integrale con un condimento leggero. La risposta corretta è la pasta integrale.",
+		"Risposta Errata! La pasta fritta assorbe moltissimo olio ed è molto calorica. Non è salutare e può causare problemi di glicemia. La risposta corretta è la pasta integrale.",
+        "Risposta Errata! Chi ha il diabete può mangiare pasta! Basta scegliere quella integrale e controllare le porzioni. Non bisogna eliminarla completamente. La risposta corretta è la pasta integrale."
+	  ]
+	},
+	{
+	  "text": "Quale bevanda è la migliore per accompagnare il pranzo?",
+	  "answers": ["Coca-Cola", "Succo di frutta", "Acqua naturale", "Energy   drink"],
+	  "correct": 2,
+	  "explanations": [
+		"Risposta Errata! La Coca-Cola contiene tantissimi zuccheri che fanno schizzare la glicemia. È una delle bevande più dannose per chi ha il diabete. La risposta corretta è l'acqua naturale.",
+		"Risposta Errata! Anche i succhi di frutta, pure quelli naturali, contengono molti zuccheri. Meglio mangiare la frutta intera che bere il succo. La risposta corretta è l'acqua naturale.",
+		"Risposta Corretta! L'acqua naturale è la bevanda ideale per ogni pasto. Non contiene zuccheri, calorie o sostanze artificiali. Perfetta per l'idratazione!",
+        "Risposta Errata! Gli energy drink sono pericolosi: troppi zuccheri, caffeina e sostanze stimolanti. Assolutamente da evitare, soprattutto durante i pasti. La risposta corretta è l'acqua naturale."
+	  ]
+	},
+	{
+	  "text": "Quale verdura fa bene mangiare a pranzo?",
+	  "answers": ["Nessuna verdura", "Solo patatine", "Tutte le verdure", "Solo   ketchup"],
+	  "correct": 2,
+	  "explanations": [
+		"Risposta Errata! Le verdure sono essenziali per una dieta sana! Contengono nutrienti fondamentali che il corpo non può ottenere da altri alimenti. La risposta corretta è tutte le verdure.",
+		"Risposta Errata! Le patatine fritte non sono verdure! Sono patate fritte nell'olio, piene di grassi e sale. Non hanno le proprietà nutritive delle verdure fresche. La risposta corretta è tutte le verdure.",
+		"Risposta Corretta! Tutte le verdure fanno bene! Sono ricche di vitamine, minerali e fibre. Aiutano a controllare la glicemia e migliorano la digestione.",
+        "Risposta Errata! Il ketchup non è una verdura! È una salsa con pomodoro ma piena di zuccheri aggiunti. Non sostituisce le verdure fresche. La risposta corretta è tutte le verdure."
+	  ]
+	},
+	{
+	  "text": "Quale di questi è un pranzo veloce ma sano?",
+	  "answers": ["Hamburger e patatine", "Panino integrale con pollo", "Pizza   fritta", "Hot dog e salse"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Hamburger e patatine sono troppo grassi e calorici. Possono essere gustosi ma non sono salutari, specialmente se mangiati spesso. La risposta corretta è il panino integrale con pollo.",
+		"Risposta Corretta! Il panino integrale con pollo e insalata è completo: carboidrati integrali, proteine magre e verdure. Veloce, gustoso e salutare!",
+		"Risposta Errata! La pizza al taglio fritta è ricchissima di grassi e sale. Non è adatta per un pranzo sano, può causare problemi di digestione e glicemia. La risposta corretta è il panino integrale con pollo.",
+        "Risposta Errata! L'hot dog con salse contiene carni processate e condimenti pieni di zuccheri e grassi. Non è una scelta salutare per il pranzo. La risposta corretta è il panino integrale con pollo."
+	  ]
+	},
+	{
+	  "text": "Quale condimento è più sano per la pasta?",
+	  "answers": ["Burro e panna", "Maionese", "Pomodoro  e  basilico", "Ketchup"],
+	  "correct": 2,
+	  "explanations": [
+		"Risposta Errata! Burro e panna sono ricchissimi di grassi saturi che possono aumentare il colesterolo. Vanno usati raramente e in piccole quantità. La risposta corretta è pomodoro e basilico.",
+		"Risposta Errata! La maionese è troppo grassa per essere usata come condimento principale della pasta. Non è adatta e non apporta nutrienti utili. La risposta corretta è pomodoro e basilico.",
+		"Risposta Corretta! Il sugo di pomodoro e basilico è leggero, ricco di licopene (antiossidante) e vitamine. È il condimento ideale per una pasta salutare!",
+        "Risposta Errata! Il ketchup non è un condimento adatto per la pasta! È una salsa americana piena di zuccheri, non va usata sulla pasta. La risposta corretta è pomodoro e basilico."
+	  ]
+	},
+	{
+	  "text": "Quale di questi è un secondo piatto sano?",
+	  "answers": ["Cotoletta fritta", "Pesce al forno", "Nuggets fritti", "Salsicce con patatine"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! La cotoletta fritta assorbe molto olio durante la frittura. Meglio cucinarla al forno per ridurre i grassi. La risposta corretta è il pesce al forno.",
+		"Risposta Corretta! Il pesce al forno è ricco di Omega-3, proteine magre e vitamine. La cottura al forno non aggiunge grassi. Ottimo per il diabete!",
+		"Risposta Errata! I nuggets fritti sono carni processate e ricche di grassi. Spesso contengono conservanti e additivi poco salutari. La risposta corretta è il pesce al forno.",
+        "Risposta Errata! Salsicce con patatine sono entrambi alimenti grassi e poco salutari. Troppi grassi saturi e sale, non adatti per un diabetico. La risposta corretta è il pesce al forno."
+	  ]
+	},
+	{
+	  "text": "Quale di questi pranzi ti dà energia per tutto il pomeriggio?",
+	  "answers": ["Solo dolci", "Riso,verdure  e  pollo", "Solo pane bianco", "Bibite zuccherate"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! I dolci danno energia immediata ma di brevissima durata. Dopo poco ti sentirai stanco e affamato di nuovo. La risposta corretta è riso integrale con verdure e pollo.",
+		"Risposta Corretta! Riso integrale con verdure e pollo è un pranzo completo: carboidrati complessi, proteine e fibre che rilasciano energia gradualmente per tutto il pomeriggio!",
+		"Risposta Errata! Il pane bianco da solo ha un alto indice glicemico e non contiene proteine. L'energia dura poco e la fame torna velocemente. La risposta corretta è riso integrale con verdure e pollo.",
+        "Risposta Errata! Le bibite zuccherate sono liquidi pieni di zucchero. Non sostituiscono il cibo solido e causano pericolosi picchi glicemici. La risposta corretta è riso integrale con verdure e pollo."
+	  ]
+	}
+  ]
+}

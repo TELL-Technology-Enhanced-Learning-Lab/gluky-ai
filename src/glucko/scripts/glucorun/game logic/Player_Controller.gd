@@ -49,7 +49,7 @@ func _ready():
 		call_deferred("setup_mobile_controls")
 
 func setup_mobile_controls():
-	var mobile_scene = preload("res://art/user interface/mobile_controls.tscn")
+	var mobile_scene = preload("res://scenes/user interface/Mobile_Controls_Glucorun.tscn")
 	mobile_controls_ui = mobile_scene.instantiate()
 	get_tree().root.add_child(mobile_controls_ui)
 	await get_tree().process_frame

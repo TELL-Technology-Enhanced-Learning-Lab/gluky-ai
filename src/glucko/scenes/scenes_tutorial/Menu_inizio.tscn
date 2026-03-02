@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://b42615nwubdut"]
+
+[ext_resource type="Script" uid="uid://bfee7sjp8f67f" path="res://scenes/scenes_tutorial/MenuInizioGame.gd" id="1_537in"]
+[ext_resource type="Texture2D" uid="uid://y1tnrb3uccnt" path="res://art/assets/MealPerfectGame/assets_img_tutorial/Menu1.png" id="2_q5l62"]
+[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://art/font_esterni/SamuraiBlast.ttf" id="3_q5l62"]
+
+[sub_resource type="Theme" id="Theme_wds66"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_digv8"]
+bg_color = Color(1, 0.3372549, 0.3372549, 0.89411765)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.81476295, 0.25979638, 0.24835199, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpaq7"]
+bg_color = Color(1, 0.33194208, 0.3609034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wds66"]
+bg_color = Color(1, 1, 1, 0.8156863)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_jpaq7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_digv8"]
+resource_name = "menu_intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yxntf"]
+resource_name = "menu_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxntf"]
+_data = {
+&"RESET": SubResource("Animation_jpaq7"),
+&"menu_intro": SubResource("Animation_digv8"),
+&"menu_out": SubResource("Animation_yxntf")
+}
+
+[node name="MainMenu" type="Control" unique_id=367168355]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_wds66")
+script = ExtResource("1_537in")
+
+[node name="Background" type="TextureRect" parent="." unique_id=821358453]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q5l62")
+expand_mode = 1
+
+[node name="AnimatedLayer" type="Control" parent="." unique_id=1104478693]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Butttons" type="VBoxContainer" parent="AnimatedLayer" unique_id=1051928955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46500003
+anchor_right = 0.5
+anchor_bottom = 0.46500003
+offset_left = -160.0
+offset_top = -176.32
+offset_right = 160.0
+offset_bottom = 175.68
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Play" type="Button" parent="AnimatedLayer/Butttons" unique_id=1991559713]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+theme_override_fonts/font = ExtResource("3_q5l62")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_digv8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpaq7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wds66")
+text = "GIOCA"
+
+[node name="Levels" type="Button" parent="AnimatedLayer/Butttons" unique_id=945337548]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+theme_override_fonts/font = ExtResource("3_q5l62")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_digv8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpaq7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wds66")
+text = "LIVELLI"
+
+[node name="Info" type="Button" parent="AnimatedLayer/Butttons" unique_id=526777900]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+theme_override_fonts/font = ExtResource("3_q5l62")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_digv8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpaq7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wds66")
+text = "INFO"
+
+[node name="Exit" type="Button" parent="AnimatedLayer/Butttons" unique_id=406537289]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+theme_override_fonts/font = ExtResource("3_q5l62")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_digv8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpaq7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wds66")
+text = "ESCI"
+
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="." unique_id=1895459776]
+libraries/ = SubResource("AnimationLibrary_yxntf")
+
+[connection signal="pressed" from="AnimatedLayer/Butttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="AnimatedLayer/Butttons/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="AnimatedLayer/Butttons/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="AnimatedLayer/Butttons/Exit" to="." method="_on_exit_pressed"]

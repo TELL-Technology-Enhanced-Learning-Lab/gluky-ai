@@ -29,12 +29,12 @@ func _ready():
 	tween.tween_property(fade_rect, "modulate:a", 0.0, 1.0)
 	tween.finished.connect(fade_rect.queue_free)
 	
-	var ui_scene = load("res://art/user interface/GameUI.tscn")
+	var ui_scene = load("res://scenes/user interface/Game_UI_Glucorun.tscn")
 	game_ui = ui_scene.instantiate() 
 	get_tree().root.add_child(game_ui)
 	
 	if OS.get_name() in ["Android", "iOS"]:
-		var controls_scene = load("res://art/user interface/mobile_controls.tscn")
+		var controls_scene = load("res://scenes/user interface/Mobile_Controls_Glucorun.tscn")
 		if controls_scene:
 			mobile_controls = controls_scene.instantiate()
 			get_tree().root.add_child(mobile_controls)

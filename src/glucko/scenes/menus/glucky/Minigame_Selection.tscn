@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dxsjstano6hfc"]
+
+[ext_resource type="Texture2D" uid="uid://b1ikl2ufswnfl" path="res://art/assets/various menus/shop/window1.png" id="1_p8pfq"]
+[ext_resource type="Script" uid="uid://c7mp85sitpajy" path="res://scripts/general/background_hue.gd" id="1_pi3gm"]
+[ext_resource type="Texture2D" uid="uid://cymdht8xr8utg" path="res://art/assets/various menus/shop/window2.png" id="2_pi3gm"]
+[ext_resource type="Texture2D" uid="uid://divdd2ywmjwse" path="res://art/assets/various menus/shop/window3.png" id="3_lfebr"]
+[ext_resource type="Texture2D" uid="uid://d34kh64ntf4ta" path="res://art/assets/various menus/shop/window4.png" id="4_ortsk"]
+[ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="5_hne6j"]
+[ext_resource type="Script" uid="uid://drjptk0684558" path="res://scripts/menu logic/general/Texture_button_simple.gd" id="7_lfebr"]
+
+[node name="MinigameSelection" type="Node2D" unique_id=1291096634]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1590151160]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=955375590]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.64705884, 0.8627451, 1)
+script = ExtResource("1_pi3gm")
+
+[node name="Window1" type="TextureButton" parent="CanvasLayer" unique_id=1807763518]
+offset_left = 336.0
+offset_top = 95.0
+offset_right = 497.0
+offset_bottom = 459.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_p8pfq")
+
+[node name="Window2" type="TextureButton" parent="CanvasLayer" unique_id=1727182505]
+offset_left = 674.0
+offset_top = 466.0
+offset_right = 1147.0
+offset_bottom = 644.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_pi3gm")
+
+[node name="Window3" type="TextureButton" parent="CanvasLayer" unique_id=1346577114]
+offset_left = 1293.0
+offset_top = 97.0
+offset_right = 1454.0
+offset_bottom = 275.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_lfebr")
+
+[node name="Window4" type="TextureButton" parent="CanvasLayer" unique_id=1188880208]
+offset_left = 680.0
+offset_top = 95.0
+offset_right = 981.0
+offset_bottom = 273.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_ortsk")
+
+[node name="HomeButton" type="TextureButton" parent="CanvasLayer" unique_id=522868237]
+offset_left = 1553.0
+offset_top = 856.0
+offset_right = 1681.0
+offset_bottom = 932.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_hne6j")
+script = ExtResource("7_lfebr")
+target_scene = "res://scenes/menus/glucky/Intro_3d.tscn"

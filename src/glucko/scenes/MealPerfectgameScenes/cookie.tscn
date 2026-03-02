@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=4 uid="uid://d0sqpru7i7wer"]
+
+[ext_resource type="PackedScene" uid="uid://cxdxesg3uqeum" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/cookie.glb" id="1_ku7mm"]
+[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="1_px6u8"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_px6u8"]
+_surfaces = [{
+"aabb": AABB(-0.13916881, -0.021586983, -0.11998215, 0.2785524, 0.09389728, 0.2411304),
+"attribute_data": PackedByteArray("wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89upg5P8D4vz2GZQY/wPi/PYZlBj/A+L89upg5P8D4vz2GZQY/4PxfPrqYOT/g/F8+upg5P+D8Xz66mDk/4PxfPrqYOT/g/F8+upg5P+D8Xz66mDk/4PxfPrqYOT/g/F8+upg5P+D8Xz66mDk/4PxfPrqYOT/g/F8+upg5P+D8Xz66mDk/wPi/PYZlBj/A+L89oP8fP8D4vz2g/x8/wPi/PbqYOT/A+L89upg5P8D4vz2g/x8/wPi/PaD/Hz/A+L89upg5P8D4vz2g/x8/wPi/PaD/Hz/A+L89hmUGP8D4vz2g/x8/wPi/PbqYOT/A+L89upg5P8D4vz2g/x8/wPi/PbqYOT/A+L89oP8fP8D4vz2g/x8/wPi/PYZlBj/A+L89oP8fP8D4vz2g/x8/wPi/PaD/Hz/A+L89upg5P8D4vz26mDk/wPi/PaD/Hz/A+L89oP8fP8D4vz2g/x8/wPi/PYZlBj/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89oP8fP8D4vz2g/x8/wPi/PYZlBj/A+L89hmUGP8D4vz2g/x8/wPi/PaD/Hz/A+L89upg5P8D4vz2g/x8/wPi/PaD/Hz/A+L89upg5P8D4vz2GZQY/wPi/PYZlBj/A+L89oP8fP8D4vz2g/x8/4PxfPrqYOT/g/F8+upg5P+D8Xz6GZQY/4PxfPoZlBj/g/F8+upg5P+D8Xz66mDk/4PxfPrqYOT/g/F8+hmUGP+D8Xz66mDk/4PxfPrqYOT/g/F8+hmUGP+D8Xz66mDk/4PxfPoZlBj/g/F8+upg5P+D8Xz66mDk/4PxfPoZlBj/g/F8+upg5P+D8Xz66mDk/4PxfPoZlBj/g/F8+hmUGP+D8Xz6GZQY/4PxfPoZlBj/g/F8+hmUGP+D8Xz6GZQY/4PxfPoZlBj/g/F8+hmUGP+D8Xz6GZQY/4PxfPoZlBj/g/F8+hmUGP+D8Xz6GZQY/"),
+"format": 34359742487,
+"index_count": 204,
+"index_data": PackedByteArray("AAABACQAAAACAAEAAAADAAIABAABAAIAAgAFAAQABgABAAQABwAFAAIACAAFAAcAAAAIAAMABQAIAAkAAAAKAAgACAAKAAkACgAGAAkACwAKAAAABgAMAAEACgAMAAYACwANAAoADgAMAAoACwAPAA0ADwAMAA4ADwALABAADAAPABAAJQAnACYAJwAlACgAKQArACoAKwApABMALAAXAC0AFwAsAC4ALwAxADAAMQAvADIAMwA0ABYANAAzADUANgA4ADcAOAA2ABIAOQA7ADoAOwA5ADwAPQA/AD4APwA9ABUAQABCAEEAQgBAAEMAQgBDAEQARABDAEUAFABHAEYARwAUAEgASQBLAEoASwBJABEATABOAE0ATgBMAE8AUABSAFEAUgBQAFMAVABWAFUAVwBZAFgAWgBcAFsAXQBfAF4AYABiAGEAYwBlAGQAGABnAGYAZwAYABsAaAAcAB8AHABoAGkAIgBqACMAagAiAGsAbAAeAB0AHgBsAG0AIABuACEAbgAgAG8AcAAaABkAGgBwAHEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 114,
+"vertex_data": PackedByteArray("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")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_us53w"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gdleh"]
+size = Vector3(0.2846985, 0.119262695, 0.2614746)
+
+[node name="Cookie" type="StaticBody3D"]
+script = ExtResource("1_px6u8")
+food_category = "Biscotto"
+indice_glicemico = 80.0
+carbs = 65.0
+prot = 6.0
+fat = 8.0
+nutrizione_info = "\"I biscotti industriali sono ricchi di carboidrati e zuccheri raffinati. 
+Possono causare un rapido aumento della glicemia se consumati da soli.\""
+
+[node name="cookie2" parent="." instance=ExtResource("1_ku7mm")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cookie2/cookie" index="0"]
+mesh = SubResource("ArrayMesh_px6u8")
+surface_material_override/0 = SubResource("StandardMaterial3D_us53w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00035095215, 0.020935059, -0.00061035156)
+shape = SubResource("BoxShape3D_gdleh")
+
+[editable path="cookie2"]

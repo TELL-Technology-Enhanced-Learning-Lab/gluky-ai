@@ -1,5 +1,3 @@
-# res://scripts/BathWaterCinematic.gd
-# COLLEGARE A: bath_water (MeshInstance3D)
 extends MeshInstance3D
 
 # ==================================================

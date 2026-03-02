@@ -1,0 +1,142 @@
+[gd_scene load_steps=21 format=3 uid="uid://d2dswpwlnbdye"]
+
+[ext_resource type="PackedScene" uid="uid://b1uraa4a3cg5k" path="res://Assets/Sushi Restaurant Kit - May 2023/Environment/FBX/Environment_Table.fbx" id="1_6rjvp"]
+[ext_resource type="Script" uid="uid://e6sf7t4g5jjd" path="res://Scripts/tablefood.gd" id="1_k565u"]
+[ext_resource type="PackedScene" uid="uid://dc6udavaw6co4" path="res://Scenes/croissant.tscn" id="3_yj108"]
+[ext_resource type="PackedScene" uid="uid://dm7tsfnfnx710" path="res://Scenes/pera.tscn" id="4_050l4"]
+[ext_resource type="PackedScene" uid="uid://ce5qjd2xy7r87" path="res://Scenes/cioccolato.tscn" id="5_3ifce"]
+[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="5_qmrxr"]
+[ext_resource type="PackedScene" uid="uid://ctv7i8fjnopfb" path="res://Scenes/arancia.tscn" id="7_5w6k7"]
+[ext_resource type="PackedScene" uid="uid://birxfktjodotf" path="res://Scenes/biscotto_cioccolato.tscn" id="8_yodcd"]
+[ext_resource type="PackedScene" uid="uid://dby67cf25ow3g" path="res://Scenes/barretta_cioccolato.tscn" id="9_8xmli"]
+[ext_resource type="PackedScene" uid="uid://due0xo5u5ko8a" path="res://Scenes/broccoli.tscn" id="10_5gk76"]
+[ext_resource type="PackedScene" uid="uid://dfo8pl4jeuvnc" path="res://Scenes/Avocado.tscn" id="11_rj23q"]
+[ext_resource type="PackedScene" uid="uid://df7bw5nxd1hv3" path="res://Scenes/apple.tscn" id="12_rj23q"]
+[ext_resource type="PackedScene" uid="uid://brg4w5512443s" path="res://Scenes/banana.tscn" id="13_igkiv"]
+[ext_resource type="PackedScene" uid="uid://cis4g0il0m056" path="res://Scenes/bread.tscn" id="14_mk2jj"]
+[ext_resource type="PackedScene" uid="uid://cjw5bgow3hrn1" path="res://Scenes/Salmon.tscn" id="15_7j3wa"]
+[ext_resource type="PackedScene" uid="uid://hj0hdl4ng8lk" path="res://Scenes/salsiccia.tscn" id="16_jx37q"]
+[ext_resource type="PackedScene" uid="uid://o55ep86makbi" path="res://Scenes/muffin.tscn" id="17_ptyqi"]
+[ext_resource type="PackedScene" uid="uid://csj32pa3lffno" path="res://Scenes/cheese.tscn" id="18_ptyqi"]
+[ext_resource type="PackedScene" uid="uid://bp46pyrdrbhc2" path="res://Scenes/candy.tscn" id="19_el5hb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6rjvp"]
+size = Vector3(1.1586914, 1, 1.1577301)
+
+[node name="Table_levelcena" type="StaticBody3D"]
+script = ExtResource("1_k565u")
+
+[node name="Environment_Table" parent="." instance=ExtResource("1_6rjvp")]
+
+[node name="Oggetti" type="Node3D" parent="."]
+
+[node name="OggettiPosati" type="Node3D" parent="."]
+
+[node name="MarkerCroissant" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.6272461, 1.5618364, 0.62201023)
+
+[node name="Croissant" parent="OggettiPosati/MarkerCroissant" instance=ExtResource("3_yj108")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="MarkerPera" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.597281, 1.5561408, 0.13460523)
+
+[node name="Pera" parent="OggettiPosati/MarkerPera" instance=ExtResource("4_050l4")]
+script = ExtResource("5_qmrxr")
+food_category = "Pera"
+indice_glicemico = 40.0
+carbs = 25.0
+prot = 2.0
+fat = 2.0
+nutrizione_info = "La pera è un alimento molto sano, essendo una frutta ha zuccheri naturali, da consumare anche dopo un pasto."
+
+[node name="MarkerCioccolato" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -0.5993106, 1.549262, -0.30024993)
+
+[node name="Cioccolato" parent="OggettiPosati/MarkerCioccolato" instance=ExtResource("5_3ifce")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("5_qmrxr")
+food_category = "Cioccolato"
+indice_glicemico = 85.0
+carbs = 80.0
+fat = 20.0
+nutrizione_info = "Il cioccolato è un alimento con molti zuccheri , da consumare con moderazione. Esistono piu tipi di cioccolato(fondente/al latte)."
+
+[node name="MarkerArancia" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.59165114, 1.5480744, -0.69838744)
+
+[node name="Arancia" parent="OggettiPosati/MarkerArancia" instance=ExtResource("7_5w6k7")]
+
+[node name="MarkerBiscotto_cioccolato" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13520233, 1.5511814, 0.623584)
+
+[node name="Biscotto_cioccolato" parent="OggettiPosati/MarkerBiscotto_cioccolato" instance=ExtResource("8_yodcd")]
+
+[node name="MarkerBarretta" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, -0.13159627, 1.5485319, 0.11884882)
+
+[node name="Barretta_cioccolato" parent="OggettiPosati/MarkerBarretta" instance=ExtResource("9_8xmli")]
+
+[node name="MarkerBroccoli" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-1.6828885e-08, 0, 0.385, 0, 0.385, 0, -0.385, 0, -1.6828885e-08, -0.1214976, 1.5427713, -0.38752466)
+
+[node name="Broccoli" parent="OggettiPosati/MarkerBroccoli" instance=ExtResource("10_5gk76")]
+transform = Transform3D(1.295, 0, 0, 0, 1.295, 0, 0, 0, 1.295, -0.19082715, 0, -7.188694e-16)
+
+[node name="MarkerAvocado" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, -0.091161765, 1.6299313, -0.67909384)
+
+[node name="Avocado" parent="OggettiPosati/MarkerAvocado" instance=ExtResource("11_rj23q")]
+
+[node name="MarkerApple" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.3363806, 1.53654, 0.605882)
+
+[node name="Apple" parent="OggettiPosati/MarkerApple" instance=ExtResource("12_rj23q")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+carbs = 25.0
+
+[node name="MarkerBanana" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-1.6828881e-08, 0, 0.38499993, 0, 0.385, 0, -0.38499993, 0, -1.6828881e-08, 0.3342116, 1.534312, 0.1128968)
+
+[node name="Banana" parent="OggettiPosati/MarkerBanana" instance=ExtResource("13_igkiv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.0895808e-09, 0.037821855, 0.024926705)
+
+[node name="MarkerBread" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-0.45, 0, -3.934025e-08, 0, 0.45, 0, 3.934025e-08, 0, -0.45, 0.36828876, 1.548532, -0.31926855)
+
+[node name="Bread" parent="OggettiPosati/MarkerBread" instance=ExtResource("14_mk2jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04093038, 0)
+
+[node name="MarkerSalmon" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-7.3762965e-09, 0, 0.16874999, 0, 0.16874999, 0, -0.16874999, 0, -7.3762965e-09, 0.34327367, 1.5424025, -0.69249505)
+
+[node name="salmon" parent="OggettiPosati/MarkerSalmon" instance=ExtResource("15_7j3wa")]
+transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, 0, 0, 0)
+
+[node name="MarkerSausage" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.7996217, 1.5456648, 0.6162565)
+
+[node name="Sausage" parent="OggettiPosati/MarkerSausage" instance=ExtResource("16_jx37q")]
+
+[node name="MarkerMuffin" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-1.6828885e-08, 0, 0.385, 0, 0.385, 0, -0.385, 0, -1.6828885e-08, 0.72156477, 1.549047, 0.13334718)
+
+[node name="Muffin" parent="OggettiPosati/MarkerMuffin" instance=ExtResource("17_ptyqi")]
+transform = Transform3D(1.44, 0, 0, 0, 1.44, 0, 0, 0, 1.44, 0, 0, 0)
+
+[node name="MarkerCheese" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-7.3762965e-09, 0, 0.16874999, 0, 0.16874999, 0, -0.16874999, 0, -7.3762965e-09, 0.7343027, 1.552537, -0.30701312)
+
+[node name="Cheese" parent="OggettiPosati/MarkerCheese" instance=ExtResource("18_ptyqi")]
+transform = Transform3D(2.53, 0, 0, 0, 2.53, 0, 0, 0, 2.53, 0, 0.061226606, 0)
+
+[node name="MarkerCandy" type="Marker3D" parent="OggettiPosati"]
+transform = Transform3D(-1.6828885e-08, 0, 0.385, 0, 0.385, 0, -0.385, 0, -1.6828885e-08, 0.75143623, 1.5983291, -0.68485665)
+
+[node name="Candy" parent="OggettiPosati/MarkerCandy" instance=ExtResource("19_el5hb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.03, 0, 0, 0, 2.03, 0, 0, 0, 2.03, 0.006979987, 0.5670247, 0.02331534)
+shape = SubResource("BoxShape3D_6rjvp")
+
+[editable path="Environment_Table"]

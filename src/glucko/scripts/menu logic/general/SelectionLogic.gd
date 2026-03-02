@@ -256,7 +256,7 @@ func _load_kitchen_scene() -> void:
 	
 	await get_tree().process_frame
 	
-	var kitchen_scene_path = "res://scenes/glucolife rooms/Kitchen.tscn"
+	var kitchen_scene_path = "res://scenes/menus/glucky/Minigame_Selection.tscn"
 	
 	if not ResourceLoader.exists(kitchen_scene_path):
 		push_error("Scene not found: " + kitchen_scene_path)

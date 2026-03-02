@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://ddc34fw5xsky4"]
+
+[ext_resource type="Texture2D" uid="uid://b0ee1h2q5gkff" path="res://art/assets/GlukoQuizAssets/Backgrounds/Copilot_20260126_194104.png" id="1_56inq"]
+[ext_resource type="Script" uid="uid://7f3d03oqdxk" path="res://scripts/GlukoQuizScript/Impostazioni.gd" id="1_qfnf0"]
+[ext_resource type="Texture2D" uid="uid://cjirjovourayl" path="res://art/assets/GlukoQuizAssets/Backgrounds/Copilot_20260126_220903.png" id="3_73gkw"]
+[ext_resource type="Script" uid="uid://cieskmue28wyr" path="res://scripts/GlukoQuizScript/Gluko_Text.gd" id="4_56inq"]
+[ext_resource type="Texture2D" uid="uid://dwnb8y5tud33t" path="res://art/assets/GlukoQuizAssets/Weirdthers candies/Weirdthers_Candy_blueberry_shadow_128.png" id="4_qfnf0"]
+[ext_resource type="Texture2D" uid="uid://vve084vipl6h" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_play_02_300x300.png" id="5_73gkw"]
+[ext_resource type="Texture2D" uid="uid://sojc7lxoyp80" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_options_150x150.png" id="6_7m7gr"]
+
+[node name="MenuIniziale" type="Control" unique_id=1658794744]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_qfnf0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1771908286]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_56inq")
+
+[node name="Particelle_Caramelle" type="CPUParticles2D" parent="." unique_id=1414073428]
+position = Vector2(954, -120)
+amount = 65
+texture = ExtResource("4_qfnf0")
+lifetime = 12.0
+explosiveness = 0.2
+lifetime_randomness = 0.1
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(960, 0)
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 50.0
+initial_velocity_max = 120.0
+angular_velocity_max = 35.0
+linear_accel_min = 20.0
+linear_accel_max = 30.0
+scale_amount_min = 0.2
+
+[node name="GlukoButton" type="TextureButton" parent="." unique_id=951006828]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.354
+anchor_right = 0.5
+anchor_bottom = 0.354
+offset_left = -685.0002
+offset_top = -512.32
+offset_right = 851.0
+offset_bottom = 511.68
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+texture_normal = ExtResource("3_73gkw")
+script = ExtResource("4_56inq")
+
+[node name="Button_gui" type="Control" parent="." unique_id=175811132]
+layout_mode = 1
+anchor_left = 0.499
+anchor_top = 0.80600005
+anchor_right = 0.499
+anchor_bottom = 0.80600005
+offset_left = -50.08008
+offset_top = -57.48004
+offset_right = 92.89288
+offset_bottom = 57.51996
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonPlay" type="TextureButton" parent="Button_gui" unique_id=1805303854]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46100003
+anchor_right = 0.5
+anchor_bottom = 0.46100003
+offset_left = -162.48642
+offset_top = -150.015
+offset_right = 137.51358
+offset_bottom = 149.985
+action_mode = 0
+texture_normal = ExtResource("5_73gkw")
+script = ExtResource("4_56inq")
+
+[node name="ButtonOption" type="TextureButton" parent="Button_gui" unique_id=1693407496]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.19
+anchor_top = -5.852
+anchor_right = -5.19
+anchor_bottom = -5.852
+offset_left = -74.97064
+offset_top = -75.01996
+offset_right = 55.029358
+offset_bottom = 54.98004
+texture_normal = ExtResource("6_7m7gr")
+script = ExtResource("4_56inq")
+
+[connection signal="pressed" from="Button_gui/ButtonPlay" to="GlukoButton" method="_on_button_play_pressed"]

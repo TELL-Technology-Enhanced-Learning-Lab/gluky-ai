@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=4 uid="uid://hj0hdl4ng8lk"]
+
+[ext_resource type="PackedScene" uid="uid://berafkovv0n7l" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/sausage-half.glb" id="1_mt4ow"]
+[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="1_o8s8q"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mt4ow"]
+_surfaces = [{
+"aabb": AABB(-0.20432511, -0.027515093, -0.09780148, 0.23432511, 0.17398171, 0.19356598),
+"attribute_data": PackedByteArray("+P93P+auZT/4/3c/5q5lP/j/dz/i5GE/+P93P+auZT/4/3c/5q5lP/j/dz/i5GE/sP6vPqiUJz+w/q8+qJQnP7D+rz6sbiw/sP6vPqxuLD+w/q8+oP8fP7D+rz6olCc/sP6vPrCdLz+w/q8+kGEQP7D+rz6g/x8/sP6vPqD/Hz+w/q8+hmUGP7D+rz6g/x8/sP6vPrqYOT+w/q8+oP8fP7D+rz6g/x8/sP6vPqD/Hz+w/q8+sJ0vP7D+rz6QYRA/sP6vPqD/Hz+w/q8+oP8fP7D+rz6g/x8/sP6vPoZlBj+w/q8+upg5P7D+rz6NOA0/sP6vPrPGMj+w/q8+oP8fP7D+rz6g/x8/4PxfPp+0Hj/g/F8+kzITP+D8Xz6g/x8/4PxfPqTfIz/g/F8+oUohP+D8Xz6tzCw/4PxfPqTfIz/g/F8+oP8fP+D8Xz6k3yM/4PxfPqTfIz/g/F8+n7QeP+D8Xz6hSiE/+P93P+l4aT/4/3c/14VWP/j/dz/aT1o/+P93P94aXj/4/3c/2k9aP/j/dz/XhVY/+P93P9pPWj/4/3c/3hpeP/j/dz/aT1o/+P93P+l4aT+w/q8+upg5P7D+rz66mDk/sP6vPphqGD+w/q8+oP8fP7D+rz6g/x8/sP6vPpSPEz+w/q8+sJ0vP7D+rz6QYRA/sP6vPqD/Hz+w/q8+mGoYP7D+rz6olCc/sP6vPqD/Hz+w/q8+oP8fP7D+rz6Yahg/sP6vPqiUJz+w/q8+rG4sP7D+rz6g/x8/sP6vPqD/Hz+w/q8+hmUGP7D+rz6GZQY/sP6vPoZlBj+w/q8+sJ0vP7D+rz66mDk/sP6vPqxuLD+w/q8+qJQnP7D+rz66mDk/sP6vPrqYOT+w/q8+upg5P7D+rz6g/x8/sP6vPqD/Hz+w/q8+hmUGP7D+rz6GZQY/sP6vPrqYOT+w/q8+oP8fP7D+rz6g/x8/sP6vPqD/Hz+w/q8+upg5P7D+rz66mDk/sP6vPoZlBj+w/q8+oP8fP7D+rz6g/x8/sP6vPoZlBj+w/q8+hmUGP7D+rz6GZQY/sP6vPpBhED+w/q8+oP8fP7D+rz6g/x8/sP6vPphqGD+w/q8+lI8TP7D+rz6Yahg/sP6vPphqGD+w/q8+lI8TP7D+rz6UjxM/sP6vPqxuLD+w/q8+oP8fP7D+rz6UjxM/sP6vPqxuLD+w/q8+lI8TP7D+rz6g/x8/sP6vPrCdLz+w/q8+upg5P7D+rz66mDk/sP6vPrCdLz+w/q8+hmUGP7D+rz6g/x8/sP6vPqD/Hz+w/q8+kGEQP7D+rz6g/x8/sP6vPqD/Hz+w/q8+hmUGP7D+rz6QYRA/sP6vPo04DT+w/q8+s8YyP7D+rz6GZQY/sP6vPrqYOT/g/F8+kzITP+D8Xz6tzCw/4PxfPpwfHD/g/F8+mooZP+D8Xz6mdCY/4PxfPpwfHD/g/F8+nB8cP+D8Xz6mdCY/4PxfPpwfHD/g/F8+mooZPw=="),
+"format": 34359742487,
+"index_count": 300,
+"index_data": PackedByteArray("AgAtAAAALQACAAEALgAwAC8AMAAuADEAMgA0ADMANAAyADUABQA2AAMANgAFAAQANwAPADgADwA3AA4AOQA7ADoAOwA5ADwAPQA+AAoAPgA9AD8APwA9AAsAQAA+AD8ACwA9AAwACwAMAEEAQQAMAEIAPgBAAA0ADQBCAAwADQAMAEMADQBEAEIADQBAAEQARQBHAEYARwBFAEgASQAQAEoAEABJAEsATAAUAE0AFABMABUATgAHAE8ABwBOAAgAUABRABIAUQBQAFIAUwBVAFQAVQBTAFYAGAAWAFcAFgAYAFgAWQAGAAkABgBZAFoAEwBcAFsAXAATABEAXQBfAF4AXwBdAGAAYQAXAGIAFwBhAGMAZABmAGUAZgBkAGcAaABqAGkAagBoAGsAbABuAG0AbgBsAG8AbgBvAHAAcABvAHEAcgB0AHMAdAByAHUAdgB4AHcAeAB2AHkAegB8AHsAfAB6AH0AGQAbABoAHAAZABoAHQAbABkAHAAeABkAfgAbAB0AHAB/AB4AfgCAABsAgQB/ABwAHwCAAH4AgQAfAH8AgAAfACAAHwCBACAAggCDACMAgwCCAIQAhACCAIUAJACDAIQAhQCCACIAIQAkAIQAhgCDACQAJAAhACUAgwCGACYAJQAhAIcAhQAiAIcAJQCHACcAJgCGACcAhwCIACcAhwAiAIgAKQAnAIgAJgAnACkAKwApAIgAJgApAIkAKQArACwALAArAIoAJgCJACoALACKACoAJgAqACIAigAiACoAJgAiACgAiwAiAIoAiAAiAIsA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 140,
+"vertex_data": PackedByteArray("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/v8AAAAA/7/+fyTRAAD+v/1//3/9//+//3/ZLv7//7/9f/9//f//vwAAFzgYOP+/AAAXOBg4/796UVdM/7UBuXpRprPilkqz6Uf/f+nH/7/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/ZrgAAAAD/v9muAAAAAP+/zpuDvxb04KYuo/9//v+X0S6j/3/+/5fRzpuDvxb04KYBAP9/AID/vwEA/38AgP+/AQD/fwCA/78BAP9/AID/vwEA/38AgP+/AQD/fwCA/78BAP9/AID/vwEA/38AgP+/zpt7QBX0HtnOm3tAFfQe2S6j/3/+/5fRLqP/f/7/l9ElUf7/AQD+vyVR/v8BAP6//n8k0QAA/r+oM4UuAEr8xqgzhS4ASvzGz5t7QHLbAIjPm3tActsAiP9/2S7+//+/2K4AAP3//7/YrgAA/f//v/7/AAAAAP+//v8AAAAA/78lUf7/AQD+vyVR/v8BAP6/elFXTP+1AbnpR/9/6cf/v/7/ztwAAJfR/v/O3AAAl9H/f9ku/v//v/9/2S7+//+//38l0f7//7/9f/9//f//v/1//3/9//+//38l0f7//7+nM3jRHWmyzHpRprPilkqzpzN40R1pssz+/87cAACX0f7/ztwAAJfRfMAv5OgLHtl8wC/k6Ase2XrALuSLJACI0JuCv3Lb/vfQm4K/ctv+93rALuSLJACIAQD/fwCA/78BAP9/AID/vwEA/38AgP+/AQD/fwCA/78BAP9/AID/vwEA/38AgP+/elFYTOKWs8x6UVhM4pazzKgzhS4eaUuzqDOFLh5pS7N6Uaaz/7X8xulH/3/px/+/6Uf/f+nH/796Uaaz/7X8xgAAFzgYOP+/AAAXOBg4/7+oM3nRAEoAuagzedEASgC5/f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v/9/wCA/v/+/w==")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8s8q"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mt4ow"]
+size = Vector3(0.27348328, 0.22514343, 0.21099854)
+
+[node name="Sausage" type="StaticBody3D"]
+script = ExtResource("1_o8s8q")
+food_category = "Salsiccia"
+indice_glicemico = 40.0
+prot = 20.0
+fat = 30.0
+nutrizione_info = "\"La salsiccia ha un indice glicemico molto basso poiché è composta principalmente da proteine e grassi. Tuttavia, un consumo eccessivo può aumentare il carico calorico totale del pasto.\""
+
+[node name="sausage-half2" parent="." instance=ExtResource("1_mt4ow")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sausage-half2/sausage-half" index="0"]
+mesh = SubResource("ArrayMesh_mt4ow")
+surface_material_override/0 = SubResource("StandardMaterial3D_o8s8q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.091789246, 0.060798645, 0.0022277832)
+shape = SubResource("BoxShape3D_mt4ow")
+
+[editable path="sausage-half2"]

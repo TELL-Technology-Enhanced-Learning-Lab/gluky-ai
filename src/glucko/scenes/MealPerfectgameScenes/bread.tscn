@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=4 uid="uid://cis4g0il0m056"]
+
+[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="1_ssi06"]
+[ext_resource type="PackedScene" uid="uid://0d6qfnfpc4b3" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/bread.glb" id="1_v6j8n"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ssi06"]
+_surfaces = [{
+"aabb": AABB(-0.257688, -0.05, -0.220543, 0.5147663, 0.13974401, 0.4410868),
+"attribute_data": PackedByteArray("wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89hmUGP8D4vz2GZQY/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89hmUGP8D4vz26mDk/wPi/PYZlBj/A+L89upg5P8D4vz2GZQY/wPi/PbqYOT/A+L89upg5P8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz26mDk/wPi/PbqYOT/A+L89hmUGP8D4vz26mDk/wPi/PbqYOT/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PbqYOT/A+L89upg5P8D4vz2GZQY/wPi/PbqYOT/A+L89upg5P8D4vz2GZQY/wPi/PYZlBj+w/q8+hmUGP7D+rz6GZQY/sP6vPoZlBj+w/q8+hmUGP7D+rz6GZQY/sP6vPoZlBj+w/q8+hmUGP7D+rz6GZQY/sP6vPoZlBj+w/q8+hmUGP7D+rz6GZQY/sP6vPrqYOT+w/q8+upg5P7D+rz66mDk/sP6vPrqYOT+w/q8+upg5P7D+rz66mDk/sP6vPrqYOT+w/q8+upg5P7D+rz66mDk/sP6vPrqYOT+w/q8+upg5P7D+rz66mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz26mDk/wPi/PbqYOT/A+L89upg5P8D4vz2GZQY/wPi/PYZlBj/A+L89upg5P8D4vz26mDk/wPi/PYZlBj/A+L89upg5P8D4vz2GZQY/wPi/PYZlBj/A+L89upg5P8D4vz26mDk/wPi/PYZlBj/A+L89upg5P8D4vz2GZQY/wPi/PYZlBj/A+L89upg5P8D4vz2GZQY/wPi/PYZlBj/A+L89upg5P8D4vz26mDk/wPi/PYZlBj/A+L89hmUGP8D4vz26mDk/wPi/PbqYOT/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz2GZQY/wPi/PYZlBj/A+L89hmUGP8D4vz26mDk/wPi/PYZlBj/A+L89upg5P8D4vz26mDk/wPi/PYZlBj/A+L89hmUGP8D4vz26mDk/wPi/PYZlBj/A+L89upg5P8D4vz2GZQY/wPi/PbqYOT/A+L89hmUGP8D4vz26mDk/wPi/PYZlBj+w/q8+hmUGP7D+rz6GZQY/sP6vPrqYOT8="),
+"format": 34359742487,
+"index_count": 348,
+"index_data": PackedByteArray("AgAAAGAAAAACAGEAAABhAAEAAQBiAAAAAQBhAAMAYgABAAQAAwBhAAUAYgAEAAYABQBhAAcAYgAGAAgABQAHAAkACAAGAAoACQAHAGMACAAKAGQACQBjAAwAZAAKAA8ADABjAA0AZAAPABAADQBjAAsAZAAQAA4ADQALABEADgAQAGUAEQALABIADgBlABMAEQASAGYAEQBmAGUAZQBmABMAEwBmAGcAZwBmABQAZwAUABUAaABqAGkAagBoABgAFgAaAGsAGgAWAGwAIQAjACIAIwAhACQAbQAcABsAHABtAG4AJQAnACYAJwAlACgAbwBxAHAAcQBvAHIAcwAeAB0AHgBzAHQAFwB2AHUAdgAXABkAdwB5AHgAeQB3AHoAewB9AHwAfQB7AH4AKQArACoAKwApACwALwCAAH8AgAAvAC0ALQAvAC4AgQAuAC8ALQAuADEALgCBADAALQAxADMAMACBADIALQAzAIIAMgCBADQAggAzAIMAMgA0AIQAggCDAIUAhAA0AIYAhQCDADYAhACGADoAhQA2ADcAOgCGADsAhQA3ADUAOwCGADkANQA3ADgAOwA5ADwAPAA5AD0APAA9ADgANQA4AD4APgA4AD0APgA9AIcAPgCHAIgAiACHAD8AiAA/AEAAHwCKAIkAigAfACAAiwCNAIwAjQCLAI4AjwBEAEMARACPAJAAQQCRAEIAkQBBAJIARQCUAJMAlABFAEcAlQBIAEYASACVAJYASQBLAEoASwBJAEwATABJAE0ATABNAJcATACXAJgAmACXAE4AmABOAE8ATwBOAFAATwBQAFEAUQBQAFIAUQBSAFMAVABWAFUAVgBUAFcAVgBXAFgAWABXAFkAWABZAFoAWgBZAFsAWgBbAFwAXABbAF0AXQBbAF4AXQBeAF8AXQBfAJkA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 154,
+"vertex_data": PackedByteArray("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37t3vnookj1/lhq+ViTGPWTLtz3oRQ6+ViTGPWTLtz1xRA4+cok4vs3MTL13js+9AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//7/duP9//v9u3P7/L6UAAGftztr/f/7/Zu3+/y+lAABn7f1//3/9//+/0DP/f8+z/7/QM/9/z7P/v/7/AAAAAP+//v8AAAAA/78AADFMMkz/vwAAMUwyTP+/AQD/fwCA/78BAP9/AID/vwEA/38AgP+/AQD/fwCA/7/9f/9//f//v/1//3/9//+//X//f/3//7/9f/9//f//v/7/AAAAAP+//v8AAAAA/7/+/wAAAAD/v/7/AAAAAP+//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v4Ja/3+C2v+/glr/f4La/79+Jf9/faX/v34l/399pf+/AACCWoJa/78AAH0lfSX/vwAAglqCWv+/AAB9JX0l/7/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgAEA/v//v87a/3/+/2bt/f8AgP7//v/9/wCA/v/+/924/3/+/27c/X//f/3//78hR/9/IMf/vyFH/38gx/+//X//f/3//7/9f/9//f//vyFH/38gx/+/IUf/fyDH/78AAOA44Dj/vwAA4DjgOP+//v8exwAAb9z+/x7HAABv3P3/AID+//7//v8vpQAAZ+3+/y+lAABn7f3/AID+//7/3bj/f/7/btzO2v9//v9m7c7a/3/+/2bt3bj/f/7/btz+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+vwAA4DjgOP+/AADgOOA4/7/+/wAAAAD/v/7/HscAAG/c/v8exwAAb9z+/wAAAAD/vwBA/3//v/+/AED/f/+//78AQP9//7//vwBA/3//v/+/AAD/PwBA/78AAP8/AED/vwAA/z8AQP+/AAD/PwBA/7/+f/7/AAD+v/5//v8AAP6/AIABAP7//78=")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egsbc"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssi06"]
+size = Vector3(0.536499, 0.11515808, 0.46118164)
+
+[node name="Bread" type="StaticBody3D"]
+script = ExtResource("1_ssi06")
+food_category = "Pane"
+indice_glicemico = 70.0
+carbs = 60.0
+prot = 8.0
+fat = 15.0
+nutrizione_info = "\"Il pane ha un alto indice glicemico.
+Provoca un rapido aumento della glicemia, ma abbinato a fibre o proteine è ottimo."
+
+[node name="bread2" parent="." instance=ExtResource("1_v6j8n")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="bread2/bread" index="0"]
+mesh = SubResource("ArrayMesh_ssi06")
+surface_material_override/0 = SubResource("StandardMaterial3D_egsbc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00030517578, 0.018287659, -0.008422852)
+shape = SubResource("BoxShape3D_ssi06")
+
+[editable path="bread2"]

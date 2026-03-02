@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://qvoh04smh1of"]
+
+[ext_resource type="Script" uid="uid://brxj6ndkps7vf" path="res://Scripts/first_person_player.gd" id="1_4ldhc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1rygn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3g7qm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ldhc"]
+
+[sub_resource type="Animation" id="Animation_xmi1n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPivot/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.7456309, -0.2567578)]
+}
+
+[sub_resource type="Animation" id="Animation_4ldhc"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPivot/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.05, 0.746, -0.257), Vector3(0, 0.691, -0.257), Vector3(0.05, 0.746, -0.257), Vector3(0, 0.691, -0.257)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ar004"]
+_data = {
+&"RESET": SubResource("Animation_xmi1n"),
+&"walk": SubResource("Animation_4ldhc")
+}
+
+[node name="FirstPersonPlayer" type="CharacterBody3D"]
+collision_layer = 3
+script = ExtResource("1_4ldhc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_1rygn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3g7qm")
+
+[node name="ObjectMarker3D" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0020421222, 0.387, -0.66902184)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0.2, -3.99)
+visible = false
+mesh = SubResource("BoxMesh_4ldhc")
+
+[node name="simulateMovement" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ar004")
+}
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.96524036, 0.2613638, 0, -0.2613638, 0.96524036, 0, 0.7456309, -0.2567578)
+fov = 60.0
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.990268, -0.13917309, 0, 0.13917309, 0.990268, 0, 0, 0)
+target_position = Vector3(0, 0, -3)

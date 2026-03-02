@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c66spt8837d0o"]
+
+[ext_resource type="Script" uid="uid://dn85tmmf6t6h5" path="res://Scripts/hud.gd" id="1_e0onf"]
+[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://font_esterni/SamuraiBlast.ttf" id="2_fccik"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fccik"]
+font = ExtResource("2_fccik")
+font_size = 30
+font_color = Color(1, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_e0onf")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 184.0
+offset_bottom = 37.0
+text = "PIATTI COMPLEATATI : 0"
+label_settings = SubResource("LabelSettings_fccik")

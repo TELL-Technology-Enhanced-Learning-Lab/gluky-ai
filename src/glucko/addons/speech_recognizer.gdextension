@@ -1,0 +1,9 @@
+[configuration]
+entry_symbol = "speechrecognizer_library_init"
+compatibility_minimum = "4.1.0"
+reloadable = true
+
+[libraries]
+android.arm64 = "res://addons/libs/arm64/libspeechrecognizer.so"
+android.arm64-v8a = "res://addons/libs/arm64-v8a/libspeechrecognizer.so"
+android.armeabi-v7a = "res://addons/libs/armeabi-v7a/libspeechrecognizer.so"

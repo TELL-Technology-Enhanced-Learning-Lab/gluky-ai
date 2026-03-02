@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://c7aqqhv4n3qj5"]
+
+[ext_resource type="Texture2D" uid="uid://b10d0um35j4vr" path="res://art/assets/GlukoQuizAssets/GUI Panels/Panel_600x900.png" id="1_0yxu7"]
+[ext_resource type="Script" uid="uid://b3lbsq2v6gq13" path="res://scripts/GlukoQuizScript/impostazioniGui.gd" id="1_7c6ps"]
+[ext_resource type="Texture2D" uid="uid://dm4hr10impli" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_ok_002_150x150.png" id="2_sp6kg"]
+[ext_resource type="FontFile" uid="uid://bfkbf1v0dokdm" path="res://art/font_esterni/Winter Tosca.otf" id="5_iknjs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iknjs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7c6ps"]
+font = ExtResource("5_iknjs")
+font_size = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7c6ps"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iknjs"]
+font = ExtResource("5_iknjs")
+font_size = 35
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n3y61"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7o0q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2llq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1suem"]
+
+[node name="GuiImpostazioni" type="Control" unique_id=446123407]
+layout_mode = 3
+anchor_left = 0.33900002
+anchor_right = 0.887
+anchor_bottom = 0.93796295
+offset_left = -25.880005
+offset_right = 0.95996094
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7c6ps")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=820443327]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027083334
+anchor_top = 0.11296296
+anchor_right = 0.536
+anchor_bottom = 0.938
+offset_left = -0.270813
+offset_top = -8.727127
+offset_right = 0.49523926
+offset_bottom = -0.30316162
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iknjs")
+
+[node name="PanelGuiImp" type="TextureRect" parent="PanelContainer" unique_id=1428750856]
+layout_mode = 2
+texture = ExtResource("1_0yxu7")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=111288379]
+layout_mode = 2
+theme_override_constants/margin_top = 92
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=117736934]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label_impostazioni" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1610352967]
+layout_mode = 2
+text = "Impostazioni"
+label_settings = SubResource("LabelSettings_7c6ps")
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1776589598]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7c6ps")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1934228936]
+layout_mode = 2
+
+[node name="Label_music" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1300514499]
+layout_mode = 2
+text = "Music: "
+label_settings = SubResource("LabelSettings_iknjs")
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=600997365]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_n3y61")
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1112511533]
+layout_mode = 2
+step = 0.1
+tick_count = 10
+ticks_position = 3
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1822372461]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_e7o0q")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=552603782]
+layout_mode = 2
+
+[node name="Label2_sound" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1746535965]
+layout_mode = 2
+text = "Sound: "
+label_settings = SubResource("LabelSettings_iknjs")
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=98417429]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2llq5")
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1326938085]
+layout_mode = 2
+tick_count = 10
+ticks_position = 3
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1995297025]
+layout_mode = 2
+theme_override_constants/separation = 90
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1suem")
+
+[node name="Control" type="Control" parent="." unique_id=827686320]
+layout_mode = 1
+anchor_left = 0.28100002
+anchor_top = 0.739
+anchor_right = 0.28100002
+anchor_bottom = 0.739
+offset_left = -79.199005
+offset_top = -79.606995
+offset_right = 78.84891
+offset_bottom = 78.68866
+
+[node name="OkButton" type="TextureButton" parent="Control" unique_id=1883126637]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019000001
+anchor_top = 0.033
+anchor_right = 0.96800005
+anchor_bottom = 0.98100007
+offset_left = 0.045001984
+offset_top = 0.07189751
+offset_right = 0.057525635
+offset_bottom = 0.007675171
+texture_normal = ExtResource("2_sp6kg")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

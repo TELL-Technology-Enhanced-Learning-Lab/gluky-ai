@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ojwaa3fxys27"
+path="res://.godot/imported/Caravane de chameaux.mp3-5f6d9cc5b62fdb74086a8ffa45752aac.mp3str"
+
+[deps]
+
+source_file="res://art/assets/GlukoQuizAssets/Music/Caravane de chameaux.mp3"
+dest_files=["res://.godot/imported/Caravane de chameaux.mp3-5f6d9cc5b62fdb74086a8ffa45752aac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

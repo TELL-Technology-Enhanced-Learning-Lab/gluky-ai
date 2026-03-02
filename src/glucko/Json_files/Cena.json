@@ -1,0 +1,114 @@
+{
+  "questions": [
+	{
+	  "text": "Cosa è meglio mangiare a cena?",
+	  "answers": ["Solo dolci", "Verdure e carne leggera", "Patatine fritte", "Caramelle"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! I dolci sono pieni di zuccheri. Non sono adatti per la cena perché fanno aumentare troppo la glicemia. La risposta corretta è verdure e carne leggera.",
+		"Risposta Corretta! Verdure e carne leggera sono perfette per la cena! Ti danno energia senza appesantire e ti aiutano a dormire bene.",
+		"Risposta Errata! Le patatine fritte sono troppo grasse per la sera. Meglio mangiare qualcosa di più leggero. La risposta corretta è verdure e carne leggera.",
+        "Risposta Errata! Le caramelle non sono un pasto! Sono solo zucchero e fanno male, specialmente a cena. La risposta corretta è verdure e carne leggera."
+	  ]
+	},
+	{
+	  "text": "Quale bevanda è meglio bere a cena?",
+	  "answers": ["Acqua", "Coca-Cola", "Energy   drink", "Succo zuccherato"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! L'acqua è la bevanda migliore per la cena! Non ha zuccheri e ti aiuta a digerire bene.",
+		"Risposta Errata! La Coca-Cola ha troppi zuccheri e ti tiene sveglio. Non è adatta per la sera. La risposta corretta è l'acqua.",
+		"Risposta Errata! Gli energy drink hanno caffeina e zuccheri. Ti impediscono di dormire! La risposta corretta è l'acqua.",
+        "Risposta Errata! I succhi zuccherati hanno troppo zucchero per la sera. Meglio bere acqua. La risposta corretta è l'acqua."
+	  ]
+	},
+	{
+	  "text": "È meglio cenare:",
+	  "answers": ["Tardi, prima di dormire", "Presto, qualche ora prima di dormire", "A   mezzanotte", "Mai"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Cenare tardi non va bene! Il tuo corpo non ha tempo per digerire prima di dormire. La risposta corretta è presto, qualche ora prima di dormire.",
+		"Risposta Corretta! È meglio cenare presto, così il tuo corpo ha tempo per digerire e dormi meglio!",
+		"Risposta Errata! A mezzanotte è troppo tardi! Devi dare tempo al corpo di digerire il cibo. La risposta corretta è presto, qualche ora prima di dormire.",
+        "Risposta Errata! Devi sempre cenare! Saltare la cena non fa bene alla salute. La risposta corretta è presto, qualche ora prima di dormire."
+	  ]
+	},
+	{
+	  "text": "Quale cibo ti fa dormire meglio?",
+	  "answers": ["Cibi pesanti   e  fritti", "Dolci   e bibite", "Cibi leggeri   come  verdure", "Pizza e gelato"],
+	  "correct": 2,
+	  "explanations": [
+		"Risposta Errata! I cibi pesanti e fritti sono difficili da digerire. Ti fanno dormire male! La risposta corretta è cibi leggeri come verdure.",
+		"Risposta Errata! Dolci e bibite hanno troppi zuccheri. Ti danno energia invece di farti dormire! La risposta corretta è cibi leggeri come verdure.",
+		"Risposta Corretta! I cibi leggeri come le verdure si digeriscono facilmente e ti fanno dormire benissimo!",
+        "Risposta Errata! Pizza e gelato sono troppo pesanti per la sera. Non ti fanno riposare bene. La risposta corretta è cibi leggeri come verdure."
+	  ]
+	},
+	{
+	  "text": "Quale pesce è meglio per cena?",
+	  "answers": ["Pesce fritto", "Bastoncini   di pesce", "Pesce alla griglia", "Pesce con tanta maionese"],
+	  "correct": 2,
+	  "explanations": [
+		"Risposta Errata! Il pesce fritto ha troppo olio. È pesante per la cena. La risposta corretta è pesce alla griglia.",
+		"Risposta Errata! I bastoncini di pesce sono fritti e processati. Non sono la scelta più sana. La risposta corretta è pesce alla griglia.",
+		"Risposta Corretta! Il pesce alla griglia è leggero e sano! È perfetto per una cena che ti fa bene.",
+        "Risposta Errata! La maionese è troppo grassa. Rende il pesce pesante da digerire. La risposta corretta è pesce alla griglia."
+	  ]
+	},
+	{
+	  "text": "Quanta cena devi mangiare?",
+	  "answers": ["Tantissima", "Una porzione moderata", "Solo un boccone", "Tre piatti pieni"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Mangiare tantissimo a cena è troppo! Ti appesantisce e non dormi bene. La risposta corretta è una porzione moderata.",
+		"Risposta Corretta! Una porzione moderata è perfetta! Non troppo, non troppo poco. Così stai bene e dormi bene!",
+		"Risposta Errata! Un solo boccone non basta! Il tuo corpo ha bisogno di cibo anche la sera. La risposta corretta è una porzione moderata.",
+        "Risposta Errata! Tre piatti pieni sono troppi per la sera! Meglio mangiare meno a cena. La risposta corretta è una porzione moderata."
+	  ]
+	},
+	{
+	  "text": "Quale verdura va bene a cena?",
+	  "answers": ["Patatine fritte", "Tutte le verdure cotte o crude", "Nessuna verdura", "Solo ketchup"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Le patatine fritte non sono verdure sane! Sono troppo grasse. La risposta corretta è tutte le verdure cotte o crude.",
+		"Risposta Corretta! Tutte le verdure vanno bene a cena! Crude, cotte al vapore o grigliate. Fanno sempre bene!",
+		"Risposta Errata! Le verdure sono importanti anche a cena! Ti aiutano a stare in salute. La risposta corretta è tutte le verdure cotte o crude.",
+        "Risposta Errata! Il ketchup non è una verdura! È una salsa con zucchero. La risposta corretta è tutte le verdure cotte o crude."
+	  ]
+	},
+	{
+	  "text": "Cosa NON devi mangiare a cena?",
+	  "answers": ["Verdure fresche", "Pollo grigliato", "Tanti dolci e cioccolato", "Insalata"],
+	  "correct": 2,
+	  "explanations": [
+		"Risposta Errata! Le verdure fresche fanno benissimo a cena! Sono leggere e sane. La risposta corretta è tanti dolci e cioccolato.",
+		"Risposta Errata! Il pollo grigliato è perfetto per cena! È leggero e buono. La risposta corretta è tanti dolci e cioccolato.",
+		"Risposta Corretta! I dolci e il cioccolato hanno troppi zuccheri per la sera! Evitali a cena per stare meglio.",
+        "Risposta Errata! L'insalata è ottima per cena! È leggera e piena di vitamine. La risposta corretta è tanti dolci e cioccolato."
+	  ]
+	},
+	{
+	  "text": "Come è meglio cucinare il cibo per cena?",
+	  "answers": ["Fritto con tanto olio", "Alla griglia o al vapore", "Con burro e panna", "Sempre impanato"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Il fritto con tanto olio è pesante! A cena meglio cucinare in modo leggero. La risposta corretta è alla griglia o al vapore.",
+		"Risposta Corretta! Alla griglia o al vapore è il modo migliore! Il cibo rimane leggero e fa bene alla salute.",
+		"Risposta Errata! Burro e panna sono troppo grassi per la cena. Meglio cucinare in modo più leggero. La risposta corretta è alla griglia o al vapore.",
+        "Risposta Errata! Il cibo impanato è spesso fritto. È troppo pesante per la sera. La risposta corretta è alla griglia o al vapore."
+	  ]
+	},
+	{
+	  "text": "Quale di queste è una buona cena?",
+	  "answers": ["Hamburger con   patatine", "Zuppa di verdure e pane", "Solo caramelle", "Tre fette di torta"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Hamburger e patatine sono troppo per la cena! Troppi grassi e zuccheri. La risposta corretta è zuppa di verdure e pane.",
+		"Risposta Corretta! Zuppa di verdure e pane è una cena perfetta! Leggera, nutriente e ti fa sentire bene!",
+		"Risposta Errata! Le caramelle non sono una cena! Sono solo zucchero e fanno male. La risposta corretta è zuppa di verdure e pane.",
+        "Risposta Errata! Tre fette di torta non sono una cena sana! Troppi zuccheri. La risposta corretta è zuppa di verdure e pane."
+	  ]
+	}
+  ]
+}

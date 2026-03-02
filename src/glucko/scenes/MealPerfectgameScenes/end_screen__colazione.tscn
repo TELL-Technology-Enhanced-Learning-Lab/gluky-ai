@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://dup8v3q0q5tsm"]
+
+[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://font_esterni/SamuraiBlast.ttf" id="1_5smmc"]
+[ext_resource type="Script" uid="uid://b6n4lajr53n0r" path="res://Scripts/end_screen__colazione.gd" id="1_gahfd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2mtv"]
+font = ExtResource("1_5smmc")
+font_size = 45
+
+[node name="EndScreen__colazione" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gahfd")
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 191.5
+offset_top = 311.0
+offset_right = -175.5
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_Next" type="Button" parent="Panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5smmc")
+theme_override_font_sizes/font_size = 30
+text = "LIVELLO SUCCESSIVO"
+vertical_icon_alignment = 0
+
+[node name="Button_Restart" type="Button" parent="Panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5smmc")
+theme_override_font_sizes/font_size = 23
+text = "RICOMINCIA LIVELLO"
+vertical_icon_alignment = 0
+
+[node name="Button_Quit" type="Button" parent="Panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5smmc")
+theme_override_font_sizes/font_size = 22
+text = "ESCI"
+vertical_icon_alignment = 0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 269.5
+offset_top = 56.0
+offset_right = 908.5
+offset_bottom = 104.0
+size_flags_horizontal = 4
+text = "LIVELLO COLAZIONE COMPLETATO"
+label_settings = SubResource("LabelSettings_f2mtv")
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 142.5
+offset_top = 168.0
+offset_right = 1050.5
+offset_bottom = 237.0
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("1_5smmc")
+theme_override_font_sizes/font_size = 30
+text = "\"HAI IMPARATO A BILANCIARE CORRETTAMENTE I PASTI 
+PER MANTENERE LA GLICEMIA STABILE\""
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button_Next" to="." method="_on_button_next_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button_Restart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button_Quit" to="." method="_on_button_quit_pressed"]

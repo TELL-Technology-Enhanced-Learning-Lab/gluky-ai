@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dy81t86o3mhra"]
+
+[ext_resource type="Script" uid="uid://w0lgbxkr3kef" path="res://scripts/glucolife/gameLogic/GlucoseBar.gd" id="1_okpne"]
+[ext_resource type="Script" uid="uid://bulwpj03x14ji" path="res://scripts/glucolife/gameLogic/HygieneBar.gd" id="2_885im"]
+[ext_resource type="Script" uid="uid://na4babajd2sm" path="res://scripts/glucolife/gameLogic/EnergyBar.gd" id="3_dia44"]
+[ext_resource type="Script" uid="uid://clvckx7ei1h73" path="res://scripts/glucolife/gameLogic/HappinessBar.gd" id="4_nexrn"]
+
+[node name="StatusBarsGlucolife" type="Node2D" unique_id=1582680091]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=848863130]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=487537935]
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.03
+anchor_right = 0.2
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1412444711]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="GlucoseUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=775377117]
+layout_mode = 2
+script = ExtResource("1_okpne")
+
+[node name="Label_Value" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/GlucoseUI" unique_id=1434739601]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 56.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GlucoseBar" type="ProgressBar" parent="CanvasLayer/MarginContainer/HBoxContainer/GlucoseUI" unique_id=1510638624]
+layout_mode = 0
+offset_top = 500.0
+offset_right = 450.0
+offset_bottom = 550.0
+rotation = 4.712389
+value = 50.0
+show_percentage = false
+
+[node name="HygieneUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1370451018]
+layout_mode = 2
+script = ExtResource("2_885im")
+
+[node name="Label_Value" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HygieneUI" unique_id=1722231364]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 56.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HygieneBar" type="ProgressBar" parent="CanvasLayer/MarginContainer/HBoxContainer/HygieneUI" unique_id=538796397]
+layout_mode = 0
+offset_top = 500.0
+offset_right = 450.0
+offset_bottom = 550.0
+rotation = 4.712389
+value = 50.0
+show_percentage = false
+
+[node name="EnergyUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1299306604]
+layout_mode = 2
+script = ExtResource("3_dia44")
+
+[node name="Label_Value" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/EnergyUI" unique_id=481057665]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 56.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnergyBar" type="ProgressBar" parent="CanvasLayer/MarginContainer/HBoxContainer/EnergyUI" unique_id=15256895]
+layout_mode = 0
+offset_top = 500.0
+offset_right = 450.0
+offset_bottom = 550.0
+rotation = 4.712389
+value = 50.0
+show_percentage = false
+
+[node name="HappinessUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=181332268]
+layout_mode = 2
+script = ExtResource("4_nexrn")
+
+[node name="Label_Value" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HappinessUI" unique_id=575108743]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 56.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HappinessBar" type="ProgressBar" parent="CanvasLayer/MarginContainer/HBoxContainer/HappinessUI" unique_id=1888898570]
+layout_mode = 0
+offset_top = 500.0
+offset_right = 450.0
+offset_bottom = 550.0
+rotation = 4.712389
+value = 50.0
+show_percentage = false

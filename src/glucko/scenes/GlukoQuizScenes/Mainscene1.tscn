@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://y4m6pgj2eavk"]
+
+[ext_resource type="Texture2D" uid="uid://b0ee1h2q5gkff" path="res://art/assets/GlukoQuizAssets/Backgrounds/Copilot_20260126_194104.png" id="1_wx0c4"]
+[ext_resource type="Texture2D" uid="uid://dwnb8y5tud33t" path="res://art/assets/GlukoQuizAssets/Weirdthers candies/Weirdthers_Candy_blueberry_shadow_128.png" id="2_pqq7s"]
+[ext_resource type="Texture2D" uid="uid://crb2poolbgoaq" path="res://art/assets/GlukoQuizAssets/Bubble/Bubble_512.png" id="3_pscp3"]
+[ext_resource type="Script" uid="uid://cvm5huthuf4rt" path="res://scripts/GlukoQuizScript/bolla.gd" id="4_ee2yi"]
+[ext_resource type="FontFile" uid="uid://dlb3tyd0lvt1k" path="res://art/font_esterni/Candyshop.otf" id="4_tj7oh"]
+[ext_resource type="Texture2D" uid="uid://ctmmhe30gygni" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_back_01_150x150.png" id="6_a4kid"]
+[ext_resource type="Script" uid="uid://b7o5b6lfww5u4" path="res://scripts/GlukoQuizScript/BackMenuPrincipale.gd" id="7_a0s1d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ee2yi"]
+font = ExtResource("4_tj7oh")
+font_size = 70
+font_color = Color(0.5372549, 0, 0.5372549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a4kid"]
+font = ExtResource("4_tj7oh")
+font_size = 80
+font_color = Color(0.5372549, 0, 0.5372549, 1)
+outline_size = 5
+outline_color = Color(0, 1, 1, 1)
+shadow_size = 10
+shadow_color = Color(0, 0.59607846, 0.7176471, 1)
+
+[node name="MainScene1" type="Control" unique_id=1420921370]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=54277846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1920.0
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -3.1415927
+texture = ExtResource("1_wx0c4")
+
+[node name="Particelle_Caramelle" type="CPUParticles2D" parent="." unique_id=1096318513]
+position = Vector2(954, -120)
+amount = 65
+texture = ExtResource("2_pqq7s")
+lifetime = 12.0
+explosiveness = 0.2
+lifetime_randomness = 0.1
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(960, 0)
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 50.0
+initial_velocity_max = 120.0
+angular_velocity_max = 35.0
+linear_accel_min = 20.0
+linear_accel_max = 30.0
+scale_amount_min = 0.2
+
+[node name="Buttons" type="Control" parent="." unique_id=1693838537]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level1" type="TextureButton" parent="Buttons" unique_id=1511793399]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18300001
+anchor_top = 0.52000004
+anchor_right = 0.18300001
+anchor_bottom = 0.52000004
+offset_left = -255.36002
+offset_top = -255.60004
+offset_right = 256.63998
+offset_bottom = 256.39996
+texture_normal = ExtResource("3_pscp3")
+script = ExtResource("4_ee2yi")
+wave_amplitude = 12.0
+sparkle_strength = 0.15
+
+[node name="Label" type="Label" parent="Buttons/Level1" unique_id=531596602]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.504
+anchor_right = 0.5
+anchor_bottom = 0.504
+offset_left = -163.0
+offset_top = -47.048004
+offset_right = 165.0
+offset_bottom = 46.951996
+text = "Colazione"
+label_settings = SubResource("LabelSettings_ee2yi")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Level2" type="TextureButton" parent="Buttons" unique_id=1013478723]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.53000003
+anchor_right = 0.50200003
+anchor_bottom = 0.53000003
+offset_left = -256.8401
+offset_top = -256.40002
+offset_right = 255.15991
+offset_bottom = 255.59998
+texture_normal = ExtResource("3_pscp3")
+script = ExtResource("4_ee2yi")
+wave_amplitude = 8.0
+wave_speed = 1.3
+sparkle_strength = 0.25
+start_delay = 0.4
+
+[node name="Label" type="Label" parent="Buttons/Level2" unique_id=2096535097]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.508
+anchor_right = 0.5
+anchor_bottom = 0.508
+offset_left = -142.0
+offset_top = -47.09601
+offset_right = 139.0
+offset_bottom = 46.90399
+text = "Pranzo"
+label_settings = SubResource("LabelSettings_ee2yi")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Level3" type="TextureButton" parent="Buttons" unique_id=1993187072]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.814
+anchor_top = 0.53300005
+anchor_right = 0.814
+anchor_bottom = 0.53300005
+offset_left = -256.88
+offset_top = -255.64008
+offset_right = 255.12
+offset_bottom = 256.35992
+texture_normal = ExtResource("3_pscp3")
+script = ExtResource("4_ee2yi")
+wave_amplitude = 15.0
+wave_speed = 0.9
+start_delay = 0.8
+
+[node name="Label" type="Label" parent="Buttons/Level3" unique_id=829364295]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.508
+anchor_right = 0.5
+anchor_bottom = 0.508
+offset_left = -142.0
+offset_top = -47.09601
+offset_right = 139.0
+offset_bottom = 46.90399
+text = "Cena"
+label_settings = SubResource("LabelSettings_ee2yi")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=797465359]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50600004
+anchor_top = 0.133
+anchor_right = 0.50600004
+anchor_bottom = 0.133
+offset_left = -356.52008
+offset_top = -47.64
+offset_right = 355.47992
+offset_bottom = 48.36
+text = "Seleziona un livello"
+label_settings = SubResource("LabelSettings_a4kid")
+horizontal_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=274214788]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06366672
+anchor_top = 0.103259265
+anchor_right = 0.06366672
+anchor_bottom = 0.103259265
+offset_left = -75.24011
+offset_top = -75.520004
+offset_right = 74.75989
+offset_bottom = 74.479996
+texture_normal = ExtResource("6_a4kid")
+script = ExtResource("7_a0s1d")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Buttons/Level1" to="Buttons/Level1" method="level1_on_pressed"]
+[connection signal="pressed" from="Buttons/Level2" to="Buttons/Level1" method="_on_level_2_pressed"]
+[connection signal="pressed" from="Buttons/Level3" to="Buttons/Level1" method="_on_level_3_pressed"]
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=4 uid="uid://dby67cf25ow3g"]
+
+[ext_resource type="PackedScene" uid="uid://dmwpvthuy4qdt" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/candy-bar.glb" id="1_j55st"]
+[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="1_rp6ec"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j55st"]
+_surfaces = [{
+"aabb": AABB(-0.1659696, -0.017394368, -0.057177722, 0.3319392, 0.10463235, 0.11161777),
+"attribute_data": PackedByteArray("4PxfPpVFFT/g/F8+lUUVP+D8Xz6VRRU/4PxfPpMyEz/g/F8+lUUVP+D8Xz6TMhM/4PxfPpVFFT/g/F8+kzITP+D8Xz6VRRU/4PxfPpVFFT/g/F8+lUUVP+D8Xz6VRRU/4PxfPpVFFT/g/F8+kzITP+D8Xz6VRRU/4PxfPpVFFT/g/F8+lUUVP+D8Xz6VRRU/4PxfPpMyEz/g/F8+lUUVP+D8Xz6VRRU/4PxfPpMyEz/g/F8+lUUVP+D8Xz6tzCw/4PxfPq3MLD/g/F8+rcwsP+D8Xz6tzCw/4PxfPq3MLD/g/F8+lUUVP+D8Xz6tzCw/4PxfPpVFFT/g/F8+lUUVP+D8Xz6tzCw/4PxfPq3MLD/g/F8+lUUVP+D8Xz6VRRU/4PxfPpVFFT/g/F8+lUUVP+D8Xz6tzCw/4PxfPpVFFT/g/F8+rcwsP+D8Xz6VRRU/4PxfPpVFFT/g/F8+lUUVP+D8Xz6VRRU/4PxfPq3MLD/g/F8+rcwsP+D8Xz6VRRU/4PxfPpVFFT/g/F8+lUUVP+D8Xz6VRRU/4PxfPpVFFT/g/F8+lUUVP+D8Xz6VRRU/4PxfPpVFFT/g/F8+lUUVP+D8Xz6VRRU/4PxfPpVFFT/g/F8+kzITP+D8Xz6VRRU/4PxfPpMyEz/g/F8+kzITP+D8Xz6VRRU/4PxfPpVFFT/g/F8+kzITP+D8Xz6TMhM/4PxfPpMyEz/g/F8+kzITP+D8Xz6VRRU/4PxfPpVFFT/g/F8+kzITP+D8Xz6TMhM/4PxfPpMyEz/g/F8+lUUVP+D8Xz6VRRU/4PxfPpMyEz/g/F8+kzITP+D8Xz6TMhM/4PxfPplRGT/g/F8+mVEZP+D8Xz6VRRU/4PxfPpMyEz/g/F8+kzITP+D8Xz6VRRU/4PxfPpVFFT/g/F8+kzITP+D8Xz6VRRU/4PxfPpMyEz/g/F8+kzITP+D8Xz6VRRU/4PxfPpMyEz/g/F8+lUUVP+D8Xz6VRRU/4PxfPpMyEz/g/F8+kzITP+D8Xz6TMhM/4PxfPpMyEz/g/F8+kzITP+D8Xz6TMhM/4PxfPpMyEz/g/F8+kzITP+D8Xz6TMhM/4PxfPpMyEz/g/F8+kzITP+D8Xz6TMhM/4PxfPplRGT/g/F8+mVEZP+D8Xz6ZURk/4PxfPplRGT/g/F8+mVEZP+D8Xz6ZURk/4PxfPplRGT/g/F8+mVEZP+D8Xz6ZURk/4PxfPplRGT8="),
+"format": 34359742487,
+"index_count": 216,
+"index_data": PackedByteArray("AAACAAEAMgAAADMACQAyADQACAAKAAkANQA2AAQANwA4ADUABgA5ADcADAANADoADQAMADsACwANADsADQALADwAPQA/AD4APwA9AEAAQAAOAD8ADgBAAEEAQgAPAEMADwBCAEQAQgBFAEQARQBCAEYARwAQAEgAEABHAEkARwARAEkAEQBHABUASgBLABYASwBKAEwATQATABQAEwBNABIATgAuAC0ALgBOAE8AUABSAFEAUgBQAFMAVABSAFMAUgBUAFUAVgBYAFcAWABWAFkAFwAZABgAGQAXABoAWgBcAFsAXABaAF0AXgBgAF8AYABeAAMAAwBeAGEAAwBhAGIAYgBhAAUAYgAFAGMAYwAFAGQAYwBkAGUAZQBkAGYAZQBmAAcABwBmAGcABwBnAGgAaQAbAB0AGwBpABwAGwAcAB4AGwAeAB8AGwAfAGoAawAiAGwAIgBrACMAIwBrACQAJABrACUAKABtACYAbQAoACcAJwAoACkAKQAoACoAKgAoAG4AKwBvACwAbwArAHAAcAArAC8AcAAvADAAcAAwADEAcQAhACAAIQBxAHIA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 115,
+"vertex_data": PackedByteArray("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")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rp6ec"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j55st"]
+size = Vector3(0.3843994, 0.15867615, 0.19946289)
+
+[node name="Barretta_cioccolato" type="StaticBody3D"]
+script = ExtResource("1_rp6ec")
+food_category = "Baretta al cioccolato"
+indice_glicemico = 90.0
+carbs = 85.0
+prot = 2.0
+fat = 34.0
+nutrizione_info = "La barretta al cioccolato è ricca di zuccheri semplici e grassi.
+Fornisce energia rapida, ma può provocare un aumento veloce della glicemia."
+
+[node name="candy-bar2" parent="." instance=ExtResource("1_j55st")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="candy-bar2/candy-bar" index="0"]
+mesh = SubResource("ArrayMesh_j55st")
+surface_material_override/0 = SubResource("StandardMaterial3D_rp6ec")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00079345703, 0.037879944, 0.004272461)
+shape = SubResource("BoxShape3D_j55st")
+
+[editable path="candy-bar2"]

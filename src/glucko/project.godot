@@ -15,13 +15,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Glucko"
-run/main_scene="uid://53ulaprq6ohm"
+run/main_scene="uid://b204wwpq2eegd"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="res://art/music/default_bus_layout.tres"
+buses/default_bus_layout="uid://dpfbqlrj6t5qu"
+driver/enable_input=true
 
 [autoload]
 
@@ -29,7 +30,9 @@ ResolutionManager="*res://scripts/general/resolution_manager.gd"
 OrientationManager="*res://scripts/general/auto_orientation_manager.gd"
 GlucolifeDataManager="*res://scripts/general/GlucolifeDataManager.gd"
 FoodDatabase="*res://scripts/glucorun/game logic/food_database.gd"
-TTSManager="*uid://dbgd21eea5phn"
+STT="*uid://b2ci41h133vst"
+GameState="*uid://wr8mqi865p40"
+MusicManager="*uid://dfuq6va10lnnd"
 
 [display]
 
@@ -93,7 +96,12 @@ sprint={
 }
 inject_insulin={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":105,"location":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+interact={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
 

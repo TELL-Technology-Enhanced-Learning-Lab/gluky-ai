@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3lqs4cs6ojn2"]
+
+[ext_resource type="Texture2D" uid="uid://4wi1k41moqaf" path="res://Assets/assets_img_tutorial/Tutorialgame2.png" id="1_48rv3"]
+[ext_resource type="Script" uid="uid://c2olmq2guy5sg" path="res://scenes_tutorial/BackMenu.gd" id="1_jx8q0"]
+[ext_resource type="FontFile" uid="uid://bwpq6tmvp82l0" path="res://font_esterni/hHittoSushi.ttf" id="3_7xeve"]
+[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://font_esterni/SamuraiBlast.ttf" id="3_alxmk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_48rv3"]
+font = ExtResource("3_7xeve")
+font_size = 30
+font_color = Color(1, 0.9411765, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx8q0"]
+bg_color = Color(1, 0.3372549, 0.3372549, 0.89411765)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.81476295, 0.25979638, 0.24835199, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alxmk"]
+bg_color = Color(1, 0.33194208, 0.3609034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xeve"]
+bg_color = Color(1, 1, 1, 0.8156863)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h8ko"]
+bg_color = Color(1, 0.3372549, 0.3372549, 0.89411765)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.81476295, 0.25979638, 0.24835199, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igk1n"]
+bg_color = Color(1, 0.33194208, 0.3609034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiycc"]
+bg_color = Color(1, 1, 1, 0.8156863)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Tutorial_3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jx8q0")
+
+[node name="Img_tutorial_3" type="TextureRect" parent="."]
+modulate = Color(0.88235295, 0.88235295, 0.88235295, 1)
+self_modulate = Color(0.3372549, 0.3372549, 0.3372549, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_48rv3")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26200002
+anchor_top = 0.093
+anchor_right = 0.94400007
+anchor_bottom = 0.273
+offset_left = 0.17596436
+offset_top = -0.26399994
+offset_right = 0.5119629
+offset_bottom = 0.09599304
+text = "I cibi per formare i piatti verranno visualizzati sopra un tavolino 
+all'interno della stanza, come mostrato in figura.
+"
+label_settings = SubResource("LabelSettings_48rv3")
+
+[node name="Back2" type="Button" parent="."]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31100002
+anchor_top = 0.758
+anchor_right = 0.31100002
+anchor_bottom = 0.758
+offset_left = -160.27203
+offset_top = -35.18402
+offset_right = 159.72797
+offset_bottom = 34.81598
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+theme_override_constants/h_separation = 9
+theme_override_fonts/font = ExtResource("3_alxmk")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_jx8q0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alxmk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7xeve")
+text = "INDIETRO"
+
+[node name="avanti2" type="Button" parent="."]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72300005
+anchor_top = 0.758
+anchor_right = 0.72300005
+anchor_bottom = 0.758
+offset_left = -159.89606
+offset_top = -35.18402
+offset_right = 160.10394
+offset_bottom = 34.81598
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+theme_override_fonts/font = ExtResource("3_alxmk")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_8h8ko")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igk1n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fiycc")
+text = "AVANTI"
+
+[connection signal="pressed" from="Back2" to="." method="_on_back_2_pressed"]
+[connection signal="pressed" from="avanti2" to="." method="_on_avanti_2_pressed"]

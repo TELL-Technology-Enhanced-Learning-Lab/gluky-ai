@@ -1,4 +1,3 @@
-# res://scripts/Glucolife/ScriptAnimation/food_item_3d.gd
 extends Node3D
 
 signal food_selected

@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://c206a8taxejru"]
+
+[ext_resource type="Script" uid="uid://c2olmq2guy5sg" path="res://scenes_tutorial/BackMenu.gd" id="1_ert05"]
+[ext_resource type="Texture2D" uid="uid://tqprvq3xewtn" path="res://Assets/assets_img_tutorial/Tutorialgame3.png" id="1_ms6sn"]
+[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://font_esterni/SamuraiBlast.ttf" id="3_d3l65"]
+[ext_resource type="FontFile" uid="uid://bwpq6tmvp82l0" path="res://font_esterni/hHittoSushi.ttf" id="3_djrpn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ms6sn"]
+font = ExtResource("3_djrpn")
+font_size = 30
+font_color = Color(1, 0.9411765, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ert05"]
+bg_color = Color(1, 0.3372549, 0.3372549, 0.89411765)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.81476295, 0.25979638, 0.24835199, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3l65"]
+bg_color = Color(1, 0.33194208, 0.3609034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djrpn"]
+bg_color = Color(1, 1, 1, 0.8156863)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h3ol"]
+bg_color = Color(1, 0.3372549, 0.3372549, 0.89411765)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.81476295, 0.25979638, 0.24835199, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v24ee"]
+bg_color = Color(1, 0.33194208, 0.3609034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkyu5"]
+bg_color = Color(1, 1, 1, 0.8156863)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Tutorial_4" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ert05")
+
+[node name="Img_tutorial_4" type="TextureRect" parent="."]
+modulate = Color(0.88235295, 0.88235295, 0.88235295, 1)
+self_modulate = Color(0.3372549, 0.3372549, 0.3372549, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ms6sn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24100001
+anchor_top = 0.069000006
+anchor_right = 0.989
+anchor_bottom = 0.43500003
+offset_left = 0.36798096
+offset_top = 0.28799438
+offset_right = -0.32800293
+offset_bottom = 0.1199646
+text = "Dopo aver preso un cibo dal tavolino bisognerà posizionarlo
+sul piatto. Al terzo cibo inserito, il gioco mostrerà una schermata 
+che indicherà se il piatto è perfetto oppure no con le varie spiegazioni.
+Assegnando un punteggio ogni qual volta si completa un piatto perfetto.
+Il livello termina quando si creano abbastanza piatti perfetti."
+label_settings = SubResource("LabelSettings_ms6sn")
+
+[node name="Back3" type="Button" parent="."]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36
+anchor_top = 0.68500006
+anchor_right = 0.36
+anchor_bottom = 0.68500006
+offset_left = -159.72003
+offset_top = -34.880035
+offset_right = 160.27997
+offset_bottom = 35.119965
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+theme_override_constants/h_separation = 9
+theme_override_fonts/font = ExtResource("3_d3l65")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_ert05")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d3l65")
+theme_override_styles/hover = SubResource("StyleBoxFlat_djrpn")
+text = "INDIETRO"
+
+[node name="Esc" type="Button" parent="."]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.707
+anchor_top = 0.68700004
+anchor_right = 0.707
+anchor_bottom = 0.68700004
+offset_left = -160.46399
+offset_top = -35.176025
+offset_right = 159.53601
+offset_bottom = 34.823975
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+theme_override_fonts/font = ExtResource("3_d3l65")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_5h3ol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v24ee")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gkyu5")
+text = "ESCI"
+
+[connection signal="pressed" from="Back3" to="." method="_on_back_3_pressed"]
+[connection signal="pressed" from="Esc" to="." method="_on_esc_pressed"]

@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://os6n2cppojxu"]
+
+[ext_resource type="FontFile" uid="uid://bfkbf1v0dokdm" path="res://fontEsterni/Winter Tosca.otf" id="1_8o0ds"]
+[ext_resource type="Script" uid="uid://dvwflsaor1ghw" path="res://Scripts/ExplanationScreen.gd" id="1_3767u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3767u"]
+font = ExtResource("1_8o0ds")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_8o0ds"]
+font = ExtResource("1_8o0ds")
+font_size = 21
+
+[sub_resource type="LabelSettings" id="LabelSettings_2pc82"]
+font = ExtResource("1_8o0ds")
+font_size = 24
+
+[sub_resource type="Theme" id="Theme_3767u"]
+default_font = ExtResource("1_8o0ds")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3767u"]
+bg_color = Color(0, 0.46666667, 0.8392157, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nf3xj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pc82"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pc82"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf3xj"]
+bg_color = Color(0, 0.6456919, 0.913016, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="PopupEducazione" type="Control" unique_id=645528442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3767u")
+
+[node name="Panel" type="Panel" parent="." unique_id=267813305]
+modulate = Color(1, 1, 1, 0.79607844)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=783271455]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18135418
+anchor_top = 0.30044448
+anchor_right = 0.83735424
+anchor_bottom = 0.6384445
+offset_left = -0.2000122
+offset_top = -0.4800415
+offset_right = 0.7791748
+offset_bottom = 0.47998047
+theme_override_constants/separation = 40
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1420912652]
+layout_mode = 2
+text = "SPIEGAZIONE GLUKOQUIZ"
+label_settings = SubResource("LabelSettings_3767u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnswerLabel" type="Label" parent="VBoxContainer" unique_id=1717773198]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_8o0ds")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExplanationLabel" type="Label" parent="VBoxContainer" unique_id=51444488]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_2pc82")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=1597938418]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_3767u")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_8o0ds")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3767u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nf3xj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2pc82")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2pc82")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_nf3xj")
+text = "CHIUDI"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1099862189]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfuq6va10lnnd"]
+
+[ext_resource type="AudioStream" uid="uid://ic7ynlw0785i" path="res://music/Sound1Menù.mp3" id="1_74tc1"]
+[ext_resource type="Script" uid="uid://d1c4ck0uh102e" path="res://music/music_manager.gd" id="1_pqths"]
+
+[node name="MusicManager" type="Node2D"]
+script = ExtResource("1_pqths")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_74tc1")
+volume_db = -8.0
+parameters/looping = true

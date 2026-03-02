@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://mjo6f0mw2fr3"]
+
+[ext_resource type="PackedScene" uid="uid://dbmfvn36w5gip" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/cutting-board-round.glb" id="1_7i4uh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7i4uh"]
+size = Vector3(0.84576416, 0.12145996, 0.8494873)
+
+[node name="Plate2" type="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="cutting-board-round2" parent="." instance=ExtResource("1_7i4uh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030212402, 0.023572296, -0.0006713867)
+shape = SubResource("BoxShape3D_7i4uh")
+
+[node name="OBjects" type="Node3D" parent="."]
+
+[node name="OBjectsplaces" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="OBjectsplaces"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.15955155, 0.100621104, -0.0043464676)
+
+[editable path="cutting-board-round2"]

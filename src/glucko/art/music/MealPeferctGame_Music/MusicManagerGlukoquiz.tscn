@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://l38ploamf2j1"]
+
+[ext_resource type="AudioStream" uid="uid://bqm37i54kqvxt" path="res://Assets/Music/La Roulette.mp3" id="1_w1xo3"]
+
+[node name="Music_manager" type="AudioStreamPlayer" unique_id=1838264690]
+stream = ExtResource("1_w1xo3")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

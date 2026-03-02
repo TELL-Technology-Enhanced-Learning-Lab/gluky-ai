@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bb5bd5kms0cfc"]
+
+[ext_resource type="Script" uid="uid://ckvqf6hn55x35" path="res://Scripts/score_hud.gd" id="1_gth8a"]
+[ext_resource type="Texture2D" uid="uid://ciq2nwui2m7an" path="res://Assets/GUI Panels/Score_panel_300x143.png" id="1_j20jy"]
+[ext_resource type="FontFile" uid="uid://bfkbf1v0dokdm" path="res://fontEsterni/Winter Tosca.otf" id="3_5u8y1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gth8a"]
+font = ExtResource("3_5u8y1")
+font_size = 40
+
+[node name="Score_HUD" type="Control" unique_id=1902345186]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gth8a")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=259836660]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.157
+anchor_bottom = 0.132
+offset_right = -0.38735962
+offset_bottom = 0.44000244
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j20jy")
+
+[node name="ScoreLabel" type="Label" parent="TextureRect" unique_id=1226686856]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51500005
+anchor_top = 0.619
+anchor_right = 0.51500005
+anchor_bottom = 0.619
+offset_left = -95.04213
+offset_top = -27.517006
+offset_right = 94.95787
+offset_bottom = 27.482994
+label_settings = SubResource("LabelSettings_gth8a")
+horizontal_alignment = 1
+vertical_alignment = 1

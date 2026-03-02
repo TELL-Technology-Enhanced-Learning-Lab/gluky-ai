@@ -1,0 +1,114 @@
+{
+  "questions": [
+	{
+	  "text": "Quale di questi è un alimento sano per la colazione?",
+	  "answers": ["Cornetto alla crema", "Frutta fresca", "Bibita gassata", "Patatine"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Il cornetto alla crema contiene molti zuccheri aggiunti e grassi saturi che possono causare picchi glicemici. Non è l'ideale per chi deve controllare il diabete. La risposta corretta è la frutta fresca.",
+		"Risposta Corretta! La frutta fresca è l'ideale per iniziare la giornata, contiene vitamine, minerali e zuccheri naturali che vengono assorbiti gradualmente dal corpo.",
+		"Risposta Errata! Le bibite gassate sono piene di zuccheri raffinati e possono far aumentare rapidamente la glicemia. Meglio evitarle, soprattutto a colazione! La risposta corretta è la frutta fresca.",
+        "Risposta Errata! Le patatine sono ricche di sale e grassi, non sono adatte per la colazione e possono causare problemi di salute se consumate regolarmente. La risposta corretta è la frutta fresca."
+	  ]
+	},
+	{
+	  "text": "Quale bevanda è la migliore per iniziare la giornata?",
+	  "answers": ["Acqua", "Cola", "Energy drink", "Succo"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! L'acqua perchè è fondamentale per l'idratazione, non contiene zuccheri aggiunti e aiuta il corpo a funzionare al meglio. È la scelta migliore!",
+		"Risposta Errata! La cola contiene moltissimi zuccheri raffinati e caffeina. Può causare picchi glicemici pericolosi per chi ha il diabete. La risposta corretta è l'acqua.",
+		"Risposta Errata! Gli energy drink sono pieni di zuccheri, caffeina e altre sostanze stimolanti. Non sono adatti per iniziare la giornata in modo sano. La risposta corretta è l'acqua.",
+        "Risposta Errata! Il succo di frutta, anche se naturale, contiene molti zuccheri. È meglio mangiare la frutta intera che bere il succo, oppure consumarlo con moderazione. La risposta corretta è l'acqua."
+	  ]
+	},
+	{
+	  "text": "Quale alimento dà energia senza troppo zucchero?",
+	  "answers": ["Caramelle", "Yogurt bianco", "Cioccolato", "Biscotti"],
+	  "correct": 1,
+	  "explanations": [
+		"Risposta Errata! Le caramelle sono quasi interamente composte da zucchero. Danno energia immediata ma causano un rapido calo glicemico dopo poco tempo. La risposta corretta è lo yogurt bianco.",
+		"Risposta Corretta! Lo yogurt bianco che contiene proteine che danno energia duratura, probiotici utili per la digestione e ha pochi zuccheri. Perfetto per il diabete!",
+		"Risposta Errata! Il cioccolato, specialmente quello al latte, contiene molti zuccheri e grassi. Anche se dà energia, non è la scelta più sana per chi deve controllare la glicemia. La risposta corretta è lo yogurt bianco.",
+        "Risposta Errata! I biscotti industriali sono ricchi di zuccheri semplici e grassi. Meglio scegliere alternative più salutari come yogurt o frutta secca. La risposta corretta è lo yogurt bianco."
+	  ]
+	},
+	{
+	  "text": "Quale colazione è più equilibrata?",
+	  "answers": ["Latte e frutta", "Solo cioccolata", "Patatine e cola", "Torta e gelato"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! Latte e frutta formano una colazione equilibrata: il latte fornisce proteine e calcio, la frutta vitamine e fibre. Ideale per un diabetico!",
+		"Risposta Errata! La cioccolata da sola contiene troppi zuccheri e grassi, senza proteine o fibre. Non è sufficiente per una colazione sana ed equilibrata. La risposta corretta è Latte e Frutta.",
+		"Risposta Errata! Patatine e cola sono una combinazione pessima! Troppi grassi, sale e zuccheri. Questa colazione può causare seri problemi di glicemia. La risposta corretta è Latte e Frutta.",
+        "Risposta Errata! Torta e gelato sono dolci ricchi di zuccheri e grassi. Non sono adatti per la colazione, specialmente per chi ha il diabete. La risposta corretta è Latte e Frutta."
+	  ]
+	},
+	{
+	  "text": "Quale alimento contiene più vitamine?",
+	  "answers": ["Frutta", "Caramelle", "Merendina", "Cioccolata"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! La frutta dato è ricca di vitamine (A, C, E), minerali e antiossidanti. È essenziale per una dieta sana e aiuta a controllare il diabete.",
+		"Risposta Errata! Le caramelle contengono solo zucchero e coloranti artificiali. Non hanno vitamine né nutrienti utili per il corpo. La risposta corretta è la Frutta.",
+		"Risposta Errata! Le merendine industriali sono piene di zuccheri, grassi e conservanti. Contengono pochissime vitamine e non sono salutari. La risposta corretta è la Frutta.",
+        "Risposta Errata! La cioccolata contiene alcuni antiossidanti, ma è principalmente composta da zuccheri e grassi. Non è una fonte significativa di vitamine. La risposta corretta è la Frutta."
+	  ]
+	},
+	{
+	  "text": "Quale di questi è un cereale sano?",
+	  "answers": ["Cereali senza zucchero", "Cereali con zucchero", "Smarties", "Caramelle colorate"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! I cereali senza zucchero, meglio se integrali, forniscono fibre e carboidrati complessi che rilasciano energia gradualmente. Perfetti per il diabete!",
+		"Risposta Errata! I cereali con zucchero aggiunto hanno un alto indice glicemico e possono causare picchi di glucosio nel sangue. Meglio scegliere quelli senza zucchero. La risposta corretta è cereali senza zucchero.",
+		"Risposta Errata! Gli Smarties sono caramelle al cioccolato, non cereali! Sono pieni di zucchero e non adatti per una colazione sana. La risposta corretta è cereali senza zucchero.",
+        "Risposta Errata! Le caramelle colorate non hanno nulla a che vedere con i cereali. Sono dolciumi pieni di zucchero da evitare a colazione. La risposta corretta è cereali senza zucchero."
+	  ]
+	},
+	{
+	  "text": "Cosa è meglio mangiare se hai bisogno di energia per la scuola?",
+	  "answers": ["Frutta e yogurt", "Solo biscotti", "Caramelle", "Patatine"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! Frutta e yogurt danno energia duratura grazie alle proteine, fibre e zuccheri naturali. Ti aiutano a rimanere concentrato a scuola tutto il giorno!",
+		"Risposta Errata! I biscotti da soli danno energia rapida ma di breve durata. Senza proteine o fibre, il livello di zucchero nel sangue scende velocemente. La risposta corretta è Frutta e yogurt.",
+		"Risposta Errata! Le caramelle danno un'energia immediata ma di cortissima durata. Dopo poco tempo ti sentirai stanco e avrai di nuovo fame. La risposta corretta è Frutta e yogurt.",
+        "Risposta Errata! Le patatine sono ricche di grassi e sale, ma povere di nutrienti. Non danno l'energia necessaria per affrontare la giornata scolastica. La risposta corretta è Frutta e yogurt."
+	  ]
+	},
+	{
+	  "text": "Quale alimento è ricco di fibre?",
+	  "answers": ["Pane integrale", "Cioccolata", "Merendina", "Patatine"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! Il pane integrale dato che è ricco di fibre che aiutano la digestione e rallentano l'assorbimento degli zuccheri. Ottimo per controllare la glicemia!",
+		"Risposta Errata! La cioccolata contiene pochissime fibre. È principalmente composta da zuccheri e grassi, non è una buona fonte di fibre. La risposta corretta è il pane integrale.",
+		"Risposta Errata! Le merendine industriali sono fatte con farina raffinata e contengono poche fibre. Meglio scegliere alimenti integrali. La risposta corretta è il pane integrale.",
+        "Risposta Errata! Le patatine fritte non contengono fibre significative. Sono ricche di grassi e sale, ma povere di nutrienti essenziali. La risposta corretta è il pane integrale."
+	  ]
+	},
+	{
+	  "text": "Quale colazione ti fa sentire sazio più a lungo?",
+	  "answers": ["Yogurt e frutta", "Caramelle", "Torta", "Bibita zuccherata"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! Yogurt e frutta, contengono proteine e fibre che rallentano la digestione e ti fanno sentire sazio più a lungo. Perfetto per evitare fame a metà mattina!",
+		"Risposta Errata! Le caramelle sono solo zucchero. Danno energia immediata ma la fame torna subito dopo. Non ti fanno sentire sazio. La risposta corretta è yogurt e frutta.",
+		"Risposta Errata! La torta è ricca di zuccheri semplici che vengono assorbiti rapidamente. La fame torna presto e la glicemia fa su e giù. La risposta corretta è yogurt e frutta.",
+        "Risposta Errata! Una bibita zuccherata non contiene nutrienti solidi. Non ti fa sentire sazio e causa picchi glicemici. Mai sostituire il cibo con bevande dolci! La risposta corretta è yogurt e frutta."
+	  ]
+	},
+	{
+	  "text": "Quale di questi è il miglior inizio per una giornata sana?",
+	  "answers": ["Acqua e frutta", "Gelato", "Patatine", "Torta al cioccolato"],
+	  "correct": 0,
+	  "explanations": [
+		"Risposta Corretta! Acqua e frutta dato che sono il modo migliore per iniziare la giornata: idratazione e vitamine per partire con energia in modo sano!",
+		"Risposta Errata! Il gelato è un dolce freddo pieno di zuccheri e grassi. Non è adatto per iniziare la giornata, può causare problemi digestivi e glicemici. La risposta corretta è acqua e frutta.",
+		"Risposta Errata! Le patatine a colazione? Mai! Sono piene di grassi e sale, totalmente inadatte per il primo pasto della giornata. La risposta corretta è acqua e frutta.",
+        "Risposta Errata! La torta al cioccolato è ricchissima di zuccheri e grassi. Può sembrare golosa ma è pessima per la salute, specialmente per chi ha il diabete. La risposta corretta è acqua e frutta."
+	  ]
+	}
+  ]
+}
