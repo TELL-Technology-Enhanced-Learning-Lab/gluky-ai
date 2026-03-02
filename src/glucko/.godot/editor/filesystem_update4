@@ -1,4 +1,2 @@
-res://scenes/menus/glucky/Minigame_Selection.tscn
 res://scripts/general/background_hue.gd
-res://scenes/menus/glucolife/SplashScreen.tscn
-res://scripts/Glucolife/ScriptMenu/splash_screen.gd
+res://scenes/menus/glucky/Minigame_Selection.tscn
