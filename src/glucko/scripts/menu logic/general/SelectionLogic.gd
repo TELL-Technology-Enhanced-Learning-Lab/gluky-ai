@@ -11,10 +11,19 @@ var is_loading_scene: bool = false
 
 func _ready() -> void:
 	visible = false
+	_setup_camera_connections()
+
+func _setup_camera_connections():
 	if camera_node:
-		camera_node.player_camera_movement.connect(_on_camera_moved)
-		camera_node.animation_sequence_completed.connect(_on_animation_completed)
-		camera_node.camera_movement_finished.connect(_on_camera_movement_finished)
+		if not camera_node.player_camera_movement.is_connected(_on_camera_moved):
+			camera_node.player_camera_movement.connect(_on_camera_moved)
+		if not camera_node.animation_sequence_completed.is_connected(_on_animation_completed):
+			camera_node.animation_sequence_completed.connect(_on_animation_completed)
+		if not camera_node.camera_movement_finished.is_connected(_on_camera_movement_finished):
+			camera_node.camera_movement_finished.connect(_on_camera_movement_finished)
+		
+		if camera_node.has_method("_enable_swipe_input"):
+			camera_node._enable_swipe_input()
 
 func _on_camera_moved(cposition: int):
 	if not is_zoomed:
@@ -59,8 +68,12 @@ func _zoom_to_target():
 	target_object = _find_target_object()
 	if not target_object:
 		return
-	if camera_node.has_method("_prepare_camera_zoom"):
-		camera_node._prepare_camera_zoom(target_object)
+	if camera_node and camera_node.has_method("_prepare_camera_zoom"):
+		var zoom_tween = camera_node._prepare_camera_zoom(target_object)
+		if zoom_tween:
+			is_zoomed = true
+			text = "Back"
+			await zoom_tween.finished
 
 func _reset_camera():
 	if not camera_node or not target_object:
@@ -112,6 +125,11 @@ func _reset_camera():
 	_update_button_text()
 	
 	await reset_tween.finished
+	
+	if camera_node.has_meta("original_position_before_zoom"):
+		camera_node.remove_meta("original_position_before_zoom")
+	if camera_node.has_meta("original_rotation_before_zoom"):
+		camera_node.remove_meta("original_rotation_before_zoom")
 
 func _update_button_text():
 	if is_loading_scene:
@@ -129,6 +147,9 @@ func _update_button_text():
 
 func _pressed():
 	if is_loading_scene:
+		return
+	
+	if not camera_node:
 		return
 	
 	if current_camera_position == 1 and not is_zoomed:
@@ -161,7 +182,7 @@ func _pressed():
 	if not target_object:
 		match current_camera_position:
 			0:
-				await _load_kitchen_scene()
+				_load_minigame_scene()
 			1:
 				pass
 			2:
@@ -194,7 +215,7 @@ func _pressed():
 	
 	match current_camera_position:
 		0:
-			await _load_kitchen_scene()
+			_load_minigame_scene()
 		1:
 			pass
 		2:
@@ -244,38 +265,21 @@ func _restore_target_object():
 	if book_node:
 		book_node.visible = false
 
-func _load_kitchen_scene() -> void:
+func _load_minigame_scene() -> void:
 	if is_loading_scene:
 		return
 	
 	is_loading_scene = true
 	_update_button_text()
 	
-	set_process(false)
-	set_physics_process(false)
-	
-	await get_tree().process_frame
-	
 	var kitchen_scene_path = "res://scenes/menus/glucky/Minigame_Selection.tscn"
 	
 	if not ResourceLoader.exists(kitchen_scene_path):
 		push_error("Scene not found: " + kitchen_scene_path)
 		is_loading_scene = false
-		set_process(true)
-		set_physics_process(true)
 		return
 	
-	call_deferred("_deferred_load_scene", kitchen_scene_path)
-
-func _deferred_load_scene(scene_path: String) -> void:
-	var kitchen_scene = load(scene_path)
-	if kitchen_scene:
-		get_tree().change_scene_to_packed(kitchen_scene)
-	else:
-		push_error("Failed to load scene: " + scene_path)
-		is_loading_scene = false
-		set_process(true)
-		set_physics_process(true)
+	get_tree().change_scene_to_file(kitchen_scene_path)
 
 func _on_back_button_pressed():
 	if is_loading_scene:

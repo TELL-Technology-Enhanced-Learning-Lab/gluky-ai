@@ -81,6 +81,9 @@ func _ready():
 	
 	set_process_input(false)
 	_prepare_book_target()
+	
+	# Start the intro animation
+	current_state = CameraState.VIGNETTE_FADE
 
 func _create_highlight_material():
 	highlight_material = StandardMaterial3D.new()
@@ -129,21 +132,6 @@ func _prepare_book_target():
 		if node.is_in_group("target") and node is Node3D:
 			book_target = node
 			break
-
-func _position_book_for_camera():
-	if not book_node or not camera_pivot:
-		return
-	
-	var camera_pos = camera_pivot.global_position
-	var camera_forward = -camera_pivot.global_transform.basis.z.normalized()
-	var book_distance = 1.5
-	var book_height_offset = -0.3
-	var book_position = camera_pos + camera_forward * book_distance
-	book_position.y += book_height_offset
-	
-	book_node.global_position = book_position
-	book_node.look_at(camera_pos)
-	book_node.rotate_object_local(Vector3(0, 1, 0), PI)
 
 func _find_player_animation_player():
 	if player_node:
@@ -278,7 +266,7 @@ func _prepare_camera_detach():
 		parent.remove_child(self)
 	camera_pivot.global_transform = current_global_transform
 	camera_pivot.add_child(self)
-	scene_tree.root.add_child(camera_pivot)
+	scene_tree.current_scene.add_child(camera_pivot)
 	transform = Transform3D.IDENTITY
 	camera_detach_prepared = true
 	original_camera_y_angle = camera_pivot.rotation_degrees.y
@@ -336,9 +324,10 @@ func _animate_camera_rise_back(delta):
 				vignette_rect.visible = false
 	if progress >= 0.75:
 		current_state = CameraState.PLAYER_CONTROL
+		current_camera_position = 1
 		set_process_input(true)
 		animation_sequence_completed.emit()
-		camera_movement_finished.emit(current_camera_position)
+		camera_movement_finished.emit(1)
 		_on_camera_movement(1)
 
 func _smooth_step(t: float) -> float:
@@ -380,6 +369,8 @@ func _handle_swipe(start_pos: Vector2, end_pos: Vector2):
 		return
 	if not swipe_input_enabled:
 		return
+	if not camera_pivot:
+		return
 	var swipe_distance = (end_pos - start_pos).length()
 	if swipe_distance < min_swipe_distance:
 		return
@@ -390,6 +381,9 @@ func _handle_swipe(start_pos: Vector2, end_pos: Vector2):
 		_move_camera_to_position(target_position)
 
 func _move_camera_to_position(target_position: int):
+	if not camera_pivot:
+		return
+	
 	is_animating = true
 	player_camera_movement.emit(target_position)
 	var old_position = current_camera_position
@@ -460,7 +454,7 @@ func _enable_swipe_input():
 
 func _prepare_camera_zoom(target_object: Node3D):
 	if not camera_pivot:
-		return
+		return null
 	
 	if not has_meta("original_position_before_zoom"):
 		set_meta("original_position_before_zoom", camera_pivot.global_position)

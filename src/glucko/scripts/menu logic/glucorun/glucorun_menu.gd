@@ -43,8 +43,8 @@ func _on_settings_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	main_buttons.visible = true
-	#get_tree().change_scene_to_file("") 
-	#qui ci mettiamo la scena del menù principale, il "main button visible" è solo un comando temporaneo
+	get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn")
+	
 
 
 func _on_exit_pressed() -> void:

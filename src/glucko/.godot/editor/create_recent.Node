@@ -1,11 +1,2 @@
-Label
-TextureButton
-ColorRect
-CanvasLayer
-ProgressBar
-TextureProgressBar
-HBoxContainer
-VBoxContainer
+Button
 Control
-Node2D
-MarginContainer

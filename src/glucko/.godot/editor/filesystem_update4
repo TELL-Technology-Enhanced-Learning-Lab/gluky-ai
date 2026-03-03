@@ -1,2 +1,4 @@
-res://scripts/general/background_hue.gd
-res://scenes/menus/glucky/Minigame_Selection.tscn
+res://scenes/glucorun levels/livello1.tscn
+res://scripts/general/gluky_controller.gd
+res://scenes/TestChatBot/TestSTT.tscn
+res://scripts/glucky/TestStt.gd

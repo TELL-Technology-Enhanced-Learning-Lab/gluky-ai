@@ -6,8 +6,6 @@ extends CanvasLayer
 	$VBoxContainer/BoxContainer/Icon3
 ]
 
-@onready var counter_label: Label = $VBoxContainer/CounterLabel
-
 var max_insulin := 3
 var current_insulin := 3
 
@@ -35,8 +33,7 @@ func reset_insulin():
 	update_display()
 
 func update_display():
-	counter_label.text = "%d/%d" % [current_insulin, max_insulin]
-
+	
 	for i in range(max_insulin):
 		if i < current_insulin:
 			icons[i].modulate = normal_modulate

@@ -34,11 +34,11 @@ var screen_shake_offset := Vector2.ZERO
 var shake_timer := 0.0
 var color_rect: ColorRect
 var screen_wobble_timer := 0.0
-var game_setup_connected := false
 var effect_intensity := 0.0
 var _is_mobile := false
 var look_joystick: VirtualLookJoystick
 var look_joystick_connected := false
+var game_setup_node: Node
 
 func _ready():
 	_is_mobile = OS.get_name() == "Android" or OS.get_name() == "iOS" or DisplayServer.is_touchscreen_available()
@@ -56,7 +56,7 @@ func _ready():
 	await get_tree().process_frame
 	find_and_connect_look_joystick()
 	await get_tree().process_frame
-	setup_game_setup_connection()
+	find_game_setup_node()
 
 func find_and_connect_look_joystick():
 	var joysticks = get_tree().get_nodes_in_group("look_joystick")
@@ -70,18 +70,30 @@ func find_and_connect_look_joystick():
 func create_visual_overlay():
 	color_rect = ColorRect.new()
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	color_rect.color = Color(1, 0, 0, 0)
+	color_rect.color = Color.TRANSPARENT
+	color_rect.z_index = 1000
 	var viewport = get_viewport()
 	if viewport:
 		viewport.add_child.call_deferred(color_rect)
 		color_rect.set_anchors_preset(Control.PRESET_FULL_RECT, true)
 
-func setup_game_setup_connection():
-	var game_setup = get_tree().root.find_child("GameSetup", true, false)
-	if game_setup and not game_setup_connected:
-		if game_setup.has_signal("glucose_updated"):
-			game_setup.connect("glucose_updated", _on_glucose_updated)
-			game_setup_connected = true
+func find_game_setup_node():
+	for node in get_tree().root.get_children():
+		if node.has_method("get_glucose_value") or node.has_signal("glucose_updated"):
+			game_setup_node = node
+			if node.has_signal("glucose_updated"):
+				node.connect("glucose_updated", _on_glucose_updated)
+			return
+	
+	for node in get_tree().root.find_children("*", "", true, false):
+		if node.has_method("get_glucose_value") or node.has_signal("glucose_updated"):
+			game_setup_node = node
+			if node.has_signal("glucose_updated"):
+				node.connect("glucose_updated", _on_glucose_updated)
+			return
+	
+	await get_tree().create_timer(1.0).timeout
+	find_game_setup_node()
 
 func _on_glucose_updated(value: float):
 	glucose_value = value
@@ -190,24 +202,36 @@ func update_screen_shake(delta):
 		var time = Time.get_ticks_msec() / 1000.0
 		screen_shake_offset.x = sin(time * 25.0) * shake_timer
 		screen_shake_offset.y = cos(time * 22.0) * shake_timer
+		shake_timer = max(shake_timer - delta, 0.0)
 	else:
 		screen_shake_offset = screen_shake_offset.lerp(Vector2.ZERO, delta * 4.0)
 
 func update_visual_effects(delta):
 	if not color_rect:
 		return
+	
 	if glucose_value < low_glucose_threshold:
 		var severity = clamp((low_glucose_threshold - glucose_value) / 30.0, 0.0, 1.0)
+		
 		var current_color = low_color_tint
 		current_color.a = severity * 0.8
 		color_rect.color = color_rect.color.lerp(current_color, delta * 6.0)
+		
+		var target_fov = original_fov + (max_fov_change * severity)
+		fov = lerp(fov, target_fov, delta * 4.0)
+		
 	elif glucose_value > high_glucose_threshold:
 		var severity = clamp((glucose_value - high_glucose_threshold) / 100.0, 0.0, 1.0)
+		
 		var current_color = high_color_tint
 		current_color.a = severity * 0.8
 		color_rect.color = color_rect.color.lerp(current_color, delta * 6.0)
+		
+		var target_fov = original_fov - (max_fov_change * severity * 0.5)
+		fov = lerp(fov, target_fov, delta * 4.0)
+		
 	else:
-		color_rect.color = color_rect.color.lerp(Color(1, 0, 0, 0), delta * 5.0)
+		color_rect.color = color_rect.color.lerp(Color.TRANSPARENT, delta * 5.0)
 		fov = lerp(fov, original_fov, delta * 4.0)
 
 func check_camera_collision(camera_target: Vector3, desired_offset: Vector3) -> float:

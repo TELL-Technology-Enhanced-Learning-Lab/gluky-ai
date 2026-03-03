@@ -9,24 +9,24 @@ size = Vector3(1.2744751, 1.9979248, 1.0361328)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o6xl0"]
 
-[node name="Player" type="CharacterBody3D" groups=["Player"]]
+[node name="Player" type="CharacterBody3D" unique_id=1313988563 groups=["Player"]]
 script = ExtResource("1_3vyb7")
 
-[node name="PlayerSkin" parent="." instance=ExtResource("1_y40ok")]
+[node name="PlayerSkin" parent="." unique_id=327867763 instance=ExtResource("1_y40ok")]
 unique_name_in_owner = true
 
-[node name="CollectionArea" type="Area3D" parent="."]
+[node name="CollectionArea" type="Area3D" parent="." unique_id=1301012542]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.852482, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectionArea" unique_id=501033507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03164673, 0.20562744, -0.008300781)
 shape = SubResource("BoxShape3D_ya4ey")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1596015359]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90349907, 0)
 shape = SubResource("CapsuleShape3D_o6xl0")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=581546270]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.8641999, -2.5237556)
 script = ExtResource("3_h0ps5")
