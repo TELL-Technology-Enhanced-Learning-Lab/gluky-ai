@@ -8,7 +8,7 @@ extends Node2D
 # ============================================================
 # CLAUDE API CONFIG
 # ============================================================
-var api_key := "inserisci la tua chiave api"
+var api_key := "inserisci la chiave api"
 var model := "claude-opus-4-6"
 var system_prompt := """Sei Gluky, un assistente simpatico e colorato all'interno di un videogioco educativo sul diabete per bambini.
 Il tuo compito è aiutare i bambini con diabete tipo 1 a capire la loro condizione in modo semplice, rassicurante e divertente.

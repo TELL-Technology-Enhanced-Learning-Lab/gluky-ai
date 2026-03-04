@@ -9,6 +9,7 @@ func _ready():
 	await get_tree().create_timer(start_delay).timeout
 	_start_animation()
 	jelly()
+	Glukybot.update_scene("res://scenes/GlukoQuizScenes/Mainscene1.tscn")
 
 func _start_animation():
 	var tween = create_tween()

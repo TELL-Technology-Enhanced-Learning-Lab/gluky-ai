@@ -208,14 +208,14 @@ func _display_foods():
 		if food_scene == null or not (food_scene is PackedScene):
 			continue
 
-		var food = food_scene.instantiate()
-		food.position = Vector3(start_x + i * food_spacing, 0.3, 0)
-		food.scale = Vector3.ONE * food_scale
-		food_spawn_point.add_child(food)
-		current_food_nodes.append(food)
+		var foodset = food_scene.instantiate()
+		foodset.position = Vector3(start_x + i * food_spacing, 0.3, 0)
+		foodset.scale = Vector3.ONE * food_scale
+		food_spawn_point.add_child(foodset)
+		current_food_nodes.append(foodset)
 
-		if food.has_signal("food_selected"):
-			food.food_selected.connect(_on_food_selected.bind(food_scene))
+		if foodset.has_signal("food_selected"):
+			foodset.food_selected.connect(_on_food_selected.bind(food_scene))
 
 func _despawn_foods():
 	for f in current_food_nodes:

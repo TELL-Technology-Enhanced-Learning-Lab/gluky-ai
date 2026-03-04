@@ -15,17 +15,13 @@ extends Camera3D
 @export var high_symptom_intensity: float = 4.0
 @export var low_color_tint: Color = Color(0.4, 0.6, 1.0, 0.9)
 @export var high_color_tint: Color = Color(1.0, 0.4, 0.4, 0.9)
-@export var max_screen_wobble: float = 15.0
 @export var max_fov_change: float = 25.0
-@export var max_shake_intensity: float = 8.0
 
 var yaw := 0.0
 var vertical_offset := 4.0
 var player: CharacterBody3D
 var actual_camera_distance := 0.0
 var glucose_value := 90.0
-var low_symptom_timer := 0.0
-var high_symptom_timer := 0.0
 var base_smooth_speed := 0.0
 var base_mouse_sensitivity := 0.0
 var dizziness_offset := Vector2.ZERO
@@ -33,10 +29,9 @@ var original_fov := 0.0
 var screen_shake_offset := Vector2.ZERO
 var shake_timer := 0.0
 var color_rect: ColorRect
-var screen_wobble_timer := 0.0
 var effect_intensity := 0.0
 var _is_mobile := false
-var look_joystick: VirtualLookJoystick
+var look_joystick: Node
 var look_joystick_connected := false
 var game_setup_node: Node
 
@@ -54,76 +49,50 @@ func _ready():
 
 	create_visual_overlay()
 	await get_tree().process_frame
-	find_and_connect_look_joystick()
-	await get_tree().process_frame
 	find_game_setup_node()
-
-func find_and_connect_look_joystick():
-	var joysticks = get_tree().get_nodes_in_group("look_joystick")
-	if joysticks.is_empty():
-		return
-	look_joystick = joysticks[0] as VirtualLookJoystick
-	if look_joystick and not look_joystick_connected:
-		look_joystick.look_joystick_updated.connect(_on_look_joystick_updated)
-		look_joystick_connected = true
 
 func create_visual_overlay():
 	color_rect = ColorRect.new()
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	color_rect.color = Color.TRANSPARENT
-	color_rect.z_index = 1000
-	var viewport = get_viewport()
-	if viewport:
-		viewport.add_child.call_deferred(color_rect)
-		color_rect.set_anchors_preset(Control.PRESET_FULL_RECT, true)
+	color_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+
+	var canvas = CanvasLayer.new()
+	canvas.layer = 100
+
+	get_tree().current_scene.add_child.call_deferred(canvas)
+	canvas.add_child.call_deferred(color_rect)
 
 func find_game_setup_node():
-	for node in get_tree().root.get_children():
-		if node.has_method("get_glucose_value") or node.has_signal("glucose_updated"):
-			game_setup_node = node
-			if node.has_signal("glucose_updated"):
-				node.connect("glucose_updated", _on_glucose_updated)
-			return
-	
 	for node in get_tree().root.find_children("*", "", true, false):
-		if node.has_method("get_glucose_value") or node.has_signal("glucose_updated"):
+		if node.has_signal("glucose_updated"):
 			game_setup_node = node
-			if node.has_signal("glucose_updated"):
-				node.connect("glucose_updated", _on_glucose_updated)
+			node.connect("glucose_updated", _on_glucose_updated)
 			return
-	
-	await get_tree().create_timer(1.0).timeout
-	find_game_setup_node()
 
 func _on_glucose_updated(value: float):
 	glucose_value = value
+	if glucose_value >= low_glucose_threshold and glucose_value <= high_glucose_threshold:
+		reset_visual_effects()
 
-func _on_look_joystick_updated(value: Vector2):
-	var sensitivity_mod := 1.0
-	if glucose_value < low_glucose_threshold:
-		sensitivity_mod = lerp(0.3, 1.0, (glucose_value - 40.0) / 30.0)
-	elif glucose_value > high_glucose_threshold:
-		sensitivity_mod = lerp(1.0, 0.3, min((glucose_value - 180.0) / 100.0, 1.0))
-	yaw -= value.x * touch_sensitivity * sensitivity_mod * 40.0
-	vertical_offset = clamp(
-		vertical_offset - value.y * vertical_sensitivity * sensitivity_mod * 40.0,
-		min_vertical_offset,
-		max_vertical_offset
-	)
+func reset_visual_effects():
+	effect_intensity = 0.0
+	dizziness_offset = Vector2.ZERO
+	screen_shake_offset = Vector2.ZERO
+	shake_timer = 0.0
+	if color_rect:
+		color_rect.color = Color.TRANSPARENT
+	fov = original_fov
 
 func _input(event):
-	if _is_mobile and event is InputEventMouseMotion:
+	if _is_mobile:
 		return
-	var sensitivity_mod := 1.0
-	if glucose_value < low_glucose_threshold:
-		sensitivity_mod = lerp(0.3, 1.0, (glucose_value - 40.0) / 30.0)
-	elif glucose_value > high_glucose_threshold:
-		sensitivity_mod = lerp(1.0, 0.3, min((glucose_value - 180.0) / 100.0, 1.0))
+
 	if event is InputEventMouseMotion:
+		var sensitivity_mod := get_sensitivity_modifier()
 		yaw -= event.relative.x * mouse_sensitivity * sensitivity_mod
-		var inverted_vertical = -event.relative.y * sensitivity_mod
 		vertical_offset = clamp(
-			vertical_offset + inverted_vertical * vertical_sensitivity,
+			vertical_offset - event.relative.y * vertical_sensitivity * sensitivity_mod,
 			min_vertical_offset,
 			max_vertical_offset
 		)
@@ -131,108 +100,67 @@ func _input(event):
 func _physics_process(delta):
 	if not player:
 		return
-	
-	if look_joystick and look_joystick.joystick_active:
-		var value = look_joystick.get_value()
-		var sensitivity_mod := 1.0
-		if glucose_value < low_glucose_threshold:
-			sensitivity_mod = lerp(0.3, 1.0, (glucose_value - 40.0) / 30.0)
-		elif glucose_value > high_glucose_threshold:
-			sensitivity_mod = lerp(1.0, 0.3, min((glucose_value - 180.0) / 100.0, 1.0))
-		yaw -= value.x * touch_sensitivity * sensitivity_mod * delta * 60.0
-		vertical_offset = clamp(
-			vertical_offset - value.y * vertical_sensitivity * sensitivity_mod * delta * 60.0,
-			min_vertical_offset,
-			max_vertical_offset
-		)
-	
-	update_symptoms(delta)
-	update_screen_shake(delta)
+
 	update_visual_effects(delta)
-	
+
 	var player_pos = player.global_position
 	var camera_target = player_pos + Vector3(0, vertical_offset, 0)
-	
-	if screen_shake_offset.length() > 0.001:
-		camera_target.x += screen_shake_offset.x * 0.8
-		camera_target.z += screen_shake_offset.y * 0.8
-	
-	var yaw_with_dizziness = yaw
-	
+
+	var yaw_mod = yaw
 	if glucose_value < low_glucose_threshold:
 		effect_intensity = clamp((low_glucose_threshold - glucose_value) / 30.0, 0.0, 1.0)
-		var intensity = effect_intensity * low_symptom_intensity
 		dizziness_offset = dizziness_offset.lerp(
-			Vector2(randf_range(-1, 1), randf_range(-1, 1)) * intensity,
+			Vector2(randf_range(-1,1), randf_range(-1,1)) * effect_intensity * low_symptom_intensity,
 			delta * 3.0
 		)
-		yaw_with_dizziness += dizziness_offset.x * 0.4
+		yaw_mod += dizziness_offset.x * 0.4
 		camera_target.y += dizziness_offset.y * 0.5
 	elif glucose_value > high_glucose_threshold:
 		effect_intensity = clamp((glucose_value - high_glucose_threshold) / 100.0, 0.0, 1.0)
-		var intensity = effect_intensity * high_symptom_intensity
 		var t = Time.get_ticks_msec() / 1000.0
 		dizziness_offset = dizziness_offset.lerp(
-			Vector2(sin(t * 4.0) * intensity, cos(t * 3.5) * intensity),
+			Vector2(sin(t * 4.0), cos(t * 3.5)) * effect_intensity * high_symptom_intensity,
 			delta * 2.5
 		)
-		yaw_with_dizziness += dizziness_offset.x * 0.25
+		yaw_mod += dizziness_offset.x * 0.25
 		camera_target.y += dizziness_offset.y * 0.3
-	
-	var desired_offset = Vector3(0, 0, camera_distance).rotated(Vector3.UP, yaw_with_dizziness)
+
+	var desired_offset = Vector3(0,0,camera_distance).rotated(Vector3.UP, yaw_mod)
 	actual_camera_distance = check_camera_collision(camera_target, desired_offset)
 	var final_position = camera_target + desired_offset.normalized() * actual_camera_distance
 	final_position = ensure_minimum_height(final_position, player_pos)
+
 	global_position = global_position.lerp(final_position, smooth_speed * delta)
-	look_at(player_pos + Vector3(0, 1, 0), Vector3.UP)
-
-func update_symptoms(delta):
-	if glucose_value < low_glucose_threshold:
-		low_symptom_timer += delta
-		high_symptom_timer = 0.0
-	elif glucose_value > high_glucose_threshold:
-		high_symptom_timer += delta
-		low_symptom_timer = 0.0
-	else:
-		low_symptom_timer = max(low_symptom_timer - delta * 2.0, 0.0)
-		high_symptom_timer = max(high_symptom_timer - delta * 2.0, 0.0)
-
-func update_screen_shake(delta):
-	if shake_timer > 0.0:
-		var time = Time.get_ticks_msec() / 1000.0
-		screen_shake_offset.x = sin(time * 25.0) * shake_timer
-		screen_shake_offset.y = cos(time * 22.0) * shake_timer
-		shake_timer = max(shake_timer - delta, 0.0)
-	else:
-		screen_shake_offset = screen_shake_offset.lerp(Vector2.ZERO, delta * 4.0)
+	look_at(player_pos + Vector3(0,1,0), Vector3.UP)
 
 func update_visual_effects(delta):
 	if not color_rect:
 		return
-	
+
 	if glucose_value < low_glucose_threshold:
 		var severity = clamp((low_glucose_threshold - glucose_value) / 30.0, 0.0, 1.0)
-		
-		var current_color = low_color_tint
-		current_color.a = severity * 0.8
-		color_rect.color = color_rect.color.lerp(current_color, delta * 6.0)
-		
-		var target_fov = original_fov + (max_fov_change * severity)
-		fov = lerp(fov, target_fov, delta * 4.0)
-		
+		var c = low_color_tint
+		c.a = severity * 0.8
+		color_rect.color = color_rect.color.lerp(c, delta * 6.0)
+		fov = lerp(fov, original_fov + max_fov_change * severity, delta * 4.0)
+
 	elif glucose_value > high_glucose_threshold:
 		var severity = clamp((glucose_value - high_glucose_threshold) / 100.0, 0.0, 1.0)
-		
-		var current_color = high_color_tint
-		current_color.a = severity * 0.8
-		color_rect.color = color_rect.color.lerp(current_color, delta * 6.0)
-		
-		var target_fov = original_fov - (max_fov_change * severity * 0.5)
-		fov = lerp(fov, target_fov, delta * 4.0)
-		
+		var c = high_color_tint
+		c.a = severity * 0.8
+		color_rect.color = color_rect.color.lerp(c, delta * 6.0)
+		fov = lerp(fov, original_fov - max_fov_change * severity * 0.5, delta * 4.0)
+
 	else:
 		color_rect.color = color_rect.color.lerp(Color.TRANSPARENT, delta * 5.0)
 		fov = lerp(fov, original_fov, delta * 4.0)
+
+func get_sensitivity_modifier() -> float:
+	if glucose_value < low_glucose_threshold:
+		return lerp(0.3, 1.0, (glucose_value - 40.0) / 30.0)
+	elif glucose_value > high_glucose_threshold:
+		return lerp(1.0, 0.3, min((glucose_value - 180.0) / 100.0, 1.0))
+	return 1.0
 
 func check_camera_collision(camera_target: Vector3, desired_offset: Vector3) -> float:
 	var space_state = get_world_3d().direct_space_state

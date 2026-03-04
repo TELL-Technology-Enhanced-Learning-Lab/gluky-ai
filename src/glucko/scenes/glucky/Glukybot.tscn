@@ -206,19 +206,19 @@ script = ExtResource("1_rmo03")
 [node name="RoundBat" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin" unique_id=562800601 instance=ExtResource("2_5hght")]
 
 [node name="Skeleton3D" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature" parent_id_path=PackedInt32Array(562800601, 1526684651) index="0" unique_id=798434000]
-bones/0/position = Vector3(0, -0.005546621, 0)
-bones/1/rotation = Quaternion(-0.021085797, 0.18088661, -0.68793565, 0.7025526)
-bones/2/rotation = Quaternion(-0.041997727, -0.012026725, 0.2797485, 0.95907897)
-bones/3/rotation = Quaternion(0.054200057, 0.06432086, 0.27009785, 0.9591519)
-bones/4/rotation = Quaternion(-0.021085797, -0.18088661, 0.68793565, 0.7025526)
-bones/5/rotation = Quaternion(-0.041997727, 0.012026725, -0.2797485, 0.95907897)
-bones/6/rotation = Quaternion(0.054200057, -0.06432086, -0.27009785, 0.9591519)
+bones/0/position = Vector3(0, 0.022326443, 0)
+bones/1/rotation = Quaternion(0.21627122, -0.026149947, -0.61244863, 0.75990105)
+bones/2/rotation = Quaternion(0.15892622, 0.07324447, 0.41226825, 0.8940988)
+bones/3/rotation = Quaternion(0.07694895, 0.08003117, 0.3601163, 0.9262775)
+bones/4/rotation = Quaternion(0.21627122, 0.026149947, 0.61244863, 0.75990105)
+bones/5/rotation = Quaternion(0.15892622, -0.07324447, -0.41226825, 0.8940988)
+bones/6/rotation = Quaternion(0.07694895, -0.08003117, -0.3601163, 0.9262775)
 bones/7/position = Vector3(0.130992, -0.227392, -0.087851495)
 bones/7/rotation = Quaternion(0.26196814, 0.08345515, 0.26575115, 0.92400455)
-bones/8/rotation = Quaternion(3.839914e-08, 0.69387865, 0.72009206, 1.7975776e-08)
+bones/8/rotation = Quaternion(2.5780446e-08, 0.6174471, 0.7866124, 2.6027466e-08)
 bones/10/position = Vector3(-0.130992, -0.227392, -0.087851495)
 bones/10/rotation = Quaternion(0.26196814, -0.08345515, -0.26575115, 0.92400455)
-bones/11/rotation = Quaternion(2.4441542e-08, 0.69387865, 0.72009206, 3.6128064e-08)
+bones/11/rotation = Quaternion(2.9389893e-08, 0.6174471, 0.7866124, 3.1443882e-08)
 
 [node name="Bat" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature/Skeleton3D" index="0" unique_id=109755260]
 material_overlay = SubResource("StandardMaterial3D_u0xry")

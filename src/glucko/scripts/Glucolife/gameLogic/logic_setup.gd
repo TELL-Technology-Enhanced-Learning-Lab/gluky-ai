@@ -12,6 +12,9 @@ func _ready():
 
 	GlucolifeDataManager.stats_changed.connect(_on_stats_changed)
 	GlucolifeDataManager.enter_glucolife()
+	 
+	
+	
 
 
 func _on_stats_changed(stats: Dictionary):

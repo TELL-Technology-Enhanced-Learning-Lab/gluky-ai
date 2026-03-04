@@ -29,6 +29,7 @@ func _enter_tree():
 func _ready():
 	if camera:
 		camera.current = true
+		
 
 func set_bounds_from_area(area: Area3D):
 	if not is_instance_valid(area):

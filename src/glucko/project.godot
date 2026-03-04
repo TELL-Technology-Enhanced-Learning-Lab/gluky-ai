@@ -33,7 +33,7 @@ FoodDatabase="*res://scripts/glucorun/game logic/food_database.gd"
 STT="*uid://b2ci41h133vst"
 GameState="*uid://wr8mqi865p40"
 MusicManager="*uid://dfuq6va10lnnd"
-Gluky="*uid://cbpiqehclq4g7"
+Glukybot="*uid://befdyijpm3qsp"
 
 [display]
 

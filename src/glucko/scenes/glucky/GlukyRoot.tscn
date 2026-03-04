@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbpiqehclq4g7"]
 
-[ext_resource type="PackedScene" uid="uid://befdyijpm3qsp" path="res://scenes/glucky/gluckybot.tscn" id="1_7xbfr"]
+[ext_resource type="PackedScene" uid="uid://befdyijpm3qsp" path="res://scenes/glucky/Glukybot.tscn" id="1_7xbfr"]
 
 [node name="GlukyRoot" type="Node2D" unique_id=45486057]
 

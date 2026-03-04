@@ -5,6 +5,7 @@ func _ready():
 	MusicManager.play_music()
 	MusicManager.fade_in()
 	$AnimationPlayer1.play("menu_intro") #fade in animazione
+	Glukybot.update_scene("res://scenes/scenes_tutorial/Menu_inizio.tscn")
 	
 #quando si clicca su 'gioca' la musica si sfuma ma continua
 func _on_animation_player_animation_finished(anim_name):

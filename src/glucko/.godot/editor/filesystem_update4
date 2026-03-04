@@ -1,4 +1,4 @@
-res://scenes/glucorun levels/livello1.tscn
+res://scenes/glucky/Glukybot.tscn
 res://scripts/general/gluky_controller.gd
 res://scenes/TestChatBot/TestSTT.tscn
 res://scripts/glucky/TestStt.gd
