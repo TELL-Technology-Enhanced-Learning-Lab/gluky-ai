@@ -1,4 +1,8 @@
 res://scenes/glucky/Glukybot.tscn
+res://scripts/MealPerfectGameScript/first_person_player.gd
+res://scenes/MealPerfectgameScenes/MainSceneLevel2.tscn
+res://scripts/MealPerfectGameScript/kitchen_plate.gd
+res://scenes/MealPerfectgameScenes/MainScene_Levelcolazione.tscn
+res://scenes/glucorun levels/livello1.tscn
 res://scripts/general/gluky_controller.gd
 res://scenes/TestChatBot/TestSTT.tscn
-res://scripts/glucky/TestStt.gd

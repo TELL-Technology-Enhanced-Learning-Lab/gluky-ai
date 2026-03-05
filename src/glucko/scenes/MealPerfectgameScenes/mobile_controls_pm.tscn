@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://8poqirqntkky"]
+
+[ext_resource type="Script" uid="uid://cb75anm0scwgj" path="res://scripts/MealPerfectGameScript/move_joystickPM.gd" id="1_pnecc"]
+[ext_resource type="Script" uid="uid://ukt1mjdefyva" path="res://scripts/MealPerfectGameScript/look_joystickPM.gd" id="2_iie4g"]
+[ext_resource type="Texture2D" uid="uid://chstpr1uw8tjk" path="res://art/assets/glucorun ui/controller/Joystick.png" id="2_ttqvt"]
+[ext_resource type="Texture2D" uid="uid://0hvltd8fkpxm" path="res://art/images/pickupImage.jpeg" id="2_ui1ne"]
+[ext_resource type="Texture2D" uid="uid://dymnekotcg3w" path="res://art/images/pickupImagepressed.jpeg" id="3_iie4g"]
+[ext_resource type="Texture2D" uid="uid://6dswnfsbm6yx" path="res://art/assets/glucorun ui/controller/LargeHandleFilledGrey.png" id="3_u6rgo"]
+
+[node name="MobileControlsPM" type="Node2D" unique_id=670195124]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=821936438]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=220277612]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="move_joystick" type="TextureButton" parent="CanvasLayer/Control" unique_id=1774942600 groups=["move_joystick"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 850.0
+offset_right = -1630.0
+offset_bottom = -84.0
+script = ExtResource("1_pnecc")
+joystick_texture = ExtResource("2_ttqvt")
+handle_texture = ExtResource("3_u6rgo")
+
+[node name="look_joystick" type="TextureButton" parent="CanvasLayer/Control" unique_id=1249290259]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1640.0
+offset_top = 850.0
+offset_right = -140.0
+offset_bottom = -84.0
+script = ExtResource("2_iie4g")
+joystick_texture = ExtResource("2_ttqvt")
+handle_texture = ExtResource("3_u6rgo")
+
+[node name="PickupAndDropButton" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=1934861183 groups=["PickupButton"]]
+position = Vector2(1444, 847.00006)
+scale = Vector2(0.14257815, 0.14257815)
+texture_normal = ExtResource("2_ui1ne")
+texture_pressed = ExtResource("3_iie4g")

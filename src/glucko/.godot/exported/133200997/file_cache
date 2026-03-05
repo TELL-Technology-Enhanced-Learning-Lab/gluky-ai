@@ -21,7 +21,7 @@ res://scenes/glucolife rooms/Kitchen.tscn::e57f0f2338834ae2730f2f5eef78f74a::177
 res://scenes/glucolife rooms/Living room.tscn::d3ee1ea95a32b45929fe2dbe1a70f125::1772623572::res://.godot/exported/133200997/export-1a2a7a30d4d178ccc96daac4935f178e-Living room.scn
 res://scenes/glucolife rooms/PlayGround.tscn::d77556b7c5f2ad04557644d82629ec58::1772623556::res://.godot/exported/133200997/export-57172df88667c81a965a88ed188b8cf5-PlayGround.scn
 res://scenes/glucolife rooms/Restroom.tscn::de3af8501afa43c31ef0270ba55718b8::1772623459::res://.godot/exported/133200997/export-b32c15b72ca71fdab377d5cc1e002862-Restroom.scn
-res://scenes/glucorun levels/livello1.tscn::402ebfc4c84993ec58693c17670bf40d::1772570674::res://.godot/exported/133200997/export-4351b212f27eab73b29d1edceff0c063-livello1.scn
+res://scenes/glucorun levels/livello1.tscn::ec63175a0297026a98d8bd4bc52e9ee2::1772705212::res://.godot/exported/133200997/export-4351b212f27eab73b29d1edceff0c063-livello1.scn
 res://scenes/glucorun levels/livello2.tscn::ad98f5e14e8bb81d6a67c6bb53995daf::1772570674::res://.godot/exported/133200997/export-5570077f281463252fdddba8e272c49d-livello2.scn
 res://scenes/glucorun levels/livello3.tscn::35175d921209014287fbc5be4b561f1d::1772570674::res://.godot/exported/133200997/export-42611c3d8c6ecae1ac88836e3e711bf4-livello3.scn
 res://scenes/GlukoQuizScenes/Impostazioni.tscn::a0f1f418742a574f05601e5209819e13::1772570674::res://.godot/exported/133200997/export-e1dfab968f3a6c7e4cde91046d5bb088-Impostazioni.scn
@@ -58,8 +58,8 @@ res://scenes/MealPerfectgameScenes/gelato_chocolate.tscn::b19d9a2b9e00e7eb50159f
 res://scenes/MealPerfectgameScenes/hud.tscn::4abe99ae505c451653ed093371974e17::1772570674::res://.godot/exported/133200997/export-2b4f4d5c530f070155153472efef4145-hud.scn
 res://scenes/MealPerfectgameScenes/kitchenPlate.tscn::ad1184e80b2d26e1a6c8ab0a0a919ed9::1772570674::res://.godot/exported/133200997/export-df0cee835224a26a771820aa2450cc39-kitchenPlate.scn
 res://scenes/MealPerfectgameScenes/MainScene.tscn::b6d4772657830c525c6da1bd8c77bc9e::1772570674::res://.godot/exported/133200997/export-e8188356776a9a53f63475fbe261892f-MainScene.scn
-res://scenes/MealPerfectgameScenes/MainSceneLevel2.tscn::0b766e45a29c7b5c0c8ce02c76059934::1772570674::res://.godot/exported/133200997/export-305e22769bb6a844366f03ef76f6bf45-MainSceneLevel2.scn
-res://scenes/MealPerfectgameScenes/MainScene_Levelcolazione.tscn::3d8f7eea3ee01a8ae6174ea506826072::1772570674::res://.godot/exported/133200997/export-03c2414021b0e944e7f377bceee758c5-MainScene_Levelcolazione.scn
+res://scenes/MealPerfectgameScenes/MainSceneLevel2.tscn::0b766e45a29c7b5c0c8ce02c76059934::1772704956::res://.godot/exported/133200997/export-305e22769bb6a844366f03ef76f6bf45-MainSceneLevel2.scn
+res://scenes/MealPerfectgameScenes/MainScene_Levelcolazione.tscn::3d8f7eea3ee01a8ae6174ea506826072::1772704902::res://.godot/exported/133200997/export-03c2414021b0e944e7f377bceee758c5-MainScene_Levelcolazione.scn
 res://scenes/MealPerfectgameScenes/muffin.tscn::a8bd4ce0973c98e002326a4f5be54b72::1772570674::res://.godot/exported/133200997/export-0ebb1eb4ecf6b53bd99bd1eb65263d6b-muffin.scn
 res://scenes/MealPerfectgameScenes/mushroom.tscn::d352ea5a846ed6fb11fe4d7bfd68769f::1772570674::res://.godot/exported/133200997/export-bb76dbee0372368afa75e8027a178439-mushroom.scn
 res://scenes/MealPerfectgameScenes/Panda_2.tscn::9ccd5047a1dd2096544c13e22c2c5ac3::1772570674::res://.godot/exported/133200997/export-c876184bcf92e5408327271d6f06c31a-Panda_2.scn
@@ -86,7 +86,7 @@ res://scenes/scenes_tutorial/Menu_inizio.tscn::bf91c9219f3801b1e9242af1dc88330b:
 res://scenes/scenes_tutorial/tutorial_2.tscn::3fc871027ac263a19b37f14dd4d5bd67::1772570674::res://.godot/exported/133200997/export-cc616423f99d72c6da015d4582251203-tutorial_2.scn
 res://scenes/scenes_tutorial/tutorial_3.tscn::0225aa88aa75afcb42b297ff5dc5de0c::1772570674::res://.godot/exported/133200997/export-cbb77859ad46f15b0895538672dff16d-tutorial_3.scn
 res://scenes/scenes_tutorial/tutorial_4.tscn::58162b63fc5cbd5bcb3cdac7e5380ecf::1772570674::res://.godot/exported/133200997/export-c3e74bb41b1386f14bb44065cb5c584c-tutorial_4.scn
-res://scenes/TestChatBot/TestSTT.tscn::e611856fe344777f58a9dd5da0a89583::1772570674::res://.godot/exported/133200997/export-8e93d4cbaebb5bed49a28b5129be881d-TestSTT.scn
+res://scenes/TestChatBot/TestSTT.tscn::e611856fe344777f58a9dd5da0a89583::1772651182::res://.godot/exported/133200997/export-8e93d4cbaebb5bed49a28b5129be881d-TestSTT.scn
 res://scenes/user interface/Game_UI_Glucorun.tscn::91e1155bf4062db98c74433f03c9151a::1772570674::res://.godot/exported/133200997/export-34a8819c9fff71468fff987c69e3d1b2-Game_UI_Glucorun.scn
 res://scenes/user interface/Glucose_Bar_Glucorun.tscn::6f87e86fbd3f178f608015a087fc5193::1772570674::res://.godot/exported/133200997/export-c50524328ed8ae116976a6dd14073caa-Glucose_Bar_Glucorun.scn
 res://scenes/user interface/Insulin_Counter_Glucorun.tscn::00e1ff5d2db6af695ec71fecebeda6c8::1772570674::res://.godot/exported/133200997/export-adc890db34694db21f467c638c81c298-Insulin_Counter_Glucorun.scn
@@ -139,4 +139,5 @@ res://special items/sugary foods/pie_apple_slice.tscn::82534406da4cd5549fdc6f84b
 res://special items/sugary foods/pie_cherry_slice.tscn::c679f6874810373965e9cbda1d8b13e1::1772570674::res://.godot/exported/133200997/export-f8ecb0b0149319e407ae81a57f53f35e-pie_cherry_slice.scn
 res://special items/sugary foods/waffle_stacked.tscn::f81c543f1b22da74495f001be73dfe1d::1772570674::res://.godot/exported/133200997/export-80bfaf08acac63103aa917c855b4d8f6-waffle_stacked.scn
 res://scenes/glucky/GlukyRoot.tscn::3d1ca59fc22c7c4082736f783dd3a6aa::1772573516::res://.godot/exported/133200997/export-642691e6f3ea79d3db6be96515e3dae9-GlukyRoot.scn
-res://scenes/glucky/Glukybot.tscn::efa5d863a9e239723fb001a161c22fef::1772624725::res://.godot/exported/133200997/export-0955ec6db459f7683da473689b1b1210-Glukybot.scn
+res://scenes/glucky/Glukybot.tscn::d770777a4403ed3add2a6a4b4f0bba06::1772706225::res://.godot/exported/133200997/export-0955ec6db459f7683da473689b1b1210-Glukybot.scn
+res://scenes/MealPerfectgameScenes/mobile_controls_pm.tscn::834006f157c42151e7083eaa6dbb7205::1772705824::res://.godot/exported/133200997/export-d9862cf0a30b8b82f3001d1f85718d8a-mobile_controls_pm.scn
