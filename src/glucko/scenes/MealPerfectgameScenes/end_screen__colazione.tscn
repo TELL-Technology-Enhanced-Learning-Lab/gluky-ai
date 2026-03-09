@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dup8v3q0q5tsm"]
+[gd_scene format=3 uid="uid://dup8v3q0q5tsm"]
 
-[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://font_esterni/SamuraiBlast.ttf" id="1_5smmc"]
-[ext_resource type="Script" uid="uid://b6n4lajr53n0r" path="res://Scripts/end_screen__colazione.gd" id="1_gahfd"]
+[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://art/font_esterni/SamuraiBlast.ttf" id="1_5smmc"]
+[ext_resource type="Script" uid="uid://caochvbndfqmg" path="res://Scripts/MealPerfectGameScript/end_screen__colazione.gd" id="1_gahfd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f2mtv"]
 font = ExtResource("1_5smmc")
