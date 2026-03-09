@@ -23,6 +23,8 @@ var original_marker: Node3D = null
 var last_marker: Node3D = null
 
 func _ready() -> void:
+	# Aggiunge il gruppo food per il rilevamento da parte del player (mobile e desktop)
+	add_to_group("food")
 	original_scale = scale
 	original_marker = get_parent()
 	last_marker = original_marker

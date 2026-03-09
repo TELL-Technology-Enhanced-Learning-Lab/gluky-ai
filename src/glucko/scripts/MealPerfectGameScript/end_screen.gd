@@ -26,7 +26,7 @@ func _on_restart_pressed() -> void:
 	# resetta il game manager
 	GameState.reset_game()
 	# ricarico scena mainscene
-	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/MealPerfectgameScenes/MainScene.tscn")
 	
 #esci dal livello(pranzo)
 func _on_button_quit_pressed() -> void:
@@ -38,4 +38,4 @@ func _on_button_quit_pressed() -> void:
 func _on_button_next_pressed() -> void:
 	get_tree().paused = false
 	GameState.reset_game()
-	get_tree().change_scene_to_file("res://Scenes/MainSceneLevel2.tscn")
+	get_tree().change_scene_to_file("res://scenes/MealPerfectgameScenes/MainSceneLevel2.tscn")

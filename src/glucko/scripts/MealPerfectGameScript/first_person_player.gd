@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var ACCELERATION := 8.0
 @export var DECELERATION := 9.0
 @export var AIR_CONTROL := 2.5
+@export var enable_mobile_controls: bool = true
 
 #camera cinematic
 @export var SWAY_STRENGTH := 0.005
@@ -26,6 +27,9 @@ const CAMERA_SENS: float = 0.003
 var gravity = 9.8
 var pickedObject: Node3D = null
 var collider: Node = null
+# Salva l'ultimo cibo visto dal raycast — rimane valido anche quando
+# il dito tocca il pulsante e il raycast perde il bersaglio per un frame
+var _last_valid_collider: Node = null
 
 # variabili interne (stato della camera)
 var sway_target := 0.0
@@ -35,8 +39,6 @@ var camera_offset := Vector3.ZERO
 # ------- MOBILE -------
 var _is_mobile := false
 var _mobile_look_input := Vector2.ZERO
-# Flag pickup: viene impostato a true dal pulsante e consumato in _physics_process,
-# stesso identico schema di _jump_requested nello script di riferimento
 var _pickup_requested := false
 
 var mobile_controls_ui: Node = null
@@ -52,52 +54,35 @@ func _ready() -> void:
 
 	_is_mobile = OS.get_name() == "Android" or OS.get_name() == "iOS"
 
-	if _is_mobile:
+	if enable_mobile_controls and _is_mobile:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		call_deferred("setup_mobile_controls")
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-# Carica e collega la UI mobile — identico a setup_mobile_controls() nello script di riferimento
 func setup_mobile_controls() -> void:
-	var mobile_scene = load("res://scenes/MealPerfectgameScenes/mobile_controls_pm.tscn")
-	if mobile_scene == null:
-		push_error("MobileControlsPM.tscn non trovata! Controlla il percorso.")
-		return
-
+	var mobile_scene = preload("res://scenes/MealPerfectgameScenes/mobile_controls_pm.tscn")
 	mobile_controls_ui = mobile_scene.instantiate()
 	get_tree().root.add_child(mobile_controls_ui)
 	await get_tree().process_frame
 
-	move_joystick  = mobile_controls_ui.find_child("move_joystick")
-	look_joystick  = mobile_controls_ui.find_child("look_joystick")
-	pickup_button  = mobile_controls_ui.find_child("PickupAndDropButton")
+	move_joystick = mobile_controls_ui.find_child("move_joystick")
+	look_joystick = mobile_controls_ui.find_child("look_joystick")
+	pickup_button = mobile_controls_ui.find_child("PickupAndDropButton")
 
 	if move_joystick:
 		move_joystick.movement_joystick_updated.connect(_on_move_joystick_updated)
-	else:
-		push_warning("move_joystick non trovato in MobileControlsPM!")
-
 	if look_joystick:
 		look_joystick.look_joystick_updated.connect(_on_look_joystick_updated)
-	else:
-		push_warning("look_joystick non trovato in MobileControlsPM!")
-
 	if pickup_button:
 		pickup_button.pressed.connect(_on_pickup_button_pressed)
-	else:
-		push_warning("PickupAndDropButton non trovato in MobileControlsPM!")
 
-# Callback joystick movimento (Input actions già gestite da VirtualJoystickPM)
 func _on_move_joystick_updated(_value: Vector2) -> void:
 	pass
 
-# Callback look joystick
 func _on_look_joystick_updated(value: Vector2) -> void:
 	_mobile_look_input = value
 
-# Callback pickup button: imposta solo il flag, NON chiama _handle_interact direttamente.
-# Il flag viene letto e consumato in _physics_process, quando collider è già aggiornato.
 func _on_pickup_button_pressed() -> void:
 	_pickup_requested = true
 
@@ -106,14 +91,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
 
-	# Rotazione camera con mouse (solo desktop)
 	if not _is_mobile and event is InputEventMouseMotion:
 		rotation.y -= event.relative.x * CAMERA_SENS
 		rotation.x = clamp(rotation.x - event.relative.y * CAMERA_SENS, -0.7, 1)
 
-	# Interact da tastiera (desktop)
 	if event.is_action_pressed("interact"):
-		_handle_interact()
+		_handle_interact(collider)
 
 # ------- PHYSICS -------
 func _physics_process(delta: float) -> void:
@@ -123,10 +106,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Consuma il flag pickup qui, dopo che _process ha già aggiornato collider
 	if _pickup_requested:
 		_pickup_requested = false
-		_handle_interact()
+		_handle_interact(_last_valid_collider)
 
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -150,9 +132,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, decel * delta)
 		velocity.z = move_toward(velocity.z, 0.0, decel * delta)
 
-	# Rotazione camera da look joystick (mobile)
 	if _is_mobile and _mobile_look_input != Vector2.ZERO:
-		var look_sens := CAMERA_SENS * 60.0
+		var look_sens := CAMERA_SENS * 10.0 # da mobile quest'azione gestisce la durezza del movimento della cameraa
 		rotation.y -= _mobile_look_input.x * look_sens
 		rotation.x = clamp(
 			rotation.x - _mobile_look_input.y * look_sens,
@@ -165,19 +146,18 @@ func _physics_process(delta: float) -> void:
 	velocity.z = clamp(velocity.z, -SPEED, SPEED)
 	move_and_slide()
 
-# Logica pickup/drop centralizzata
-func _handle_interact() -> void:
+# Gestisce pickup e drop sia da tastiera (desktop) che da pulsante (mobile).
+# - target: il cibo da raccogliere (_last_valid_collider su mobile, collider su desktop)
+# - per il drop usa sempre collider aggiornato in tempo reale
+func _handle_interact(target: Node) -> void:
 	if pickedObject:
+		# Oggetto in mano: prova a depositarlo su piatto o tavolo
 		if collider == pickedObject:
 			return
-
-		# Drop su piatto
 		if collider is store_object:
 			if collider.add_object(pickedObject):
 				pickedObject = null
 			return
-
-		# Drop sul tavolo
 		var t := collider
 		while t and not t.is_in_group("table"):
 			t = t.get_parent()
@@ -185,10 +165,10 @@ func _handle_interact() -> void:
 			drop_to_table(t)
 			return
 	else:
-		if collider and collider.is_in_group("food"):
-			if pickedObject == null:
-				if collider.has_method("on_dropped"):
-					pick_up_object(collider)
+		# Mani vuote: prova a raccogliere il cibo puntato
+		if target and target.is_in_group("food") and pickedObject == null:
+			if target.has_method("on_dropped"):
+				pick_up_object(target)
 
 # ------- CAMERA -------
 func apply_camera_sway(delta: float, input_dir: Vector2) -> void:
@@ -211,9 +191,15 @@ func _process(_delta: float) -> void:
 	if ray_cast_3d.is_colliding():
 		collider = ray_cast_3d.get_collider()
 		interact_object.emit(collider)
+		# Salva solo il cibo — tavolo e piatto vengono gestiti tramite collider diretto
+		if collider and collider.is_in_group("food"):
+			_last_valid_collider = collider
 	else:
 		collider = null
 		interact_object.emit(null)
+		# Azzera solo se il nodo non esiste più in scena (es. già raccolto)
+		if _last_valid_collider != null and not is_instance_valid(_last_valid_collider):
+			_last_valid_collider = null
 
 # ------- UTILITY -------
 func head_move(value: float) -> void:

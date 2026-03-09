@@ -5,7 +5,7 @@ func _ready():
 
 func _on_pressed():
 	var current_scene = get_tree().current_scene.scene_file_path
-	var target_scene = "res://scenes/glucolife rooms/Living room.tscn"
+	var target_scene = "res://scenes/glucolife rooms/Bedroom.tscn"
 	
 	if current_scene == target_scene:
 		return

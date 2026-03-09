@@ -26,7 +26,7 @@ func _on_button_restart_pressed() -> void:
 	# resetta il game manager
 	GameState.reset_game()
 	# ricarico scena mainscene
-	get_tree().change_scene_to_file("res://Scenes/MainScene_Levelcolazione.tscn")
+	get_tree().change_scene_to_file("res://scenes/MealPerfectgameScenes/MainScene_Levelcolazione.tscn")
 
 #esci dal livello in questione(colazione) porta al menu dei livelli
 func _on_button_quit_pressed() -> void:
@@ -38,4 +38,4 @@ func _on_button_quit_pressed() -> void:
 func _on_button_next_pressed() -> void:
 	get_tree().paused = false #tolgo la pausa per il caricamento del nuovo livello
 	GameState.reset_game() #reset del game state, cosi il livello parte senza bloccarsi
-	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn") #carico la scena del livello pranzo
+	get_tree().change_scene_to_file("res://scenes/MealPerfectgameScenes/MainScene.tscn") #carico la scena del livello pranzo

@@ -98,32 +98,34 @@ _data = {
 &"bob": SubResource("Animation_gtut0")
 }
 
-[node name="coconut" type="Node3D"]
+[node name="coconut" type="Node3D" unique_id=1401674323]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=746778698]
 
-[node name="coconut_mesh" type="MeshInstance3D" parent="Node3D"]
+[node name="coconut_mesh" type="MeshInstance3D" parent="Node3D" unique_id=681994830]
 transform = Transform3D(27.39086, 30.420637, 0, -30.420637, 27.39086, 0, 0, 0, 40.935, 4.038688e-10, 0.006178532, 2.019344e-10)
 mesh = SubResource("ArrayMesh_k0w34")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_tofe1")
 
-[node name="Area3D" type="Area3D" parent="Node3D"]
+[node name="Area3D" type="Area3D" parent="Node3D" unique_id=131848772]
 script = ExtResource("1_pit56")
 effect_duration = 45.0
+glucolife_glucose = 12.0
+glucolife_energy = 15.0
+glucolife_happiness = 15.0
+glucolife_digestion = 3.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D" unique_id=56477216]
 shape = SubResource("SphereShape3D_chd25")
 
-[node name="Label3D" type="Label3D" parent="Node3D"]
+[node name="Label3D" type="Label3D" parent="Node3D" unique_id=118292396]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0874041, 0.4730688, -0.016572442)
 billboard = 1
 text = "Cocco"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=309346719]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_o2nf8")
-}
-autoplay = "bob"
+libraries/ = SubResource("AnimationLibrary_o2nf8")
+autoplay = &"bob"
 speed_scale = 0.4

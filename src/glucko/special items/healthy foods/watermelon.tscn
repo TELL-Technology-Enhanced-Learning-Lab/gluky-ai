@@ -97,35 +97,37 @@ _data = {
 &"bob": SubResource("Animation_gtut0")
 }
 
-[node name="watermelon" type="Node3D"]
+[node name="watermelon" type="Node3D" unique_id=527393807]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=1624512109]
 
-[node name="watermelon_mesh" type="MeshInstance3D" parent="Node3D"]
+[node name="watermelon_mesh" type="MeshInstance3D" parent="Node3D" unique_id=102742037]
 transform = Transform3D(30.98, 0, 0, 0, 30.98, 0, 0, 0, 30.98, 0, 0.25718468, 0)
 mesh = SubResource("ArrayMesh_62hh6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1x2ya")
 
-[node name="Area3D" type="Area3D" parent="Node3D"]
+[node name="Area3D" type="Area3D" parent="Node3D" unique_id=225512911]
 script = ExtResource("1_1x2ya")
 glucose_amount = 8.0
 effect_duration = 13.0
+glucolife_glucose = 30.0
+glucolife_energy = 18.0
+glucolife_happiness = 45.0
+glucolife_digestion = 4.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D" unique_id=1904555459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24081767, 0)
 shape = SubResource("SphereShape3D_uexlh")
 
-[node name="Label3D" type="Label3D" parent="Node3D"]
+[node name="Label3D" type="Label3D" parent="Node3D" unique_id=250693851]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0075775385, 0.76503026, -0.016572442)
 billboard = 1
 text = "Anguria"
 font_size = 26
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=959535751]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_o2nf8")
-}
-autoplay = "bob"
+libraries/ = SubResource("AnimationLibrary_o2nf8")
+autoplay = &"bob"
 speed_scale = 0.4

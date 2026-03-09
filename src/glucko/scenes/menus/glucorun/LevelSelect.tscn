@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://fe1t3f47lv8s"]
+
+[ext_resource type="Shader" uid="uid://4yw0avo2pt2a" path="res://scenes/menus/glucorun/background.gdshader" id="1_bu370"]
+[ext_resource type="Script" uid="uid://7wcy71ngxn22" path="res://scenes/menus/glucorun/LevelSelect.gd" id="1_wu47e"]
+[ext_resource type="FontFile" uid="uid://booos1o06mthc" path="res://art/font_esterni/Orbitron-VariableFont_wght.ttf" id="2_dybd8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dybd8"]
+shader = ExtResource("1_bu370")
+shader_parameter/grid_size = 60.0
+shader_parameter/scroll_speed = 0.3
+shader_parameter/grid_color = Color(0, 1, 0.8, 0.04)
+shader_parameter/bg_color = Color(0.008, 0.043, 0.078, 1)
+shader_parameter/vignette_strength = 1.2
+shader_parameter/glow_pulse = 0.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wu47e"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 98, 0)
+scale_max = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu47e"]
+bg_color = Color(0.050980393, 0.16470589, 0.13333334, 1)
+border_color = Color(0, 1, 0.8, 1)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ro8h"]
+bg_color = Color(0, 1.0309138, 0.82505333, 1)
+corner_detail = 3
+
+[node name="Control" type="Control" unique_id=1005616936]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wu47e")
+
+[node name="Background" type="ColorRect" parent="." unique_id=500179675]
+material = SubResource("ShaderMaterial_dybd8")
+layout_mode = 0
+offset_right = 1918.0
+offset_bottom = 1076.0
+color = Color(0.007843138, 0.03529412, 0.05490196, 1)
+
+[node name="BackgroundParticles" type="GPUParticles2D" parent="." unique_id=1616718977]
+position = Vector2(278, 1)
+amount = 80
+lifetime = 8.0
+process_material = SubResource("ParticleProcessMaterial_wu47e")
+
+[node name="BackgroundParticles2" type="GPUParticles2D" parent="." unique_id=296084180]
+position = Vector2(1628, 4)
+amount = 80
+lifetime = 8.0
+process_material = SubResource("ParticleProcessMaterial_wu47e")
+
+[node name="BackgroundParticles3" type="GPUParticles2D" parent="." unique_id=1617318901]
+position = Vector2(987, 2)
+amount = 80
+lifetime = 8.0
+process_material = SubResource("ParticleProcessMaterial_wu47e")
+
+[node name="Header" type="VBoxContainer" parent="." unique_id=1849331834]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -295.5
+offset_top = 88.76
+offset_right = 295.5
+offset_bottom = 243.815
+grow_horizontal = 2
+
+[node name="SubLabel" type="Label" parent="Header" unique_id=1492143502]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_dybd8")
+theme_override_font_sizes/font_size = 23
+text = "EDUCAZIONE AL DIABETE"
+horizontal_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Header" unique_id=1431705000]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dybd8")
+theme_override_font_sizes/font_size = 90
+text = "GLUCORUN"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1824262722]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -265.835
+offset_right = 200.00049
+offset_bottom = -221.83499
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wu47e")
+
+[node name="TopBar" type="HBoxContainer" parent="PanelContainer" unique_id=467658889]
+custom_minimum_size = Vector2(400, 44)
+layout_mode = 2
+
+[node name="GlucoseIcon" type="Label" parent="PanelContainer/TopBar" unique_id=1827264046]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dybd8")
+theme_override_font_sizes/font_size = 16
+text = "GLUCOSIO"
+
+[node name="GlucoseBar" type="ProgressBar" parent="PanelContainer/TopBar" unique_id=1506483704]
+custom_minimum_size = Vector2(140, 6)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_6ro8h")
+min_value = 70.0
+max_value = 200.0
+value = 128.0
+show_percentage = false
+
+[node name="GlucoseValue" type="Label" parent="PanelContainer/TopBar" unique_id=513681688]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_dybd8")
+text = "128 mg/dL"

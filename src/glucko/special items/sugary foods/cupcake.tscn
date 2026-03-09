@@ -59,33 +59,35 @@ _data = {
 &"bob": SubResource("Animation_gtut0")
 }
 
-[node name="cupcake" type="Node3D"]
+[node name="cupcake" type="Node3D" unique_id=972321542]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=50100639]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1399200399]
 mesh = ExtResource("1_qpcoa")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_qerps")
 
-[node name="Area3D" type="Area3D" parent="Node3D"]
+[node name="Area3D" type="Area3D" parent="Node3D" unique_id=1349216023]
 script = ExtResource("1_38dfg")
 glucose_amount = 55.0
 effect_duration = 15.0
+glucolife_glucose = 32.0
+glucolife_energy = 18.0
+glucolife_happiness = 35.0
+glucolife_digestion = -5.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D" unique_id=688046630]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048217773, 0.25170898, 0.006958008)
 shape = SubResource("BoxShape3D_x5l7x")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=1815642184]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_o2nf8")
-}
-autoplay = "bob"
+libraries/ = SubResource("AnimationLibrary_o2nf8")
+autoplay = &"bob"
 speed_scale = 0.4
 
-[node name="Label3D" type="Label3D" parent="Node3D"]
+[node name="Label3D" type="Label3D" parent="Node3D" unique_id=1492196425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 billboard = 1
 text = "Cupcake"

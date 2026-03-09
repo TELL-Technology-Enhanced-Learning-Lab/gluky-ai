@@ -59,36 +59,38 @@ _data = {
 &"bob": SubResource("Animation_gtut0")
 }
 
-[node name="Hummus" type="Node3D"]
+[node name="Hummus" type="Node3D" unique_id=1413196735]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=207069588]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1394541895]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 mesh = ExtResource("1_0rpum")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_1spiy")
 
-[node name="Area3D" type="Area3D" parent="Node3D"]
+[node name="Area3D" type="Area3D" parent="Node3D" unique_id=1281041583]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_r6imr")
 glucose_amount = 10.0
 effect_duration = 25.0
+glucolife_glucose = 15.0
+glucolife_energy = 18.0
+glucolife_happiness = 15.0
+glucolife_digestion = 3.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D" unique_id=1505243767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015563965, 0.038368225, 0.0075149536)
 shape = SubResource("BoxShape3D_1spiy")
 
-[node name="Label3D" type="Label3D" parent="Node3D"]
+[node name="Label3D" type="Label3D" parent="Node3D" unique_id=2123388514]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 billboard = 1
 text = "Crema di Ceci"
 font_size = 14
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=1499611371]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_o2nf8")
-}
-autoplay = "bob"
+libraries/ = SubResource("AnimationLibrary_o2nf8")
+autoplay = &"bob"
 speed_scale = 0.4

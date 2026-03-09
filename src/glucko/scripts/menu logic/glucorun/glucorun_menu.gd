@@ -33,7 +33,7 @@ func _process(_delta):
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/glucorun levels/livello1.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/glucorun/LevelSelect.tscn")
 
 
 func _on_settings_pressed() -> void:

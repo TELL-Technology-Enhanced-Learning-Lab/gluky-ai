@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://qvoh04smh1of"]
+[gd_scene format=3 uid="uid://qvoh04smh1of"]
 
-[ext_resource type="Script" uid="uid://brxj6ndkps7vf" path="res://Scripts/first_person_player.gd" id="1_4ldhc"]
+[ext_resource type="Script" uid="uid://ccy6ku3qs3jf8" path="res://scripts/MealPerfectGameScript/first_person_player.gd" id="1_4ldhc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1rygn"]
 
@@ -46,36 +46,34 @@ _data = {
 &"walk": SubResource("Animation_4ldhc")
 }
 
-[node name="FirstPersonPlayer" type="CharacterBody3D"]
+[node name="FirstPersonPlayer" type="CharacterBody3D" unique_id=1898803213]
 collision_layer = 3
 script = ExtResource("1_4ldhc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1763774873]
 mesh = SubResource("CapsuleMesh_1rygn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1408720595]
 shape = SubResource("CapsuleShape3D_3g7qm")
 
-[node name="ObjectMarker3D" type="Marker3D" parent="."]
+[node name="ObjectMarker3D" type="Marker3D" parent="." unique_id=1919708459]
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0020421222, 0.387, -0.66902184)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=161452111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0.2, -3.99)
 visible = false
 mesh = SubResource("BoxMesh_4ldhc")
 
-[node name="simulateMovement" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ar004")
-}
+[node name="simulateMovement" type="AnimationPlayer" parent="." unique_id=923678215]
+libraries/ = SubResource("AnimationLibrary_ar004")
 
-[node name="CameraPivot" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="." unique_id=298949634]
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=399303572]
 transform = Transform3D(1, 0, 0, 0, 0.96524036, 0.2613638, 0, -0.2613638, 0.96524036, 0, 0.7456309, -0.2567578)
 fov = 60.0
 
-[node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D"]
+[node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D" unique_id=1242353796]
 transform = Transform3D(1, 0, 0, 0, 0.990268, -0.13917309, 0, 0.13917309, 0.990268, 0, 0, 0)
 target_position = Vector3(0, 0, -3)

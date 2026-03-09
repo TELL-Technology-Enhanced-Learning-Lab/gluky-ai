@@ -35,6 +35,9 @@ var exit_button: Button
 var is_active := false
 var is_animating := false
 var tween: Tween
+var can_interact_with_table := true
+
+var meal_label: Label3D
 
 signal food_selected(scene_path: String)
 signal food_selected_packed(scene: PackedScene)
@@ -44,15 +47,18 @@ func _ready():
 	_find_references()
 	_setup_click_area()
 	_load_foods_from_database()
+	_find_meal_label()
+	_update_table_interaction_status()
+	_update_meal_label_text()
 
 func _exit_tree():
 	if tween and tween.is_valid():
 		tween.kill()
 	if ui_canvas and is_instance_valid(ui_canvas):
 		ui_canvas.queue_free()
-	for f in current_food_nodes:
-		if is_instance_valid(f):
-			f.queue_free()
+	for food_node in current_food_nodes:
+		if is_instance_valid(food_node):
+			food_node.queue_free()
 	current_food_nodes.clear()
 
 func _find_references():
@@ -68,12 +74,14 @@ func _setup_click_area():
 	click_area = get_node_or_null("TableClickArea")
 	if click_area:
 		click_area.input_event.connect(_on_table_clicked)
-	else:
-		push_error("TableClickArea non trovata!")
+
+func _find_meal_label():
+	meal_label = get_node_or_null("mealLabel")
+	if meal_label:
+		meal_label.text = ""
 
 func _load_foods_from_database():
 	if not FoodDatabase or not FoodDatabase.food_database:
-		push_error("FoodDatabase non trovato!")
 		return
 	var food_resource = FoodDatabase.food_database
 	if "healthy_foods" in food_resource:
@@ -82,48 +90,147 @@ func _load_foods_from_database():
 		sugary_food_scenes = food_resource.sugary_foods
 	all_food_scenes = healthy_food_scenes + sugary_food_scenes
 
+func _update_table_interaction_status():
+	var current_meal_type = _get_current_meal_type()
+	can_interact_with_table = GlucolifeDataManager.can_eat_meal(current_meal_type)
+	
+	if click_area and click_area.has_method("set_interaction_message"):
+		if can_interact_with_table:
+			click_area.set_interaction_message("Scegli il tuo pasto")
+		else:
+			var messages = {
+				GlucolifeDataManager.MealType.BREAKFAST: "Hai già fatto colazione oggi",
+				GlucolifeDataManager.MealType.SNACK1: "Hai già fatto merenda oggi",
+				GlucolifeDataManager.MealType.LUNCH: "Hai già pranzato oggi",
+				GlucolifeDataManager.MealType.SNACK2: "Hai già fatto merenda oggi",
+				GlucolifeDataManager.MealType.DINNER: "Hai già cenato oggi"
+			}
+			click_area.set_interaction_message(messages.get(current_meal_type, "Non puoi mangiare ora"))
+
+func _update_meal_label_text():
+	if not meal_label:
+		return
+		
+	var hour = Time.get_time_dict_from_system().hour
+	var meal_type = _get_current_meal_type()
+	
+	match meal_type:
+		GlucolifeDataManager.MealType.BREAKFAST:
+			if GlucolifeDataManager.can_eat_meal(meal_type):
+				meal_label.text = "Colazione (6:00 - 10:00)"
+			else:
+				meal_label.text = "Hai già fatto colazione oggi"
+				
+		GlucolifeDataManager.MealType.SNACK1:
+			if GlucolifeDataManager.can_eat_meal(meal_type):
+				meal_label.text = "Merenda Mattutina (10:00 - 12:00)"
+			else:
+				meal_label.text = "Hai già fatto merenda oggi"
+				
+		GlucolifeDataManager.MealType.LUNCH:
+			if GlucolifeDataManager.can_eat_meal(meal_type):
+				meal_label.text = "Pranzo (12:00 - 15:00)"
+			else:
+				meal_label.text = "Hai già pranzato oggi"
+				
+		GlucolifeDataManager.MealType.SNACK2:
+			if GlucolifeDataManager.can_eat_meal(meal_type):
+				meal_label.text = "Merenda Pomeridiana (15:00 - 18:00)"
+			else:
+				meal_label.text = "Hai già fatto merenda oggi"
+				
+		GlucolifeDataManager.MealType.DINNER:
+			if GlucolifeDataManager.can_eat_meal(meal_type):
+				meal_label.text = "Cena (18:00 - 22:00)"
+			else:
+				meal_label.text = "Hai già cenato oggi"
+				
+		_:
+			if hour < 6:
+				meal_label.text = "È troppo tardi! Torna domani per la colazione! (6:00)"
+			elif hour > 22:
+				meal_label.text = "È troppo tardi! Torna domani per la colazione! (6:00)"
+			else:
+				meal_label.text = "Non è ora di mangiare"
+
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if is_active or is_animating:
+		if not is_active:
+			_check_table_click()
+		elif is_active and not is_animating:
+			_check_food_click()
+
+func _check_table_click():
+	if not can_interact_with_table:
+		return
+		
+	var mouse_pos = get_viewport().get_mouse_position()
+	var ray_origin = camera.project_ray_origin(mouse_pos)
+	var ray_end = ray_origin + camera.project_ray_normal(mouse_pos) * 100.0
+
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
+	query.collide_with_areas = true
+	query.collide_with_bodies = false
+	query.collision_mask = 0xFFFFFFFF
+
+	var camera_bounds = get_tree().get_first_node_in_group("camera_bounds")
+	if camera_bounds:
+		query.exclude = [camera_bounds.get_rid()]
+
+	var result = space_state.intersect_ray(query)
+	
+	if not result.is_empty() and result.collider == click_area:
+		start_food_interaction()
+
+func _check_food_click():
+	var mouse_pos = get_viewport().get_mouse_position()
+	var ray_origin = camera.project_ray_origin(mouse_pos)
+	var ray_end = ray_origin + camera.project_ray_normal(mouse_pos) * 100.0
+
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
+	query.collide_with_areas = true
+	query.collide_with_bodies = true
+	query.collision_mask = 0xFFFFFFFF
+
+	var camera_bounds = get_tree().get_first_node_in_group("camera_bounds")
+	if camera_bounds:
+		query.exclude = [camera_bounds.get_rid()]
+
+	var result = space_state.intersect_ray(query)
+	
+	if result.is_empty():
+		return
+		
+	var collider = result.collider
+	
+	for food_node_instance in current_food_nodes:
+		if not is_instance_valid(food_node_instance):
+			continue
+			
+		if collider == food_node_instance or food_node_instance.is_ancestor_of(collider):
+			_on_food_selected(food_node_instance)
 			return
-		var mouse_pos = get_viewport().get_mouse_position()
-		var ray_origin = camera.project_ray_origin(mouse_pos)
-		var ray_end = ray_origin + camera.project_ray_normal(mouse_pos) * 100.0
-
-		var space_state = get_world_3d().direct_space_state
-		var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
-		query.collide_with_areas = true
-		query.collide_with_bodies = false
-
-		var camera_bounds = get_tree().get_first_node_in_group("camera_bounds")
-		if camera_bounds:
-			query.exclude = [camera_bounds.get_rid()]
-		else:
-			var cb = get_tree().root.find_child("CameraBounds", true, false)
-			if cb:
-				query.exclude = [cb.get_rid()]
-
-		var result = space_state.intersect_ray(query)
-		if result and result.collider == click_area:
-			start_food_interaction()
 
 func _on_table_clicked(_cam, event, _pos, _normal, _idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if not is_active:
+		if not is_active and not is_animating and can_interact_with_table:
 			start_food_interaction()
 
 func start_food_interaction():
-	if is_animating or all_food_scenes.is_empty():
+	if is_animating or all_food_scenes.is_empty() or not can_interact_with_table:
 		return
 
 	is_active = true
 	is_animating = true
 
-	# Salva i transform originali di pivot e camera
-	original_pivot_transform = camera_pivot.global_transform
-	original_camera_transform = camera.transform
+	if camera_pivot:
+		original_pivot_transform = camera_pivot.global_transform
+	if camera:
+		original_camera_transform = camera.transform
 
-	if camera_pivot.has_method("set_food_view_mode"):
+	if camera_pivot and camera_pivot.has_method("set_food_view_mode"):
 		camera_pivot.set_food_view_mode(true)
 
 	await _zoom_camera_to_table()
@@ -140,20 +247,23 @@ func end_food_interaction():
 	await _despawn_foods()
 	await _zoom_camera_out()
 
-	if camera_pivot.has_method("set_food_view_mode"):
+	if camera_pivot and camera_pivot.has_method("set_food_view_mode"):
 		camera_pivot.set_food_view_mode(false)
 
 	is_active = false
 	is_animating = false
+	
+	_update_table_interaction_status()
+	_update_meal_label_text()
 
 func _zoom_camera_to_table():
+	if not camera_pivot or not camera:
+		return
+		
 	var table_pos = global_position
-
 	var target_pivot_pos = table_pos
-
-	# Camera stessa direzione di sempre, ma più vicina e bassa
 	var target_cam_pos = Vector3(0, 1.0, 2.5)
-	var target_cam_rot = Vector3(deg_to_rad(10), 0, 0)
+	var target_cam_rot = Vector3(deg_to_rad(10), 0.0, 0.0)
 
 	tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)
@@ -168,6 +278,14 @@ func _zoom_camera_to_table():
 	await tween.finished
 
 func _zoom_camera_out():
+	if not camera_pivot or not camera:
+		return
+	
+	if original_pivot_transform == Transform3D() or original_camera_transform == Transform3D():
+		return
+	if abs(original_pivot_transform.basis.determinant()) < 0.001 or abs(original_camera_transform.basis.determinant()) < 0.001:
+		return
+		
 	tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
@@ -189,13 +307,12 @@ func _spawn_random_foods():
 	await _display_foods()
 
 func _display_foods():
-	for f in current_food_nodes:
-		if is_instance_valid(f):
-			f.queue_free()
+	for food_node in current_food_nodes:
+		if is_instance_valid(food_node):
+			food_node.queue_free()
 	current_food_nodes.clear()
 
 	if food_spawn_point == null:
-		push_error("FoodSpawnPoint è null!")
 		return
 
 	var start_x = -(foods_displayed - 1) * food_spacing * 0.5
@@ -204,23 +321,24 @@ func _display_foods():
 		var scene_index = current_food_indices[i]
 		if scene_index >= all_food_scenes.size():
 			continue
+			
 		var food_scene = all_food_scenes[scene_index]
 		if food_scene == null or not (food_scene is PackedScene):
 			continue
 
-		var foodset = food_scene.instantiate()
-		foodset.position = Vector3(start_x + i * food_spacing, 0.3, 0)
-		foodset.scale = Vector3.ONE * food_scale
-		food_spawn_point.add_child(foodset)
-		current_food_nodes.append(foodset)
-
-		if foodset.has_signal("food_selected"):
-			foodset.food_selected.connect(_on_food_selected.bind(food_scene))
+		var food_node_instance = food_scene.instantiate()
+		
+		var food_pos = Vector3(start_x + i * food_spacing, 0.3, 0)
+		food_node_instance.position = food_pos
+		food_node_instance.scale = Vector3.ONE * food_scale
+		
+		food_spawn_point.add_child(food_node_instance)
+		current_food_nodes.append(food_node_instance)
 
 func _despawn_foods():
-	for f in current_food_nodes:
-		if is_instance_valid(f):
-			f.queue_free()
+	for food_node in current_food_nodes:
+		if is_instance_valid(food_node):
+			food_node.queue_free()
 	current_food_nodes.clear()
 	await get_tree().process_frame
 
@@ -228,7 +346,7 @@ func _scroll_foods(direction: int):
 	if is_animating or all_food_scenes.is_empty():
 		return
 	is_animating = true
-	for i in range(foods_displayed):
+	for i in range(current_food_indices.size()):
 		current_food_indices[i] = (current_food_indices[i] + direction) % all_food_scenes.size()
 	await _display_foods()
 	is_animating = false
@@ -265,7 +383,69 @@ func _destroy_ui():
 		ui_canvas.queue_free()
 		ui_canvas = null
 
-func _on_food_selected(food_scene: PackedScene):
-	food_selected.emit(food_scene.resource_path)
-	food_selected_packed.emit(food_scene)
+func _on_food_selected(food_node_instance):
+	food_selected.emit(food_node_instance.scene_file_path)
+	food_selected_packed.emit(load(food_node_instance.scene_file_path))
+
+	if food_node_instance.has_method("get_glucolife_data"):
+		var data = food_node_instance.get_glucolife_data()
+		var meal_type = _get_current_meal_type()
+		
+		var meal_added = GlucolifeDataManager.add_meal(
+			meal_type,
+			data["glucose"],
+			data["energy"],
+			data["happiness"],
+			data.get("digestion_time", 1.0)
+		)
+		
+		if meal_added:
+			GlucolifeDataManager.update_glucose(data["glucose"])
+			GlucolifeDataManager.update_energy(data["energy"])
+			GlucolifeDataManager.update_happiness(data["happiness"])
+			GlucolifeDataManager.update_hygiene(data["hygiene"])
+	
+	await _play_food_eaten_animation(food_node_instance)
+	
 	end_food_interaction()
+
+func _get_current_meal_type() -> int:
+	var hour = Time.get_time_dict_from_system().hour
+	
+	match hour:
+		6,7,8,9,10:
+			return GlucolifeDataManager.MealType.BREAKFAST
+		11,12:
+			return GlucolifeDataManager.MealType.SNACK1
+		13,14,15:
+			return GlucolifeDataManager.MealType.LUNCH
+		16,17,18:
+			return GlucolifeDataManager.MealType.SNACK2
+		19,20,21,22:
+			return GlucolifeDataManager.MealType.DINNER
+		_:
+			return -1
+			
+func _play_food_eaten_animation(food_node_instance):
+	if not is_instance_valid(food_node_instance):
+		return
+
+	current_food_nodes.erase(food_node_instance)
+
+	if camera and is_instance_valid(camera):
+		var target_pos = camera.global_position + Vector3(0, 0, -0.5)
+
+		var tweening = create_tween()
+		tweening.set_parallel(true)
+		tweening.set_ease(Tween.EASE_OUT)
+		tweening.set_trans(Tween.TRANS_BACK)
+
+		tweening.tween_property(food_node_instance, "global_position", target_pos, 0.35)
+		tweening.tween_property(food_node_instance, "scale", Vector3(0.001, 0.001, 0.001), 0.35)
+
+		await tweening.finished
+	else:
+		await get_tree().process_frame
+
+	if is_instance_valid(food_node_instance):
+		food_node_instance.queue_free()

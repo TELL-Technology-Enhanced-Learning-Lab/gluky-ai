@@ -59,33 +59,35 @@ _data = {
 &"bob": SubResource("Animation_gtut0")
 }
 
-[node name="croissant" type="Node3D"]
+[node name="croissant" type="Node3D" unique_id=2027066161]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=770835694]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1295243458]
 mesh = ExtResource("1_0rmxi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_gr4gr")
 
-[node name="Area3D" type="Area3D" parent="Node3D"]
+[node name="Area3D" type="Area3D" parent="Node3D" unique_id=993443052]
 script = ExtResource("1_rwvk2")
 glucose_amount = 75.0
 effect_duration = 18.0
+glucolife_glucose = 28.0
+glucolife_energy = 20.0
+glucolife_happiness = 22.0
+glucolife_digestion = 3.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D" unique_id=966104664]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06213379, 0.12921143, 0.027038574)
 shape = SubResource("BoxShape3D_y4y0i")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=1858446666]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_o2nf8")
-}
-autoplay = "bob"
+libraries/ = SubResource("AnimationLibrary_o2nf8")
+autoplay = &"bob"
 speed_scale = 0.4
 
-[node name="Label3D" type="Label3D" parent="Node3D"]
+[node name="Label3D" type="Label3D" parent="Node3D" unique_id=888574680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 billboard = 1
 text = "Croissant"

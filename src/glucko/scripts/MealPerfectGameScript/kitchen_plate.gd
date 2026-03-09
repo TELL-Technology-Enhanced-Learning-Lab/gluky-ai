@@ -3,10 +3,12 @@ class_name store_object
 
 @onready var objects: Node3D = $Objects
 @onready var object_places: Node3D = $ObjectPlaces
-#gestire il popup come autoload dato che se lo lascio cosi funziona solo per il livello pranzo
+
 @onready var glycemic_popup := get_tree().root.get_node("/root/Node3D/CanvasLayer/GlycemicPopup")
 @onready var glycemic_popup_cena := get_tree().root.get_node("/root/Node3D/Panel")
 @onready var glycemic_popup_colazione := get_tree().root.get_node("/root/Node3D/PanelClz")
+
+@onready var panda_anim: AnimationPlayer = get_tree().root.get_node_or_null("/root/Node3D/Panda/AnimationPlayer") #prendo il riferimento della scena istanziata del pandas
 
 var hud
 var itemsPlaced: Array = []
@@ -162,7 +164,6 @@ func add_object(object: Node3D) -> bool:
 				var spiegazione := get_nutritional_explanation()
 				
 				if is_perfect_plate(ratio):
-					#modificare qui e inserire gli altri popup per i rispettivi livelli
 					
 					if glycemic_popup: #popup pranzo
 						glycemic_popup.show_popup("Piatto perfetto! Ottimo bilanciamento!\n\n" + spiegazione, ratio)
@@ -175,7 +176,15 @@ func add_object(object: Node3D) -> bool:
 					
 					point_PerfectPlate() #richiama le due funzione piatto perfetto e pulisci piatto.
 					clear_plate()
+					
+					if panda_anim:
+						panda_anim.stop()
+						panda_anim.play("Yes")
 				else:
+					if panda_anim:
+						panda_anim.stop()
+						panda_anim.play("No")
+						
 					var suggerimento := get_balance_suggestion(ratio)
 					if glycemic_popup: #popup pranzo
 						glycemic_popup.show_popup(suggerimento + "\n\n" + spiegazione, ratio)

@@ -63,7 +63,4 @@ func _process(delta):
 # CAMBIO SCENA
 # ============================
 func _change_scene(path: String) -> void:
-	if FileAccess.file_exists(path):
-		get_tree().change_scene_to_file(path)
-	else:
-		push_error("❌ Scena non trovata: " + path)
+	get_tree().change_scene_to_file(path)
