@@ -92,7 +92,10 @@ func _load_foods_from_database():
 
 func _update_table_interaction_status():
 	var current_meal_type = _get_current_meal_type()
-	can_interact_with_table = GlucolifeDataManager.can_eat_meal(current_meal_type)
+	if current_meal_type == -1:
+		can_interact_with_table = false
+	else:
+		can_interact_with_table = GlucolifeDataManager.can_eat_meal(current_meal_type)
 	
 	if click_area and click_area.has_method("set_interaction_message"):
 		if can_interact_with_table:
@@ -114,44 +117,35 @@ func _update_meal_label_text():
 	var hour = Time.get_time_dict_from_system().hour
 	var meal_type = _get_current_meal_type()
 	
-	match meal_type:
-		GlucolifeDataManager.MealType.BREAKFAST:
-			if GlucolifeDataManager.can_eat_meal(meal_type):
-				meal_label.text = "Colazione (6:00 - 10:00)"
-			else:
-				meal_label.text = "Hai già fatto colazione oggi"
-				
-		GlucolifeDataManager.MealType.SNACK1:
-			if GlucolifeDataManager.can_eat_meal(meal_type):
-				meal_label.text = "Merenda Mattutina (10:00 - 12:00)"
-			else:
-				meal_label.text = "Hai già fatto merenda oggi"
-				
-		GlucolifeDataManager.MealType.LUNCH:
-			if GlucolifeDataManager.can_eat_meal(meal_type):
-				meal_label.text = "Pranzo (12:00 - 15:00)"
-			else:
-				meal_label.text = "Hai già pranzato oggi"
-				
-		GlucolifeDataManager.MealType.SNACK2:
-			if GlucolifeDataManager.can_eat_meal(meal_type):
-				meal_label.text = "Merenda Pomeridiana (15:00 - 18:00)"
-			else:
-				meal_label.text = "Hai già fatto merenda oggi"
-				
-		GlucolifeDataManager.MealType.DINNER:
-			if GlucolifeDataManager.can_eat_meal(meal_type):
-				meal_label.text = "Cena (18:00 - 22:00)"
-			else:
-				meal_label.text = "Hai già cenato oggi"
-				
-		_:
-			if hour < 6:
-				meal_label.text = "È troppo tardi! Torna domani per la colazione! (6:00)"
-			elif hour > 22:
-				meal_label.text = "È troppo tardi! Torna domani per la colazione! (6:00)"
-			else:
-				meal_label.text = "Non è ora di mangiare"
+	if meal_type == -1:
+		if hour < 6:
+			meal_label.text = "È troppo presto! Torna dopo le 6:00 per la colazione"
+		elif hour > 22:
+			meal_label.text = "È troppo tardi! Torna domani per la colazione"
+		else:
+			meal_label.text = "Non è ora di mangiare"
+		return
+	
+	var meal_names = {
+		GlucolifeDataManager.MealType.BREAKFAST: "Colazione",
+		GlucolifeDataManager.MealType.SNACK1: "Merenda Mattutina",
+		GlucolifeDataManager.MealType.LUNCH: "Pranzo",
+		GlucolifeDataManager.MealType.SNACK2: "Merenda Pomeridiana",
+		GlucolifeDataManager.MealType.DINNER: "Cena"
+	}
+	
+	var meal_hours = {
+		GlucolifeDataManager.MealType.BREAKFAST: "6:00 - 10:00",
+		GlucolifeDataManager.MealType.SNACK1: "11:00 - 12:00",
+		GlucolifeDataManager.MealType.LUNCH: "13:00 - 15:00",
+		GlucolifeDataManager.MealType.SNACK2: "16:00 - 18:00",
+		GlucolifeDataManager.MealType.DINNER: "19:00 - 22:00"
+	}
+	
+	if GlucolifeDataManager.can_eat_meal(meal_type):
+		meal_label.text = meal_names[meal_type] + " (" + meal_hours[meal_type] + ")"
+	else:
+		meal_label.text = "Hai già mangiato " + meal_names[meal_type] + " oggi"
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -210,8 +204,23 @@ func _check_food_click():
 			continue
 			
 		if collider == food_node_instance or food_node_instance.is_ancestor_of(collider):
-			_on_food_selected(food_node_instance)
+			var food_data_node = _find_food_data_node(food_node_instance)
+			if food_data_node:
+				_on_food_selected(food_data_node, food_node_instance)
 			return
+
+func _find_food_data_node(food_root: Node3D) -> Node:
+	if food_root.has_method("get_glucolife_data"):
+		return food_root
+	
+	for child in food_root.get_children():
+		if child.has_method("get_glucolife_data"):
+			return child
+		for grandchild in child.get_children():
+			if grandchild.has_method("get_glucolife_data"):
+				return grandchild
+	
+	return null
 
 func _on_table_clicked(_cam, event, _pos, _normal, _idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -383,30 +392,32 @@ func _destroy_ui():
 		ui_canvas.queue_free()
 		ui_canvas = null
 
-func _on_food_selected(food_node_instance):
-	food_selected.emit(food_node_instance.scene_file_path)
-	food_selected_packed.emit(load(food_node_instance.scene_file_path))
+func _on_food_selected(food_data_node: Node, food_root_node: Node3D):
+	food_selected.emit(food_root_node.scene_file_path)
+	food_selected_packed.emit(load(food_root_node.scene_file_path))
 
-	if food_node_instance.has_method("get_glucolife_data"):
-		var data = food_node_instance.get_glucolife_data()
+	if food_data_node.has_method("get_glucolife_data"):
+		var data = food_data_node.get_glucolife_data()
 		var meal_type = _get_current_meal_type()
+		
+		if meal_type == -1:
+			return
+		
+		if not GlucolifeDataManager.can_eat_meal(meal_type):
+			return
 		
 		var meal_added = GlucolifeDataManager.add_meal(
 			meal_type,
-			data["glucose"],
-			data["energy"],
-			data["happiness"],
-			data.get("digestion_time", 1.0)
+			data.get("glucose", 0.0),
+			data.get("energy", 0.0),
+			data.get("happiness", 0.0),
+			data.get("digestion_duration", 2.0)
 		)
 		
 		if meal_added:
-			GlucolifeDataManager.update_glucose(data["glucose"])
-			GlucolifeDataManager.update_energy(data["energy"])
-			GlucolifeDataManager.update_happiness(data["happiness"])
-			GlucolifeDataManager.update_hygiene(data["hygiene"])
+			GlucolifeDataManager.force_save()
 	
-	await _play_food_eaten_animation(food_node_instance)
-	
+	await _play_food_eaten_animation(food_root_node)
 	end_food_interaction()
 
 func _get_current_meal_type() -> int:

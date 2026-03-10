@@ -1,6 +1,7 @@
 extends Node
 
 signal stats_changed(stats)
+signal scene_changing
 
 enum MealType {
 	BREAKFAST,
@@ -17,7 +18,7 @@ class MealData:
 	var happiness_change: float
 	var digestion_time: float
 	var eaten_time: float
-	var eaten_date: Dictionary  # {year, month, day}
+	var eaten_date: Dictionary
 	
 	func _init(p_type: MealType, p_glucose: float, p_energy: float, p_happiness: float, p_digestion: float, p_time: float, p_date: Dictionary):
 		type = p_type
@@ -62,12 +63,35 @@ var lunch: MealData = null
 var snack2: MealData = null
 var dinner: MealData = null
 
+var _last_saved_stats: Dictionary = {}
+
 const SAVE_PATH := "user://glucolife_save.dat"
 
 const GLUCOSE_DECAY_PER_HOUR := 15.0
 const ENERGY_DECAY_PER_HOUR := 12.0
 const HYGIENE_DECAY_PER_HOUR := 8.0
 const HAPPINESS_DECAY_PER_HOUR := 5.0
+
+const STATS_CHANGE_THRESHOLD := 10.0
+
+const ENERGY_DELAY_MINUTES := 5.0
+const HAPPINESS_IMMEDIATE := true
+
+func _ready():
+	var scene_tree = get_tree()
+	if scene_tree:
+		scene_tree.node_added.connect(_on_node_added)
+
+func _on_node_added(node: Node):
+	if node.is_in_group("scene_manager") or node.name == "SceneManager":
+		if not node.tree_exiting.is_connected(_on_scene_changing):
+			node.tree_exiting.connect(_on_scene_changing)
+
+func _on_scene_changing():
+	emit_signal("scene_changing")
+	if is_glucolife_active:
+		_save_data()
+		print("[Glucolife] Saved due to scene change.")
 
 func enter_glucolife():
 	if is_glucolife_active:
@@ -79,6 +103,8 @@ func enter_glucolife():
 	_calculate_offline_changes()
 	_start_update_timer()
 	_emit_stats()
+	
+	_last_saved_stats = get_stats().duplicate()
 
 	print("[Glucolife] Entered.")
 
@@ -96,36 +122,75 @@ func add_meal(meal_type: MealType, glucose: float, energy: float, happiness: flo
 	if not is_glucolife_active:
 		return false
 	
+	if not can_eat_meal(meal_type):
+		print("[Glucolife] Non puoi mangiare: pasto già consumato oggi o ora sbagliata")
+		return false
+	
 	var current_time = Time.get_unix_time_from_system()
 	var current_date = Time.get_date_dict_from_system()
-	var meal_data = MealData.new(meal_type, glucose, energy, happiness, digestion_hours, current_time, current_date)
+	
+	var meal_data = MealData.new(
+		meal_type, 
+		glucose,
+		energy,
+		happiness,
+		digestion_hours, 
+		current_time, 
+		current_date
+	)
+	
+	var meal_added = false
 	
 	match meal_type:
 		MealType.BREAKFAST:
 			if _can_override_meal(breakfast, current_date):
 				breakfast = meal_data
-				_save_data()
-				return true
+				meal_added = true
 		MealType.SNACK1:
 			if _can_override_meal(snack1, current_date):
 				snack1 = meal_data
-				_save_data()
-				return true
+				meal_added = true
 		MealType.LUNCH:
 			if _can_override_meal(lunch, current_date):
 				lunch = meal_data
-				_save_data()
-				return true
+				meal_added = true
 		MealType.SNACK2:
 			if _can_override_meal(snack2, current_date):
 				snack2 = meal_data
-				_save_data()
-				return true
+				meal_added = true
 		MealType.DINNER:
 			if _can_override_meal(dinner, current_date):
 				dinner = meal_data
+				meal_added = true
+	
+	if meal_added:
+		glucose_level = clamp(glucose_level + glucose, 0.0, 100.0)
+		print("[Glucolife] Glucosio +", glucose, " applicato immediatamente")
+		
+		if HAPPINESS_IMMEDIATE:
+			happiness_level = clamp(happiness_level + happiness, 0.0, 100.0)
+			print("[Glucolife] Felicità +", happiness, " applicata immediatamente")
+		
+		var energy_timer = Timer.new()
+		energy_timer.name = "EnergyTimer_" + str(current_time)
+		energy_timer.wait_time = ENERGY_DELAY_MINUTES * 60.0
+		energy_timer.one_shot = true
+		energy_timer.timeout.connect(func():
+			if is_glucolife_active and is_instance_valid(self):
+				energy_level = clamp(energy_level + energy, 0.0, 100.0)
+				_emit_stats()
 				_save_data()
-				return true
+				print("[Glucolife] Energia +", energy, " applicata dopo ", ENERGY_DELAY_MINUTES, " minuti")
+			if is_instance_valid(energy_timer):
+				energy_timer.queue_free()
+		)
+		add_child(energy_timer)
+		energy_timer.start()
+		
+		_save_data()
+		_emit_stats()
+		print("[Glucolife] Pasto aggiunto: glucosio ", glucose, " (dilazionato in ", digestion_hours, " ore)")
+		return true
 	
 	return false
 
@@ -217,6 +282,8 @@ func _modify_stat(stat_name: String, amount: float):
 	if not is_glucolife_active:
 		return
 
+	var old_stats = get_stats()
+
 	match stat_name:
 		"glucose":
 			glucose_level = clamp(glucose_level + amount, 0.0, 100.0)
@@ -227,12 +294,25 @@ func _modify_stat(stat_name: String, amount: float):
 		"happiness":
 			happiness_level = clamp(happiness_level + amount, 0.0, 100.0)
 
-	_save_data()
 	_emit_stats()
+	_check_and_save_if_changed(old_stats)
+
+func _check_and_save_if_changed(old_stats: Dictionary):
+	var current_stats = get_stats()
+	var should_save = false
+	
+	for stat in current_stats:
+		if abs(current_stats[stat] - old_stats[stat]) >= STATS_CHANGE_THRESHOLD:
+			should_save = true
+			break
+	
+	if should_save:
+		_save_data()
+		_last_saved_stats = current_stats.duplicate()
+		print("[Glucolife] Auto-saved due to stat change >= ", STATS_CHANGE_THRESHOLD)
 
 func _emit_stats():
 	var stats := get_stats()
-	print("[Glucolife] Emit Stats:", stats)
 	emit_signal("stats_changed", stats)
 
 func _load_data():
@@ -278,6 +358,7 @@ func _load_data():
 	if last_update_time <= 0.0:
 		last_update_time = Time.get_unix_time_from_system()
 
+	_last_saved_stats = get_stats().duplicate()
 	print("[Glucolife] Save loaded.")
 	print("Values:", get_stats())
 
@@ -297,6 +378,8 @@ func _save_data():
 
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_var(save_data)
+	
+	_last_saved_stats = get_stats().duplicate()
 
 func _meal_to_dict(meal: MealData):
 	if meal == null:
@@ -341,8 +424,8 @@ func _calculate_offline_changes():
 
 	if hours_passed > 0.1:
 		glucose_level = max(0.0, glucose_level - GLUCOSE_DECAY_PER_HOUR * hours_passed)
-		energy_level = max(0.0, energy_level - ENERGY_DECAY_PER_HOUR * hours_passed)
 		hygiene_level = max(0.0, hygiene_level - HYGIENE_DECAY_PER_HOUR * hours_passed)
+		energy_level = max(0.0, energy_level - ENERGY_DECAY_PER_HOUR * hours_passed)
 		happiness_level = max(0.0, happiness_level - HAPPINESS_DECAY_PER_HOUR * hours_passed)
 		
 		_apply_meal_effects_over_time(current_time, hours_passed)
@@ -360,9 +443,10 @@ func _apply_meal_effects_over_time(current_time: float, hours_passed: float):
 			var effect = meal.get_remaining_effect(current_time)
 			if effect.active:
 				var decay_factor = hours_passed / meal.digestion_time
-				glucose_level = clamp(glucose_level + meal.glucose_change * decay_factor, 0.0, 100.0)
-				energy_level = clamp(energy_level + meal.energy_change * decay_factor, 0.0, 100.0)
-				happiness_level = clamp(happiness_level + meal.happiness_change * decay_factor, 0.0, 100.0)
+				var glucose_increase = meal.glucose_change * decay_factor
+				if glucose_increase > 0:
+					glucose_level = clamp(glucose_level + glucose_increase, 0.0, 100.0)
+					print("[Glucolife] Offline: glucosio +", glucose_increase, " da pasto")
 
 func _start_update_timer():
 	if has_node("UpdateTimer"):
@@ -386,6 +470,7 @@ func _on_update_timer():
 	if not is_glucolife_active:
 		return
 
+	var old_stats = get_stats()
 	var minute_fraction := 1.0 / 60.0
 	var current_time = Time.get_unix_time_from_system()
 
@@ -404,12 +489,20 @@ func _on_update_timer():
 			var effect = meal.get_remaining_effect(current_time)
 			if effect.active:
 				var decay_factor = minute_fraction / meal.digestion_time
-				glucose_level = clamp(glucose_level + meal.glucose_change * decay_factor, 0.0, 100.0)
-				energy_level = clamp(energy_level + meal.energy_change * decay_factor, 0.0, 100.0)
-				happiness_level = clamp(happiness_level + meal.happiness_change * decay_factor, 0.0, 100.0)
+				var glucose_increase = meal.glucose_change * decay_factor
+				if glucose_increase > 0:
+					glucose_level = clamp(glucose_level + glucose_increase, 0.0, 100.0)
 
 	var now := Time.get_unix_time_from_system()
 	if int(now) % 300 < 60:
 		_save_data()
 
+	_emit_stats()
+	_check_and_save_if_changed(old_stats)
+
+func force_save():
+	_save_data()
+	print("[Glucolife] Force save completed.")
+
+func force_stats_update():
 	_emit_stats()

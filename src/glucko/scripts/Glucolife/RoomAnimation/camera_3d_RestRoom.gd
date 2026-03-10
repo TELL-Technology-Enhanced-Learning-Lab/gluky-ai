@@ -19,12 +19,12 @@ func _ready():
 	original_transform = global_transform
 
 func _exit_tree():
-	if idle_tween and idle_tween.is_valid():
+	if idle_tween and is_instance_valid(idle_tween):
 		idle_tween.kill()
 	
 	var tweens = get_tree().get_processed_tweens()
 	for t in tweens:
-		if t.is_valid() and t.target == self:
+		if is_instance_valid(t) and t.is_bound_to(self):
 			t.kill()
 
 func setup_bathtub_camera(bathtub: Node3D):
@@ -34,14 +34,13 @@ func start_camera_animation():
 	if is_animating:
 		return
 	
-	# Tell the camera pivot we're taking over
 	var camera_pivot = get_tree().get_first_node_in_group("camera_pivot")
 	if camera_pivot and camera_pivot.has_method("set_bathtub_mode"):
 		camera_pivot.set_bathtub_mode(true)
 
 	is_animating = true
 
-	if idle_tween and idle_tween.is_valid():
+	if idle_tween and is_instance_valid(idle_tween):
 		idle_tween.kill()
 
 	var target_transform: Transform3D = _build_final_transform()
@@ -68,7 +67,7 @@ func camera_phase_1_initial_movement():
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_IN_OUT)
 
-	var prep_offset := (
+	var prep_offset = (
 		global_transform.basis.z * -0.35 +
 		global_transform.basis.y * -0.2
 	)
@@ -101,7 +100,7 @@ func camera_phase_3_settle(target: Transform3D):
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_OUT)
 
-	var overshoot_pos := target.origin + Vector3(0, 0.08, 0)
+	var overshoot_pos = target.origin + Vector3(0, 0.08, 0)
 
 	tween.tween_property(self, "global_position", overshoot_pos, settle_duration * 0.6)
 	tween.tween_property(self, "global_position", target.origin, settle_duration * 0.4)
@@ -114,7 +113,7 @@ func start_camera_idle():
 	idle_tween.set_trans(Tween.TRANS_SINE)
 	idle_tween.set_ease(Tween.EASE_IN_OUT)
 
-	var base_pos := global_position
+	var base_pos = global_position
 
 	idle_tween.tween_property(
 		self,
@@ -134,12 +133,12 @@ func start_camera_idle():
 	rot_tween.set_trans(Tween.TRANS_SINE)
 	rot_tween.set_ease(Tween.EASE_IN_OUT)
 
-	var base_y := rotation.y
+	var base_y = rotation.y
 	rot_tween.tween_property(self, "rotation:y", base_y + deg_to_rad(1.2), 5.0)
 	rot_tween.tween_property(self, "rotation:y", base_y - deg_to_rad(1.2), 5.0)
 
 func reset_camera():
-	if idle_tween and idle_tween.is_valid():
+	if idle_tween and is_instance_valid(idle_tween):
 		idle_tween.kill()
 
 	is_animating = false
@@ -152,7 +151,6 @@ func reset_camera():
 
 	await tween.finished
 	
-	# Tell camera pivot we're done
 	var camera_pivot = get_tree().get_first_node_in_group("camera_pivot")
 	if camera_pivot and camera_pivot.has_method("set_bathtub_mode"):
 		camera_pivot.set_bathtub_mode(false)

@@ -48,6 +48,10 @@ show_percentage = false
 [node name="HygieneUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1370451018]
 layout_mode = 2
 script = ExtResource("2_885im")
+low_threshold = 50.0
+high_threshold = 101.0
+optimal_min = 70.0
+optimal_max = 101.0
 
 [node name="Label_Value" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HygieneUI" unique_id=1722231364]
 light_mask = 2
@@ -71,6 +75,9 @@ show_percentage = false
 [node name="EnergyUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1299306604]
 layout_mode = 2
 script = ExtResource("3_dia44")
+high_threshold = 101.0
+optimal_min = 50.0
+optimal_max = 101.0
 
 [node name="Label_Value" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/EnergyUI" unique_id=481057665]
 light_mask = 2
@@ -94,6 +101,10 @@ show_percentage = false
 [node name="HappinessUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=181332268]
 layout_mode = 2
 script = ExtResource("4_nexrn")
+low_threshold = 40.0
+high_threshold = 101.0
+optimal_min = 50.0
+optimal_max = 101.0
 
 [node name="Label_Value" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HappinessUI" unique_id=575108743]
 light_mask = 2

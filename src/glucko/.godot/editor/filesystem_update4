@@ -1,16 +1,2 @@
-res://scenes/MealPerfectgameScenes/apple.tscn
-res://scenes/MealPerfectgameScenes/arancia.tscn
-res://scenes/MealPerfectgameScenes/Avocado.tscn
-res://scenes/MealPerfectgameScenes/banana.tscn
-res://scenes/MealPerfectgameScenes/bread.tscn
-res://scenes/MealPerfectgameScenes/broccoli.tscn
-res://scenes/MealPerfectgameScenes/cheese.tscn
-res://scenes/MealPerfectgameScenes/ciambella_integrale.tscn
-res://scenes/MealPerfectgameScenes/ciambella_smarties.tscn
-res://scenes/MealPerfectgameScenes/croissant.tscn
-res://scenes/MealPerfectgameScenes/egg.tscn
-res://scenes/MealPerfectgameScenes/frappè_cioccolato.tscn
-res://scenes/MealPerfectgameScenes/muffin.tscn
-res://scenes/menus/glucorun/LevelSelect.tscn
-res://scenes/menus/glucorun/LevelSelect.gd
-res://scripts/glucorun/game items/label_su.gd
+res://scenes/glucky/Glukybot.tscn
+res://scripts/general/gluky_controller.gd
