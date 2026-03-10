@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dwnb8y5tud33t" path="res://art/assets/GlukoQuizAssets/Weirdthers candies/Weirdthers_Candy_blueberry_shadow_128.png" id="4_qfnf0"]
 [ext_resource type="Texture2D" uid="uid://vve084vipl6h" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_play_02_300x300.png" id="5_73gkw"]
 [ext_resource type="Texture2D" uid="uid://sojc7lxoyp80" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_options_150x150.png" id="6_7m7gr"]
+[ext_resource type="Texture2D" uid="uid://ctmmhe30gygni" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_back_01_150x150.png" id="8_reypy"]
+[ext_resource type="Script" uid="uid://ctd55j5tccuxx" path="res://scripts/GlukoQuizScript/esc_button.gd" id="9_k5dnp"]
 
 [node name="MenuIniziale" type="Control" unique_id=1658794744]
 layout_mode = 3
@@ -95,15 +97,30 @@ script = ExtResource("4_56inq")
 [node name="ButtonOption" type="TextureButton" parent="Button_gui" unique_id=1693407496]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -5.19
-anchor_top = -5.852
-anchor_right = -5.19
-anchor_bottom = -5.852
-offset_left = -74.97064
-offset_top = -75.01996
-offset_right = 55.029358
-offset_bottom = 54.98004
+anchor_left = 5.945
+anchor_top = -6.122
+anchor_right = 5.945
+anchor_bottom = -6.122
+offset_left = -74.97418
+offset_top = -74.96997
+offset_right = 75.02582
+offset_bottom = 75.03003
 texture_normal = ExtResource("6_7m7gr")
 script = ExtResource("4_56inq")
 
+[node name="EscButton" type="TextureButton" parent="." unique_id=1198384870]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.10300001
+anchor_right = 0.064
+anchor_bottom = 0.10300001
+offset_left = -75.880005
+offset_top = -75.240005
+offset_right = 74.119995
+offset_bottom = 74.759995
+texture_normal = ExtResource("8_reypy")
+script = ExtResource("9_k5dnp")
+
 [connection signal="pressed" from="Button_gui/ButtonPlay" to="GlukoButton" method="_on_button_play_pressed"]
+[connection signal="pressed" from="EscButton" to="EscButton" method="_on_pressed"]

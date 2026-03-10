@@ -41,11 +41,11 @@ func _ready():
 	base_smooth_speed = smooth_speed
 	base_mouse_sensitivity = mouse_sensitivity
 	original_fov = fov
-
-	if _is_mobile:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#if _is_mobile:
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#else:
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 	create_visual_overlay()
 	await get_tree().process_frame

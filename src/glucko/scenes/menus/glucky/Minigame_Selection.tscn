@@ -30,90 +30,135 @@ color = Color(0.1764706, 0.64705884, 0.8627451, 1)
 script = ExtResource("1_pi3gm")
 
 [node name="Window1" type="TextureButton" parent="CanvasLayer" unique_id=1807763518]
-offset_left = 245.0
-offset_top = 213.0
-offset_right = 406.0
-offset_bottom = 577.0
+anchors_preset = -1
+anchor_left = 0.21100001
+anchor_top = 0.53400004
+anchor_right = 0.21100001
+anchor_bottom = 0.53400004
+offset_left = -160.12003
+offset_top = -363.72003
+offset_right = 0.87997437
+offset_bottom = 0.27996826
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_pi3gm")
 texture_pressed = ExtResource("3_ortsk")
 
 [node name="Label" type="Label" parent="CanvasLayer/Window1" unique_id=1156692011]
-layout_mode = 0
-offset_left = 18.5
-offset_top = 19.5
-offset_right = 134.5
-offset_bottom = 43.5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47500002
+anchor_top = 0.087000005
+anchor_right = 0.47500002
+anchor_bottom = 0.087000005
+offset_left = -57.975006
+offset_top = -12.168001
+offset_right = 58.024994
+offset_bottom = 11.831999
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p8pfq")
 theme_override_font_sizes/font_size = 20
 text = "GLUKORUN"
 
 [node name="Window2" type="TextureButton" parent="CanvasLayer" unique_id=1055447159]
-offset_left = 616.0
-offset_top = 213.0
-offset_right = 777.0
-offset_bottom = 577.0
+anchors_preset = -1
+anchor_left = 0.40500003
+anchor_top = 0.53400004
+anchor_right = 0.40500003
+anchor_bottom = 0.53400004
+offset_left = -161.60004
+offset_top = -363.72003
+offset_right = -0.6000366
+offset_bottom = 0.27996826
 scale = Vector2(2, 2)
 texture_normal = ExtResource("4_lfebr")
 texture_pressed = ExtResource("6_hne6j")
 
 [node name="Label" type="Label" parent="CanvasLayer/Window2" unique_id=464628260]
-layout_mode = 0
-offset_left = 18.5
-offset_top = 19.5
-offset_right = 138.5
-offset_bottom = 43.5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48800004
+anchor_top = 0.087000005
+anchor_right = 0.48800004
+anchor_bottom = 0.087000005
+offset_left = -60.06801
+offset_top = -12.168001
+offset_right = 59.93199
+offset_bottom = 11.831999
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p8pfq")
 theme_override_font_sizes/font_size = 20
 text = "GLUKOLIFE"
 
 [node name="Window3" type="TextureButton" parent="CanvasLayer" unique_id=1336032881]
-offset_left = 979.0
-offset_top = 213.0
-offset_right = 1140.0
-offset_bottom = 577.0
+anchors_preset = -1
+anchor_left = 0.59400004
+anchor_top = 0.53400004
+anchor_right = 0.59400004
+anchor_bottom = 0.53400004
+offset_left = -161.4801
+offset_top = -363.72003
+offset_right = -0.48010254
+offset_bottom = 0.27996826
 scale = Vector2(2, 2)
 texture_normal = ExtResource("8_lxblu")
 texture_pressed = ExtResource("9_kfun2")
 
 [node name="Label" type="Label" parent="CanvasLayer/Window3" unique_id=2061063971]
-layout_mode = 0
-offset_left = 6.5
-offset_top = 19.5
-offset_right = 164.5
-offset_bottom = 43.500004
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.087000005
+anchor_right = 0.5
+anchor_bottom = 0.087000005
+offset_left = -74.0
+offset_top = -12.168001
+offset_right = 84.0
+offset_bottom = 11.832003
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p8pfq")
 theme_override_font_sizes/font_size = 18
 text = "MEAL PERFECT"
 
 [node name="Window4" type="TextureButton" parent="CanvasLayer" unique_id=785887496]
-offset_left = 1368.0
-offset_top = 217.0
-offset_right = 1529.0
-offset_bottom = 581.0
+anchors_preset = -1
+anchor_left = 0.79600006
+anchor_top = 0.53800005
+anchor_right = 0.79600006
+anchor_bottom = 0.53800005
+offset_left = -160.32007
+offset_top = -364.04004
+offset_right = 0.67993164
+offset_bottom = -0.040039063
 scale = Vector2(2, 2)
 texture_normal = ExtResource("10_8v422")
 texture_pressed = ExtResource("11_6j7x1")
 
 [node name="Label" type="Label" parent="CanvasLayer/Window4" unique_id=331707552]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 19.5
-offset_right = 140.0
-offset_bottom = 43.50002
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47200003
+anchor_top = 0.087000005
+anchor_right = 0.47200003
+anchor_bottom = 0.087000005
+offset_left = -63.992004
+offset_top = -12.168001
+offset_right = 64.007996
+offset_bottom = 11.832018
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p8pfq")
 theme_override_font_sizes/font_size = 20
 text = "GLUKO QUIZ"
 
 [node name="HomeButton" type="TextureButton" parent="CanvasLayer" unique_id=522868237]
-offset_left = 1719.9999
-offset_top = 961.0
-offset_right = 1847.9999
-offset_bottom = 1037.0
+anchors_preset = -1
+anchor_left = 0.94200003
+anchor_top = 0.93900007
+anchor_right = 0.94200003
+anchor_bottom = 0.93900007
+offset_left = -88.64014
+offset_top = -53.120056
+offset_right = 39.359863
+offset_bottom = 22.879944
 scale = Vector2(1.395, 1.395)
 texture_normal = ExtResource("5_hne6j")
 ignore_texture_size = true
@@ -121,13 +166,15 @@ script = ExtResource("7_lfebr")
 target_scene = "res://scenes/menus/glucky/Intro_3d.tscn"
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1833083948]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -562.0
-offset_top = 27.0
-offset_right = 579.0
-offset_bottom = 256.0
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.13100001
+anchor_right = 0.504
+anchor_bottom = 0.13100001
+offset_left = -569.68
+offset_top = -114.48001
+offset_right = 571.32
+offset_bottom = 114.51999
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p8pfq")

@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://brlbmjblicbyx" path="res://scenes/MealPerfectgameScenes/kitchenPlate.tscn" id="6_iyamj"]
 [ext_resource type="Texture2D" uid="uid://dhpvhwe0n5ifj" path="res://art/models/Textures/Skybox_2.hdr" id="7_2kke1"]
 [ext_resource type="PackedScene" uid="uid://vrf6y8jy80xh" path="res://scenes/MealPerfectgameScenes/table_levelcolazione.tscn" id="7_iyamj"]
+[ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="11_8q1l3"]
+[ext_resource type="Script" uid="uid://bg3gstfp1a86k" path="res://scripts/MealPerfectGameScript/btn_exit_mpg.gd" id="12_j4qss"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dudsc"]
 panorama = ExtResource("7_2kke1")
@@ -1290,3 +1292,18 @@ shape = SubResource("BoxShape3D_cm4fd")
 transform = Transform3D(42.907722, -25.669573, -1.1220527e-06, 0, -2.1855697e-06, 50, -25.669573, -42.907722, -1.8755566e-06, 0.05916691, 0.9167509, -0.20923328)
 mesh = SubResource("ArrayMesh_uth6h")
 skeleton = NodePath("")
+
+[node name="BtnExitMPG3" type="TextureButton" parent="." unique_id=1315243222]
+anchors_preset = -1
+anchor_left = 0.117000006
+anchor_top = 0.119
+anchor_right = 0.117000006
+anchor_bottom = 0.119
+offset_left = -63.640015
+offset_top = -37.520004
+offset_right = 64.359985
+offset_bottom = 38.479996
+texture_normal = ExtResource("11_8q1l3")
+script = ExtResource("12_j4qss")
+
+[connection signal="pressed" from="BtnExitMPG3" to="BtnExitMPG3" method="_on_pressed"]

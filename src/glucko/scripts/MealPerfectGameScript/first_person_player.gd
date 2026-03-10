@@ -53,7 +53,7 @@ func _ready() -> void:
 	headmovement.play("walk")
 
 	_is_mobile = OS.get_name() == "Android" or OS.get_name() == "iOS"
-
+	
 	if enable_mobile_controls and _is_mobile:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		call_deferred("setup_mobile_controls")

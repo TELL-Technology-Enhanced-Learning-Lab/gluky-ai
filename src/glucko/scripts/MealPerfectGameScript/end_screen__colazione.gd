@@ -32,7 +32,7 @@ func _on_button_restart_pressed() -> void:
 func _on_button_quit_pressed() -> void:
 	get_tree().paused = false
 	GameState.reset_game()
-	get_tree().change_scene_to_file("res://scenes_tutorial/MenuLivelli.tscn")
+	get_tree().change_scene_to_file("res://scenes/scenes_tutorial/MenuLivelli.tscn")
 
 #collegati al livello successivo, pranzo
 func _on_button_next_pressed() -> void:

@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Glucko"
-run/main_scene="uid://fe1t3f47lv8s"
+run/main_scene="uid://bo7rsau8hu0jk"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

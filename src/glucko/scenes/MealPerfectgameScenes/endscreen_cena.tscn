@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddjgcilk3nuax"]
+[gd_scene format=3 uid="uid://ddjgcilk3nuax"]
 
-[ext_resource type="Script" uid="uid://umthk4h8mmgx" path="res://Scripts/endscreen_cena.gd" id="1_7bwj5"]
-[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://font_esterni/SamuraiBlast.ttf" id="1_qmn3a"]
+[ext_resource type="Script" uid="uid://umthk4h8mmgx" path="res://scripts/MealPerfectGameScript/endscreen_cena.gd" id="1_7bwj5"]
+[ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://art/font_esterni/SamuraiBlast.ttf" id="1_qmn3a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7bwj5"]
 font = ExtResource("1_qmn3a")
 font_size = 45
 
-[node name="EndScreen_cena" type="Control"]
+[node name="EndScreen_cena" type="Control" unique_id=2055405478]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7bwj5")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=720856540]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 15
@@ -25,7 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=736181616]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 15
@@ -38,7 +38,7 @@ offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button_Next" type="Button" parent="Panel/VBoxContainer"]
+[node name="Button_Next" type="Button" parent="Panel/VBoxContainer" unique_id=1426988427]
 process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qmn3a")
@@ -46,7 +46,7 @@ theme_override_font_sizes/font_size = 30
 text = "LIVELLO SUCCESSIVO"
 vertical_icon_alignment = 0
 
-[node name="Button_Restart" type="Button" parent="Panel/VBoxContainer"]
+[node name="Button_Restart" type="Button" parent="Panel/VBoxContainer" unique_id=1700391615]
 process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qmn3a")
@@ -54,7 +54,7 @@ theme_override_font_sizes/font_size = 23
 text = "RICOMINCIA LIVELLO"
 vertical_icon_alignment = 0
 
-[node name="Button_Quit" type="Button" parent="Panel/VBoxContainer"]
+[node name="Button_Quit" type="Button" parent="Panel/VBoxContainer" unique_id=1561626200]
 process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qmn3a")
@@ -62,23 +62,33 @@ theme_override_font_sizes/font_size = 22
 text = "ESCI"
 vertical_icon_alignment = 0
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 269.5
-offset_top = 56.0
-offset_right = 908.5
-offset_bottom = 104.0
+[node name="Label" type="Label" parent="Panel" unique_id=682037249]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.509
+anchor_top = 0.08800001
+anchor_right = 0.509
+anchor_bottom = 0.08800001
+offset_left = -320.28003
+offset_top = -24.040009
+offset_right = 318.71997
+offset_bottom = 23.959991
 size_flags_horizontal = 4
 text = "LIVELLO CENA COMPLETATO"
 label_settings = SubResource("LabelSettings_7bwj5")
 horizontal_alignment = 1
 
-[node name="Message" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 142.5
-offset_top = 168.0
-offset_right = 1050.5
-offset_bottom = 237.0
+[node name="Message" type="Label" parent="Panel" unique_id=652862191]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.178
+anchor_right = 0.503
+anchor_bottom = 0.178
+offset_left = -453.76
+offset_top = -34.240005
+offset_right = 454.24
+offset_bottom = 34.759995
 theme_override_constants/line_spacing = 3
 theme_override_fonts/font = ExtResource("1_qmn3a")
 theme_override_font_sizes/font_size = 30

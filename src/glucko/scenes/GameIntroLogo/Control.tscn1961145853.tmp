@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bo7rsau8hu0jk"]
+
+[ext_resource type="Script" uid="uid://csyem32apdb7b" path="res://scenes/GameIntroLogo/IntroVideo.gd" id="1_cd16m"]
+
+[node name="Control" type="Control" unique_id=1730003925]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cd16m")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=422124017]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SkipLabel" type="Label" parent="." unique_id=1910971603]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

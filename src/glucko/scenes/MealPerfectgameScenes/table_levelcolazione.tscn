@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bk1cd2smw2xip" path="res://scenes/MealPerfectgameScenes/ciambella_smarties.tscn" id="3_bthjh"]
 [ext_resource type="PackedScene" uid="uid://cp1iavnloj04g" path="res://scenes/MealPerfectgameScenes/frappè_cioccolato.tscn" id="4_fndx6"]
 [ext_resource type="PackedScene" uid="uid://dm7tsfnfnx710" path="res://scenes/MealPerfectgameScenes/pera.tscn" id="5_4jdfh"]
-[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://scripts/MealPerfectGameScript/food.gd" id="6_orh14"]
+[ext_resource type="Script" uid="uid://wmqlic8ai82r" path="res://scripts/MealPerfectGameScript/food.gd" id="6_orh14"]
 [ext_resource type="PackedScene" uid="uid://brg4w5512443s" path="res://scenes/MealPerfectgameScenes/banana.tscn" id="7_wrs5n"]
 [ext_resource type="PackedScene" uid="uid://csj32pa3lffno" path="res://scenes/MealPerfectgameScenes/cheese.tscn" id="8_kq6hy"]
 [ext_resource type="PackedScene" uid="uid://ctv7i8fjnopfb" path="res://scenes/MealPerfectgameScenes/arancia.tscn" id="9_r2cy0"]
@@ -119,7 +119,14 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.6450727, 1.550371
 [node name="MarkerCioccolato" type="Marker3D" parent="OggettiPosati" unique_id=102120948]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2676224, 1.5486901, -0.69951653)
 
-[node name="Cioccolato" parent="OggettiPosati/MarkerCioccolato" unique_id=2013986591 instance=ExtResource("18_stq5w")]
+[node name="Cioccolato" parent="OggettiPosati/MarkerCioccolato" unique_id=843162334 instance=ExtResource("18_stq5w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("6_orh14")
+food_category = "Cioccolato"
+indice_glicemico = 85.0
+carbs = 80.0
+fat = 20.0
+nutrizione_info = "Il cioccolato è un alimento con molti zuccheri , da consumare con moderazione. Esistono piu tipi di cioccolato(fondente/al latte)."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=180176529]
 transform = Transform3D(2.03, 0, 0, 0, 2.03, 0, 0, 0, 2.03, 0.006979987, 0.7403519, -0.06625412)

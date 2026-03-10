@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://birxfktjodotf"]
+[gd_scene format=4 uid="uid://birxfktjodotf"]
 
-[ext_resource type="PackedScene" uid="uid://dbp6me3l2yj0" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/cookie-chocolate.glb" id="1_muyvv"]
-[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="1_or07a"]
+[ext_resource type="PackedScene" uid="uid://dbp6me3l2yj0" path="res://art/assets/MealPerfectGame/Sushi Restaurant Kit - May 2023/Food/glTF/cookie-chocolate.glb" id="1_muyvv"]
+[ext_resource type="Script" uid="uid://wmqlic8ai82r" path="res://Scripts/MealPerfectGameScript/food.gd" id="1_or07a"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_muyvv"]
 _surfaces = [{

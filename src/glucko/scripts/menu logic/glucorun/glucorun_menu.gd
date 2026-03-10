@@ -47,9 +47,9 @@ func _on_back_pressed() -> void:
 	
 
 
-func _on_exit_pressed() -> void:
-	get_tree().quit()
-
-
 func _on_back_options_pressed() -> void:
 	_ready()
+
+#porta al menu selezione giochi
+func _on_btn_exit_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn")

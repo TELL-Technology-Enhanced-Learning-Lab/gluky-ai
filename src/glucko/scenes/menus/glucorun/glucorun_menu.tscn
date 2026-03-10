@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d34kh64ntf4ta" path="res://art/assets/various menus/shop/window4.png" id="6_5j3xc"]
 [ext_resource type="Script" uid="uid://dtq0reqw0e6li" path="res://scripts/general/fullscreen_control.gd" id="6_rurpw"]
 [ext_resource type="Texture2D" uid="uid://bwhqyr0auoo44" path="res://art/assets/glucorun menu/Lollipop_Berry_128.png" id="11_e8jsp"]
+[ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="12_stm1t"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_625yj"]
 texture = ExtResource("2_dwn1n")
@@ -325,20 +326,18 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_petnf")
 script = ExtResource("6_rurpw")
 
-[node name="Exit Button" type="Button" parent="." unique_id=162008881]
-layout_direction = 1
+[node name="btn_exit" type="TextureButton" parent="." unique_id=1868369790]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.984
-anchor_top = 0.028
-anchor_right = 0.984
-anchor_bottom = 0.028
-offset_left = -24.28003
-offset_top = -25.240002
-offset_right = 25.71997
-offset_bottom = 24.759998
-grow_horizontal = 0
-text = "X"
+anchor_left = 0.060000002
+anchor_top = 0.072000004
+anchor_right = 0.060000002
+anchor_bottom = 0.072000004
+offset_left = -63.200005
+offset_top = -37.760002
+offset_right = 64.799995
+offset_bottom = 38.239998
+texture_normal = ExtResource("12_stm1t")
 
 [connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Button2" to="." method="_on_settings_pressed"]
@@ -346,4 +345,4 @@ text = "X"
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
 [connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/AudioControl" to="Options/VBoxContainer/HBoxContainer/AudioControl" method="_on_value_changed"]
 [connection signal="toggled" from="Options/VBoxContainer/HBoxContainer2/FullscreenControl" to="Options/VBoxContainer/HBoxContainer2/FullscreenControl" method="_on_toggled"]
-[connection signal="pressed" from="Exit Button" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="btn_exit" to="." method="_on_btn_exit_pressed"]

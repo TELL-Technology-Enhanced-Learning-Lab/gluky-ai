@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://duq4nv04a082n"]
+[gd_scene format=3 uid="uid://duq4nv04a082n"]
 
-[ext_resource type="Script" uid="uid://bt6s87wgowv0w" path="res://Scripts/glycemic_popup.gd" id="1_gpums"]
-[ext_resource type="FontFile" uid="uid://bwpq6tmvp82l0" path="res://font_esterni/hHittoSushi.ttf" id="2_sflh1"]
+[ext_resource type="Script" uid="uid://bt6s87wgowv0w" path="res://scripts/MealPerfectGameScript/glycemic_popup.gd" id="1_gpums"]
+[ext_resource type="FontFile" uid="uid://bwpq6tmvp82l0" path="res://art/font_esterni/hHittoSushi.ttf" id="2_sflh1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmpyu"]
 font = ExtResource("2_sflh1")
@@ -14,9 +14,9 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_qu7or"]
 font = ExtResource("2_sflh1")
-font_size = 25
+font_size = 35
 
-[node name="PanelClz" type="Panel"]
+[node name="PanelClz" type="Panel" unique_id=120487057]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,41 +25,46 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_gpums")
 
-[node name="Label_Title" type="Label" parent="."]
+[node name="Label_Title" type="Label" parent="." unique_id=834031653]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.033
 anchor_right = 0.5
+anchor_bottom = 0.033
 offset_left = -205.5
-offset_top = 15.0
+offset_top = -24.64
 offset_right = 205.5
-offset_bottom = 61.0
+offset_bottom = 25.36
 grow_horizontal = 2
 text = "Bilanciamento del piatto"
 label_settings = SubResource("LabelSettings_tmpyu")
 
-[node name="Label_Message" type="Label" parent="."]
+[node name="Label_Message" type="Label" parent="." unique_id=768585084]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.026041666
 anchor_top = 0.09876543
-anchor_right = 1.0
-anchor_bottom = 0.97376543
+anchor_right = 0.9765625
+anchor_bottom = 0.94814813
 grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_ktkuv")
+horizontal_alignment = 1
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label_Ratio" type="Label" parent="."]
+[node name="Label_Ratio" type="Label" parent="." unique_id=117967551]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.012152778
-anchor_top = 0.1470247
-anchor_right = 0.21200001
-anchor_bottom = 0.24527776
+anchor_left = 0.3923611
+anchor_top = 0.14517285
+anchor_right = 0.5922083
+anchor_bottom = 0.24342595
 offset_top = 0.22801208
 offset_right = -0.22401428
 offset_bottom = 0.060012817
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_qu7or")
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

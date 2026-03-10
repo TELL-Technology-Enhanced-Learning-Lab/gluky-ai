@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://hjg8ufi5bae3"]
 
 [ext_resource type="Script" uid="uid://bvsdvpyjrq4u0" path="res://scripts/Glucolife/ScriptMenu/menu.gd" id="1_ssown"]
-[ext_resource type="FontFile" uid="uid://5vyjhlve78uv" path="res://art/assets/glucorun menu/LuckiestGuy-Regular.ttf" id="2_aqsh1"]
 [ext_resource type="VideoStream" uid="uid://dvg67k43ki0o1" path="res://art/videos/MenuGlukolife/VideoIntro.ogv" id="2_ktb2s"]
 [ext_resource type="VideoStream" uid="uid://cob5bd3pnl3kf" path="res://art/videos/MenuGlukolife/VideoLoop.ogv" id="4_jiwxj"]
+[ext_resource type="FontFile" uid="uid://bfkbf1v0dokdm" path="res://art/font_esterni/Winter Tosca.otf" id="4_r1yye"]
 [ext_resource type="Script" uid="uid://bj83gjbea0rba" path="res://scripts/Glucolife/general/button_play.gd" id="5_jiwxj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjrqn"]
+bg_color = Color(0.078431375, 0.61960787, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0.9647059, 0.6)
+shadow_size = 8
 
 [node name="Menu" type="Control" unique_id=531269067]
 layout_mode = 3
@@ -34,7 +43,10 @@ offset_left = 401.0
 offset_top = 914.0
 offset_right = 705.0
 offset_bottom = 1059.0
-theme_override_fonts/font = ExtResource("2_aqsh1")
-theme_override_font_sizes/font_size = 52
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 4
+theme_override_fonts/font = ExtResource("4_r1yye")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjrqn")
 text = "Play"
 script = ExtResource("5_jiwxj")

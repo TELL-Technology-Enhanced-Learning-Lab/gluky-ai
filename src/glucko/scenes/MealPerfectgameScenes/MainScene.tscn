@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dbhktpy53tn2y" path="res://scenes/MealPerfectgameScenes/Panda_2.tscn" id="7_q68mp"]
 [ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://art/font_esterni/SamuraiBlast.ttf" id="8_xb4mg"]
 [ext_resource type="PackedScene" uid="uid://ce4onc8li3wrk" path="res://art/assets/MealPerfectGame/Sushi Restaurant Kit - May 2023/Environment/FBX/Truck.fbx" id="13_6t1o7"]
+[ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="14_glc0k"]
+[ext_resource type="Script" uid="uid://bg3gstfp1a86k" path="res://scripts/MealPerfectGameScript/btn_exit_mpg.gd" id="15_iglwj"]
 [ext_resource type="PackedScene" uid="uid://dr8oy30m18m62" path="res://scenes/MealPerfectgameScenes/table.tscn" id="18_i0j58"]
 [ext_resource type="Texture2D" uid="uid://bdxuq5bbirjmd" path="res://art/assets/MealPerfectGame/Sushi Restaurant Kit - May 2023/Sushi_Atlas.png" id="77_7gb0p"]
 
@@ -35,7 +37,7 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_4b75m"]
 font = ExtResource("6_8ju71")
-font_size = 25
+font_size = 35
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mhgh"]
 resource_name = "Atlas"
@@ -1012,6 +1014,7 @@ environment = SubResource("Environment_k6f6f")
 process_mode = 3
 
 [node name="EndScreen" parent="CanvasLayer" unique_id=1316443269 instance=ExtResource("6_4b75m")]
+visible = false
 
 [node name="GlycemicPopup" type="Panel" parent="CanvasLayer" unique_id=89652878]
 modulate = Color(1, 1, 1, 0.6666667)
@@ -1024,13 +1027,15 @@ script = ExtResource("2_enc0b")
 
 [node name="Label_Title" type="Label" parent="CanvasLayer/GlycemicPopup" unique_id=1552001336]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.035
 anchor_right = 0.5
+anchor_bottom = 0.035
 offset_left = -205.5
-offset_top = 15.0
+offset_top = -22.8
 offset_right = 205.5
-offset_bottom = 61.0
+offset_bottom = 23.2
 grow_horizontal = 2
 text = "Bilanciamento del piatto"
 label_settings = SubResource("LabelSettings_enc0b")
@@ -1038,27 +1043,30 @@ label_settings = SubResource("LabelSettings_enc0b")
 [node name="Label_Message" type="Label" parent="CanvasLayer/GlycemicPopup" unique_id=120768547]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.09876543
-anchor_right = 1.0
-anchor_bottom = 0.97376543
+anchor_left = 0.025520833
+anchor_top = 0.11203704
+anchor_right = 0.9713542
+anchor_bottom = 0.9351852
 grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_hx8n4")
+horizontal_alignment = 1
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_Ratio" type="Label" parent="CanvasLayer/GlycemicPopup" unique_id=1655557585]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.012152778
+anchor_left = 0.3939236
 anchor_top = 0.1470247
-anchor_right = 0.21200001
-anchor_bottom = 0.24527776
+anchor_right = 0.59377086
+anchor_bottom = 0.2452778
 offset_top = 0.22801208
 offset_right = -0.22401428
 offset_bottom = 0.060012817
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_4b75m")
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HUD" parent="." unique_id=968180933 instance=ExtResource("2_0iob3")]
@@ -1665,3 +1673,18 @@ shape = SubResource("BoxShape3D_dtg5n")
 
 [node name="Truck" parent="." unique_id=817272625 instance=ExtResource("13_6t1o7")]
 transform = Transform3D(0.99632293, 0, 0.08567776, 0, 1, 0, -0.08567776, 0, 0.99632293, 8.837722, 0, 2.41824)
+
+[node name="BtnExitMPG" type="TextureButton" parent="." unique_id=1909033869]
+anchors_preset = -1
+anchor_left = 0.117000006
+anchor_top = 0.119
+anchor_right = 0.117000006
+anchor_bottom = 0.119
+offset_left = -63.640015
+offset_top = -37.520004
+offset_right = 64.359985
+offset_bottom = 38.479996
+texture_normal = ExtResource("14_glc0k")
+script = ExtResource("15_iglwj")
+
+[connection signal="pressed" from="BtnExitMPG" to="BtnExitMPG" method="_on_pressed"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://bssn362rgxskd"]
+[gd_scene format=4 uid="uid://bssn362rgxskd"]
 
-[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="1_je5pd"]
-[ext_resource type="Texture2D" uid="uid://dq2nhs0xlwrw" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/Textures/colormap.png" id="1_nkrds"]
+[ext_resource type="Script" uid="uid://wmqlic8ai82r" path="res://Scripts/MealPerfectGameScript/food.gd" id="1_je5pd"]
+[ext_resource type="Texture2D" uid="uid://dq2nhs0xlwrw" path="res://art/assets/MealPerfectGame/Sushi Restaurant Kit - May 2023/Food/glTF/Textures/colormap.png" id="1_nkrds"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tw6d"]
 resource_name = "colormap"

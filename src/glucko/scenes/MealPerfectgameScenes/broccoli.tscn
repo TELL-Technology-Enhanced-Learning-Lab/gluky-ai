@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://due0xo5u5ko8a"]
+[gd_scene format=4 uid="uid://due0xo5u5ko8a"]
 
-[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="1_fws5x"]
-[ext_resource type="PackedScene" uid="uid://drdh38y1jh075" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/broccoli.glb" id="1_iq8yy"]
+[ext_resource type="Script" uid="uid://wmqlic8ai82r" path="res://Scripts/MealPerfectGameScript/food.gd" id="1_fws5x"]
+[ext_resource type="PackedScene" uid="uid://drdh38y1jh075" path="res://art/assets/MealPerfectGame/Sushi Restaurant Kit - May 2023/Food/glTF/broccoli.glb" id="1_iq8yy"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fws5x"]
 _surfaces = [{

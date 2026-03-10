@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://dby67cf25ow3g"]
+[gd_scene format=4 uid="uid://dby67cf25ow3g"]
 
-[ext_resource type="PackedScene" uid="uid://dmwpvthuy4qdt" path="res://Assets/Sushi Restaurant Kit - May 2023/Food/glTF/candy-bar.glb" id="1_j55st"]
-[ext_resource type="Script" uid="uid://d15lu2bdtbxb" path="res://Scripts/food.gd" id="1_rp6ec"]
+[ext_resource type="PackedScene" uid="uid://dmwpvthuy4qdt" path="res://art/assets/MealPerfectGame/Sushi Restaurant Kit - May 2023/Food/glTF/candy-bar.glb" id="1_j55st"]
+[ext_resource type="Script" uid="uid://wmqlic8ai82r" path="res://scripts/MealPerfectGameScript/food.gd" id="1_rp6ec"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_j55st"]
 _surfaces = [{
@@ -22,7 +22,7 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_j55st"]
 size = Vector3(0.3843994, 0.15867615, 0.19946289)
 
-[node name="Barretta_cioccolato" type="StaticBody3D"]
+[node name="Barretta_cioccolato" type="StaticBody3D" unique_id=994181005]
 script = ExtResource("1_rp6ec")
 food_category = "Baretta al cioccolato"
 indice_glicemico = 90.0
@@ -32,13 +32,13 @@ fat = 34.0
 nutrizione_info = "La barretta al cioccolato è ricca di zuccheri semplici e grassi.
 Fornisce energia rapida, ma può provocare un aumento veloce della glicemia."
 
-[node name="candy-bar2" parent="." instance=ExtResource("1_j55st")]
+[node name="candy-bar2" parent="." unique_id=1271139006 instance=ExtResource("1_j55st")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="candy-bar2/candy-bar" index="0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="candy-bar2/candy-bar" parent_id_path=PackedInt32Array(1271139006, 2004879816) index="0" unique_id=1742162121]
 mesh = SubResource("ArrayMesh_j55st")
 surface_material_override/0 = SubResource("StandardMaterial3D_rp6ec")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1199727282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00079345703, 0.037879944, 0.004272461)
 shape = SubResource("BoxShape3D_j55st")
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qvoh04smh1of"]
 
-[ext_resource type="Script" uid="uid://ccy6ku3qs3jf8" path="res://scripts/MealPerfectGameScript/first_person_player.gd" id="1_4ldhc"]
+[ext_resource type="Script" uid="uid://8kkvslpm8igd" path="res://scripts/MealPerfectGameScript/first_person_player.gd" id="1_4ldhc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1rygn"]
 

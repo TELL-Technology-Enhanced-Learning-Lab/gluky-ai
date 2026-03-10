@@ -26,7 +26,7 @@ func _on_levels_pressed() -> void:
 	
 
 func _on_exit_pressed():
-	get_tree().quit() #al click del pulsante chiudi il gioco
+	get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn") #al click del pulsante porta al menu selezione giochi
 	
 
 	
