@@ -11,6 +11,7 @@ const VIDEO_PATH = "res://scenes/GameIntroLogo/Gluky_s_GlukoWorld_Adventure_Intr
 @onready var skip_label: Label               = $SkipLabel
 
 var _can_skip: bool = false
+var _scene_changing: bool = false  # ← evita chiamate doppie
 
 func _ready():
 	modulate = Color(0, 0, 0, 1)
@@ -27,7 +28,6 @@ func _ready():
 	video_player.stream = stream
 	video_player.finished.connect(_on_video_finished)
 
-	# Fade in iniziale da nero
 	var tw = create_tween()
 	tw.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.6)\
 		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
@@ -65,7 +65,10 @@ func _on_video_finished():
 	_cinematic_transition()
 
 func _cinematic_transition():
-	# Layer vignette shader che stringe dai bordi
+	if _scene_changing:  # ← blocca doppie chiamate
+		return
+	_scene_changing = true
+
 	var vignette = ColorRect.new()
 	vignette.set_anchors_preset(Control.PRESET_FULL_RECT)
 	vignette.set_offsets_preset(Control.PRESET_FULL_RECT)
@@ -86,7 +89,6 @@ void fragment() {
 	mat.shader = shader
 	vignette.material = mat
 
-	# Flash bianco
 	var flash = ColorRect.new()
 	flash.set_anchors_preset(Control.PRESET_FULL_RECT)
 	flash.set_offsets_preset(Control.PRESET_FULL_RECT)
@@ -95,22 +97,24 @@ void fragment() {
 	add_child(flash)
 
 	var tw = create_tween()
-	# Step 1 — vignette stringe
 	tw.tween_method(
 		func(v: float): mat.set_shader_parameter("strength", v),
 		0.0, 8.0, 1.2
 	).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
-	# Step 2 — flash bianco
 	tw.tween_property(flash, "color:a", 1.0, 0.15)\
 		.set_ease(Tween.EASE_OUT)
-	# Step 3 — dal bianco al nero
 	tw.tween_property(flash, "color", Color(0, 0, 0, 1), 0.5)\
 		.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
-	# Step 4 — cambia scena
 	tw.tween_callback(_go_to_next_scene)
 
+	# ← Fallback Android: se il tween si blocca, cambia scena dopo 4s
+	get_tree().create_timer(4.0).timeout.connect(func():
+		if is_inside_tree():
+			_go_to_next_scene()
+	)
+
 func _go_to_next_scene():
-	if FileAccess.file_exists(NEXT_SCENE):
-		get_tree().change_scene_to_file(NEXT_SCENE)
-	else:
-		push_error("Scena non trovata: " + NEXT_SCENE)
+	if not is_inside_tree():  # ← sicurezza extra su mobile
+		return
+	# FileAccess.file_exists rimosso — non funziona su Android con res://
+	get_tree().change_scene_to_file(NEXT_SCENE)

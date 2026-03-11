@@ -10,6 +10,7 @@ extends Control
 
 var _glucose_time: float = 0.0
 var _glucose_base: float = 128.0
+var _scene_changing: bool = false  # ← anti doppio tap mobile
 
 const LEVEL_DATA = [
 	{
@@ -36,16 +37,15 @@ const LEVEL_DATA = [
 ]
 
 # Palette candy/arcobaleno
-const SKY_BLUE   = Color(0.40, 0.82, 1.00, 1.0)   # azzurro cielo
-const CANDY_PINK = Color(1.00, 0.42, 0.70, 1.0)   # rosa caramella
-const CANDY_YELL = Color(1.00, 0.88, 0.20, 1.0)   # giallo limone
-const CANDY_PURP = Color(0.72, 0.35, 1.00, 1.0)   # viola lecca-lecca
-const CANDY_MINT = Color(0.30, 0.95, 0.65, 1.0)   # verde menta
-const CANDY_ORG  = Color(1.00, 0.60, 0.15, 1.0)   # arancione zucchero
+const SKY_BLUE   = Color(0.40, 0.82, 1.00, 1.0)
+const CANDY_PINK = Color(1.00, 0.42, 0.70, 1.0)
+const CANDY_YELL = Color(1.00, 0.88, 0.20, 1.0)
+const CANDY_PURP = Color(0.72, 0.35, 1.00, 1.0)
+const CANDY_MINT = Color(0.30, 0.95, 0.65, 1.0)
+const CANDY_ORG  = Color(1.00, 0.60, 0.15, 1.0)
 const WHITE      = Color(1.00, 1.00, 1.00, 1.0)
-const DARK_BG    = Color(0.10, 0.22, 0.45, 1.0)   # blu notte cartone
+const DARK_BG    = Color(0.10, 0.22, 0.45, 1.0)
 
-# Colore accent per ciascun livello
 const LEVEL_COLORS = [CANDY_PINK, CANDY_YELL, CANDY_MINT]
 
 # ══════════════════════════════════════════════
@@ -56,14 +56,12 @@ func _ready():
 	_build_cards()
 
 func _paint_background():
-	# Sfondo sfumato cielo → notte cartone
 	var bg = ColorRect.new()
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.color = Color(0.55, 0.85, 1.0, 1.0)
 	add_child(bg)
 	move_child(bg, 0)
 
-	# Striscia arcobaleno orizzontale in basso (decorativa)
 	var rainbow = HBoxContainer.new()
 	rainbow.set_anchor(SIDE_LEFT,   0.0)
 	rainbow.set_anchor(SIDE_RIGHT,  1.0)
@@ -84,7 +82,6 @@ func _paint_background():
 		rainbow.add_child(strip)
 
 func _style_glucose_bar():
-	# Barra glucosio stile candy — sfondo bianco pastello, fill giallo/rosa
 	var bg = StyleBoxFlat.new()
 	bg.bg_color = Color(1, 1, 1, 0.35)
 	bg.set_corner_radius_all(8)
@@ -113,7 +110,6 @@ func _style_glucose_bar():
 	glucose_label.add_theme_color_override("font_color", CANDY_PURP)
 
 func _add_header_line():
-	# Linea arcobaleno sotto il titolo
 	var g = Gradient.new()
 	g.set_color(0, Color(1, 0.4, 0.7, 0.0))
 	g.add_point(0.25, Color(1, 0.85, 0.2, 1.0))
@@ -169,7 +165,6 @@ func _make_card(data: Dictionary, idx: int) -> PanelContainer:
 	vbox.add_theme_constant_override("separation", 10)
 	card.add_child(vbox)
 
-	# Badge livello colorato
 	var badge_row = HBoxContainer.new()
 	var badge = PanelContainer.new()
 	var badge_style = StyleBoxFlat.new()
@@ -188,13 +183,11 @@ func _make_card(data: Dictionary, idx: int) -> PanelContainer:
 	badge_row.add_child(badge)
 	vbox.add_child(badge_row)
 
-	# Emoji decorativa per ciascun mondo
 	var emojis = ["🍭", "🍯", "🌿"]
 	var emoji_lbl = Label.new()
 	emoji_lbl.text = emojis[data["id"] - 1]
 	emoji_lbl.add_theme_font_size_override("font_size", 36)
 	emoji_lbl.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	# piccola animazione float
 	var tw_e = create_tween().set_loops()
 	tw_e.tween_property(emoji_lbl, "position:y", emoji_lbl.position.y - 6, 0.9)\
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
@@ -245,7 +238,6 @@ func _style_card(card: PanelContainer, state: String, accent: Color):
 		"completed":
 			s.bg_color     = Color(1.0, 1.0, 1.0, 0.92)
 			s.border_color = accent
-			# piccola ombra colorata
 			s.shadow_color = Color(accent.r, accent.g, accent.b, 0.4)
 			s.shadow_size  = 8
 		"unlocked":
@@ -344,7 +336,6 @@ func _make_progress(data: Dictionary, state: String, accent: Color) -> VBoxConta
 	bg2.set_corner_radius_all(4)
 	bar.add_theme_stylebox_override("background", bg2)
 	var fill2 = StyleBoxFlat.new()
-	# fill arcobaleno sfumato
 	fill2.bg_color = accent
 	fill2.set_corner_radius_all(4)
 	bar.add_theme_stylebox_override("fill", fill2)
@@ -402,10 +393,16 @@ func _on_hover_exit(card: PanelContainer):
 		.set_ease(Tween.EASE_OUT)
 
 func _on_play(data: Dictionary, card: PanelContainer):
+	# ← Blocca doppi tap su mobile
+	if _scene_changing:
+		return
+
 	if data["state"] == "locked":
 		_shake(card)
 		_show_toast("🔒  Completa prima il livello precedente!")
 		return
+
+	_scene_changing = true  # ← da qui in poi nessun altro tap viene accettato
 
 	_burst_particles(card.global_position + card.size * 0.5, LEVEL_COLORS[data["id"] - 1])
 
@@ -417,19 +414,22 @@ func _on_play(data: Dictionary, card: PanelContainer):
 	overlay.color = Color(1, 1, 1, 0)
 	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(overlay)
+
 	var tw2 = create_tween()
 	tw2.tween_interval(0.25)
 	tw2.tween_property(overlay, "color:a", 1.0, 0.4)
 	tw2.tween_callback(func():
-		if FileAccess.file_exists(data["scene"]):
+		# ← FileAccess.file_exists RIMOSSO: non funziona su Android con res://
+		get_tree().change_scene_to_file(data["scene"])
+	)
+
+	# ← Fallback: se il tween si blocca su Android, cambia scena dopo 2s
+	get_tree().create_timer(2.0).timeout.connect(func():
+		if is_inside_tree():
 			get_tree().change_scene_to_file(data["scene"])
-		else:
-			push_error("Scena non trovata: " + data["scene"])
-			overlay.queue_free()
 	)
 
 func _burst_particles(pos: Vector2, accent: Color):
-	var shapes = ["⭐", "🍭", "✨", "💥"]
 	var burst_colors = [accent, CANDY_PINK, CANDY_YELL, CANDY_PURP, CANDY_ORG, WHITE]
 	for i in range(30):
 		var p = ColorRect.new()
@@ -498,13 +498,12 @@ func _process(delta):
 		_glucose_base = clamp(_glucose_base, 90.0, 170.0)
 		glucose_bar.value  = _glucose_base
 		glucose_label.text = "%d mg/dL" % int(_glucose_base)
-		# colore barra in base al valore glicemico
 		var fill = StyleBoxFlat.new()
 		fill.set_corner_radius_all(8)
 		if _glucose_base < 100:
-			fill.bg_color = CANDY_PURP   # basso → viola
+			fill.bg_color = CANDY_PURP
 		elif _glucose_base > 150:
-			fill.bg_color = CANDY_ORG    # alto  → arancione
+			fill.bg_color = CANDY_ORG
 		else:
-			fill.bg_color = CANDY_MINT   # ok    → verde menta
+			fill.bg_color = CANDY_MINT
 		glucose_bar.add_theme_stylebox_override("fill", fill)

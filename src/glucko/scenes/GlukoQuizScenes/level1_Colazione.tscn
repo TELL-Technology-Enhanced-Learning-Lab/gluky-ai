@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://cnytw70jfyxte"]
 
-[ext_resource type="Texture2D" uid="uid://beijjglyl3q7p" path="res://Assets/Backgrounds/1920x1080_Mixed.png" id="1_3i7of"]
-[ext_resource type="Script" uid="uid://c2ck6x3egwiu3" path="res://Scripts/level_1_colazione.gd" id="1_dmxfj"]
-[ext_resource type="Texture2D" uid="uid://drvebiegn4h6p" path="res://Assets/Weirdthers candies/Weirdthers_Candy_blueberry_128.png" id="2_sfuao"]
-[ext_resource type="PackedScene" uid="uid://bb5bd5kms0cfc" path="res://Scenes/score_hud.tscn" id="3_nkqrd"]
-[ext_resource type="FontFile" uid="uid://bfkbf1v0dokdm" path="res://fontEsterni/Winter Tosca.otf" id="3_s8al8"]
-[ext_resource type="FontFile" uid="uid://dlb3tyd0lvt1k" path="res://fontEsterni/Candyshop.otf" id="4_00u3t"]
-[ext_resource type="Script" uid="uid://dwap302y741d3" path="res://Scripts/Text_question.gd" id="5_cm5y3"]
-[ext_resource type="Texture2D" uid="uid://bw6gx3sa05uk8" path="res://Assets/Bubble/Bubble_256.png" id="5_olnth"]
-[ext_resource type="Script" uid="uid://cvm5huthuf4rt" path="res://Scripts/bolla.gd" id="6_olnth"]
-[ext_resource type="Texture2D" uid="uid://dm4hr10impli" path="res://Assets/GUI Panels/Button_ok_002_150x150.png" id="7_0daup"]
-[ext_resource type="FontFile" uid="uid://dlwc82b4pcsbo" path="res://fontEsterni/Candyshop.ttf" id="8_xacwj"]
-[ext_resource type="Texture2D" uid="uid://bs3we65sltx8y" path="res://Assets/GUI Panels/Button_pause_150x150.png" id="12_s8al8"]
+[ext_resource type="Texture2D" uid="uid://beijjglyl3q7p" path="res://art/assets/GlukoQuizAssets/Backgrounds/1920x1080_Mixed.png" id="1_3i7of"]
+[ext_resource type="Script" uid="uid://c2ck6x3egwiu3" path="res://scripts/GlukoQuizScript/level_1_colazione.gd" id="1_dmxfj"]
+[ext_resource type="Texture2D" uid="uid://drvebiegn4h6p" path="res://art/assets/GlukoQuizAssets/Weirdthers candies/Weirdthers_Candy_blueberry_128.png" id="2_sfuao"]
+[ext_resource type="PackedScene" uid="uid://bb5bd5kms0cfc" path="res://scenes/GlukoQuizScenes/score_hud.tscn" id="3_nkqrd"]
+[ext_resource type="FontFile" uid="uid://bfkbf1v0dokdm" path="res://art/font_esterni/Winter Tosca.otf" id="3_s8al8"]
+[ext_resource type="FontFile" uid="uid://dlb3tyd0lvt1k" path="res://art/font_esterni/Candyshop.otf" id="4_00u3t"]
+[ext_resource type="Script" uid="uid://dwap302y741d3" path="res://scripts/GlukoQuizScript/Text_question.gd" id="5_cm5y3"]
+[ext_resource type="Texture2D" uid="uid://bw6gx3sa05uk8" path="res://art/assets/GlukoQuizAssets/Bubble/Bubble_256.png" id="5_olnth"]
+[ext_resource type="Script" uid="uid://cvm5huthuf4rt" path="res://scripts/GlukoQuizScript/bolla.gd" id="6_olnth"]
+[ext_resource type="Texture2D" uid="uid://dm4hr10impli" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_ok_002_150x150.png" id="7_0daup"]
+[ext_resource type="FontFile" uid="uid://dlwc82b4pcsbo" path="res://art/font_esterni/Candyshop.ttf" id="8_xacwj"]
+[ext_resource type="Texture2D" uid="uid://bs3we65sltx8y" path="res://art/assets/GlukoQuizAssets/GUI Panels/Button_pause_150x150.png" id="12_s8al8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ar5bq"]
 font = ExtResource("3_s8al8")
@@ -320,13 +320,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1920.0
-offset_top = 1080.0
-offset_right = 1920.0
-offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -3.1415927
 texture = ExtResource("1_3i7of")
 
 [node name="TimerLabel" type="Label" parent="." unique_id=1924641445]

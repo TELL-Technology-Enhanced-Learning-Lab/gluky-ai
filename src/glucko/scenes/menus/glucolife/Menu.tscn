@@ -5,6 +5,7 @@
 [ext_resource type="VideoStream" uid="uid://cob5bd3pnl3kf" path="res://art/videos/MenuGlukolife/VideoLoop.ogv" id="4_jiwxj"]
 [ext_resource type="FontFile" uid="uid://bfkbf1v0dokdm" path="res://art/font_esterni/Winter Tosca.otf" id="4_r1yye"]
 [ext_resource type="Script" uid="uid://bj83gjbea0rba" path="res://scripts/Glucolife/general/button_play.gd" id="5_jiwxj"]
+[ext_resource type="Script" uid="uid://3femqwkw3abr" path="res://scripts/Glucolife/ScriptMenu/ExitButton.gd" id="6_fjrqn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjrqn"]
 bg_color = Color(0.078431375, 0.61960787, 0, 1)
@@ -17,7 +18,11 @@ shadow_size = 8
 
 [node name="Menu" type="Control" unique_id=531269067]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ssown")
 
 [node name="VideoIntro" type="VideoStreamPlayer" parent="." unique_id=2091965413]
@@ -37,12 +42,19 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="Button2" type="Button" parent="VideoLoop" unique_id=329807074]
-layout_mode = 0
-offset_left = 401.0
-offset_top = 914.0
-offset_right = 705.0
-offset_bottom = 1059.0
+[node name="Button2" type="Button" parent="." unique_id=329807074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -72.5
+offset_right = 152.0
+offset_bottom = 72.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 4
 theme_override_fonts/font = ExtResource("4_r1yye")
@@ -50,3 +62,24 @@ theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_fjrqn")
 text = "Play"
 script = ExtResource("5_jiwxj")
+
+[node name="Button3" type="Button" parent="." unique_id=456884431]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -445.27502
+offset_right = 152.0
+offset_bottom = -300.27582
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 4
+theme_override_fonts/font = ExtResource("4_r1yye")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjrqn")
+text = "ESCI"
+script = ExtResource("6_fjrqn")

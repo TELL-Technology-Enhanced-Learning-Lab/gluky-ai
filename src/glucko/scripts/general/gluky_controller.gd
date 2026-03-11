@@ -12,7 +12,7 @@ extends Node2D
 # CONFIG CLAUDE
 # ============================================================
 
-var api_key := "inserisci la chiave api "
+var api_key := "inserisci la chiave api"
 var model := "claude-haiku-4-5-20251001"
 
 # ============================================================
@@ -85,7 +85,6 @@ var prompts := {
 	"glucolife"  : "",
 	"mealperfect": "",
 	"glukoquiz"  : "",
-	
 }
 
 var active_prompt := ""
@@ -278,8 +277,6 @@ func _start_auto_tutorial(msg: String):
 		return
 
 	if msg == "PRESENTAZIONE_CON_NOME":
-		# Gluky si presenta, spiega il bottone, chiede il nome.
-		# Il microfono NON parte da solo — il bambino preme quando vuole.
 		_waiting_for_name = true
 		print("[GLUKY] Presentazione iniziale con richiesta nome")
 		_send_to_claude(
@@ -303,7 +300,7 @@ func _process(_delta):
 		_set_state(State.IDLE)
 
 # ============================================================
-# BOTTONE — comportamento identico a prima, nessuna modifica
+# BOTTONE
 # ============================================================
 
 func _on_btn_pressed():
@@ -342,7 +339,6 @@ func _on_stt_result(text: String):
 
 	if text.strip_edges() == "":
 		print("[GLUKY] Testo vuoto")
-		# Se aspettavamo il nome e il bambino non ha detto nulla, via col tutorial
 		if _waiting_for_name:
 			_waiting_for_name = false
 			_send_to_claude(_build_intro_tutorial_msg())
@@ -350,17 +346,86 @@ func _on_stt_result(text: String):
 			_set_state(State.IDLE)
 		return
 
-	# Prova sempre a estrarre il nome
-	_try_extract_name(text)
-
-	# Se stavamo aspettando il nome: rispondi con entusiasmo + fai subito il tutorial
+	# Se stavamo aspettando il nome: lascia che Claude lo estragga
 	if _waiting_for_name:
 		_waiting_for_name = false
-		_send_to_claude(_build_intro_tutorial_msg())
+		_extract_name_via_claude(text)
 		return
 
 	# Conversazione normale
 	_send_to_claude(text)
+
+# ============================================================
+# ESTRAZIONE NOME TRAMITE CLAUDE — affidabile al 100%
+# ============================================================
+
+func _extract_name_via_claude(text: String):
+	if claude_busy:
+		return
+	claude_busy = true
+	_set_state(State.THINKING)
+
+	var body = JSON.stringify({
+		"model": model,
+		"max_tokens": 50,
+		"messages": [{
+			"role": "user",
+			"content": [{
+				"type": "text",
+				"text": (
+					"Estrai il nome proprio da questa frase detta da un bambino italiano: \"" + text + "\"\n" +
+					"Rispondi SOLO con un oggetto JSON, senza markdown, senza backtick, senza spiegazioni.\n" +
+					"Formato esatto: {\"name\": \"Marco\"}\n" +
+					"Se non trovi nessun nome: {\"name\": \"\"}"
+				)
+			}]
+		}]
+	})
+
+	var headers = [
+		"Content-Type: application/json",
+		"x-api-key: " + api_key,
+		"anthropic-version: 2023-06-01"
+	]
+
+	var http_name = HTTPRequest.new()
+	http_name.use_threads = true
+	http_name.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(http_name)
+	http_name.request_completed.connect(
+		func(result, code, _h, body_r):
+			_on_name_extracted(result, code, body_r, http_name)
+	)
+	http_name.request("https://api.anthropic.com/v1/messages", headers, HTTPClient.METHOD_POST, body)
+
+func _on_name_extracted(result, code, body, http_node: HTTPRequest):
+	http_node.queue_free()
+	claude_busy = false
+
+	if result == HTTPRequest.RESULT_SUCCESS and code == 200:
+		var json = JSON.new()
+		if json.parse(body.get_string_from_utf8()) == OK:
+			var data = json.get_data()
+			var reply = data["content"][0]["text"].strip_edges()
+			# Rimuove eventuali backtick residui
+			reply = reply.replace("```json", "").replace("```", "").strip_edges()
+			var j2 = JSON.new()
+			if j2.parse(reply) == OK:
+				var extracted = j2.get_data()
+				if extracted.has("name") and extracted["name"] != "":
+					child_name = (extracted["name"] as String).capitalize()
+					print("[GLUKY] Nome estratto da Claude:", child_name)
+				else:
+					print("[GLUKY] Nessun nome trovato nel testo")
+			else:
+				print("[GLUKY] Errore parsing JSON nome:", reply)
+		else:
+			print("[GLUKY] Errore parsing risposta nome")
+	else:
+		print("[GLUKY] Errore HTTP estrazione nome:", code)
+
+	# Prosegui sempre col tutorial, con o senza nome
+	_send_to_claude(_build_intro_tutorial_msg())
 
 # ============================================================
 # MESSAGGIO DI RISPOSTA AL NOME + TUTORIAL STANZA
@@ -385,40 +450,6 @@ func _build_intro_tutorial_msg() -> String:
 			"striscia a destra per trovare la porta Quit per uscire. " +
 			"Massimo 3 frasi totali. Niente markdown o simboli."
 		)
-
-# ============================================================
-# ESTRAZIONE NOME DAL TESTO STT
-# ============================================================
-
-func _try_extract_name(text: String):
-	if child_name != "":
-		return
-
-	var t = text.to_lower().strip_edges()
-
-	# Pattern espliciti tipo "mi chiamo Marco", "sono Luca"
-	var patterns = ["mi chiamo ", "sono ", "il mio nome è ", "il mio nome e ", "chiamami "]
-	for p in patterns:
-		var idx = t.find(p)
-		if idx != -1:
-			var after = text.substr(idx + p.length()).strip_edges()
-			var parts = after.split(" ")
-			if parts.size() > 0:
-				var candidate = parts[0].rstrip("!,.")
-				if candidate.length() >= 2 and candidate.length() <= 20:
-					child_name = candidate.capitalize()
-					print("[GLUKY] Nome appreso:", child_name)
-					return
-
-	# Fallback: se stavamo aspettando il nome e il bambino ha detto solo 1-2 parole
-	# e quasi certamente il nome
-	if _waiting_for_name:
-		var words = text.strip_edges().split(" ")
-		if words.size() <= 2:
-			var candidate = words[0].rstrip("!,.")
-			if candidate.length() >= 2 and candidate.length() <= 20:
-				child_name = candidate.capitalize()
-				print("[GLUKY] Nome appreso (risposta diretta):", child_name)
 
 # ============================================================
 # INVIO A CLAUDE CON CRONOLOGIA COMPLETA

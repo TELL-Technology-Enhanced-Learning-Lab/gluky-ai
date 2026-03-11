@@ -179,23 +179,35 @@ layer = 100
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1820836810]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = 185.0
+offset_bottom = -682.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/Control" unique_id=1230962770]
-layout_mode = 0
-offset_left = 1628.0
-offset_top = -11.0
-offset_right = 1886.0
-offset_bottom = 260.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -135.49936
+offset_right = 129.0
+offset_bottom = 135.49936
+grow_horizontal = 2
+grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/Control/SubViewportContainer" unique_id=1127638554]
 world_3d = SubResource("World3D_ujsof")
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(258, 271)
+size = Vector2i(258, 270)
 render_target_clear_mode = 2
 render_target_update_mode = 4
 
@@ -206,19 +218,19 @@ script = ExtResource("1_rmo03")
 [node name="RoundBat" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin" unique_id=562800601 instance=ExtResource("2_5hght")]
 
 [node name="Skeleton3D" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature" parent_id_path=PackedInt32Array(562800601, 509335734) index="0" unique_id=1220696720]
-bones/0/position = Vector3(0, -0.0236, 0)
-bones/1/rotation = Quaternion(-0.039081994, 0.18597686, -0.6444483, 0.7406563)
-bones/2/rotation = Quaternion(-0.18792272, -0.05388322, 0.27032632, 0.9427118)
-bones/3/rotation = Quaternion(-0.16966575, 0.010454653, 0.21252243, 0.96225697)
-bones/4/rotation = Quaternion(-0.039081994, -0.18597686, 0.6444483, 0.7406563)
-bones/5/rotation = Quaternion(-0.18792272, 0.05388322, -0.27032632, 0.9427118)
-bones/6/rotation = Quaternion(-0.16966575, -0.010454653, -0.21252243, 0.96225697)
+bones/0/position = Vector3(0, 0.0236, 0)
+bones/1/rotation = Quaternion(0.19412537, -0.013393972, -0.63194585, 0.7501869)
+bones/2/rotation = Quaternion(0.17711778, 0.078930296, 0.3994174, 0.8960273)
+bones/3/rotation = Quaternion(0.12754047, 0.1007763, 0.36302233, 0.91749245)
+bones/4/rotation = Quaternion(0.19412537, 0.013393972, 0.63194585, 0.7501869)
+bones/5/rotation = Quaternion(0.17711778, -0.078930296, -0.3994174, 0.8960273)
+bones/6/rotation = Quaternion(0.12754047, -0.1007763, -0.36302233, 0.91749245)
 bones/7/position = Vector3(0.130992, -0.227392, -0.087851495)
 bones/7/rotation = Quaternion(0.26196814, 0.08345515, 0.26575115, 0.92400455)
-bones/8/rotation = Quaternion(3.468732e-08, 0.59999245, 0.8000057, 2.0787766e-08)
+bones/8/rotation = Quaternion(3.839837e-08, 0.646727, 0.76272154, 2.5504539e-08)
 bones/10/position = Vector3(-0.130992, -0.227392, -0.087851495)
 bones/10/rotation = Quaternion(0.26196814, -0.08345515, -0.26575115, 0.92400455)
-bones/11/rotation = Quaternion(3.653551e-08, 0.59999245, 0.8000057, 4.7122068e-08)
+bones/11/rotation = Quaternion(2.5525567e-08, 0.646727, 0.76272154, 3.225302e-08)
 
 [node name="Bat" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature/Skeleton3D" index="0" unique_id=680737279]
 material_overlay = SubResource("StandardMaterial3D_u0xry")
@@ -239,6 +251,7 @@ parameters/HurtShot/request = 0
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/Control/SubViewportContainer/SubViewport" unique_id=2122151135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.42607)
 environment = SubResource("Environment_uwjur")
+current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Control/SubViewportContainer/SubViewport" unique_id=1234175332]
 light_color = Color(1, 0.95686275, 0.8980392, 1)
@@ -247,13 +260,15 @@ light_indirect_energy = 1.5
 [node name="BtnRecord" type="Button" parent="CanvasLayer" unique_id=1120070487]
 anchors_preset = -1
 anchor_left = 0.90900004
-anchor_top = 0.22000001
+anchor_top = 0.43500003
 anchor_right = 0.90900004
-anchor_bottom = 0.22000001
+anchor_bottom = 0.43500003
 offset_left = -141.28003
-offset_top = -32.60002
+offset_top = -32.80005
 offset_right = 140.71997
-offset_bottom = 32.39998
+offset_bottom = 32.19995
+grow_horizontal = 0
+grow_vertical = 0
 text = "PREMI PER FARE UNA DOMANDA🎤"
 
 [node name="TTS" type="Node" parent="." unique_id=1707215855]

@@ -35,13 +35,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1920.0
-offset_top = 1080.0
-offset_right = 1920.0
-offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -3.1415927
 texture = ExtResource("1_wx0c4")
 
 [node name="Particelle_Caramelle" type="CPUParticles2D" parent="." unique_id=1096318513]
