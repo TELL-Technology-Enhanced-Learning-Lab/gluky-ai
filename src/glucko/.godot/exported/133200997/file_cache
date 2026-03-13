@@ -18,7 +18,7 @@ res://art/player_FemaleGlukolife.tscn::55b5463d77d508c4dcca1fe206ae13fb::1773416
 res://art/player_male.tscn::3f9462c4898deb505e2708534bf6e57f::1773416451::res://.godot/exported/133200997/export-f9d6226bfb31221dde3b3e4618b6c30d-player_male.scn
 res://resources/food_arrays.tres::3ec9907702d2540b6c22c46bf9d55cf6::1773416452::res://.godot/exported/133200997/export-8f2f660abe17ffcb28379534fd7d4190-food_arrays.res
 res://scenes/GameIntroLogo/Control.tscn::35ba85243afcf9c5dfcdf2b4bc1b1ff8::1773416452::res://.godot/exported/133200997/export-23b19bbb57ab499d64d79190e5dfa3ee-Control.scn
-res://scenes/glucky/Glukybot.tscn::d025311e7ef696e98473744222e39d80::1773417423::res://.godot/exported/133200997/export-0955ec6db459f7683da473689b1b1210-Glukybot.scn
+res://scenes/glucky/Glukybot.tscn::b5b2af8b9f758cf5db4de55187df2b28::1773418980::res://.godot/exported/133200997/export-0955ec6db459f7683da473689b1b1210-Glukybot.scn
 res://scenes/glucky/GlukyRoot.tscn::3d1ca59fc22c7c4082736f783dd3a6aa::1773416452::res://.godot/exported/133200997/export-642691e6f3ea79d3db6be96515e3dae9-GlukyRoot.scn
 res://scenes/glucolife rooms/Bedroom.tscn::fd1cf152fc40b337544b6d1cc6f55a4b::1773416452::res://.godot/exported/133200997/export-ec63b07c92872eac55ef0bfb01bde56c-Bedroom.scn
 res://scenes/glucolife rooms/Kitchen.tscn::84d397054d39419ba84ed38bd1786c59::1773416452::res://.godot/exported/133200997/export-6479720263def127cfba205ba16072e8-Kitchen.scn
