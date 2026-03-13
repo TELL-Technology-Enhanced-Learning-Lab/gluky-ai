@@ -1,9 +1,6 @@
-res://scenes/MealPerfectgameScenes/MainScene.tscn
-res://scripts/MealPerfectGameScript/btn_exit_msin_scene.gd
-res://scenes/MealPerfectgameScenes/MainSceneLevel2.tscn
 res://scenes/MealPerfectgameScenes/MainScene_Levelcolazione.tscn
-res://scenes/GlukoQuizScenes/level1_Colazione.tscn
-res://scenes/GlukoQuizScenes/level2_Pranzo.tscn
-res://scenes/GlukoQuizScenes/level_3_cena.tscn
-res://scenes/glucky/Glukybot.tscn
-res://scripts/general/gluky_controller.gd
+res://scripts/MealPerfectGameScript/end_screen__colazione.gd
+res://scenes/MealPerfectgameScenes/endscreen_cena.tscn
+res://scripts/MealPerfectGameScript/Game_state_ST.gd
+res://scripts/MealPerfectGameScript/tablefood.gd
+res://scenes/MealPerfectgameScenes/end_screen.tscn

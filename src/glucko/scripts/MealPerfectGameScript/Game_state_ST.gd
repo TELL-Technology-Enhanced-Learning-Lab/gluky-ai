@@ -3,7 +3,7 @@ extends Node
 #emettendo un segnale quando il livello è completato
 signal game_won
 
-const WIN_SCORE := 4 #numero di 'piatti perfetti' per far vincere il player
+const WIN_SCORE := 1#numero di 'piatti perfetti' per far vincere il player
 
 var perfect_plates: int = 0
 var game_over: bool = false
