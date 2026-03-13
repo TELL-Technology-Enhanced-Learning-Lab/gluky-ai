@@ -310,7 +310,7 @@ func _go_next_question():
 		
 		#dopo x secondi in questo caso 5 passa al livello successivo.
 		await get_tree().create_timer(5.0).timeout
-		get_tree().change_scene_to_file("res://Scenes/Mainscene1.tscn") #portare al livello due
+		get_tree().change_scene_to_file("res://scenes/GlukoQuizScenes/Mainscene1.tscn") #portare al livello due
 		return
 	
 	show_questions()

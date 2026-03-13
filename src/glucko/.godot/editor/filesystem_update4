@@ -13,3 +13,9 @@ res://scenes/MealPerfectgameScenes/MainScene_Levelcolazione.tscn
 res://scripts/MealPerfectGameScript/btn_exit_msin_scene.gd
 res://scenes/MealPerfectgameScenes/mobile_controls_pm.tscn
 res://scripts/MealPerfectGameScript/Game_state_ST.gd
+res://scenes/GlukoQuizScenes/level1_Colazione.tscn
+res://scripts/GlukoQuizScript/level_1_colazione.gd
+res://scenes/GlukoQuizScenes/level2_Pranzo.tscn
+res://scripts/GlukoQuizScript/level_2_pranzo.gd
+res://scenes/GlukoQuizScenes/level_3_cena.tscn
+res://scripts/GlukoQuizScript/level_3_cena.gd

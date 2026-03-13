@@ -1,7 +1,7 @@
 extends Node
 
 signal game_won
-const WIN_SCORE := 1
+const WIN_SCORE := 3
 var perfect_plates: int = 0
 var game_over: bool = false
 
