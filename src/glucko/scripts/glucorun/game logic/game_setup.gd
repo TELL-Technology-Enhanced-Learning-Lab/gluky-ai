@@ -15,32 +15,51 @@ var game_over_zone: Area3D = null
 @export var preferred_orientation := OrientationManager.OrientationMode.LANDSCAPE
 
 func _ready():
+	# Pulizia nodi mobile/controls residui da sessioni precedenti
+	var nodes_to_remove = []
+	var stack = [get_tree().root]
+	while stack.size() > 0:
+		var current = stack.pop_back()
+		if current != self and (
+			current.name.to_lower().find("mobile") != -1 or
+			current.name.to_lower().find("controls") != -1 or
+			(current is Control and current.visible and current.has_method("_on_joystick_pressed"))
+		):
+			nodes_to_remove.append(current)
+		for child in current.get_children():
+			stack.append(child)
+	for node in nodes_to_remove:
+		if is_instance_valid(node):
+			node.queue_free()
+
+	await get_tree().process_frame  # aspetta che i nodi siano rimossi
+
+	# Fade in
 	var fade_rect = ColorRect.new()
 	fade_rect.color = Color.BLACK
 	fade_rect.size = get_viewport().get_visible_rect().size
 	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	fade_rect.modulate.a = 1.0
-	
-	get_tree().root.add_child.call_deferred(fade_rect)
-	
+	add_child.call_deferred(fade_rect)
 	await get_tree().process_frame
-	
+
 	var tween = create_tween()
 	tween.tween_property(fade_rect, "modulate:a", 0.0, 1.0)
 	tween.finished.connect(fade_rect.queue_free)
-	
+
+	# Caricamento UI
 	var ui_scene = load("res://scenes/user interface/Game_UI_Glucorun.tscn")
-	game_ui = ui_scene.instantiate() 
-	get_tree().root.add_child(game_ui)
-	
+	game_ui = ui_scene.instantiate()
+	add_child(game_ui)
+
 	if OS.get_name() in ["Android", "iOS"]:
 		var controls_scene = load("res://scenes/user interface/Mobile_Controls_Glucorun.tscn")
 		if controls_scene:
 			mobile_controls = controls_scene.instantiate()
-			get_tree().root.add_child(mobile_controls)
-	
+			get_tree().current_scene.add_child(mobile_controls)
+
 	game_over_zone = find_game_over_zone()
-	
+
 	glucose_bar = get_glucose_bar()
 	if glucose_bar:
 		if glucose_bar.has_signal("glucose_game_over"):
@@ -48,9 +67,11 @@ func _ready():
 		if glucose_bar.has_signal("glucose_updated"):
 			glucose_bar.glucose_updated.connect(_on_glucose_bar_updated)
 		emit_signal("glucose_bar_available", glucose_bar)
-	
+
 	emit_signal("glucose_bar_ready")
 	emit_signal("ui_ready")
+	
+	
 
 func _on_glucose_bar_updated(value: float):
 	emit_signal("glucose_updated", value)
@@ -76,7 +97,7 @@ func fade_and_reload():
 	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	fade_rect.modulate.a = 0
 	
-	get_tree().root.add_child(fade_rect)
+	add_child(fade_rect)
 	
 	var tween = create_tween()
 	tween.tween_property(fade_rect, "modulate:a", 1.0, 0.5)

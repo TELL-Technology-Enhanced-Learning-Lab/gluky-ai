@@ -22,3 +22,7 @@ func register_perfect_plate() -> void:
 func reset_game() -> void:
 	perfect_plates = 0
 	game_over = false
+
+
+func _on_btn_exit_mpg_pressed() -> void:
+		get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn")

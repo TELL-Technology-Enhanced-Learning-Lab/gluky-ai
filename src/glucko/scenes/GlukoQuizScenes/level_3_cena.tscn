@@ -427,7 +427,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_cm5y3")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Answer1" unique_id=1999908440]
@@ -462,7 +462,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_cm5y3")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Answer2" unique_id=1274653622]
@@ -496,7 +496,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_cm5y3")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Answer3" unique_id=332111500]
@@ -531,7 +531,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_cm5y3")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Answer4" unique_id=1830855424]

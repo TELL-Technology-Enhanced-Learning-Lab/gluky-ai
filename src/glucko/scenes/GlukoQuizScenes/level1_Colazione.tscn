@@ -408,7 +408,7 @@ anchor_right = 0.35425
 anchor_bottom = 0.87700003
 offset_left = -12.800018
 offset_top = -0.19995117
-offset_right = -12.153564
+offset_right = -12.154541
 offset_bottom = -0.15844727
 size_flags_vertical = 0
 texture_normal = ExtResource("5_olnth")
@@ -427,7 +427,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_cm5y3")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Answer1" unique_id=1999908440]
@@ -462,7 +462,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_cm5y3")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Answer2" unique_id=1274653622]
@@ -491,12 +491,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -0.0010986328
 grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_cm5y3")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Answer3" unique_id=332111500]
@@ -531,7 +532,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_cm5y3")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Answer4" unique_id=1830855424]

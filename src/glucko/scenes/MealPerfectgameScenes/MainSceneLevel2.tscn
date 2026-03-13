@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ddjgcilk3nuax" path="res://scenes/MealPerfectgameScenes/endscreen_cena.tscn" id="10_4ppyw"]
 [ext_resource type="PackedScene" uid="uid://d2dswpwlnbdye" path="res://scenes/MealPerfectgameScenes/table_levelcena.tscn" id="10_7b36a"]
 [ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="11_15cni"]
-[ext_resource type="Script" uid="uid://bg3gstfp1a86k" path="res://scripts/MealPerfectGameScript/btn_exit_mpg.gd" id="12_8rfh0"]
+[ext_resource type="Script" uid="uid://dapev5tbes18p" path="res://scripts/MealPerfectGameScript/btn_exit_msin_scene.gd" id="12_15cni"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_moibl"]
 panorama = ExtResource("4_js54x")
@@ -1160,17 +1160,24 @@ transform = Transform3D(64.63, 0, 0, 0, -4.060788e-06, 20.575, 0, -92.9, -8.9936
 mesh = SubResource("ArrayMesh_4ppyw")
 skeleton = NodePath("")
 
-[node name="BtnExitMPG2" type="TextureButton" parent="." unique_id=1529816637]
-anchors_preset = -1
-anchor_left = 0.117000006
-anchor_top = 0.119
-anchor_right = 0.117000006
-anchor_bottom = 0.119
-offset_left = -63.640015
-offset_top = -37.520004
-offset_right = 64.359985
-offset_bottom = 38.479996
-texture_normal = ExtResource("11_15cni")
-script = ExtResource("12_8rfh0")
+[node name="Control" type="CanvasLayer" parent="." unique_id=746256581]
+layer = 10
 
-[connection signal="pressed" from="BtnExitMPG2" to="BtnExitMPG2" method="_on_pressed"]
+[node name="Btn_ExitMsinScene" type="TextureButton" parent="Control" unique_id=2098219341]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = -1
+anchor_left = 0.0072916667
+anchor_top = 0.06796297
+anchor_right = 0.094333336
+anchor_bottom = 0.20666668
+offset_left = 17.0
+offset_top = -0.40000153
+offset_right = -0.120010376
+offset_bottom = -0.2000122
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("11_15cni")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("12_15cni")
+metadata/_edit_use_anchors_ = true

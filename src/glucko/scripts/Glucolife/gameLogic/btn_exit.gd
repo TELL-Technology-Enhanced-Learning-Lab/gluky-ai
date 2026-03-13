@@ -7,6 +7,6 @@ func _on_pressed():
 	GlucolifeDataManager.exit_glucolife()
 	
 	if has_node("/root/SceneTransition"):
-		get_node("/root/SceneTransition").change_scene("res://scenes/menus/glucky/Intro_3d.tscn")
+		get_node("/root/SceneTransition").change_scene("res://scenes/menus/glucky/Minigame_Selection.tscn")
 	else:
-		get_tree().change_scene_to_file("res://scenes/menus/glucky/Intro_3d.tscn")
+		get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn")

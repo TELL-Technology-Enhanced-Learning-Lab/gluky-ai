@@ -6,13 +6,13 @@ extends Node2D
 
 @onready var tts = $TTS
 @onready var microphone: AudioStreamPlayer2D = $Microphone
-@onready var btn_record: Button = $CanvasLayer/BtnRecord
+@onready var btn_record: Button = $CanvasLayer/MarginContainer/VBoxContainer/BtnRecord
 
 # ============================================================
 # CONFIG CLAUDE
 # ============================================================
 
-var api_key := "inserisci la chiave api"
+var api_key := "inserisci l'api"
 var model := "claude-haiku-4-5-20251001"
 
 # ============================================================

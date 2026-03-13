@@ -32,7 +32,6 @@ var color_rect: ColorRect
 var effect_intensity := 0.0
 var _is_mobile := false
 var look_joystick: Node
-var look_joystick_connected := false
 var game_setup_node: Node
 
 func _ready():
@@ -41,15 +40,41 @@ func _ready():
 	base_smooth_speed = smooth_speed
 	base_mouse_sensitivity = mouse_sensitivity
 	original_fov = fov
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	#if _is_mobile:
-		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	#else:
-		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	if _is_mobile:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		connect_to_look_joystick()
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 	create_visual_overlay()
 	await get_tree().process_frame
 	find_game_setup_node()
+
+func connect_to_look_joystick():
+	await get_tree().process_frame
+	for node in get_tree().get_nodes_in_group("look_joystick"):
+		look_joystick = node
+		if look_joystick.has_signal("look_joystick_updated"):
+			look_joystick.look_joystick_updated.connect(_on_look_joystick_moved)
+			return
+	
+	var joystick = find_child("VirtualLookJoystick", true, false)
+	if joystick and joystick.has_signal("look_joystick_updated"):
+		look_joystick = joystick
+		look_joystick.look_joystick_updated.connect(_on_look_joystick_moved)
+
+func _on_look_joystick_moved(value: Vector2):
+	if not _is_mobile:
+		return
+	
+	var sensitivity_mod := get_sensitivity_modifier()
+	yaw -= value.x * touch_sensitivity * sensitivity_mod * 10.0
+	vertical_offset = clamp(
+		vertical_offset - value.y * vertical_sensitivity * sensitivity_mod * 5.0,
+		min_vertical_offset,
+		max_vertical_offset
+	)
 
 func create_visual_overlay():
 	color_rect = ColorRect.new()

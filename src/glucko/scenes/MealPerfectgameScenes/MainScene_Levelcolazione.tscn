@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dhpvhwe0n5ifj" path="res://art/models/Textures/Skybox_2.hdr" id="7_2kke1"]
 [ext_resource type="PackedScene" uid="uid://vrf6y8jy80xh" path="res://scenes/MealPerfectgameScenes/table_levelcolazione.tscn" id="7_iyamj"]
 [ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="11_8q1l3"]
-[ext_resource type="Script" uid="uid://bg3gstfp1a86k" path="res://scripts/MealPerfectGameScript/btn_exit_mpg.gd" id="12_j4qss"]
+[ext_resource type="Script" uid="uid://dapev5tbes18p" path="res://scripts/MealPerfectGameScript/btn_exit_msin_scene.gd" id="12_8q1l3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dudsc"]
 panorama = ExtResource("7_2kke1")
@@ -1293,17 +1293,24 @@ transform = Transform3D(42.907722, -25.669573, -1.1220527e-06, 0, -2.1855697e-06
 mesh = SubResource("ArrayMesh_uth6h")
 skeleton = NodePath("")
 
-[node name="BtnExitMPG3" type="TextureButton" parent="." unique_id=1315243222]
-anchors_preset = -1
-anchor_left = 0.117000006
-anchor_top = 0.119
-anchor_right = 0.117000006
-anchor_bottom = 0.119
-offset_left = -63.640015
-offset_top = -37.520004
-offset_right = 64.359985
-offset_bottom = 38.479996
-texture_normal = ExtResource("11_8q1l3")
-script = ExtResource("12_j4qss")
+[node name="Control" type="CanvasLayer" parent="." unique_id=147747347]
+layer = 10
 
-[connection signal="pressed" from="BtnExitMPG3" to="BtnExitMPG3" method="_on_pressed"]
+[node name="Btn_ExitMsinScene" type="TextureButton" parent="Control" unique_id=1086002638]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = -1
+anchor_left = 0.0072916667
+anchor_top = 0.06796297
+anchor_right = 0.094333336
+anchor_bottom = 0.20666668
+offset_left = 17.0
+offset_top = -0.40000153
+offset_right = -0.120010376
+offset_bottom = -0.2000122
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("11_8q1l3")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("12_8q1l3")
+metadata/_edit_use_anchors_ = true

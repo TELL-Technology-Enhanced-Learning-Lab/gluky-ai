@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://w0lgbxkr3kef" path="res://scripts/glucolife/gameLogic/GlucoseBar.gd" id="1_okpne"]
 [ext_resource type="Script" uid="uid://bulwpj03x14ji" path="res://scripts/glucolife/gameLogic/HygieneBar.gd" id="2_885im"]
+[ext_resource type="Texture2D" uid="uid://bt50b4a8muh2a" path="res://art/assets/glucolife/icons/glucose-icon.png" id="2_aaeoy"]
 [ext_resource type="Script" uid="uid://na4babajd2sm" path="res://scripts/glucolife/gameLogic/EnergyBar.gd" id="3_dia44"]
 [ext_resource type="Script" uid="uid://clvckx7ei1h73" path="res://scripts/glucolife/gameLogic/HappinessBar.gd" id="4_nexrn"]
+[ext_resource type="Texture2D" uid="uid://7876b5xwjoff" path="res://art/assets/glucolife/icons/hygiene-icon.png" id="4_qgcr1"]
+[ext_resource type="Texture2D" uid="uid://d3alq7k5grqgj" path="res://art/assets/glucolife/icons/energy-icon.png" id="6_2kwef"]
+[ext_resource type="Texture2D" uid="uid://b8x30uq1mpc33" path="res://art/assets/glucolife/icons/happiness-icon.png" id="8_lci84"]
 
 [node name="StatusBarsGlucolife" type="Node2D" unique_id=1582680091]
 
@@ -45,6 +49,14 @@ rotation = 4.712389
 value = 50.0
 show_percentage = false
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/GlucoseUI" unique_id=1128828689]
+layout_mode = 0
+offset_left = -37.6
+offset_top = 490.59998
+offset_right = 88.4
+offset_bottom = 611.6
+texture = ExtResource("2_aaeoy")
+
 [node name="HygieneUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1370451018]
 layout_mode = 2
 script = ExtResource("2_885im")
@@ -72,6 +84,14 @@ rotation = 4.712389
 value = 50.0
 show_percentage = false
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/HygieneUI" unique_id=630787]
+layout_mode = 0
+offset_left = -5.5999985
+offset_top = 500.59998
+offset_right = 58.4
+offset_bottom = 564.6
+texture = ExtResource("4_qgcr1")
+
 [node name="EnergyUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1299306604]
 layout_mode = 2
 script = ExtResource("3_dia44")
@@ -97,6 +117,14 @@ offset_bottom = 550.0
 rotation = 4.712389
 value = 50.0
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/EnergyUI" unique_id=1919222167]
+layout_mode = 0
+offset_left = -6.5999985
+offset_top = 510.59998
+offset_right = 57.4
+offset_bottom = 569.6
+texture = ExtResource("6_2kwef")
 
 [node name="HappinessUI" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=181332268]
 layout_mode = 2
@@ -124,3 +152,11 @@ offset_bottom = 550.0
 rotation = 4.712389
 value = 50.0
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/HappinessUI" unique_id=74715425]
+layout_mode = 0
+offset_left = -6.5999985
+offset_top = 505.59998
+offset_right = 57.4
+offset_bottom = 569.6
+texture = ExtResource("8_lci84")

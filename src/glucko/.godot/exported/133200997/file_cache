@@ -1,145 +1,145 @@
-res://art/assets/room intro_menu/room_lights.tscn::98159b687761171280f9d3dae7bcb1d3::1773187391::res://.godot/exported/133200997/export-1e1f96c5468d1ad1919fc8c1e00ed0ae-room_lights.scn
-res://art/assets/special arts/p_cube_129.tscn::abb638323a8f20647e7ce3d94b325dc2::1773187391::res://.godot/exported/133200997/export-41201184caadb9baf4008e6ed85c6a45-p_cube_129.scn
-res://art/assets/special arts/p_cube_133.tscn::766021085a729f6f45bc58b59f766b23::1773187391::res://.godot/exported/133200997/export-2841fe126334b3f527c0b0bb3888da03-p_cube_133.scn
-res://art/models/gdquest_round_bat/round_bat_skin.tscn::09af5fe895c2b0260a71ff446bf34291::1773187392::res://.godot/exported/133200997/export-8e78cfd070d1c6d092d14f5faca87e5f-round_bat_skin.scn
-res://art/models/Player Model/player_files/model/materials/character_material.tres::ab8c2491a6fd0bdcef1b267fc8a72792::1773187392::res://.godot/exported/133200997/export-ca289e30acf8705a183680e442ff04da-character_material.res
-res://art/models/Player Model/player_files/model/materials/eye_mat_L.tres::c08fda4f09e228d8bbd8ec1d005b3d7a::1773187392::res://.godot/exported/133200997/export-0b15bba13a4c28b1619109b39b93b054-eye_mat_L.res
-res://art/models/Player Model/player_files/model/materials/eye_mat_override.tres::5cc9ad2962d61e93bf20c5df7a716564::1773187392::res://.godot/exported/133200997/export-2b20ee0bc4c1514fc865e545174e0747-eye_mat_override.res
-res://art/models/Player Model/player_files/model/materials/eye_mat_R.tres::973c35872163c2ccc13a5a95f0afa21a::1773187392::res://.godot/exported/133200997/export-57a160ce6037712325b45795bd4eeede-eye_mat_R.res
-res://art/models/Player Model/player_files/model/materials/mouth_mat.tres::1edbad302d2e35fe5db80ee6fc0631ba::1773187392::res://.godot/exported/133200997/export-4aa63c9ee4c27e1ec0d065b5a79641c0-mouth_mat.res
-res://art/models/Player Model/player_files/player_model_female.tscn::00c3d31f0f9bdbcb3d9e12768aa3d251::1773187392::res://.godot/exported/133200997/export-d1df4a08bba453c4e10da3508d8f574a-player_model_female.scn
-res://art/models/Player Model 2/player_files/model/materials/eye_mat_M.tres::454688adff12fd7e916fe5901f20742b::1773187392::res://.godot/exported/133200997/export-31bb9c9a6ea74cb706c000f99966a5f5-eye_mat_M.res
-res://art/models/Player Model 2/player_files/player_model_male.tscn::7e3ea6db8f726be10c1feda0ca2afeab::1773187392::res://.godot/exported/133200997/export-dc089a8bd37e2607774c98d1d3664e07-player_model_male.scn
-res://art/music/MealPeferctGame_Music/MusicManagerGlukoquiz.tscn::b34fe2257fb924648c8a416080104282::1773187392::res://.godot/exported/133200997/export-79ef25566e8d432f38d45305cab10e68-MusicManagerGlukoquiz.scn
-res://art/music/MealPeferctGame_Music/music_manager.tscn::d7ca7bb1857d3ef26f58d7b7caff1be9::1773187392::res://.godot/exported/133200997/export-8682363a960fcc031fdaea98e819d8ac-music_manager.scn
-res://art/music/default_bus_layout.tres::a2e883bc634ba35c2f1e69747f45b3cb::1773187392::res://.godot/exported/133200997/export-f0fe92e0105ada9fb2715c918daec7db-default_bus_layout.res
-res://art/player_female.tscn::285686b02800ee3b09fb0060ed261dfc::1773187392::res://.godot/exported/133200997/export-2b9621d69d226b7ca8d8c9449386ed43-player_female.scn
-res://art/player_FemaleGlukolife.tscn::55b5463d77d508c4dcca1fe206ae13fb::1773187392::res://.godot/exported/133200997/export-a5bba9b07302a213129f26396b773afd-player_FemaleGlukolife.scn
-res://art/player_male.tscn::3f9462c4898deb505e2708534bf6e57f::1773187392::res://.godot/exported/133200997/export-f9d6226bfb31221dde3b3e4618b6c30d-player_male.scn
-res://resources/food_arrays.tres::3ec9907702d2540b6c22c46bf9d55cf6::1773187393::res://.godot/exported/133200997/export-8f2f660abe17ffcb28379534fd7d4190-food_arrays.res
-res://scenes/GameIntroLogo/Control.tscn::35ba85243afcf9c5dfcdf2b4bc1b1ff8::1773187393::res://.godot/exported/133200997/export-23b19bbb57ab499d64d79190e5dfa3ee-Control.scn
-res://scenes/glucky/Glukybot.tscn::557d58643c5da57a94ad045af7c44d21::1773187690::res://.godot/exported/133200997/export-0955ec6db459f7683da473689b1b1210-Glukybot.scn
-res://scenes/glucky/GlukyRoot.tscn::3d1ca59fc22c7c4082736f783dd3a6aa::1773187393::res://.godot/exported/133200997/export-642691e6f3ea79d3db6be96515e3dae9-GlukyRoot.scn
-res://scenes/glucolife rooms/Bedroom.tscn::765a6b4330b0ba301dd2bcf746a3d710::1773187393::res://.godot/exported/133200997/export-ec63b07c92872eac55ef0bfb01bde56c-Bedroom.scn
-res://scenes/glucolife rooms/Kitchen.tscn::a26aa59608b8d3d42da0c55fbbd05e34::1773187393::res://.godot/exported/133200997/export-6479720263def127cfba205ba16072e8-Kitchen.scn
-res://scenes/glucolife rooms/PlayGround.tscn::176d148dfba5df06088bab43c4ca2769::1773187393::res://.godot/exported/133200997/export-57172df88667c81a965a88ed188b8cf5-PlayGround.scn
-res://scenes/glucolife rooms/Restroom.tscn::f9287982fc980afc2d131a7d9a4ad474::1773187393::res://.godot/exported/133200997/export-b32c15b72ca71fdab377d5cc1e002862-Restroom.scn
-res://scenes/glucorun levels/livello1.tscn::04b53be30ae9ea67c32214fa3405d8e9::1773187393::res://.godot/exported/133200997/export-4351b212f27eab73b29d1edceff0c063-livello1.scn
-res://scenes/glucorun levels/livello2.tscn::06fc64a991fcfcdfe03b9b75f61c3b4c::1773187393::res://.godot/exported/133200997/export-5570077f281463252fdddba8e272c49d-livello2.scn
-res://scenes/glucorun levels/livello3.tscn::e0b9ee0bf0c6440894bd4fea5722f88b::1773187393::res://.godot/exported/133200997/export-42611c3d8c6ecae1ac88836e3e711bf4-livello3.scn
-res://scenes/GlukoQuizScenes/Impostazioni.tscn::a0f1f418742a574f05601e5209819e13::1773187393::res://.godot/exported/133200997/export-e1dfab968f3a6c7e4cde91046d5bb088-Impostazioni.scn
-res://scenes/GlukoQuizScenes/level1_Colazione.tscn::f09ccb046e0fb67714c70da59007812c::1773187393::res://.godot/exported/133200997/export-2de42758358c16cfdfb6b722dbca5807-level1_Colazione.scn
-res://scenes/GlukoQuizScenes/level2_Pranzo.tscn::7bec914c1c2ab2b4858863d91d2e3ebe::1773187393::res://.godot/exported/133200997/export-bf5876df66d368fb0841d0452d96e3f9-level2_Pranzo.scn
-res://scenes/GlukoQuizScenes/level_3_cena.tscn::b941971c69d2bdc496819eb3ae538e06::1773187393::res://.godot/exported/133200997/export-78383bfbea1b73ddd88c39cf3d92c4c6-level_3_cena.scn
-res://scenes/GlukoQuizScenes/Mainscene1.tscn::8bab33b21e1e184c4b514598d69396a3::1773187393::res://.godot/exported/133200997/export-2ca7883525c8f159ffcee39a7f3f412b-Mainscene1.scn
-res://scenes/GlukoQuizScenes/Menuiniziale.tscn::fe1e45bec7403cecf920a643a879456a::1773187393::res://.godot/exported/133200997/export-7f877beff0e05845c26e93dc49b8aa58-Menuiniziale.scn
-res://scenes/GlukoQuizScenes/pause_control.tscn::c09b47b41d31beb4e2ce2e6b4cbbe55f::1773187393::res://.godot/exported/133200997/export-3068596bc13dfd3cf19764c9b5c96550-pause_control.scn
-res://scenes/GlukoQuizScenes/PopupEducativo.tscn::42883bc5cc155f7b1f3cc872161aab4a::1773187393::res://.godot/exported/133200997/export-523dae4b982a835e8dae2af190a0ac00-PopupEducativo.scn
-res://scenes/GlukoQuizScenes/score_hud.tscn::e1258d135c4350762ffbb17e4afb73ca::1773187393::res://.godot/exported/133200997/export-a4ea38058a1cf66ddb2e6583ff812472-score_hud.scn
-res://scenes/MealPerfectgameScenes/apple.tscn::a651a6d531268f79009a5ac20e5ec091::1773187393::res://.godot/exported/133200997/export-59cafb68dbabf42fe3723738f3bdf4b9-apple.scn
-res://scenes/MealPerfectgameScenes/arancia.tscn::c2c5746a29cf7f2b2289df39f3a0620c::1773187393::res://.godot/exported/133200997/export-a36efba86a86c0f07912404262996402-arancia.scn
-res://scenes/MealPerfectgameScenes/Avocado.tscn::824f549fb1d283d24a7a0d64be3554af::1773187393::res://.godot/exported/133200997/export-53fd436454ce88e9ba20337318e3edc3-Avocado.scn
-res://scenes/MealPerfectgameScenes/banana.tscn::dd4cda92ce95433da66dc36a87976d4e::1773187393::res://.godot/exported/133200997/export-ded8a992b4cb457e5c7357ccc97d5204-banana.scn
-res://scenes/MealPerfectgameScenes/barretta_cioccolato.tscn::a5218e27bf8b352d638b828986bbbdfb::1773187393::res://.godot/exported/133200997/export-51643bebd7680ec7ba4cdd822bf06b34-barretta_cioccolato.scn
-res://scenes/MealPerfectgameScenes/biscotto_cioccolato.tscn::016b83881dceaae5c7bfc377b6364e89::1773187393::res://.godot/exported/133200997/export-2cdc1f57cf2c4f2011c909ff26471e4f-biscotto_cioccolato.scn
-res://scenes/MealPerfectgameScenes/bread.tscn::d09b52910f7159b92e815745607deaa9::1773187393::res://.godot/exported/133200997/export-89d4b6f8f1d00b38f189f83dd87feb26-bread.scn
-res://scenes/MealPerfectgameScenes/broccoli.tscn::597e067d7c261427f7be6ba8bd4480c8::1773187393::res://.godot/exported/133200997/export-b746cae7cc61d4b91661720403aa3f48-broccoli.scn
-res://scenes/MealPerfectgameScenes/candy.tscn::0ffd983167cb363bee029dc9590a439c::1773187393::res://.godot/exported/133200997/export-0476712d25c2ef598afb800390e44a88-candy.scn
-res://scenes/MealPerfectgameScenes/cheese.tscn::ef034dfe4bf3277ed1671dc446c4917d::1773187393::res://.godot/exported/133200997/export-7f781a7532d26a36ab12584359692e2e-cheese.scn
-res://scenes/MealPerfectgameScenes/ciambella_integrale.tscn::a2a7269e90f354a318d122a9ae15fd5f::1773187393::res://.godot/exported/133200997/export-49cefbc955388b919b1d913d21f41c24-ciambella_integrale.scn
-res://scenes/MealPerfectgameScenes/ciambella_smarties.tscn::4e088fc6174860ff32abe2a34491cb68::1773187393::res://.godot/exported/133200997/export-0eb2f6a6f655b5ec0be2d0383260ec33-ciambella_smarties.scn
-res://scenes/MealPerfectgameScenes/cioccolato.tscn::1e2f4e901602523780b9c5efaa3b55db::1773187393::res://.godot/exported/133200997/export-f2855af2a9bf973be0a9328e4de133cd-cioccolato.scn
-res://scenes/MealPerfectgameScenes/cookie.tscn::1c8d1e5d4adab7dfc38ee6d7bb3fada0::1773187393::res://.godot/exported/133200997/export-c9b634af88e5cbcc06f8ac96dbc0c1d0-cookie.scn
-res://scenes/MealPerfectgameScenes/croissant.tscn::4a06ac46b7fa0e511e894a697ec8aede::1773187393::res://.godot/exported/133200997/export-fa21d488ab6c0887cb10681aefea4e45-croissant.scn
-res://scenes/MealPerfectgameScenes/egg.tscn::43b76860c101a029d43a4f455fb7a304::1773187393::res://.godot/exported/133200997/export-d41060640274695f18623f9ca8f518e6-egg.scn
-res://scenes/MealPerfectgameScenes/endscreen_cena.tscn::e578074d43f2c6f15a11a124294f9f17::1773187393::res://.godot/exported/133200997/export-72205eb0333ac041fecd9546e1395f85-endscreen_cena.scn
-res://scenes/MealPerfectgameScenes/end_screen.tscn::eb83c1b6e0052fee58ed8804836e9731::1773187393::res://.godot/exported/133200997/export-3c7104e90f4a97444bdb5a12704db626-end_screen.scn
-res://scenes/MealPerfectgameScenes/end_screen__colazione.tscn::a412eacef88d69fc44e03c794b5b82e8::1773187393::res://.godot/exported/133200997/export-7e256ace6c7a25a442501d100530df5f-end_screen__colazione.scn
-res://scenes/MealPerfectgameScenes/first_person_player.tscn::ed3a1f8d0559b869640981c56bd37b3b::1773187393::res://.godot/exported/133200997/export-a1d11090ebc950413aefa4fdb9752e72-first_person_player.scn
-res://scenes/MealPerfectgameScenes/frappè_cioccolato.tscn::9402c15f9b911caf46586c9fe53d763a::1773187393::res://.godot/exported/133200997/export-16d7272dff0b666ff208e386f9b9a8ce-frappè_cioccolato.scn
-res://scenes/MealPerfectgameScenes/gelato_chocolate.tscn::f5eecd99641463b7e26dbdd6fb4f0ed7::1773187393::res://.godot/exported/133200997/export-d595665e95dc3f76ea33ebcd70386841-gelato_chocolate.scn
-res://scenes/MealPerfectgameScenes/hud.tscn::67eabf4caed0ba966081e734ce77d083::1773187393::res://.godot/exported/133200997/export-2b4f4d5c530f070155153472efef4145-hud.scn
-res://scenes/MealPerfectgameScenes/kitchenPlate.tscn::920ba29e386d2e839fe82a064fe3b271::1773187393::res://.godot/exported/133200997/export-df0cee835224a26a771820aa2450cc39-kitchenPlate.scn
-res://scenes/MealPerfectgameScenes/MainScene.tscn::a19681a66874975b41ae2f01494d99bb::1773187393::res://.godot/exported/133200997/export-e8188356776a9a53f63475fbe261892f-MainScene.scn
-res://scenes/MealPerfectgameScenes/MainSceneLevel2.tscn::7c1d6cfc7f665ad8ec5f52fb96c791c9::1773187393::res://.godot/exported/133200997/export-305e22769bb6a844366f03ef76f6bf45-MainSceneLevel2.scn
-res://scenes/MealPerfectgameScenes/MainScene_Levelcolazione.tscn::be0acbdee0e02b7e47c970c57a19278e::1773187393::res://.godot/exported/133200997/export-03c2414021b0e944e7f377bceee758c5-MainScene_Levelcolazione.scn
-res://scenes/MealPerfectgameScenes/mobile_controls_pm.tscn::834006f157c42151e7083eaa6dbb7205::1773187393::res://.godot/exported/133200997/export-d9862cf0a30b8b82f3001d1f85718d8a-mobile_controls_pm.scn
-res://scenes/MealPerfectgameScenes/muffin.tscn::e6e5164afa5c2cecd61e4d82cef7d4ad::1773187393::res://.godot/exported/133200997/export-0ebb1eb4ecf6b53bd99bd1eb65263d6b-muffin.scn
-res://scenes/MealPerfectgameScenes/mushroom.tscn::b9955942721d13557ef6c29b642ba7dd::1773187393::res://.godot/exported/133200997/export-bb76dbee0372368afa75e8027a178439-mushroom.scn
-res://scenes/MealPerfectgameScenes/Panda_2.tscn::9ccd5047a1dd2096544c13e22c2c5ac3::1773187393::res://.godot/exported/133200997/export-c876184bcf92e5408327271d6f06c31a-Panda_2.scn
-res://scenes/MealPerfectgameScenes/panel_livelloCena.tscn::1fe53fd0e9b6774c2a7eb2c7a14b1824::1773187393::res://.godot/exported/133200997/export-b56995911c9a054856dfc86848d6e5c1-panel_livelloCena.scn
-res://scenes/MealPerfectgameScenes/panel_livelloColazione.tscn::0f07ded58fb615efb1a017c37e72795e::1773187393::res://.godot/exported/133200997/export-0e9583fe8aa02d6193ad0570eeed80a7-panel_livelloColazione.scn
-res://scenes/MealPerfectgameScenes/pera.tscn::3aa458cf55ada7f369bbe7fd63db0753::1773187393::res://.godot/exported/133200997/export-9c015620f9dfff52e4e2c5a3723f4802-pera.scn
-res://scenes/MealPerfectgameScenes/pizza.tscn::ce39fb4eb14aeaac8ecb8ab72a1ae68b::1773187393::res://.godot/exported/133200997/export-5f7d6b6f07348407a437d36b3f3cd434-pizza.scn
-res://scenes/MealPerfectgameScenes/plate_2.tscn::aee598aeb99621563305525dac868f1f::1773187393::res://.godot/exported/133200997/export-676fed60ac26d7dde7900d36de5e3be3-plate_2.scn
-res://scenes/MealPerfectgameScenes/rice.tscn::fd415c51d485ea9bd54e20e7774cefa3::1773187393::res://.godot/exported/133200997/export-ef5b142cc4bca6b6e5a61250230b04a0-rice.scn
-res://scenes/MealPerfectgameScenes/Salmon.tscn::ab07e8c6d3175836bdf2b8958ee56fd7::1773187393::res://.godot/exported/133200997/export-f1cc8edfe177116fcccd47c6ce2920b4-Salmon.scn
-res://scenes/MealPerfectgameScenes/salsiccia.tscn::95b11433c74f047bfb1c75c5d23f79ec::1773187393::res://.godot/exported/133200997/export-06e1ce01b40dcf4a94ba19715c622580-salsiccia.scn
-res://scenes/MealPerfectgameScenes/table.tscn::d9110da2f15721d51ecc9c122b6a0d2a::1773187393::res://.godot/exported/133200997/export-da0ecd2a6d7b35bef2acfb390adda25c-table.scn
-res://scenes/MealPerfectgameScenes/table_levelcena.tscn::1117d2cea74d67c7a7f23fed49d10728::1773187393::res://.godot/exported/133200997/export-3ed726ce5fc7f2ebb2d435566495745d-table_levelcena.scn
-res://scenes/MealPerfectgameScenes/table_levelcolazione.tscn::e48cdc165c5c95f0b7b3f6d89c7b38bf::1773187393::res://.godot/exported/133200997/export-4a333942f61144bd3309ad928cf876f2-table_levelcolazione.scn
-res://scenes/menus/glucky/Intro_3d.tscn::03d64d31ed69abe41bcb88ee9f7cab65::1773187393::res://.godot/exported/133200997/export-c0e7f72f3ddf4d6a95746160b168dad6-Intro_3d.scn
-res://scenes/menus/glucky/Minigame_Selection.tscn::b0717003f71e41fde114417305e215bf::1773187393::res://.godot/exported/133200997/export-7e9f8acad6bab27a4a8fb8fad978950f-Minigame_Selection.scn
-res://scenes/menus/glucolife/Menu.tscn::692ef3637c3f08d5271a8c1af9317544::1773187393::res://.godot/exported/133200997/export-ae762176c59591f1b1c1ba847510dfb1-Menu.scn
-res://scenes/menus/glucolife/SplashScreen.tscn::561a937cdaedddf2136578623417eb35::1773187393::res://.godot/exported/133200997/export-55ca9567d9a98b75d118c4768a80d379-SplashScreen.scn
-res://scenes/menus/glucorun/glucorun_menu.tscn::52b82ad04cc0003dd1d8064e3158ee3f::1773187393::res://.godot/exported/133200997/export-9001b6709aab475f1f7c29d239e04acb-glucorun_menu.scn
-res://scenes/menus/glucorun/LevelSelect.tscn::cec668fcd5e9e192cefaa156453b02d6::1773187393::res://.godot/exported/133200997/export-1310703c551cf0c89207c49813ab08b5-LevelSelect.scn
-res://scenes/menus/tutorials/Insuline Tutorial.tscn::c9aa25981b8cca073607454d4d941ac1::1773187393::res://.godot/exported/133200997/export-687ab5d27c7d080d61db37d514ebefe4-Insuline Tutorial.scn
-res://scenes/menus/tutorials/tutorial_glucorun_food.tscn::df2eb4a84c5571efe1ad3193d41a6d4e::1773187393::res://.godot/exported/133200997/export-c5709654c29f3962a814d076f14503e9-tutorial_glucorun_food.scn
-res://scenes/scenes_tutorial/MenuLivelli.tscn::0670eaa8f167cac16cfda64bfaf87701::1773187393::res://.godot/exported/133200997/export-0bf4e09a9a387ab6a2f2bc0f763c6d53-MenuLivelli.scn
-res://scenes/scenes_tutorial/Menu_inizio.tscn::bf91c9219f3801b1e9242af1dc88330b::1773187393::res://.godot/exported/133200997/export-f10762400cf86acc0608f89b10d52eac-Menu_inizio.scn
-res://scenes/scenes_tutorial/tutorial_2.tscn::3fc871027ac263a19b37f14dd4d5bd67::1773187393::res://.godot/exported/133200997/export-cc616423f99d72c6da015d4582251203-tutorial_2.scn
-res://scenes/scenes_tutorial/tutorial_3.tscn::0225aa88aa75afcb42b297ff5dc5de0c::1773187393::res://.godot/exported/133200997/export-cbb77859ad46f15b0895538672dff16d-tutorial_3.scn
-res://scenes/scenes_tutorial/tutorial_4.tscn::58162b63fc5cbd5bcb3cdac7e5380ecf::1773187393::res://.godot/exported/133200997/export-c3e74bb41b1386f14bb44065cb5c584c-tutorial_4.scn
-res://scenes/TestChatBot/TestSTT.tscn::e611856fe344777f58a9dd5da0a89583::1773187393::res://.godot/exported/133200997/export-8e93d4cbaebb5bed49a28b5129be881d-TestSTT.scn
-res://scenes/user interface/Game_UI_Glucorun.tscn::91e1155bf4062db98c74433f03c9151a::1773187393::res://.godot/exported/133200997/export-34a8819c9fff71468fff987c69e3d1b2-Game_UI_Glucorun.scn
-res://scenes/user interface/Glucose_Bar_Glucorun.tscn::6f87e86fbd3f178f608015a087fc5193::1773187393::res://.godot/exported/133200997/export-c50524328ed8ae116976a6dd14073caa-Glucose_Bar_Glucorun.scn
-res://scenes/user interface/Insulin_Counter_Glucorun.tscn::00e1ff5d2db6af695ec71fecebeda6c8::1773187393::res://.godot/exported/133200997/export-adc890db34694db21f467c638c81c298-Insulin_Counter_Glucorun.scn
-res://scenes/user interface/Mobile_Controls_Glucorun.tscn::3483f37d165fccbf48dec5d2d2a33def::1773187393::res://.godot/exported/133200997/export-1020f3f0b646d43f58192c8221b4ba5c-Mobile_Controls_Glucorun.scn
-res://scenes/user interface/Status_Bars_Glucolife.tscn::3aa28275a6d7d5738d1758e935f3fbd0::1773187393::res://.godot/exported/133200997/export-08390649d4a261d396e2c019c6cfa350-Status_Bars_Glucolife.scn
-res://shader/shader_material.tres::e8e16e49509acb8b809298f20221e4a5::1773187393::res://.godot/exported/133200997/export-7ec5ab8d192b4eb442aa0842fd89d171-shader_material.res
-res://special items/decorations/sign_drone2.tscn::7f0ada1576cb987cfff1a1e4f45b4f21::1773187393::res://.godot/exported/133200997/export-12125497df5296eff86d8e68c1e5f363-sign_drone2.scn
-res://special items/decorations/sign_drone.tscn::24bcadd7040618b4811f84c2c78d6138::1773187393::res://.godot/exported/133200997/export-212e607a1c00d0a46d49cbae09349e1f-sign_drone.scn
-res://special items/healthy foods/apple.tscn::d86898d06bc2987d98eea34ba70bfb58::1773187393::res://.godot/exported/133200997/export-c48bb560290c6860b77f78c942490948-apple.scn
-res://special items/healthy foods/baguette.tscn::a1a9cedd4f9d2fa20c93d948de70375f::1773187393::res://.godot/exported/133200997/export-fba21428257850d9ac00d3183938c2c3-baguette.scn
-res://special items/healthy foods/baguette_half.tscn::d91c3bb4396362b8d0f2e5778eabbeb6::1773187393::res://.godot/exported/133200997/export-3b167bb0250ae1cda2e1a59eb30c828c-baguette_half.scn
-res://special items/healthy foods/banana.tscn::16e19e761bcd1b9b7a12ddf2b6349689::1773187393::res://.godot/exported/133200997/export-6bb87a984d924e6e42b03dac00b8c8fc-banana.scn
-res://special items/healthy foods/blackberry.tscn::a907a32a508c39262b218d7b1b6d5d4f::1773187393::res://.godot/exported/133200997/export-04ad1b55f0e77099a092e01e0f8ac98d-blackberry.scn
-res://special items/healthy foods/bottle_water_b.tscn::13a7052885ed8ee8aae9a1f0bbf6ace1::1773187393::res://.godot/exported/133200997/export-040ed904848beb8b955621b054d26c93-bottle_water_b.scn
-res://special items/healthy foods/bread_roll.tscn::4fc7636b022098d4c1adf4340b7aef08::1773187393::res://.godot/exported/133200997/export-7deab05f65cb6edcf930fcfa1ce71c51-bread_roll.scn
-res://special items/healthy foods/bread_slice.tscn::efbd376a4696b0fa919c83cfd6159c41::1773187393::res://.godot/exported/133200997/export-61be84c81c9249e42abddd73110bd39f-bread_slice.scn
-res://special items/healthy foods/chicken_cooking_a.tscn::9bce3236ba7aa78774955a9cb6972dc4::1773187393::res://.godot/exported/133200997/export-60fe7334652d91cf79641b3ad3c0e99d-chicken_cooking_a.scn
-res://special items/healthy foods/coconut.tscn::3a9b4ec400437a435db8aa587820d59e::1773187393::res://.godot/exported/133200997/export-9ed3b75d047e2226b20c67179560bc41-coconut.scn
-res://special items/healthy foods/hummus.tscn::2329b273c45e4e932e12d19b2b1daaea::1773187393::res://.godot/exported/133200997/export-24fc0683b4b9886ca9cf3cd839892b89-hummus.scn
-res://special items/healthy foods/orange.tscn::c12f310fe0045faeb49d8661bc70fcae::1773187393::res://.godot/exported/133200997/export-3e886abbb452b994f33cf472ff3d96e1-orange.scn
-res://special items/healthy foods/pear.tscn::5ade32745f6f79e9aa94cc28e88aab53::1773187393::res://.godot/exported/133200997/export-a69b0cce2bde49b9e5fd1f7e7db19844-pear.scn
-res://special items/healthy foods/pineapple.tscn::0ae83bbae25093f43ff735e662bf1aeb::1773187393::res://.godot/exported/133200997/export-7b7804fde42d429efd23f0043c165f9e-pineapple.scn
-res://special items/healthy foods/strawberry.tscn::49563e9894d6629d9697e93f951b9350::1773187393::res://.godot/exported/133200997/export-e17a8b33d41082eb0734c4d118ac4d4e-strawberry.scn
-res://special items/healthy foods/watermelon.tscn::81370851341f44b40ff460e05d063c1e::1773187393::res://.godot/exported/133200997/export-e955661f3a8577c9bbc31a6996eaa06c-watermelon.scn
-res://special items/Obstacles/cannon.tscn::b5708cf670ed3ff286af2e31565b7604::1773187393::res://.godot/exported/133200997/export-19b83864e8fae40fb4553509147d157b-cannon.scn
-res://special items/Obstacles/cylinder_lollipop.tscn::4658787912b4a946f41aa3051bb0629f::1773187393::res://.godot/exported/133200997/export-7b548402b44f76d69e08e44544052b65-cylinder_lollipop.scn
-res://special items/Obstacles/disk_candy.tscn::20e3bc9344fdadf7425a5ff7a62c1ca1::1773187393::res://.godot/exported/133200997/export-68620f793f8594c1eea13f1169af5e88-disk_candy.scn
-res://special items/Obstacles/ground_hammer.tscn::786236992ca2427c0043d88c98a6d336::1773187393::res://.godot/exported/133200997/export-86dd614869ffb8ab31f81c3e000addf3-ground_hammer.scn
-res://special items/Obstacles/gummy_in_a_box.tscn::4dde115d996a332413426e28830f6764::1773187393::res://.godot/exported/133200997/export-cdb7a5045d5152e2108eddf00e30573d-gummy_in_a_box.scn
-res://special items/Obstacles/propeller.tscn::3580fa354593c386c8b028ac9dd2a927::1773187393::res://.godot/exported/133200997/export-ae405428bc6eab90c1d0a5d6e58bb8d0-propeller.scn
-res://special items/Obstacles/spinning_cup.tscn::a0a2389b2026241e6b64e0947f1b827d::1773187393::res://.godot/exported/133200997/export-a0f1a7190eecfa27fd339e90b2b5059a-spinning_cup.scn
-res://special items/Obstacles/swinging_trunk.tscn::3067a291ab91e792d0dc34d6b04a9a1d::1773187393::res://.godot/exported/133200997/export-b256068ff0c93c529764d02d95d4653b-swinging_trunk.scn
-res://special items/Obstacles/swirling_balloon.tscn::2297bcde13732f3b23b9900b43fc913d::1773187393::res://.godot/exported/133200997/export-93ea4857de975011f3541ab367df2104-swirling_balloon.scn
-res://special items/Projectiles/projectile.tscn::c2d933e7c0cbf42762564ba3c7b23c69::1773187393::res://.godot/exported/133200997/export-556637c0da2f409728f589bfefcb67d7-projectile.scn
-res://special items/Projectiles/projectile_2.tscn::8455788994ca3fc20bab3edcc4d8bb75::1773187393::res://.godot/exported/133200997/export-d52089ff58bf144eb78555484fa4d290-projectile_2.scn
-res://special items/Projectiles/projectile_3.tscn::2f3f1c6b7a586e58726d64a17e4d9b59::1773187393::res://.godot/exported/133200997/export-1250fc0cd7a332982f930cdc73d2c205-projectile_3.scn
-res://special items/Projectiles/projectile_4.tscn::711101f5bae0d10b24abf76a7461cc8f::1773187393::res://.godot/exported/133200997/export-64409c1a8f07694eca3fe54c00581566-projectile_4.scn
-res://special items/Projectiles/projectile_5.tscn::479c3c9ab688f1d601365fed78026df6::1773187393::res://.godot/exported/133200997/export-a3213e4dc01f134d5408be1be8799e4e-projectile_5.scn
-res://special items/sugary foods/cake_birthday_slice.tscn::95102717e7fcdb7176fc17ead6317854::1773187393::res://.godot/exported/133200997/export-15393a944bddad37cdbeac6664f1b8c9-cake_birthday_slice.scn
-res://special items/sugary foods/cake_chocolate_slice.tscn::3236dcdf051af9f1580a888e959bf9af::1773187393::res://.godot/exported/133200997/export-80ada3b9dfe126980b12f220b0159f61-cake_chocolate_slice.scn
-res://special items/sugary foods/cake_strawberry_slice.tscn::707378b275c64ee38839baba059edb22::1773187393::res://.godot/exported/133200997/export-8edfd3bbf8736754b5f55ab2a600d07f-cake_strawberry_slice.scn
-res://special items/sugary foods/cinnamon_roll.tscn::16bec276b40bccb49a8103bc480a582a::1773187393::res://.godot/exported/133200997/export-1a4256e13a4b87d5a7298dc4bde17a4c-cinnamon_roll.scn
-res://special items/sugary foods/cookie.tscn::28393a7c0a9113d6c05842c6ae5c93d1::1773187393::res://.godot/exported/133200997/export-936105fc332caf2e33ad171eafc69de7-cookie.scn
-res://special items/sugary foods/croissant.tscn::3e16408052926aff81507f2570177a96::1773187393::res://.godot/exported/133200997/export-97d1fb53acf16767efe38a27c44cafdf-croissant.scn
-res://special items/sugary foods/cupcake.tscn::f41b335d31169d67a612cd758bce61e8::1773187393::res://.godot/exported/133200997/export-ca0bd4103fa1a889b56ca64d73021c8d-cupcake.scn
-res://special items/sugary foods/donut.tscn::5ee74b0f19de8cfd332b9ee0c5970b3f::1773187393::res://.godot/exported/133200997/export-485b7e062a2c8d792eeb63a4c80ac7f8-donut.scn
-res://special items/sugary foods/donut_pink.tscn::d437716d018aaf0fc468e4f8f84d5ca4::1773187393::res://.godot/exported/133200997/export-87b32399da2199c83da3ad119bdfc4a8-donut_pink.scn
-res://special items/sugary foods/muffin.tscn::aba71ed0494697678b156a584fe15096::1773187393::res://.godot/exported/133200997/export-8ea408fa1f915a195370a26f360d3fc2-muffin.scn
-res://special items/sugary foods/pie_apple_slice.tscn::74b9a9a00beae158594ffdab30cbab1d::1773187393::res://.godot/exported/133200997/export-8f9ca8c977169de4885a71a18d43b490-pie_apple_slice.scn
-res://special items/sugary foods/pie_cherry_slice.tscn::43cef854f1c749461a42b97d558800f0::1773187393::res://.godot/exported/133200997/export-f8ecb0b0149319e407ae81a57f53f35e-pie_cherry_slice.scn
-res://special items/sugary foods/waffle_stacked.tscn::30a5156341bea71ce5c120af4d68e71f::1773187393::res://.godot/exported/133200997/export-80bfaf08acac63103aa917c855b4d8f6-waffle_stacked.scn
+res://art/assets/room intro_menu/room_lights.tscn::98159b687761171280f9d3dae7bcb1d3::1773406489::res://.godot/exported/133200997/export-1e1f96c5468d1ad1919fc8c1e00ed0ae-room_lights.scn
+res://art/assets/special arts/p_cube_129.tscn::abb638323a8f20647e7ce3d94b325dc2::1773406489::res://.godot/exported/133200997/export-41201184caadb9baf4008e6ed85c6a45-p_cube_129.scn
+res://art/assets/special arts/p_cube_133.tscn::766021085a729f6f45bc58b59f766b23::1773406489::res://.godot/exported/133200997/export-2841fe126334b3f527c0b0bb3888da03-p_cube_133.scn
+res://art/models/gdquest_round_bat/round_bat_skin.tscn::09af5fe895c2b0260a71ff446bf34291::1773406491::res://.godot/exported/133200997/export-8e78cfd070d1c6d092d14f5faca87e5f-round_bat_skin.scn
+res://art/models/Player Model/player_files/model/materials/character_material.tres::ab8c2491a6fd0bdcef1b267fc8a72792::1773406491::res://.godot/exported/133200997/export-ca289e30acf8705a183680e442ff04da-character_material.res
+res://art/models/Player Model/player_files/model/materials/eye_mat_L.tres::c08fda4f09e228d8bbd8ec1d005b3d7a::1773406491::res://.godot/exported/133200997/export-0b15bba13a4c28b1619109b39b93b054-eye_mat_L.res
+res://art/models/Player Model/player_files/model/materials/eye_mat_override.tres::5cc9ad2962d61e93bf20c5df7a716564::1773406491::res://.godot/exported/133200997/export-2b20ee0bc4c1514fc865e545174e0747-eye_mat_override.res
+res://art/models/Player Model/player_files/model/materials/eye_mat_R.tres::973c35872163c2ccc13a5a95f0afa21a::1773406491::res://.godot/exported/133200997/export-57a160ce6037712325b45795bd4eeede-eye_mat_R.res
+res://art/models/Player Model/player_files/model/materials/mouth_mat.tres::1edbad302d2e35fe5db80ee6fc0631ba::1773406491::res://.godot/exported/133200997/export-4aa63c9ee4c27e1ec0d065b5a79641c0-mouth_mat.res
+res://art/models/Player Model/player_files/player_model_female.tscn::00c3d31f0f9bdbcb3d9e12768aa3d251::1773406491::res://.godot/exported/133200997/export-d1df4a08bba453c4e10da3508d8f574a-player_model_female.scn
+res://art/models/Player Model 2/player_files/model/materials/eye_mat_M.tres::454688adff12fd7e916fe5901f20742b::1773406491::res://.godot/exported/133200997/export-31bb9c9a6ea74cb706c000f99966a5f5-eye_mat_M.res
+res://art/models/Player Model 2/player_files/player_model_male.tscn::7e3ea6db8f726be10c1feda0ca2afeab::1773406491::res://.godot/exported/133200997/export-dc089a8bd37e2607774c98d1d3664e07-player_model_male.scn
+res://art/music/MealPeferctGame_Music/MusicManagerGlukoquiz.tscn::b34fe2257fb924648c8a416080104282::1773406491::res://.godot/exported/133200997/export-79ef25566e8d432f38d45305cab10e68-MusicManagerGlukoquiz.scn
+res://art/music/MealPeferctGame_Music/music_manager.tscn::d7ca7bb1857d3ef26f58d7b7caff1be9::1773406491::res://.godot/exported/133200997/export-8682363a960fcc031fdaea98e819d8ac-music_manager.scn
+res://art/music/default_bus_layout.tres::a2e883bc634ba35c2f1e69747f45b3cb::1773406491::res://.godot/exported/133200997/export-f0fe92e0105ada9fb2715c918daec7db-default_bus_layout.res
+res://art/player_female.tscn::285686b02800ee3b09fb0060ed261dfc::1773406491::res://.godot/exported/133200997/export-2b9621d69d226b7ca8d8c9449386ed43-player_female.scn
+res://art/player_FemaleGlukolife.tscn::55b5463d77d508c4dcca1fe206ae13fb::1773406491::res://.godot/exported/133200997/export-a5bba9b07302a213129f26396b773afd-player_FemaleGlukolife.scn
+res://art/player_male.tscn::3f9462c4898deb505e2708534bf6e57f::1773406491::res://.godot/exported/133200997/export-f9d6226bfb31221dde3b3e4618b6c30d-player_male.scn
+res://resources/food_arrays.tres::3ec9907702d2540b6c22c46bf9d55cf6::1773406492::res://.godot/exported/133200997/export-8f2f660abe17ffcb28379534fd7d4190-food_arrays.res
+res://scenes/GameIntroLogo/Control.tscn::35ba85243afcf9c5dfcdf2b4bc1b1ff8::1773406492::res://.godot/exported/133200997/export-23b19bbb57ab499d64d79190e5dfa3ee-Control.scn
+res://scenes/glucky/Glukybot.tscn::e373bc760c47b5ea76fa628a6d32182f::1773406492::res://.godot/exported/133200997/export-0955ec6db459f7683da473689b1b1210-Glukybot.scn
+res://scenes/glucky/GlukyRoot.tscn::3d1ca59fc22c7c4082736f783dd3a6aa::1773406492::res://.godot/exported/133200997/export-642691e6f3ea79d3db6be96515e3dae9-GlukyRoot.scn
+res://scenes/glucolife rooms/Bedroom.tscn::fd1cf152fc40b337544b6d1cc6f55a4b::1773406492::res://.godot/exported/133200997/export-ec63b07c92872eac55ef0bfb01bde56c-Bedroom.scn
+res://scenes/glucolife rooms/Kitchen.tscn::84d397054d39419ba84ed38bd1786c59::1773406492::res://.godot/exported/133200997/export-6479720263def127cfba205ba16072e8-Kitchen.scn
+res://scenes/glucolife rooms/PlayGround.tscn::b1420b4da02c0b712f1a2658389c343b::1773406492::res://.godot/exported/133200997/export-57172df88667c81a965a88ed188b8cf5-PlayGround.scn
+res://scenes/glucolife rooms/Restroom.tscn::388b2ba32f6845e3542d044f28e9ef5d::1773406492::res://.godot/exported/133200997/export-b32c15b72ca71fdab377d5cc1e002862-Restroom.scn
+res://scenes/glucorun levels/livello1.tscn::663273072341368b7d9432128941ad5e::1773406492::res://.godot/exported/133200997/export-4351b212f27eab73b29d1edceff0c063-livello1.scn
+res://scenes/glucorun levels/livello2.tscn::0cd284b16c12e4ca4f81e3d63b61ef9b::1773406492::res://.godot/exported/133200997/export-5570077f281463252fdddba8e272c49d-livello2.scn
+res://scenes/glucorun levels/livello3.tscn::35175d921209014287fbc5be4b561f1d::1773406492::res://.godot/exported/133200997/export-42611c3d8c6ecae1ac88836e3e711bf4-livello3.scn
+res://scenes/GlukoQuizScenes/Impostazioni.tscn::a0f1f418742a574f05601e5209819e13::1773406492::res://.godot/exported/133200997/export-e1dfab968f3a6c7e4cde91046d5bb088-Impostazioni.scn
+res://scenes/GlukoQuizScenes/level1_Colazione.tscn::798c2c11c2b47a2011f108c73243f0b6::1773408792::res://.godot/exported/133200997/export-2de42758358c16cfdfb6b722dbca5807-level1_Colazione.scn
+res://scenes/GlukoQuizScenes/level2_Pranzo.tscn::1984029234486395e9a8c5d8f80be451::1773408814::res://.godot/exported/133200997/export-bf5876df66d368fb0841d0452d96e3f9-level2_Pranzo.scn
+res://scenes/GlukoQuizScenes/level_3_cena.tscn::cbbd6a22e2f1326f974f1891685f7690::1773408832::res://.godot/exported/133200997/export-78383bfbea1b73ddd88c39cf3d92c4c6-level_3_cena.scn
+res://scenes/GlukoQuizScenes/Mainscene1.tscn::8bab33b21e1e184c4b514598d69396a3::1773406492::res://.godot/exported/133200997/export-2ca7883525c8f159ffcee39a7f3f412b-Mainscene1.scn
+res://scenes/GlukoQuizScenes/Menuiniziale.tscn::fe1e45bec7403cecf920a643a879456a::1773406492::res://.godot/exported/133200997/export-7f877beff0e05845c26e93dc49b8aa58-Menuiniziale.scn
+res://scenes/GlukoQuizScenes/pause_control.tscn::c09b47b41d31beb4e2ce2e6b4cbbe55f::1773406492::res://.godot/exported/133200997/export-3068596bc13dfd3cf19764c9b5c96550-pause_control.scn
+res://scenes/GlukoQuizScenes/PopupEducativo.tscn::42883bc5cc155f7b1f3cc872161aab4a::1773406492::res://.godot/exported/133200997/export-523dae4b982a835e8dae2af190a0ac00-PopupEducativo.scn
+res://scenes/GlukoQuizScenes/score_hud.tscn::e1258d135c4350762ffbb17e4afb73ca::1773406492::res://.godot/exported/133200997/export-a4ea38058a1cf66ddb2e6583ff812472-score_hud.scn
+res://scenes/MealPerfectgameScenes/apple.tscn::a651a6d531268f79009a5ac20e5ec091::1773406597::res://.godot/exported/133200997/export-59cafb68dbabf42fe3723738f3bdf4b9-apple.scn
+res://scenes/MealPerfectgameScenes/arancia.tscn::c2c5746a29cf7f2b2289df39f3a0620c::1773406597::res://.godot/exported/133200997/export-a36efba86a86c0f07912404262996402-arancia.scn
+res://scenes/MealPerfectgameScenes/Avocado.tscn::824f549fb1d283d24a7a0d64be3554af::1773406597::res://.godot/exported/133200997/export-53fd436454ce88e9ba20337318e3edc3-Avocado.scn
+res://scenes/MealPerfectgameScenes/banana.tscn::dd4cda92ce95433da66dc36a87976d4e::1773406597::res://.godot/exported/133200997/export-ded8a992b4cb457e5c7357ccc97d5204-banana.scn
+res://scenes/MealPerfectgameScenes/barretta_cioccolato.tscn::a5218e27bf8b352d638b828986bbbdfb::1773406597::res://.godot/exported/133200997/export-51643bebd7680ec7ba4cdd822bf06b34-barretta_cioccolato.scn
+res://scenes/MealPerfectgameScenes/biscotto_cioccolato.tscn::016b83881dceaae5c7bfc377b6364e89::1773406597::res://.godot/exported/133200997/export-2cdc1f57cf2c4f2011c909ff26471e4f-biscotto_cioccolato.scn
+res://scenes/MealPerfectgameScenes/bread.tscn::d09b52910f7159b92e815745607deaa9::1773406597::res://.godot/exported/133200997/export-89d4b6f8f1d00b38f189f83dd87feb26-bread.scn
+res://scenes/MealPerfectgameScenes/broccoli.tscn::597e067d7c261427f7be6ba8bd4480c8::1773406597::res://.godot/exported/133200997/export-b746cae7cc61d4b91661720403aa3f48-broccoli.scn
+res://scenes/MealPerfectgameScenes/candy.tscn::0ffd983167cb363bee029dc9590a439c::1773406597::res://.godot/exported/133200997/export-0476712d25c2ef598afb800390e44a88-candy.scn
+res://scenes/MealPerfectgameScenes/cheese.tscn::ef034dfe4bf3277ed1671dc446c4917d::1773406597::res://.godot/exported/133200997/export-7f781a7532d26a36ab12584359692e2e-cheese.scn
+res://scenes/MealPerfectgameScenes/ciambella_integrale.tscn::a2a7269e90f354a318d122a9ae15fd5f::1773406597::res://.godot/exported/133200997/export-49cefbc955388b919b1d913d21f41c24-ciambella_integrale.scn
+res://scenes/MealPerfectgameScenes/ciambella_smarties.tscn::4e088fc6174860ff32abe2a34491cb68::1773406597::res://.godot/exported/133200997/export-0eb2f6a6f655b5ec0be2d0383260ec33-ciambella_smarties.scn
+res://scenes/MealPerfectgameScenes/cioccolato.tscn::1e2f4e901602523780b9c5efaa3b55db::1773406597::res://.godot/exported/133200997/export-f2855af2a9bf973be0a9328e4de133cd-cioccolato.scn
+res://scenes/MealPerfectgameScenes/cookie.tscn::1c8d1e5d4adab7dfc38ee6d7bb3fada0::1773406597::res://.godot/exported/133200997/export-c9b634af88e5cbcc06f8ac96dbc0c1d0-cookie.scn
+res://scenes/MealPerfectgameScenes/croissant.tscn::4a06ac46b7fa0e511e894a697ec8aede::1773406597::res://.godot/exported/133200997/export-fa21d488ab6c0887cb10681aefea4e45-croissant.scn
+res://scenes/MealPerfectgameScenes/egg.tscn::43b76860c101a029d43a4f455fb7a304::1773406597::res://.godot/exported/133200997/export-d41060640274695f18623f9ca8f518e6-egg.scn
+res://scenes/MealPerfectgameScenes/endscreen_cena.tscn::e578074d43f2c6f15a11a124294f9f17::1773406597::res://.godot/exported/133200997/export-72205eb0333ac041fecd9546e1395f85-endscreen_cena.scn
+res://scenes/MealPerfectgameScenes/end_screen.tscn::eb83c1b6e0052fee58ed8804836e9731::1773406597::res://.godot/exported/133200997/export-3c7104e90f4a97444bdb5a12704db626-end_screen.scn
+res://scenes/MealPerfectgameScenes/end_screen__colazione.tscn::a412eacef88d69fc44e03c794b5b82e8::1773406597::res://.godot/exported/133200997/export-7e256ace6c7a25a442501d100530df5f-end_screen__colazione.scn
+res://scenes/MealPerfectgameScenes/first_person_player.tscn::ed3a1f8d0559b869640981c56bd37b3b::1773406597::res://.godot/exported/133200997/export-a1d11090ebc950413aefa4fdb9752e72-first_person_player.scn
+res://scenes/MealPerfectgameScenes/frappè_cioccolato.tscn::9402c15f9b911caf46586c9fe53d763a::1773406597::res://.godot/exported/133200997/export-16d7272dff0b666ff208e386f9b9a8ce-frappè_cioccolato.scn
+res://scenes/MealPerfectgameScenes/gelato_chocolate.tscn::f5eecd99641463b7e26dbdd6fb4f0ed7::1773406597::res://.godot/exported/133200997/export-d595665e95dc3f76ea33ebcd70386841-gelato_chocolate.scn
+res://scenes/MealPerfectgameScenes/hud.tscn::67eabf4caed0ba966081e734ce77d083::1773406597::res://.godot/exported/133200997/export-2b4f4d5c530f070155153472efef4145-hud.scn
+res://scenes/MealPerfectgameScenes/kitchenPlate.tscn::920ba29e386d2e839fe82a064fe3b271::1773406597::res://.godot/exported/133200997/export-df0cee835224a26a771820aa2450cc39-kitchenPlate.scn
+res://scenes/MealPerfectgameScenes/MainScene.tscn::d239404f0c6b11638bb00888876088a5::1773407878::res://.godot/exported/133200997/export-e8188356776a9a53f63475fbe261892f-MainScene.scn
+res://scenes/MealPerfectgameScenes/MainSceneLevel2.tscn::41e01a176c3da3fdd0b27e9d394bfc01::1773407831::res://.godot/exported/133200997/export-305e22769bb6a844366f03ef76f6bf45-MainSceneLevel2.scn
+res://scenes/MealPerfectgameScenes/MainScene_Levelcolazione.tscn::255248f92805e78bfdaa4b7d7be5fdde::1773407848::res://.godot/exported/133200997/export-03c2414021b0e944e7f377bceee758c5-MainScene_Levelcolazione.scn
+res://scenes/MealPerfectgameScenes/mobile_controls_pm.tscn::834006f157c42151e7083eaa6dbb7205::1773406597::res://.godot/exported/133200997/export-d9862cf0a30b8b82f3001d1f85718d8a-mobile_controls_pm.scn
+res://scenes/MealPerfectgameScenes/muffin.tscn::e6e5164afa5c2cecd61e4d82cef7d4ad::1773406597::res://.godot/exported/133200997/export-0ebb1eb4ecf6b53bd99bd1eb65263d6b-muffin.scn
+res://scenes/MealPerfectgameScenes/mushroom.tscn::b9955942721d13557ef6c29b642ba7dd::1773406597::res://.godot/exported/133200997/export-bb76dbee0372368afa75e8027a178439-mushroom.scn
+res://scenes/MealPerfectgameScenes/Panda_2.tscn::9ccd5047a1dd2096544c13e22c2c5ac3::1773406597::res://.godot/exported/133200997/export-c876184bcf92e5408327271d6f06c31a-Panda_2.scn
+res://scenes/MealPerfectgameScenes/panel_livelloCena.tscn::1fe53fd0e9b6774c2a7eb2c7a14b1824::1773406597::res://.godot/exported/133200997/export-b56995911c9a054856dfc86848d6e5c1-panel_livelloCena.scn
+res://scenes/MealPerfectgameScenes/panel_livelloColazione.tscn::0f07ded58fb615efb1a017c37e72795e::1773406597::res://.godot/exported/133200997/export-0e9583fe8aa02d6193ad0570eeed80a7-panel_livelloColazione.scn
+res://scenes/MealPerfectgameScenes/pera.tscn::3aa458cf55ada7f369bbe7fd63db0753::1773406597::res://.godot/exported/133200997/export-9c015620f9dfff52e4e2c5a3723f4802-pera.scn
+res://scenes/MealPerfectgameScenes/pizza.tscn::ce39fb4eb14aeaac8ecb8ab72a1ae68b::1773406597::res://.godot/exported/133200997/export-5f7d6b6f07348407a437d36b3f3cd434-pizza.scn
+res://scenes/MealPerfectgameScenes/plate_2.tscn::aee598aeb99621563305525dac868f1f::1773406597::res://.godot/exported/133200997/export-676fed60ac26d7dde7900d36de5e3be3-plate_2.scn
+res://scenes/MealPerfectgameScenes/rice.tscn::fd415c51d485ea9bd54e20e7774cefa3::1773406597::res://.godot/exported/133200997/export-ef5b142cc4bca6b6e5a61250230b04a0-rice.scn
+res://scenes/MealPerfectgameScenes/Salmon.tscn::ab07e8c6d3175836bdf2b8958ee56fd7::1773406597::res://.godot/exported/133200997/export-f1cc8edfe177116fcccd47c6ce2920b4-Salmon.scn
+res://scenes/MealPerfectgameScenes/salsiccia.tscn::95b11433c74f047bfb1c75c5d23f79ec::1773406597::res://.godot/exported/133200997/export-06e1ce01b40dcf4a94ba19715c622580-salsiccia.scn
+res://scenes/MealPerfectgameScenes/table.tscn::d9110da2f15721d51ecc9c122b6a0d2a::1773406597::res://.godot/exported/133200997/export-da0ecd2a6d7b35bef2acfb390adda25c-table.scn
+res://scenes/MealPerfectgameScenes/table_levelcena.tscn::1117d2cea74d67c7a7f23fed49d10728::1773406597::res://.godot/exported/133200997/export-3ed726ce5fc7f2ebb2d435566495745d-table_levelcena.scn
+res://scenes/MealPerfectgameScenes/table_levelcolazione.tscn::e48cdc165c5c95f0b7b3f6d89c7b38bf::1773406597::res://.godot/exported/133200997/export-4a333942f61144bd3309ad928cf876f2-table_levelcolazione.scn
+res://scenes/menus/glucky/Intro_3d.tscn::555331860628254cde813f3a27a4bf85::1773406492::res://.godot/exported/133200997/export-c0e7f72f3ddf4d6a95746160b168dad6-Intro_3d.scn
+res://scenes/menus/glucky/Minigame_Selection.tscn::2005e172cf44aa04de34631d4b28a528::1773406492::res://.godot/exported/133200997/export-7e9f8acad6bab27a4a8fb8fad978950f-Minigame_Selection.scn
+res://scenes/menus/glucolife/Menu.tscn::7e29b77228f6e23e07429ecf95a7c76a::1773406492::res://.godot/exported/133200997/export-ae762176c59591f1b1c1ba847510dfb1-Menu.scn
+res://scenes/menus/glucolife/SplashScreen.tscn::d178eaea054ae62c7d37fa999a199d00::1773406492::res://.godot/exported/133200997/export-55ca9567d9a98b75d118c4768a80d379-SplashScreen.scn
+res://scenes/menus/glucorun/glucorun_menu.tscn::52b82ad04cc0003dd1d8064e3158ee3f::1773406492::res://.godot/exported/133200997/export-9001b6709aab475f1f7c29d239e04acb-glucorun_menu.scn
+res://scenes/menus/glucorun/LevelSelect.tscn::96098bedfa5c56fb4afd288b75e1a2e5::1773406492::res://.godot/exported/133200997/export-1310703c551cf0c89207c49813ab08b5-LevelSelect.scn
+res://scenes/menus/tutorials/Insuline Tutorial.tscn::c9aa25981b8cca073607454d4d941ac1::1773406492::res://.godot/exported/133200997/export-687ab5d27c7d080d61db37d514ebefe4-Insuline Tutorial.scn
+res://scenes/menus/tutorials/tutorial_glucorun_food.tscn::df2eb4a84c5571efe1ad3193d41a6d4e::1773406492::res://.godot/exported/133200997/export-c5709654c29f3962a814d076f14503e9-tutorial_glucorun_food.scn
+res://scenes/scenes_tutorial/MenuLivelli.tscn::0670eaa8f167cac16cfda64bfaf87701::1773406492::res://.godot/exported/133200997/export-0bf4e09a9a387ab6a2f2bc0f763c6d53-MenuLivelli.scn
+res://scenes/scenes_tutorial/Menu_inizio.tscn::bf91c9219f3801b1e9242af1dc88330b::1773406492::res://.godot/exported/133200997/export-f10762400cf86acc0608f89b10d52eac-Menu_inizio.scn
+res://scenes/scenes_tutorial/tutorial_2.tscn::3fc871027ac263a19b37f14dd4d5bd67::1773406492::res://.godot/exported/133200997/export-cc616423f99d72c6da015d4582251203-tutorial_2.scn
+res://scenes/scenes_tutorial/tutorial_3.tscn::0225aa88aa75afcb42b297ff5dc5de0c::1773406492::res://.godot/exported/133200997/export-cbb77859ad46f15b0895538672dff16d-tutorial_3.scn
+res://scenes/scenes_tutorial/tutorial_4.tscn::58162b63fc5cbd5bcb3cdac7e5380ecf::1773406492::res://.godot/exported/133200997/export-c3e74bb41b1386f14bb44065cb5c584c-tutorial_4.scn
+res://scenes/TestChatBot/TestSTT.tscn::e611856fe344777f58a9dd5da0a89583::1773406492::res://.godot/exported/133200997/export-8e93d4cbaebb5bed49a28b5129be881d-TestSTT.scn
+res://scenes/user interface/Game_UI_Glucorun.tscn::80911b1a46a841a972b5cb0d512a1348::1773406492::res://.godot/exported/133200997/export-34a8819c9fff71468fff987c69e3d1b2-Game_UI_Glucorun.scn
+res://scenes/user interface/Glucose_Bar_Glucorun.tscn::20f1253ef6e1d33129bb675e6eaba29e::1773406492::res://.godot/exported/133200997/export-c50524328ed8ae116976a6dd14073caa-Glucose_Bar_Glucorun.scn
+res://scenes/user interface/Insulin_Counter_Glucorun.tscn::5c8eafee351e0996dbf54aeb64ce276d::1773406492::res://.godot/exported/133200997/export-adc890db34694db21f467c638c81c298-Insulin_Counter_Glucorun.scn
+res://scenes/user interface/Mobile_Controls_Glucorun.tscn::3483f37d165fccbf48dec5d2d2a33def::1773406492::res://.godot/exported/133200997/export-1020f3f0b646d43f58192c8221b4ba5c-Mobile_Controls_Glucorun.scn
+res://scenes/user interface/Status_Bars_Glucolife.tscn::59adc0acb3576a58a479ec5db2d4733b::1773406492::res://.godot/exported/133200997/export-08390649d4a261d396e2c019c6cfa350-Status_Bars_Glucolife.scn
+res://shader/shader_material.tres::e8e16e49509acb8b809298f20221e4a5::1773406492::res://.godot/exported/133200997/export-7ec5ab8d192b4eb442aa0842fd89d171-shader_material.res
+res://special items/decorations/sign_drone2.tscn::7f0ada1576cb987cfff1a1e4f45b4f21::1773406492::res://.godot/exported/133200997/export-12125497df5296eff86d8e68c1e5f363-sign_drone2.scn
+res://special items/decorations/sign_drone.tscn::24bcadd7040618b4811f84c2c78d6138::1773406492::res://.godot/exported/133200997/export-212e607a1c00d0a46d49cbae09349e1f-sign_drone.scn
+res://special items/healthy foods/apple.tscn::d86898d06bc2987d98eea34ba70bfb58::1773406492::res://.godot/exported/133200997/export-c48bb560290c6860b77f78c942490948-apple.scn
+res://special items/healthy foods/baguette.tscn::a1a9cedd4f9d2fa20c93d948de70375f::1773406492::res://.godot/exported/133200997/export-fba21428257850d9ac00d3183938c2c3-baguette.scn
+res://special items/healthy foods/baguette_half.tscn::d91c3bb4396362b8d0f2e5778eabbeb6::1773406492::res://.godot/exported/133200997/export-3b167bb0250ae1cda2e1a59eb30c828c-baguette_half.scn
+res://special items/healthy foods/banana.tscn::16e19e761bcd1b9b7a12ddf2b6349689::1773406492::res://.godot/exported/133200997/export-6bb87a984d924e6e42b03dac00b8c8fc-banana.scn
+res://special items/healthy foods/blackberry.tscn::a907a32a508c39262b218d7b1b6d5d4f::1773406492::res://.godot/exported/133200997/export-04ad1b55f0e77099a092e01e0f8ac98d-blackberry.scn
+res://special items/healthy foods/bottle_water_b.tscn::13a7052885ed8ee8aae9a1f0bbf6ace1::1773406492::res://.godot/exported/133200997/export-040ed904848beb8b955621b054d26c93-bottle_water_b.scn
+res://special items/healthy foods/bread_roll.tscn::4fc7636b022098d4c1adf4340b7aef08::1773406492::res://.godot/exported/133200997/export-7deab05f65cb6edcf930fcfa1ce71c51-bread_roll.scn
+res://special items/healthy foods/bread_slice.tscn::efbd376a4696b0fa919c83cfd6159c41::1773406492::res://.godot/exported/133200997/export-61be84c81c9249e42abddd73110bd39f-bread_slice.scn
+res://special items/healthy foods/chicken_cooking_a.tscn::9bce3236ba7aa78774955a9cb6972dc4::1773406492::res://.godot/exported/133200997/export-60fe7334652d91cf79641b3ad3c0e99d-chicken_cooking_a.scn
+res://special items/healthy foods/coconut.tscn::3a9b4ec400437a435db8aa587820d59e::1773406492::res://.godot/exported/133200997/export-9ed3b75d047e2226b20c67179560bc41-coconut.scn
+res://special items/healthy foods/hummus.tscn::2329b273c45e4e932e12d19b2b1daaea::1773406492::res://.godot/exported/133200997/export-24fc0683b4b9886ca9cf3cd839892b89-hummus.scn
+res://special items/healthy foods/orange.tscn::c12f310fe0045faeb49d8661bc70fcae::1773406492::res://.godot/exported/133200997/export-3e886abbb452b994f33cf472ff3d96e1-orange.scn
+res://special items/healthy foods/pear.tscn::5ade32745f6f79e9aa94cc28e88aab53::1773406492::res://.godot/exported/133200997/export-a69b0cce2bde49b9e5fd1f7e7db19844-pear.scn
+res://special items/healthy foods/pineapple.tscn::0ae83bbae25093f43ff735e662bf1aeb::1773406492::res://.godot/exported/133200997/export-7b7804fde42d429efd23f0043c165f9e-pineapple.scn
+res://special items/healthy foods/strawberry.tscn::49563e9894d6629d9697e93f951b9350::1773406492::res://.godot/exported/133200997/export-e17a8b33d41082eb0734c4d118ac4d4e-strawberry.scn
+res://special items/healthy foods/watermelon.tscn::81370851341f44b40ff460e05d063c1e::1773406492::res://.godot/exported/133200997/export-e955661f3a8577c9bbc31a6996eaa06c-watermelon.scn
+res://special items/Obstacles/cannon.tscn::b5708cf670ed3ff286af2e31565b7604::1773406492::res://.godot/exported/133200997/export-19b83864e8fae40fb4553509147d157b-cannon.scn
+res://special items/Obstacles/cylinder_lollipop.tscn::4658787912b4a946f41aa3051bb0629f::1773406492::res://.godot/exported/133200997/export-7b548402b44f76d69e08e44544052b65-cylinder_lollipop.scn
+res://special items/Obstacles/disk_candy.tscn::20e3bc9344fdadf7425a5ff7a62c1ca1::1773406492::res://.godot/exported/133200997/export-68620f793f8594c1eea13f1169af5e88-disk_candy.scn
+res://special items/Obstacles/ground_hammer.tscn::786236992ca2427c0043d88c98a6d336::1773406492::res://.godot/exported/133200997/export-86dd614869ffb8ab31f81c3e000addf3-ground_hammer.scn
+res://special items/Obstacles/gummy_in_a_box.tscn::4dde115d996a332413426e28830f6764::1773406492::res://.godot/exported/133200997/export-cdb7a5045d5152e2108eddf00e30573d-gummy_in_a_box.scn
+res://special items/Obstacles/propeller.tscn::3580fa354593c386c8b028ac9dd2a927::1773406492::res://.godot/exported/133200997/export-ae405428bc6eab90c1d0a5d6e58bb8d0-propeller.scn
+res://special items/Obstacles/spinning_cup.tscn::a0a2389b2026241e6b64e0947f1b827d::1773406492::res://.godot/exported/133200997/export-a0f1a7190eecfa27fd339e90b2b5059a-spinning_cup.scn
+res://special items/Obstacles/swinging_trunk.tscn::3067a291ab91e792d0dc34d6b04a9a1d::1773406492::res://.godot/exported/133200997/export-b256068ff0c93c529764d02d95d4653b-swinging_trunk.scn
+res://special items/Obstacles/swirling_balloon.tscn::2297bcde13732f3b23b9900b43fc913d::1773406492::res://.godot/exported/133200997/export-93ea4857de975011f3541ab367df2104-swirling_balloon.scn
+res://special items/Projectiles/projectile.tscn::c2d933e7c0cbf42762564ba3c7b23c69::1773406492::res://.godot/exported/133200997/export-556637c0da2f409728f589bfefcb67d7-projectile.scn
+res://special items/Projectiles/projectile_2.tscn::8455788994ca3fc20bab3edcc4d8bb75::1773406492::res://.godot/exported/133200997/export-d52089ff58bf144eb78555484fa4d290-projectile_2.scn
+res://special items/Projectiles/projectile_3.tscn::2f3f1c6b7a586e58726d64a17e4d9b59::1773406492::res://.godot/exported/133200997/export-1250fc0cd7a332982f930cdc73d2c205-projectile_3.scn
+res://special items/Projectiles/projectile_4.tscn::711101f5bae0d10b24abf76a7461cc8f::1773406492::res://.godot/exported/133200997/export-64409c1a8f07694eca3fe54c00581566-projectile_4.scn
+res://special items/Projectiles/projectile_5.tscn::479c3c9ab688f1d601365fed78026df6::1773406492::res://.godot/exported/133200997/export-a3213e4dc01f134d5408be1be8799e4e-projectile_5.scn
+res://special items/sugary foods/cake_birthday_slice.tscn::95102717e7fcdb7176fc17ead6317854::1773406492::res://.godot/exported/133200997/export-15393a944bddad37cdbeac6664f1b8c9-cake_birthday_slice.scn
+res://special items/sugary foods/cake_chocolate_slice.tscn::3236dcdf051af9f1580a888e959bf9af::1773406492::res://.godot/exported/133200997/export-80ada3b9dfe126980b12f220b0159f61-cake_chocolate_slice.scn
+res://special items/sugary foods/cake_strawberry_slice.tscn::707378b275c64ee38839baba059edb22::1773406492::res://.godot/exported/133200997/export-8edfd3bbf8736754b5f55ab2a600d07f-cake_strawberry_slice.scn
+res://special items/sugary foods/cinnamon_roll.tscn::16bec276b40bccb49a8103bc480a582a::1773406492::res://.godot/exported/133200997/export-1a4256e13a4b87d5a7298dc4bde17a4c-cinnamon_roll.scn
+res://special items/sugary foods/cookie.tscn::28393a7c0a9113d6c05842c6ae5c93d1::1773406492::res://.godot/exported/133200997/export-936105fc332caf2e33ad171eafc69de7-cookie.scn
+res://special items/sugary foods/croissant.tscn::3e16408052926aff81507f2570177a96::1773406492::res://.godot/exported/133200997/export-97d1fb53acf16767efe38a27c44cafdf-croissant.scn
+res://special items/sugary foods/cupcake.tscn::f41b335d31169d67a612cd758bce61e8::1773406492::res://.godot/exported/133200997/export-ca0bd4103fa1a889b56ca64d73021c8d-cupcake.scn
+res://special items/sugary foods/donut.tscn::5ee74b0f19de8cfd332b9ee0c5970b3f::1773406492::res://.godot/exported/133200997/export-485b7e062a2c8d792eeb63a4c80ac7f8-donut.scn
+res://special items/sugary foods/donut_pink.tscn::d437716d018aaf0fc468e4f8f84d5ca4::1773406492::res://.godot/exported/133200997/export-87b32399da2199c83da3ad119bdfc4a8-donut_pink.scn
+res://special items/sugary foods/muffin.tscn::aba71ed0494697678b156a584fe15096::1773406492::res://.godot/exported/133200997/export-8ea408fa1f915a195370a26f360d3fc2-muffin.scn
+res://special items/sugary foods/pie_apple_slice.tscn::74b9a9a00beae158594ffdab30cbab1d::1773406492::res://.godot/exported/133200997/export-8f9ca8c977169de4885a71a18d43b490-pie_apple_slice.scn
+res://special items/sugary foods/pie_cherry_slice.tscn::43cef854f1c749461a42b97d558800f0::1773406492::res://.godot/exported/133200997/export-f8ecb0b0149319e407ae81a57f53f35e-pie_cherry_slice.scn
+res://special items/sugary foods/waffle_stacked.tscn::30a5156341bea71ce5c120af4d68e71f::1773406492::res://.godot/exported/133200997/export-80bfaf08acac63103aa917c855b4d8f6-waffle_stacked.scn

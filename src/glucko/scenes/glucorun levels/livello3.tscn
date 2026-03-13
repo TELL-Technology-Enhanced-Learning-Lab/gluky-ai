@@ -17,8 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://cgei42cjyyyeo" path="res://special items/Obstacles/gummy_in_a_box.tscn" id="10_b6bnt"]
 [ext_resource type="Script" uid="uid://b50v8y610we7e" path="res://scripts/glucorun/game logic/game_over_zone.gd" id="15_toni7"]
 [ext_resource type="Script" uid="uid://defh7qx52suvq" path="res://scripts/glucorun/game logic/food_spawn_system.gd" id="17_b6bnt"]
-[ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="18_wadqf"]
-[ext_resource type="Script" uid="uid://cyk1ylbtje8um" path="res://scripts/glucorun/game logic/btn_exithome.gd" id="19_paqrf"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_l8kcc"]
 panorama = ExtResource("4_jk75u")
@@ -4021,22 +4019,3 @@ script = ExtResource("17_b6bnt")
 [node name="Marker3D19" type="Marker3D" parent="SpawnFoods" unique_id=323082851 groups=["HealthyFood"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 342.69003, 28.315468, -168.33919)
 script = ExtResource("17_b6bnt")
-
-[node name="Btn_Exit3" type="TextureButton" parent="." unique_id=300332546]
-custom_minimum_size = Vector2(200, 200)
-anchors_preset = -1
-anchor_left = 0.132
-anchor_top = 0.162
-anchor_right = 0.132
-anchor_bottom = 0.162
-offset_left = -100.44
-offset_top = -99.96001
-offset_right = 99.56
-offset_bottom = 100.03999
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("18_wadqf")
-script = ExtResource("19_paqrf")
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="Btn_Exit3" to="Btn_Exit3" method="_on_pressed"]

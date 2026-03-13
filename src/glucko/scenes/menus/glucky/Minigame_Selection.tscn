@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bct6m1wawehwc" path="res://art/assets/various menus/shop/Glucolife_Window.png" id="4_lfebr"]
 [ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="5_hne6j"]
 [ext_resource type="Texture2D" uid="uid://de27k8o2bjg5m" path="res://art/assets/various menus/shop/Glucolife_Window_clicked.png" id="6_hne6j"]
-[ext_resource type="Script" uid="uid://drjptk0684558" path="res://scripts/menu logic/general/Texture_button_simple.gd" id="7_lfebr"]
 [ext_resource type="Texture2D" uid="uid://btr3hhiw7noej" path="res://art/assets/various menus/shop/Mealperfect_Window.png" id="8_lxblu"]
 [ext_resource type="Texture2D" uid="uid://d36eavsewy8bv" path="res://art/assets/various menus/shop/Mealperfect_Window_clicked.png" id="9_kfun2"]
 [ext_resource type="Texture2D" uid="uid://caylyaitaa4ma" path="res://art/assets/various menus/shop/Glucoquiz_Window.png" id="10_8v422"]
@@ -162,8 +161,6 @@ offset_bottom = 22.879944
 scale = Vector2(1.395, 1.395)
 texture_normal = ExtResource("5_hne6j")
 ignore_texture_size = true
-script = ExtResource("7_lfebr")
-target_scene = "res://scenes/menus/glucky/Intro_3d.tscn"
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1833083948]
 anchors_preset = -1

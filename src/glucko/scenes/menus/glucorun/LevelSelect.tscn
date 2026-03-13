@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://dj3nynjl5uc6n" path="res://scenes/menus/glucorun/GlukoText.gd" id="5_l47w8"]
 [ext_resource type="FontFile" uid="uid://dlb3tyd0lvt1k" path="res://art/font_esterni/Candyshop.otf" id="7_l47w8"]
 [ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="8_b156e"]
-[ext_resource type="Script" uid="uid://cyk1ylbtje8um" path="res://scripts/glucorun/game logic/btn_exithome.gd" id="9_p3a2y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu47e"]
 bg_color = Color(0.40784314, 0.16470589, 0.5058824, 1)
@@ -151,13 +150,13 @@ text = "128 mg/dL"
 label_settings = SubResource("LabelSettings_b156e")
 
 [node name="Btn_Exit" type="TextureButton" parent="." unique_id=550274726]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.132
 anchor_top = 0.162
-anchor_right = 0.132
-anchor_bottom = 0.162
+anchor_right = 0.105958335
+anchor_bottom = 0.11570371
 offset_left = -100.44
 offset_top = -99.96001
 offset_right = 99.56
@@ -165,7 +164,8 @@ offset_bottom = 100.03999
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("8_b156e")
-script = ExtResource("9_p3a2y")
+ignore_texture_size = true
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Btn_Exit" to="Btn_Exit" method="_on_pressed"]
+[connection signal="pressed" from="Btn_Exit" to="." method="_on_btn_exit_pressed"]

@@ -3,11 +3,36 @@
 [ext_resource type="PackedScene" uid="uid://0q6h818eiqe7" path="res://scenes/user interface/Glucose_Bar_Glucorun.tscn" id="1_bstwh"]
 [ext_resource type="Script" uid="uid://chn3ttvoct7ns" path="res://scripts/glucorun/game logic/game_ui.gd" id="1_rk08h"]
 [ext_resource type="PackedScene" uid="uid://cfctbnbv8n1hm" path="res://scenes/user interface/Insulin_Counter_Glucorun.tscn" id="2_rk08h"]
+[ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="4_rji8h"]
 
-[node name="GameUI" type="CanvasLayer"]
+[node name="GameUI" type="CanvasLayer" unique_id=28473659]
 follow_viewport_enabled = true
 script = ExtResource("1_rk08h")
 
-[node name="GlucoseUI" parent="." instance=ExtResource("1_bstwh")]
+[node name="GlucoseUI" parent="." unique_id=1468247979 instance=ExtResource("1_bstwh")]
 
-[node name="InsulinCounter" parent="." instance=ExtResource("2_rk08h")]
+[node name="InsulinCounter" parent="." unique_id=1329432861 instance=ExtResource("2_rk08h")]
+layer = 9
+
+[node name="Control" type="CanvasLayer" parent="." unique_id=667715485]
+layer = 10
+
+[node name="Btn_Exit" type="TextureButton" parent="Control" unique_id=1025183710]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = -1
+anchor_left = 0.0072916667
+anchor_top = 0.06796297
+anchor_right = 0.094333336
+anchor_bottom = 0.20666668
+offset_left = 17.0
+offset_top = -0.40000153
+offset_right = -0.120010376
+offset_bottom = -0.2000122
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_rji8h")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/Btn_Exit" to="." method="_on_btn_exit_pressed"]

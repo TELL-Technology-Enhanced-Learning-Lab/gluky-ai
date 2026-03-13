@@ -1,6 +1,7 @@
 extends Control
 
 @onready var splash_image: TextureRect = $Background
+@export var preferred_orientation := OrientationManager.OrientationMode.PORTRAIT
 
 @export var auto_transition_delay: float = 3.0
 @export var transition_duration: float = 1.0

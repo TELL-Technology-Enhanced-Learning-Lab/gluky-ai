@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://hjg8ufi5bae3"]
 
-[ext_resource type="Script" uid="uid://bvsdvpyjrq4u0" path="res://scripts/Glucolife/ScriptMenu/menu.gd" id="1_ssown"]
+[ext_resource type="Script" uid="uid://bvsdvpyjrq4u0" path="res://scripts/glucolife/ScriptMenu/menu.gd" id="1_ssown"]
 [ext_resource type="VideoStream" uid="uid://dvg67k43ki0o1" path="res://art/videos/MenuGlukolife/VideoIntro.ogv" id="2_ktb2s"]
 [ext_resource type="VideoStream" uid="uid://cob5bd3pnl3kf" path="res://art/videos/MenuGlukolife/VideoLoop.ogv" id="4_jiwxj"]
 [ext_resource type="FontFile" uid="uid://bfkbf1v0dokdm" path="res://art/font_esterni/Winter Tosca.otf" id="4_r1yye"]
-[ext_resource type="Script" uid="uid://bj83gjbea0rba" path="res://scripts/Glucolife/general/button_play.gd" id="5_jiwxj"]
-[ext_resource type="Script" uid="uid://3femqwkw3abr" path="res://scripts/Glucolife/ScriptMenu/ExitButton.gd" id="6_fjrqn"]
+[ext_resource type="Script" uid="uid://bj83gjbea0rba" path="res://scripts/glucolife/general/button_play.gd" id="5_jiwxj"]
+[ext_resource type="Script" uid="uid://3femqwkw3abr" path="res://scripts/glucolife/ScriptMenu/ExitButton.gd" id="6_fjrqn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjrqn"]
 bg_color = Color(0.078431375, 0.61960787, 0, 1)

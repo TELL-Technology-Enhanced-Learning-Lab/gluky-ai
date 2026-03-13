@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://53ulaprq6ohm"]
 
-[ext_resource type="Script" uid="uid://b517oj4t30bbk" path="res://scripts/Glucolife/ScriptMenu/splash_screen.gd" id="1_okrj0"]
+[ext_resource type="Script" uid="uid://b517oj4t30bbk" path="res://scripts/glucolife/ScriptMenu/splash_screen.gd" id="1_okrj0"]
 [ext_resource type="Texture2D" uid="uid://v17oa68s56o4" path="res://art/images/7f465373-19f1-4f16-a894-b6e7b9065aa4.png" id="2_envvx"]
 
 [node name="StartScreen" type="Control" unique_id=1670484872]

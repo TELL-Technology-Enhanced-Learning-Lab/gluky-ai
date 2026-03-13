@@ -2,6 +2,7 @@ extends Control
 
 @onready var video_intro: VideoStreamPlayer = $VideoIntro
 @onready var video_loop: VideoStreamPlayer = $VideoLoop
+@export var preferred_orientation := OrientationManager.OrientationMode.PORTRAIT
 
 @export var fade_duration: float = 0.5
 @export var crossfade_enabled: bool = true

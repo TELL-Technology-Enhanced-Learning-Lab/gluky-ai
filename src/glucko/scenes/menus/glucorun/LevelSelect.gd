@@ -306,7 +306,7 @@ func _make_difficulty(level: int, accent: Color) -> VBoxContainer:
 	vb.add_child(row)
 	return vb
 
-func _make_progress(data: Dictionary, state: String, accent: Color) -> VBoxContainer:
+func _make_progress(_data: Dictionary, state: String, accent: Color) -> VBoxContainer:
 	var vb = VBoxContainer.new()
 	vb.add_theme_constant_override("separation", 5)
 	var row = HBoxContainer.new()
@@ -507,3 +507,7 @@ func _process(delta):
 		else:
 			fill.bg_color = CANDY_MINT
 		glucose_bar.add_theme_stylebox_override("fill", fill)
+
+
+func _on_btn_exit_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn")

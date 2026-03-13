@@ -5896,39 +5896,39 @@ position = Vector2(74, 126)
 [node name="Selection" type="Button" parent="Main Selection" unique_id=341255679]
 offset_left = 30.0
 offset_top = 462.0
-offset_right = 128.0
-offset_bottom = 492.0
+offset_right = 280.0
+offset_bottom = 537.0
 script = ExtResource("15_6rkvy")
 
 [node name="Library Options" type="Node2D" parent="." unique_id=1394935043]
 script = ExtResource("16_4dtb5")
 
 [node name="TutGlucolife" type="Button" parent="Library Options" unique_id=1883094466]
-offset_left = 550.0
+offset_left = 850.0
 offset_top = 475.0
-offset_right = 648.0
-offset_bottom = 506.0
+offset_right = 1100.0
+offset_bottom = 550.0
 text = "Glucolife"
 
 [node name="TutGlucorun" type="Button" parent="Library Options" unique_id=547391886]
-offset_left = 400.0
+offset_left = 550.0
 offset_top = 475.0
-offset_right = 498.0
-offset_bottom = 506.0
+offset_right = 800.0
+offset_bottom = 550.0
 text = "Glucorun"
 
 [node name="TutSelection" type="Button" parent="Library Options" unique_id=1041999460]
 offset_left = 400.0
 offset_top = 275.0
-offset_right = 498.0
-offset_bottom = 305.0
+offset_right = 650.0
+offset_bottom = 350.0
 text = "Tutorials"
 
 [node name="BackButton" type="Button" parent="Library Options" unique_id=935813291]
 offset_left = 250.0
 offset_top = 475.0
-offset_right = 348.0
-offset_bottom = 505.0
+offset_right = 500.0
+offset_bottom = 550.0
 text = "Flip back"
 
 [node name="Book" type="Node3D" parent="." unique_id=1058253372 groups=["book"]]

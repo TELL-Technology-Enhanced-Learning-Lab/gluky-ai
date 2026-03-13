@@ -177,69 +177,63 @@ script = ExtResource("1_5hght")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1061316579]
 layer = 100
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1820836810]
-layout_mode = 3
-anchors_preset = 15
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=648173546]
+z_index = -1
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1575.0
-offset_top = 185.0
-offset_bottom = -682.0
-grow_horizontal = 2
+offset_left = -282.0
+grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/Control" unique_id=1230962770]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -135.49936
-offset_right = 129.0
-offset_bottom = 135.49936
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=490875352]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1230962770]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Control/SubViewportContainer" unique_id=1127638554]
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer" unique_id=1127638554]
 world_3d = SubResource("World3D_ujsof")
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(258, 270)
+size = Vector2i(282, 200)
 render_target_clear_mode = 2
 render_target_update_mode = 4
 
-[node name="RoundBatSkin" type="Node3D" parent="CanvasLayer/Control/SubViewportContainer/SubViewport" unique_id=2106860234]
+[node name="RoundBatSkin" type="Node3D" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport" unique_id=2106860234]
 transform = Transform3D(1, 0, 0, 0, 0.9998134, 0.019319594, 0, -0.019319594, 0.9998134, 0, 0, 0)
 script = ExtResource("1_rmo03")
 
-[node name="RoundBat" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin" unique_id=562800601 instance=ExtResource("2_5hght")]
+[node name="RoundBat" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin" unique_id=562800601 instance=ExtResource("2_5hght")]
 
-[node name="Skeleton3D" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature" parent_id_path=PackedInt32Array(562800601, 509335734) index="0" unique_id=1220696720]
-bones/0/position = Vector3(0, 0.0236, 0)
-bones/1/rotation = Quaternion(0.19412537, -0.013393972, -0.63194585, 0.7501869)
-bones/2/rotation = Quaternion(0.17711778, 0.078930296, 0.3994174, 0.8960273)
-bones/3/rotation = Quaternion(0.12754047, 0.1007763, 0.36302233, 0.91749245)
-bones/4/rotation = Quaternion(0.19412537, 0.013393972, 0.63194585, 0.7501869)
-bones/5/rotation = Quaternion(0.17711778, -0.078930296, -0.3994174, 0.8960273)
-bones/6/rotation = Quaternion(0.12754047, -0.1007763, -0.36302233, 0.91749245)
+[node name="Skeleton3D" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature" parent_id_path=PackedInt32Array(562800601, 509335734) index="0" unique_id=1220696720]
+bones/0/position = Vector3(0, -0.00010508066, 0)
+bones/1/rotation = Quaternion(0.15539075, 0.025796434, -0.59324205, 0.7894632)
+bones/2/rotation = Quaternion(-0.00077110104, -0.00030242046, 0.38688612, 0.9221271)
+bones/3/rotation = Quaternion(-0.12090009, 0.011748089, 0.2954001, 0.9476202)
+bones/4/rotation = Quaternion(0.15539075, -0.025796434, 0.59324205, 0.7894632)
+bones/5/rotation = Quaternion(-0.00077110104, 0.00030242046, -0.38688612, 0.9221271)
+bones/6/rotation = Quaternion(-0.12090009, -0.011748089, -0.2954001, 0.9476202)
 bones/7/position = Vector3(0.130992, -0.227392, -0.087851495)
 bones/7/rotation = Quaternion(0.26196814, 0.08345515, 0.26575115, 0.92400455)
-bones/8/rotation = Quaternion(3.839837e-08, 0.646727, 0.76272154, 2.5504539e-08)
+bones/8/rotation = Quaternion(2.8426298e-08, 0.542441, 0.840094, 2.0217602e-08)
 bones/10/position = Vector3(-0.130992, -0.227392, -0.087851495)
 bones/10/rotation = Quaternion(0.26196814, -0.08345515, -0.26575115, 0.92400455)
-bones/11/rotation = Quaternion(2.5525567e-08, 0.646727, 0.76272154, 3.225302e-08)
+bones/11/rotation = Quaternion(2.5226498e-08, 0.542441, 0.840094, 4.3963205e-08)
 
-[node name="Bat" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature/Skeleton3D" index="0" unique_id=680737279]
+[node name="Bat" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature/Skeleton3D" index="0" unique_id=680737279]
 material_overlay = SubResource("StandardMaterial3D_u0xry")
 
-[node name="AnimationPlayer" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat" index="1" unique_id=608344887]
+[node name="AnimationPlayer" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat" index="1" unique_id=608344887]
 libraries/ = SubResource("AnimationLibrary_sqho5")
 libraries/custom = ExtResource("3_uwjur")
 
-[node name="AnimationTree" type="AnimationTree" parent="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin" unique_id=974615288]
+[node name="AnimationTree" type="AnimationTree" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin" unique_id=974615288]
 unique_name_in_owner = true
 root_node = NodePath("%AnimationTree/../RoundBat")
 tree_root = SubResource("AnimationNodeBlendTree_omnlg")
@@ -248,27 +242,19 @@ parameters/HurtShot/active = false
 parameters/HurtShot/internal_active = false
 parameters/HurtShot/request = 0
 
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Control/SubViewportContainer/SubViewport" unique_id=2122151135]
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport" unique_id=2122151135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.42607)
 environment = SubResource("Environment_uwjur")
 current = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Control/SubViewportContainer/SubViewport" unique_id=1234175332]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport" unique_id=1234175332]
 light_color = Color(1, 0.95686275, 0.8980392, 1)
 light_indirect_energy = 1.5
 
-[node name="BtnRecord" type="Button" parent="CanvasLayer" unique_id=1120070487]
-anchors_preset = -1
-anchor_left = 0.90900004
-anchor_top = 0.43500003
-anchor_right = 0.90900004
-anchor_bottom = 0.43500003
-offset_left = -141.28003
-offset_top = -32.80005
-offset_right = 140.71997
-offset_bottom = 32.19995
-grow_horizontal = 0
-grow_vertical = 0
+[node name="BtnRecord" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1120070487]
+custom_minimum_size = Vector2(282, 80)
+layout_mode = 2
+mouse_filter = 1
 text = "PREMI PER FARE UNA DOMANDA🎤"
 
 [node name="TTS" type="Node" parent="." unique_id=1707215855]
@@ -279,4 +265,4 @@ stream = SubResource("AudioStreamMicrophone_ujsof")
 autoplay = true
 bus = &"Record"
 
-[editable path="CanvasLayer/Control/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat"]
+[editable path="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat"]

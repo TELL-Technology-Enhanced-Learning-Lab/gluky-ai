@@ -2,46 +2,52 @@
 
 [ext_resource type="Script" uid="uid://eu7moy8ymkc4" path="res://scripts/glucorun/game logic/glucose_bar.gd" id="1_fk700"]
 
-[node name="GlucoseUI" type="CanvasLayer"]
+[node name="GlucoseUI" type="CanvasLayer" unique_id=2002923969]
 layer = -1
 follow_viewport_enabled = true
 script = ExtResource("1_fk700")
 
-[node name="BackgroundBar" type="ColorRect" parent="."]
+[node name="BackgroundBar" type="ColorRect" parent="." unique_id=984190227]
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 420.0
 offset_bottom = 50.0
+mouse_filter = 2
 color = Color(0.2231029, 0.2231029, 0.22310287, 1)
 
-[node name="FillBar" type="ColorRect" parent="."]
+[node name="FillBar" type="ColorRect" parent="." unique_id=1260507674]
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 420.0
 offset_bottom = 50.0
+mouse_filter = 2
 color = Color(0.07702621, 0.9518791, 0, 1)
 
-[node name="ColorRect_LowThreshold" type="ColorRect" parent="."]
+[node name="ColorRect_LowThreshold" type="ColorRect" parent="." unique_id=1936799629]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
-[node name="ColorRect_HighThreshold" type="ColorRect" parent="."]
+[node name="ColorRect_HighThreshold" type="ColorRect" parent="." unique_id=1594832403]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
-[node name="ColorRect_SafeMin" type="ColorRect" parent="."]
+[node name="ColorRect_SafeMin" type="ColorRect" parent="." unique_id=1578424195]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 color = Color(0.9666667, 1, 0, 1)
 
-[node name="ColorRect_SafeMax" type="ColorRect" parent="."]
+[node name="ColorRect_SafeMax" type="ColorRect" parent="." unique_id=1314334766]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 color = Color(0.9666667, 1, 0, 1)
 
-[node name="Label_Value" type="Label" parent="."]
+[node name="Label_Value" type="Label" parent="." unique_id=1268483442]
 light_mask = 2
 visibility_layer = 2
 offset_left = 180.0

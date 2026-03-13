@@ -12,7 +12,7 @@
 [ext_resource type="FontFile" uid="uid://jm3hksv13qby" path="res://art/font_esterni/SamuraiBlast.ttf" id="8_xb4mg"]
 [ext_resource type="PackedScene" uid="uid://ce4onc8li3wrk" path="res://art/assets/MealPerfectGame/Sushi Restaurant Kit - May 2023/Environment/FBX/Truck.fbx" id="13_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://b3i265dcvdtmp" path="res://art/assets/various menus/win screen/home button.png" id="14_glc0k"]
-[ext_resource type="Script" uid="uid://bg3gstfp1a86k" path="res://scripts/MealPerfectGameScript/btn_exit_mpg.gd" id="15_iglwj"]
+[ext_resource type="Script" uid="uid://dapev5tbes18p" path="res://scripts/MealPerfectGameScript/btn_exit_msin_scene.gd" id="15_iglwj"]
 [ext_resource type="PackedScene" uid="uid://dr8oy30m18m62" path="res://scenes/MealPerfectgameScenes/table.tscn" id="18_i0j58"]
 [ext_resource type="Texture2D" uid="uid://bdxuq5bbirjmd" path="res://art/assets/MealPerfectGame/Sushi Restaurant Kit - May 2023/Sushi_Atlas.png" id="77_7gb0p"]
 
@@ -1674,17 +1674,24 @@ shape = SubResource("BoxShape3D_dtg5n")
 [node name="Truck" parent="." unique_id=817272625 instance=ExtResource("13_6t1o7")]
 transform = Transform3D(0.99632293, 0, 0.08567776, 0, 1, 0, -0.08567776, 0, 0.99632293, 8.837722, 0, 2.41824)
 
-[node name="BtnExitMPG" type="TextureButton" parent="." unique_id=1909033869]
-anchors_preset = -1
-anchor_left = 0.117000006
-anchor_top = 0.119
-anchor_right = 0.117000006
-anchor_bottom = 0.119
-offset_left = -63.640015
-offset_top = -37.520004
-offset_right = 64.359985
-offset_bottom = 38.479996
-texture_normal = ExtResource("14_glc0k")
-script = ExtResource("15_iglwj")
+[node name="Control" type="CanvasLayer" parent="." unique_id=2070977717]
+layer = 10
 
-[connection signal="pressed" from="BtnExitMPG" to="BtnExitMPG" method="_on_pressed"]
+[node name="Btn_ExitMsinScene" type="TextureButton" parent="Control" unique_id=1758877326]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = -1
+anchor_left = 0.0072916667
+anchor_top = 0.06796297
+anchor_right = 0.094333336
+anchor_bottom = 0.20666668
+offset_left = 17.0
+offset_top = -0.40000153
+offset_right = -0.120010376
+offset_bottom = -0.2000122
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("14_glc0k")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("15_iglwj")
+metadata/_edit_use_anchors_ = true

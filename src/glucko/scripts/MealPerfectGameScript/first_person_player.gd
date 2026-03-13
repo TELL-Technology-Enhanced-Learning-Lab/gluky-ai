@@ -231,3 +231,11 @@ func drop_to_table(table: Node) -> void:
 	else:
 		table.add_object(obj)
 	pickedObject = null
+
+
+func _on_btn_exit_mpg_2_pressed() -> void:
+		get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn")
+
+
+func _on_btn_exit_mpg_3_pressed() -> void:
+		get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn")

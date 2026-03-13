@@ -25,6 +25,7 @@ func _ready():
 	var window2: TextureButton = parent.get_node("Window2")
 	var window3: TextureButton = parent.get_node("Window3")
 	var window4: TextureButton = parent.get_node("Window4")
+	var homebutton: TextureButton = parent.get_node("HomeButton")
 	
 
 	# Connessioni bottoni con i percorsi che mi hai dato
@@ -42,9 +43,10 @@ func _ready():
 
 	window4.pressed.connect(func():
 		_change_scene("res://scenes/GlukoQuizScenes/Menuiniziale.tscn")
+	)
 	
-
-	
+	homebutton.pressed.connect(func():
+		_change_scene("res://scenes/menus/glucky/Intro_3d.tscn")
 	)
 
 # ============================
