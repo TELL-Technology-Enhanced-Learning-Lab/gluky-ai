@@ -34,7 +34,7 @@ func show_popup(
 
 	# attesa NON bloccante
 	#attesa dura 8 secondi, rendere di meno se si vuole
-	await get_tree().create_timer(8).timeout #timer popup, variabile
+	await get_tree().create_timer(10).timeout #timer popup, variabile
 
 	var tween2 = create_tween()
 	tween2.tween_property(self, "modulate:a", 0.0, 0.3)

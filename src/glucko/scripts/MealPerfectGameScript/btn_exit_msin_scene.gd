@@ -4,10 +4,8 @@ func _ready():
 	pressed.connect(_on_pressed)
 
 func _on_pressed():
-	# Trova il player e rimuovi i suoi controlli mobile
-	var player = get_tree().get_first_node_in_group("player")
-	if player and player.mobile_controls_ui:
-		player.mobile_controls_ui.queue_free()
-		player.mobile_controls_ui = null
-	
+	for child in get_tree().root.get_children():
+		if child.scene_file_path == "res://scenes/MealPerfectgameScenes/mobile_controls_pm.tscn":
+			child.queue_free()
+			break
 	get_tree().change_scene_to_file("res://scenes/menus/glucky/Minigame_Selection.tscn")

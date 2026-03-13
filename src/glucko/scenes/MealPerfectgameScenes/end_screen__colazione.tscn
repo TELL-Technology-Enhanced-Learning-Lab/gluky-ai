@@ -26,54 +26,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=2003097525]
-process_mode = 3
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 191.5
-offset_top = 311.0
-offset_right = -175.5
-offset_bottom = -155.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button_Next" type="Button" parent="Panel/VBoxContainer" unique_id=319796715]
-process_mode = 3
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5smmc")
-theme_override_font_sizes/font_size = 30
-text = "LIVELLO SUCCESSIVO"
-vertical_icon_alignment = 0
-
-[node name="Button_Restart" type="Button" parent="Panel/VBoxContainer" unique_id=1397592498]
-process_mode = 3
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5smmc")
-theme_override_font_sizes/font_size = 23
-text = "RICOMINCIA LIVELLO"
-vertical_icon_alignment = 0
-
-[node name="Button_Quit" type="Button" parent="Panel/VBoxContainer" unique_id=1712778681]
-process_mode = 3
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5smmc")
-theme_override_font_sizes/font_size = 22
-text = "ESCI"
-vertical_icon_alignment = 0
-
 [node name="Label" type="Label" parent="Panel" unique_id=829576152]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.50600004
-anchor_top = 0.08800001
-anchor_right = 0.50600004
-anchor_bottom = 0.08800001
-offset_left = -353.52008
-offset_top = -24.040009
-offset_right = 354.47992
-offset_bottom = 23.959991
+anchor_left = 0.48400003
+anchor_top = 0.44400004
+anchor_right = 0.48400003
+anchor_bottom = 0.44400004
+offset_left = -354.28003
+offset_top = -24.52005
+offset_right = 353.71997
+offset_bottom = 23.47995
 size_flags_horizontal = 4
 text = "LIVELLO COLAZIONE COMPLETATO"
 label_settings = SubResource("LabelSettings_f2mtv")
@@ -82,21 +45,17 @@ horizontal_alignment = 1
 [node name="Message" type="Label" parent="Panel" unique_id=81147162]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.503
-anchor_top = 0.18
-anchor_right = 0.503
-anchor_bottom = 0.18
-offset_left = -454.76
-offset_top = -34.40001
-offset_right = 453.24
-offset_bottom = 34.59999
+anchor_left = 0.485
+anchor_top = 0.52900004
+anchor_right = 0.485
+anchor_bottom = 0.52900004
+offset_left = -454.2
+offset_top = -34.32007
+offset_right = 453.8
+offset_bottom = 34.67993
 theme_override_constants/line_spacing = 3
 theme_override_fonts/font = ExtResource("1_5smmc")
 theme_override_font_sizes/font_size = 30
 text = "\"HAI IMPARATO A BILANCIARE CORRETTAMENTE I PASTI 
 PER MANTENERE LA GLICEMIA STABILE\""
 horizontal_alignment = 1
-
-[connection signal="pressed" from="Panel/VBoxContainer/Button_Next" to="." method="_on_button_next_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button_Restart" to="." method="_on_button_restart_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button_Quit" to="." method="_on_button_quit_pressed"]

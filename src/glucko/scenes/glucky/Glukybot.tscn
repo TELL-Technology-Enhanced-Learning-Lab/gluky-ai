@@ -212,19 +212,19 @@ script = ExtResource("1_rmo03")
 [node name="RoundBat" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin" unique_id=562800601 instance=ExtResource("2_5hght")]
 
 [node name="Skeleton3D" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature" parent_id_path=PackedInt32Array(562800601, 509335734) index="0" unique_id=1220696720]
-bones/0/position = Vector3(0, -0.00010508066, 0)
-bones/1/rotation = Quaternion(0.15539075, 0.025796434, -0.59324205, 0.7894632)
-bones/2/rotation = Quaternion(-0.00077110104, -0.00030242046, 0.38688612, 0.9221271)
-bones/3/rotation = Quaternion(-0.12090009, 0.011748089, 0.2954001, 0.9476202)
-bones/4/rotation = Quaternion(0.15539075, -0.025796434, 0.59324205, 0.7894632)
-bones/5/rotation = Quaternion(-0.00077110104, 0.00030242046, -0.38688612, 0.9221271)
-bones/6/rotation = Quaternion(-0.12090009, -0.011748089, -0.2954001, 0.9476202)
+bones/0/position = Vector3(0, -0.015053248, 0)
+bones/1/rotation = Quaternion(-0.052206673, 0.20975058, -0.67580926, 0.7046709)
+bones/2/rotation = Quaternion(-0.11419778, -0.030950101, 0.25997597, 0.9583389)
+bones/3/rotation = Quaternion(-0.024709608, 0.042034607, 0.24237983, 0.9689554)
+bones/4/rotation = Quaternion(-0.052206673, -0.20975058, 0.67580926, 0.7046709)
+bones/5/rotation = Quaternion(-0.11419778, 0.030950101, -0.25997597, 0.9583389)
+bones/6/rotation = Quaternion(-0.024709608, -0.042034607, -0.24237983, 0.9689554)
 bones/7/position = Vector3(0.130992, -0.227392, -0.087851495)
 bones/7/rotation = Quaternion(0.26196814, 0.08345515, 0.26575115, 0.92400455)
-bones/8/rotation = Quaternion(2.8426298e-08, 0.542441, 0.840094, 2.0217602e-08)
+bones/8/rotation = Quaternion(3.6227764e-08, 0.66966176, 0.7426663, 2.1360728e-08)
 bones/10/position = Vector3(-0.130992, -0.227392, -0.087851495)
 bones/10/rotation = Quaternion(0.26196814, -0.08345515, -0.26575115, 0.92400455)
-bones/11/rotation = Quaternion(2.5226498e-08, 0.542441, 0.840094, 4.3963205e-08)
+bones/11/rotation = Quaternion(2.1757876e-08, 0.66966224, 0.7426659, 4.547008e-08)
 
 [node name="Bat" parent="CanvasLayer/MarginContainer/VBoxContainer/SubViewportContainer/SubViewport/RoundBatSkin/RoundBat/Armature/Skeleton3D" index="0" unique_id=680737279]
 material_overlay = SubResource("StandardMaterial3D_u0xry")

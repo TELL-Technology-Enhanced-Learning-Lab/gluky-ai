@@ -12,7 +12,7 @@ extends Node2D
 # CONFIG CLAUDE
 # ============================================================
 
-var api_key := "inserisci l'api"
+var api_key := "api"
 var model := "claude-haiku-4-5-20251001"
 
 # ============================================================
