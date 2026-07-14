@@ -1,63 +1,188 @@
-# 📘 Istruzioni per i Progetti di tesi sviluppati dal laboratorio TELL
+<div align="center">
 
-## 🎯 Finalità del repository
+<img src="src/glucko/icon.svg" alt="Glucko Logo" width="120" height="120"/>
 
-Questo repository è parte dell’organizzazione GitHub del laboratorio TELL e deve essere usato per documentare in modo completo e strutturato ogni progetto software sviluppato da collaboratori, tesisti o assegnisti.
+# 🎮 Glucko
 
-Ogni sviluppatore responsabile **ha l’obbligo** di:
-- caricare il codice sorgente;
-- fornire una **pagina descrittiva** del progetto (`README.md`);
-- scrivere una **guida tecnica all’uso** (`docs/HOWTO.md` o simile).
+### Un videogioco educativo sulla gestione del diabete
 
-Questo approccio consente:
-- la tracciabilità del lavoro;
-- la collaborazione tra membri del laboratorio;
-- la possibilità di riutilizzo o estensione dei progetti in futuro;
-- una documentazione utile anche per la redazione della tesi o paper collegati.
+*Sviluppato nell'ambito del Laboratorio [TELL – Technology-Enhanced Learning Lab](https://github.com/TELL-Technology-Enhanced-Learning-Lab)*
 
 ---
 
-## 💡 Perché usare Git e GitHub?
+[![Godot Engine](https://img.shields.io/badge/Godot-4.6-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white)](https://godotengine.org/)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Android-green?style=for-the-badge&logo=android&logoColor=white)](https://github.com/TELL-Technology-Enhanced-Learning-Lab/gluky-ai)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Branch](https://img.shields.io/badge/Branch-main%20%7C%20GluckoRun--base-orange?style=for-the-badge&logo=git&logoColor=white)](https://github.com/TELL-Technology-Enhanced-Learning-Lab/gluky-ai/branches)
 
-Conoscere **Git e GitHub** è oggi una competenza fondamentale per chi sviluppa software.  
-Git permette di:
-- tenere traccia delle modifiche nel tempo (versionamento);
-- lavorare in team in modo controllato;
-- gestire conflitti, rollback e rami di sviluppo.
-
-Inoltre, l’uso di GitHub:
-- aggiunge valore al tuo CV;
-- semplifica la collaborazione;
-- offre uno storico utile per la valutazione del tuo lavoro.
+</div>
 
 ---
 
-## 🧭 Struttura consigliata del repository
+## 🧭 Descrizione del Progetto
+
+**Glucko** è un videogioco educativo 3D sviluppato con il motore **Godot 4.6**, concepito come strumento di apprendimento gamificato per sensibilizzare bambini e ragazzi con diabete di tipo 1 (e non) alla gestione della glicemia, dell'alimentazione e dell'uso dell'insulina.
+
+Il gioco integra meccaniche di **serious game** in un ambiente visivamente coinvolgente, dove il giocatore veste i panni di un personaggio che deve raccogliere cibo sano, evitare zuccheri in eccesso e somministrare insulina al momento giusto — il tutto mentre affronta sfide e ostacoli ispirati alla vita reale di un paziente diabetico.
+
+Il progetto è stato sviluppato come lavoro di tesi all'interno del laboratorio **TELL (Technology-Enhanced Learning Lab)** e rappresenta un caso concreto di applicazione dell'intelligenza artificiale e del machine learning in ambito educativo-sanitario.
+
+---
+
+## ✨ Caratteristiche Principali
+
+| Feature | Descrizione |
+|--------|-------------|
+| 🎮 **Gameplay 3D** | Ambiente tridimensionale con meccaniche runner/action |
+| 🍎 **Alimentazione simulata** | Database alimenti reali con impatto glicemico |
+| 💉 **Gestione insulina** | Meccaniche di iniezione insulinica tempestiva |
+| 🤖 **GlukyBot AI** | Assistente virtuale basato su LLM integrato nel gioco |
+| 🎵 **Audio dinamico** | Colonna sonora adattiva e effetti sonori |
+| 📱 **Multipiattaforma** | Disponibile su Windows (PC) e Android |
+| 🔊 **Speech-to-Text** | Riconoscimento vocale integrato |
+| 📊 **Tracciamento dati** | Salvataggio progressi e dati glicemici del giocatore |
+
+---
+
+## 📁 Struttura del Repository
 
 ```
-project-name/
+gluky-ai/
 │
-├── src/                    # Codice sorgente
-├── docs/                   # Documentazione (incluso HOWTO.md)
-├── data/                   # (Opzionale) Dati di input/output
-├── tests/                  # Test automatici
+├── 📂 src/glucko/              # Progetto Godot completo (codice sorgente)
+│   ├── scenes/                 # Scene del gioco (.tscn)
+│   ├── scripts/                # Script GDScript (.gd)
+│   ├── art/                    # Asset grafici, texture, modelli
+│   ├── sounds and music/       # Musica e effetti sonori
+│   ├── resources/              # Risorse e materiali
+│   ├── models/                 # Modelli 3D
+│   ├── Json_files/             # Database alimenti e configurazioni
+│   ├── addons/                 # Plugin aggiuntivi Godot
+│   └── project.godot           # File di progetto Godot
 │
-├── README.md               # Descrizione progetto (questa pagina)
-├── LICENSE                 # Licenza
-├── requirements.txt        # Dipendenze (Python) o altri file config
-└── .gitignore              # File e cartelle da ignorare
+├── 📂 file exe pc/             # Eseguibile per Windows
+│   ├── Glucko.exe              # Avvia il gioco su PC
+│   └── Glucko.pck              # Pacchetto risorse del gioco
+│
+├── 📂 file eseguibile android/ # Applicazione Android
+│   └── Glucko.apk              # APK installabile su Android
+│
+├── 📂 docs/                    # Documentazione tecnica
+│   ├── HOWTO.md                # Guida tecnica all'uso e installazione
+│   └── README.md               # Note sulla documentazione
+│
+├── 📂 data/                    # Dati di input/output
+├── 📂 source/                  # Librerie e risorse esterne
+│
+├── README.md                   # Questo file
+└── .gitignore
 ```
-
-📌 Ogni progetto, oltre al codice e al materiale necessario, deve contenere:
-- **README.md** ben compilato: obiettivi, struttura, autori, tecnologie, contesto.
-- **HOWTO.md** con guida tecnica all'installazione, all’uso e alle eventuali criticità.
 
 ---
 
-## 📌 Regole e buone pratiche
+## 🚀 Come Ottenere e Usare Glucko
 
-- Effettua almeno **un push a settimana** (consigliato).
-- Usa **branch** per nuove funzionalità o esperimenti, ma assicurati che il codice stabile sia sempre aggiornato su `main`.
-- Usa il file `.gitignore` per evitare di salvare file locali o temporanei (es. `.idea/`, `__pycache__/`, `*.log`).
-- Se carichi dati >10 MB, usa un **permalink o archivio esterno** (es. Google Drive, OneDrive, Mega, etc.).
-- Specifica sempre **versioni delle librerie** o dipendenze necessarie.
+> 📖 **Per la guida tecnica completa**, consulta [`docs/HOWTO.md`](docs/HOWTO.md)
+
+Esistono **tre modalità** per accedere al progetto, a seconda delle tue esigenze:
+
+---
+
+### 🅰️ Opzione 1 — Solo il codice sorgente (branch `GluckoRun-base`)
+
+Ideale per sviluppatori e collaboratori che vogliono aprire ed editare il progetto in Godot.
+
+```bash
+git clone -b GluckoRun-base https://github.com/TELL-Technology-Enhanced-Learning-Lab/gluky-ai.git
+```
+
+- Contiene **esclusivamente il codice sorgente** del progetto Godot
+- Apri il progetto con **Godot 4.6** o superiore
+- Nessun file eseguibile incluso in questo branch
+
+---
+
+### 🅱️ Opzione 2 — Repository completo (branch `main`)
+
+Ideale per chi vuole tutto: codice sorgente **+** eseguibili per PC e Android.
+
+```bash
+git clone https://github.com/TELL-Technology-Enhanced-Learning-Lab/gluky-ai.git
+```
+
+Oppure scarica l'archivio ZIP direttamente da GitHub:
+
+> **`Code` → `Download ZIP`** dalla pagina principale del repository
+
+Dopo il download troverai:
+- 📂 `src/glucko/` → progetto apribile in Godot
+- 📂 `file exe pc/` → eseguibile Windows (`Glucko.exe`)
+- 📂 `file eseguibile android/` → applicazione Android (`Glucko.apk`)
+
+---
+
+### 🅲 Opzione 3 — Solo l'APK Android (installazione rapida)
+
+Ideale per chi vuole giocare subito su un dispositivo Android senza scaricare l'intero repository.
+
+1. Vai alla cartella [`file eseguibile android/`](file%20eseguibile%20android/) nel repository
+2. Scarica direttamente il file **`Glucko.apk`**
+3. Trasferiscilo sul tuo dispositivo Android
+4. Abilita **"Origini sconosciute"** nelle impostazioni del dispositivo
+5. Tocca il file APK per avviare l'installazione
+
+> ⚠️ Prima dell'installazione, assicurati che il tuo dispositivo Android esegua **Android 6.0 (API 23) o superiore**.
+
+---
+
+## 🛠️ Requisiti Tecnici
+
+### Per eseguire il gioco su PC (Windows)
+- **Sistema Operativo:** Windows 10 / 11 (64-bit)
+- **RAM:** minimo 4 GB (consigliati 8 GB)
+- **Spazio disco:** ~450 MB
+- **GPU:** compatibile con Vulkan o OpenGL 3.3+
+
+### Per eseguire il gioco su Android
+- **Android:** 6.0 (Marshmallow, API 23) o superiore
+- **RAM:** minimo 3 GB
+- **Spazio di archiviazione:** ~450 MB liberi
+- **Permessi richiesti:** microfono (per Speech-to-Text), archiviazione
+
+### Per aprire il progetto in Godot
+- **Godot Engine:** versione 4.6 o superiore
+- **Tipo di progetto:** Mobile / Renderer: Forward Mobile
+- **GDScript** (nessuna dipendenza esterna obbligatoria)
+
+---
+
+## 👨‍💻 Autori e Contatti
+
+| Ruolo | Nome |
+|-------|------|
+| 🎓 Sviluppatore / Tesista | Michele — [@MicheleUT](https://github.com/MicheleUT) |
+| 🏛️ Laboratorio | [TELL – Technology-Enhanced Learning Lab](https://github.com/TELL-Technology-Enhanced-Learning-Lab) |
+
+---
+
+## 🏛️ Contesto Accademico
+
+Questo progetto è stato sviluppato come parte di una **tesi di laurea** nell'ambito del laboratorio TELL. Il laboratorio si occupa di ricerca e sviluppo di tecnologie per l'apprendimento potenziato, con focus su:
+
+- Serious Games e gamification in ambito educativo-sanitario
+- Intelligenza artificiale applicata all'educazione
+- Strumenti digitali per la formazione e la sensibilizzazione
+
+---
+
+## 📄 Licenza
+
+Questo progetto è distribuito sotto licenza **MIT**. Consulta il file [LICENSE](LICENSE) per i dettagli.
+
+---
+
+<div align="center">
+
+*Sviluppato con ❤️ dal laboratorio TELL · Godot Engine 4.6 · 2025–2026*
+
+</div>
