@@ -9,7 +9,8 @@
 
 ## 👤 Autore
 
-Michele — Tesista @ [TELL Laboratory](https://github.com/TELL-Technology-Enhanced-Learning-Lab)
+Michele Domenico Petruzzelli — Tesista @ [TELL Laboratory](https://github.com/TELL-Technology-Enhanced-Learning-Lab)
+Vincenzo Pio Eraclea — Tesista @ [TELL Laboratory](https://github.com/TELL-Technology-Enhanced-Learning-Lab)
 
 ---
 
