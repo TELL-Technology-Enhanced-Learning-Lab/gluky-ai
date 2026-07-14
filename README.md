@@ -160,7 +160,8 @@ Ideale per chi vuole giocare subito su un dispositivo Android senza scaricare l'
 
 | Ruolo | Nome |
 |-------|------|
-| 🎓 Sviluppatore / Tesista | Michele — [@MicheleUT](https://github.com/MicheleUT) |
+| 🎓 Sviluppatore / Tesista | Michele Domenico Petruzzelli|
+| 🎓 Sviluppatore / Tesista | Vincenzo Pio Eraclea|
 | 🏛️ Laboratorio | [TELL – Technology-Enhanced Learning Lab](https://github.com/TELL-Technology-Enhanced-Learning-Lab) |
 
 ---
