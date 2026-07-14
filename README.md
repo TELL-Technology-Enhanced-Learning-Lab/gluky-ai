@@ -82,7 +82,7 @@ gluky-ai/
 
 ## 🚀 Come Ottenere e Usare Glucko
 
-> 📖 **Per la guida tecnica completa**, consulta [`docs/HOWTO.md`](docs/HOWTO.md)
+> 📖 **Per la guida tecnica completa**, consulta [`docs/Howto.md`](docs/Howto.md)
 
 Esistono **tre modalità** per accedere al progetto, a seconda delle tue esigenze:
 
